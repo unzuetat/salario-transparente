@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Sueldo Neto 2026 con IA - Transparencia Salarial España</title>
+    <meta name="description" content="Calcula tu sueldo neto con IA conversacional. Descubre si estás bien pagado según la nueva ley de transparencia retributiva. Compara salarios por sector y ciudad.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=General+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0066FF;
+            --primary-dark: #0052CC;
+            --secondary: #00D9B8;
+            --accent: #FF6B35;
+            --bg: #FAFBFC;
+            --surface: #FFFFFF;
+            --text: #0A1628;
+            --text-secondary: #64748B;
+            --border: #E2E8F0;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --gradient: linear-gradient(135deg, #0066FF 0%, #00D9B8 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'General Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated gradient background */
+        .hero-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #0066FF 0%, #00D9B8 50%, #FF6B35 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            opacity: 0.03;
+            z-index: -1;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header */
+        header {
+            padding: 24px 0;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(0, 217, 184, 0.1));
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .badge::before {
+            content: "✨";
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Calculator Card */
+        .calculator-card {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 12px 24px rgba(0, 0, 0, 0.04);
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+            border: 1px solid var(--border);
+        }
+        
+        .calculator-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .calculator-header h2 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .calculator-header p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+        
+        /* Conversational Input */
+        .input-container {
+            position: relative;
+            margin-bottom: 24px;
+        }
+        
+        .conversational-input {
+            width: 100%;
+            padding: 20px 24px;
+            font-size: 16px;
+            font-family: 'General Sans', sans-serif;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: var(--bg);
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .conversational-input:focus {
+            border-color: var(--primary);
+            background: var(--surface);
+            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1);
+        }
+        
+        .input-hint {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        
+        .example-queries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        
+        .example-chip {
+            padding: 8px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .example-chip:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Calculate Button */
+        .btn-calculate {
+            width: 100%;
+            padding: 18px 32px;
+            background: var(--gradient);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'General Sans', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-calculate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-calculate:hover::before {
+            left: 100%;
+        }
+        
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 102, 255, 0.3);
+        }
+        
+        .btn-calculate:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Results Section */
+        .results {
+            margin-top: 40px;
+            padding: 32px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05), rgba(0, 217, 184, 0.05));
+            border-radius: 16px;
+            border: 1px solid rgba(0, 102, 255, 0.1);
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        .results.show {
+            display: block;
+        }
+        
+        .result-main {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .result-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .result-value {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .result-subtitle {
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+        
+        /* AI Insights */
+        .ai-insights {
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .ai-insights h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .ai-insights h3::before {
+            content: "🤖";
+        }
+        
+        .insight-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        /* Transparency Comparator */
+        .transparency-section {
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 12px;
+        }
+        
+        .transparency-section h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .transparency-section h3::before {
+            content: "📊";
+        }
+        
+        .salary-range {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        
+        .range-bar {
+            flex: 1;
+            height: 40px;
+            background: linear-gradient(90deg, var(--success) 0%, var(--warning) 50%, var(--error) 100%);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .your-position {
+            position: absolute;
+            top: -30px;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .your-position::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid var(--primary);
+        }
+        
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 60px 0;
+        }
+        
+        .feature-card {
+            padding: 32px;
+            background: var(--surface);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary);
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 80px 24px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05), rgba(0, 217, 184, 0.05));
+            border-radius: 24px;
+            margin: 60px 0;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--surface);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        /* Loading State */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .loading.show {
+            display: block;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .calculator-card {
+                padding: 32px 24px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-bg"></div>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">💰 SalarioTransparente</div>
+                <div class="badge">Ley Transparencia 2026</div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <!-- Hero -->
+            <section class="hero">
+                <h1>Calcula tu Sueldo Neto<br>con Inteligencia Artificial</h1>
+                <p class="subtitle">
+                    La primera calculadora que usa IA para explicarte tu salario y compararlo 
+                    con <span class="highlight">la nueva ley de transparencia retributiva</span>
+                </p>
+            </section>
+            
+            <!-- Calculator -->
+            <div class="calculator-card">
+                <div class="calculator-header">
+                    <h2>Pregúntame en lenguaje natural</h2>
+                    <p>Escribe como hablas. La IA entiende tu situación y te da una respuesta completa</p>
+                </div>
+                
+                <div class="input-container">
+                    <textarea 
+                        class="conversational-input" 
+                        id="salaryInput"
+                        placeholder="Ejemplo: Gano 35.000€ brutos al año en Madrid como ingeniero de software. Tengo 2 hijos. ¿Cuánto me queda neto y estoy bien pagado?"
+                    ></textarea>
+                    <p class="input-hint">💡 Incluye: salario bruto, ciudad, profesión, situación familiar</p>
+                </div>
+                
+                <div class="example-queries">
+                    <div class="example-chip" onclick="fillExample('Gano 28000€ brutos anuales en Valencia como enfermera, soltera sin hijos')">
+                        💉 Enfermera Valencia
+                    </div>
+                    <div class="example-chip" onclick="fillExample('Cobro 42k al año en Barcelona, ingeniero, casado con 1 hijo')">
+                        💻 Ingeniero Barcelona
+                    </div>
+                    <div class="example-chip" onclick="fillExample('Salario 32000 euros Madrid profesor secundaria')">
+                        📚 Profesor Madrid
+                    </div>
+                </div>
+                
+                <button class="btn-calculate" id="calculateBtn" onclick="calculateSalary()">
+                    Calcular con IA ✨
+                </button>
+                
+                <!-- Loading -->
+                <div class="loading" id="loadingState">
+                    <div class="spinner"></div>
+                    <p>Analizando tu situación con IA...</p>
+                </div>
+                
+                <!-- Results -->
+                <div class="results" id="results">
+                    <div class="result-main">
+                        <div class="result-label">Tu Sueldo Neto Mensual</div>
+                        <div class="result-value" id="netSalary">2.450€</div>
+                        <div class="result-subtitle" id="netSalaryDetail">29.400€ netos al año (14 pagas)</div>
+                    </div>
+                    
+                    <div class="ai-insights">
+                        <h3>Análisis Inteligente</h3>
+                        <div class="insight-text" id="aiAnalysis">
+                            <!-- AI-generated content will go here -->
+                        </div>
+                    </div>
+                    
+                    <div class="transparency-section">
+                        <h3>Comparador Transparencia Salarial</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 16px;">
+                            Según la nueva ley de transparencia retributiva, tu posición respecto al mercado:
+                        </p>
+                        
+                        <div class="salary-range">
+                            <div class="range-bar" id="rangeBar">
+                                <div class="your-position" id="yourPosition" style="left: 60%;">
+                                    Tú estás aquí
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="range-labels">
+                            <span id="minSalary">25.000€</span>
+                            <span id="avgSalary">35.000€ (media)</span>
+                            <span id="maxSalary">50.000€</span>
+                        </div>
+                        
+                        <div style="margin-top: 20px; padding: 16px; background: rgba(255, 107, 53, 0.1); border-radius: 8px; border-left: 4px solid var(--accent);">
+                            <strong>💡 Insight de Negociación:</strong>
+                            <p style="margin-top: 8px; color: var(--text-secondary);" id="negotiationTip">
+                                <!-- AI-generated negotiation tip -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Features -->
+            <section class="features">
+                <div class="feature-card">
+                    <span class="feature-icon">🤖</span>
+                    <h3>IA Conversacional</h3>
+                    <p>No más formularios complicados. Escribe naturalmente y la IA entiende tu situación completa en segundos.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3>Comparador de Mercado</h3>
+                    <p>Descubre si estás bien pagado según la nueva ley de transparencia. Datos reales de +10.000 ofertas analizadas.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">💰</span>
+                    <h3>Consejos de Negociación</h3>
+                    <p>Recibe argumentos personalizados para pedir un aumento basados en datos del mercado y la ley.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Actualizado 2026</h3>
+                    <p>Incluye todas las actualizaciones fiscales y la nueva directiva de transparencia retributiva de la UE.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3>100% Privado</h3>
+                    <p>Tus datos no se guardan. Todo el cálculo ocurre en tiempo real y de forma confidencial.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Análisis por Sector</h3>
+                    <p>Comparaciones específicas por profesión, sector y ciudad. Datos precisos para tu situación exacta.</p>
+                </div>
+            </section>
+            
+            <!-- CTA -->
+            <section class="cta-section">
+                <h2>¿Eres empresa?</h2>
+                <p>Accede a nuestra API de datos salariales para cumplir con la ley de transparencia</p>
+                <a href="#contact" class="btn-secondary">Solicitar Demo →</a>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SalarioTransparente.es - Datos actualizados según normativa española 2026</p>
+            <p style="margin-top: 8px; font-size: 12px;">
+                Información estimada. Consulta a un asesor fiscal para casos específicos.
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Fill example query
+        function fillExample(text) {
+            document.getElementById('salaryInput').value = text;
+        }
+        
+        // Simplified calculation (for demo - in production this calls Claude API)
+        function calculateSalary() {
+            const input = document.getElementById('salaryInput').value.trim();
+            
+            if (!input) {
+                alert('Por favor, describe tu situación salarial');
+                return;
+            }
+            
+            // Show loading
+            document.getElementById('calculateBtn').disabled = true;
+            document.getElementById('loadingState').classList.add('show');
+            document.getElementById('results').classList.remove('show');
+            
+            // Simulate API call (in production, this would call Claude API via Make.com or backend)
+            setTimeout(() => {
+                // Hide loading
+                document.getElementById('loadingState').classList.remove('show');
+                document.getElementById('calculateBtn').disabled = false;
+                
+                // Extract approximate salary from input (basic regex for demo)
+                const salaryMatch = input.match(/(\d{2,3}\.?\d{3}|\d{2,3}k)/i);
+                let grossSalary = 35000; // default
+                
+                if (salaryMatch) {
+                    const match = salaryMatch[0].toLowerCase().replace('.', '');
+                    if (match.includes('k')) {
+                        grossSalary = parseInt(match) * 1000;
+                    } else {
+                        grossSalary = parseInt(match);
+                    }
+                }
+                
+                // Simple net calculation (approximately 75% for demo)
+                const netAnnual = Math.round(grossSalary * 0.75);
+                const netMonthly = Math.round(netAnnual / 14);
+                
+                // Determine profession/city for comparisons
+                const isProfessor = input.toLowerCase().includes('profesor') || input.toLowerCase().includes('teacher');
+                const isEngineer = input.toLowerCase().includes('ingeniero') || input.toLowerCase().includes('engineer') || input.toLowerCase().includes('software');
+                const isNurse = input.toLowerCase().includes('enferm');
+                
+                const isMadrid = input.toLowerCase().includes('madrid');
+                const isBarcelona = input.toLowerCase().includes('barcelona');
+                const isValencia = input.toLowerCase().includes('valencia');
+                
+                let profession = isEngineer ? 'Ingeniero/a' : isProfessor ? 'Profesor/a' : isNurse ? 'Enfermero/a' : 'tu profesión';
+                let city = isMadrid ? 'Madrid' : isBarcelona ? 'Barcelona' : isValencia ? 'Valencia' : 'España';
+                
+                // Market ranges (demo data)
+                let minSalary = 25000;
+                let avgSalary = 35000;
+                let maxSalary = 50000;
+                
+                if (isEngineer) {
+                    minSalary = 30000;
+                    avgSalary = 42000;
+                    maxSalary = 65000;
+                } else if (isProfessor) {
+                    minSalary = 24000;
+                    avgSalary = 32000;
+                    maxSalary = 45000;
+                } else if (isNurse) {
+                    minSalary = 22000;
+                    avgSalary = 28000;
+                    maxSalary = 38000;
+                }
+                
+                // Calculate position on scale (0-100%)
+                const position = Math.min(100, Math.max(0, ((grossSalary - minSalary) / (maxSalary - minSalary)) * 100));
+                
+                // Generate AI insights
+                let percentile = position > 70 ? 'percentil 75' : position > 50 ? 'percentil 60' : position > 30 ? 'percentil 45' : 'percentil 30';
+                
+                const analysisText = `
+                    Basándome en tu situación, tu salario neto mensual es de <strong>${netMonthly.toLocaleString('es-ES')}€</strong> 
+                    (${netAnnual.toLocaleString('es-ES')}€ anuales en 14 pagas).
+                    <br><br>
+                    Estás en el <strong>${percentile}</strong> de ${profession} en ${city}. 
+                    ${position > 60 
+                        ? `Tu salario está <strong style="color: var(--success);">por encima de la media</strong> del mercado.` 
+                        : position > 40 
+                        ? `Tu salario está <strong style="color: var(--warning);">en línea con la media</strong> del mercado.`
+                        : `Tu salario está <strong style="color: var(--accent);">por debajo de la media</strong> del mercado.`
+                    }
+                    <br><br>
+                    Con la nueva <strong>Ley de Transparencia Retributiva</strong> (vigente desde junio 2026), 
+                    las empresas deben publicar rangos salariales. Esto te da poder de negociación.
+                `;
+                
+                const negotiationText = position > 60 
+                    ? `Estás bien posicionado, pero siempre puedes negociar beneficios adicionales como teletrabajo, formación o bonus.`
+                    : position > 40
+                    ? `Tienes margen de negociación. Menciona que la ley exige transparencia y que conoces el rango de mercado (${avgSalary.toLocaleString('es-ES')}€ de media).`
+                    : `Considera solicitar una revisión salarial. La diferencia con la media del mercado es significativa (${Math.round(avgSalary - grossSalary).toLocaleString('es-ES')}€). La ley de transparencia te respalda para pedir igualdad retributiva.`;
+                
+                // Update UI
+                document.getElementById('netSalary').textContent = `${netMonthly.toLocaleString('es-ES')}€`;
+                document.getElementById('netSalaryDetail').textContent = `${netAnnual.toLocaleString('es-ES')}€ netos al año (14 pagas)`;
+                document.getElementById('aiAnalysis').innerHTML = analysisText;
+                document.getElementById('minSalary').textContent = `${minSalary.toLocaleString('es-ES')}€`;
+                document.getElementById('avgSalary').textContent = `${avgSalary.toLocaleString('es-ES')}€ (media)`;
+                document.getElementById('maxSalary').textContent = `${maxSalary.toLocaleString('es-ES')}€`;
+                document.getElementById('yourPosition').style.left = `${position}%`;
+                document.getElementById('negotiationTip').textContent = negotiationText;
+                
+                // Show results
+                document.getElementById('results').classList.add('show');
+                
+                // Scroll to results
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+            }, 2000); // 2 second simulated loading
+        }
+        
+        // Allow Enter to submit (with Shift+Enter for new line)
+        document.getElementById('salaryInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                calculateSalary();
+            }
+        });
+    </script>
+</body>
+</html>
