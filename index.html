@@ -657,6 +657,93 @@
       margin-left: 4px;
     }
 
+    /* CITY RANKING */
+    .ranking-row {
+      display: grid;
+      grid-template-columns: 24px 1fr auto auto;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--cream-100);
+    }
+    .ranking-row:last-child { border-bottom: none; }
+
+    .ranking-pos {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink-lighter);
+      text-align: center;
+    }
+
+    .ranking-city-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .ranking-bar-wrap {
+      position: relative;
+      height: 6px;
+      background: var(--cream-200);
+      border-radius: 2px;
+      margin-top: 5px;
+    }
+
+    .ranking-bar-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.5s ease;
+    }
+
+    .ranking-salary {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .ranking-tag {
+      display: inline-block;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      margin-left: 6px;
+    }
+
+    .ranking-tag-media { background: #EFF6FF; color: #3B82F6; }
+    .ranking-tag-mediana { background: #FEF9F3; color: var(--gold); }
+    .ranking-tag-tu { background: var(--ink); color: #fff; }
+
+    .ranking-legend {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--cream-200);
+      flex-wrap: wrap;
+    }
+
+    .ranking-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--ink-light);
+    }
+
+    .ranking-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 1px;
+      flex-shrink: 0;
+    }
+
     .urban-compare {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1529,107 +1616,10 @@
       </div>
     </div>
 
-    <!-- SPAIN MAP -->
-    <div class="map-card">
-      <div class="range-title" style="margin-bottom:20px">Distribución salarial por comunidad autónoma</div>
-      <div class="spain-map-wrap">
-        <svg class="map-svg" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" style="stroke:#fff;stroke-width:1;stroke-linejoin:round;">
-          <!-- Peninsula -->
-          <!-- Galicia -->
-          <path class="map-region level-mid" d="M80,95 L82,80 L90,68 L104,60 L122,58 L138,62 L148,72 L152,86 L148,100 L140,112 L126,120 L108,124 L92,118 L80,106 Z"><title>Galicia</title></path>
-          <!-- Asturias -->
-          <path class="map-region level-mid" d="M148,72 L164,64 L182,60 L202,60 L218,64 L228,72 L224,84 L210,90 L190,92 L170,90 L152,84 Z"><title>Asturias</title></path>
-          <!-- Cantabria -->
-          <path class="map-region level-mid" d="M224,72 L242,66 L258,66 L268,74 L264,86 L248,90 L230,88 L224,80 Z"><title>Cantabria</title></path>
-          <!-- País Vasco -->
-          <path class="map-region level-high" d="M264,66 L282,60 L300,58 L314,62 L320,74 L314,86 L298,90 L280,88 L266,82 Z"><title>País Vasco</title></path>
-          <!-- Navarra -->
-          <path class="map-region level-mid" d="M314,58 L332,54 L348,58 L356,72 L352,90 L338,102 L320,104 L308,96 L308,82 L314,70 Z"><title>Navarra</title></path>
-          <!-- La Rioja -->
-          <path class="map-region level-mid" d="M268,88 L298,90 L314,88 L318,102 L298,110 L274,106 L264,96 Z"><title>La Rioja</title></path>
-          <!-- Aragón -->
-          <path class="map-region level-mid" d="M318,58 L360,54 L390,62 L400,80 L404,110 L402,148 L396,180 L374,192 L352,190 L334,178 L320,158 L316,134 L316,108 L320,90 Z"><title>Aragón</title></path>
-          <!-- Cataluña -->
-          <path class="map-region level-high" d="M360,54 L394,44 L426,46 L456,54 L478,72 L474,96 L456,116 L434,132 L408,140 L394,132 L388,114 L392,88 L394,68 Z"><title>Cataluña</title></path>
-          <!-- Castilla y León -->
-          <path class="map-region level-mid" d="M92,118 L126,120 L148,106 L170,90 L210,90 L228,88 L248,90 L266,96 L274,106 L298,110 L318,108 L318,134 L300,156 L278,172 L248,182 L208,186 L170,184 L138,176 L108,162 L88,144 L84,128 Z"><title>Castilla y León</title></path>
-          <!-- Madrid -->
-          <path class="map-region level-high" d="M248,184 L284,182 L294,196 L294,218 L278,228 L254,228 L238,216 L236,198 Z"><title>Comunidad de Madrid</title></path>
-          <!-- Castilla-La Mancha -->
-          <path class="map-region level-low" d="M138,178 L170,184 L208,186 L248,184 L236,198 L238,216 L254,228 L278,228 L294,218 L308,236 L316,264 L310,298 L284,314 L248,320 L208,314 L174,300 L150,276 L138,250 L134,224 Z"><title>Castilla-La Mancha</title></path>
-          <!-- Comunidad Valenciana -->
-          <path class="map-region level-mid" d="M374,192 L396,180 L412,188 L424,208 L430,238 L426,272 L414,304 L398,318 L378,322 L360,308 L346,280 L340,250 L344,220 L358,202 Z"><title>Comunidad Valenciana</title></path>
-          <!-- Extremadura -->
-          <path class="map-region level-low" d="M84,192 L108,186 L138,178 L134,224 L138,250 L118,270 L92,278 L68,260 L60,232 L64,206 Z"><title>Extremadura</title></path>
-          <!-- Andalucía -->
-          <path class="map-region level-mid" d="M64,268 L92,278 L118,270 L150,276 L174,300 L208,314 L248,320 L284,314 L310,298 L328,308 L336,332 L322,362 L292,380 L248,390 L200,388 L156,378 L114,360 L82,338 L64,310 L56,284 Z"><title>Andalucía</title></path>
-          <!-- Murcia -->
-          <path class="map-region level-mid" d="M310,298 L346,280 L374,296 L398,318 L384,348 L352,358 L322,352 L314,330 L316,308 Z"><title>Murcia</title></path>
-
-          <!-- Labels -->
-          <text x="112" y="96" font-size="8" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">GAL</text>
-          <text x="188" y="80" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">AST</text>
-          <text x="246" y="82" font-size="6.5" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CANT</text>
-          <text x="292" y="78" font-size="7" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">P.V.</text>
-          <text x="334" y="82" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">NAV</text>
-          <text x="290" y="102" font-size="6.5" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">RIOJA</text>
-          <text x="360" y="130" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">ARAGÓN</text>
-          <text x="432" y="96" font-size="8" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">CAT</text>
-          <text x="198" y="148" font-size="9" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CASTILLA Y LEÓN</text>
-          <text x="266" y="210" font-size="7.5" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">MADRID</text>
-          <text x="222" y="268" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CAST.-LA MANCHA</text>
-          <text x="388" y="258" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">VALENCIA</text>
-          <text x="96" y="238" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">EXTREM.</text>
-          <text x="196" y="342" font-size="9" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">ANDALUCÍA</text>
-          <text x="352" y="328" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">MURCIA</text>
-
-          <!-- Baleares -->
-          <path class="map-region level-mid" d="M510,158 L532,150 L550,154 L558,168 L550,180 L530,184 L512,176 Z"><title>Islas Baleares (Mallorca)</title></path>
-          <path class="map-region level-mid" d="M564,162 L578,158 L586,164 L584,174 L570,178 L560,172 Z"><title>Islas Baleares (Menorca)</title></path>
-          <path class="map-region level-mid" d="M496,178 L506,174 L512,180 L508,188 L498,188 Z"><title>Islas Baleares (Ibiza)</title></path>
-          <text x="532" y="170" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">BAL</text>
-
-          <!-- Canarias (inset) -->
-          <rect x="44" y="450" width="200" height="2" fill="var(--cream-300)" stroke="none" opacity="0.5"/>
-          <rect x="44" y="450" width="2" height="130" fill="var(--cream-300)" stroke="none" opacity="0.5"/>
-          <rect x="242" y="450" width="2" height="130" fill="var(--cream-300)" stroke="none" opacity="0.5"/>
-          <rect x="44" y="578" width="200" height="2" fill="var(--cream-300)" stroke="none" opacity="0.5"/>
-          <text x="144" y="466" font-size="7" fill="var(--ink-lighter)" font-family="DM Sans" font-weight="700" text-anchor="middle" letter-spacing="0.08em">CANARIAS</text>
-          <!-- Tenerife -->
-          <path class="map-region level-low" d="M58,490 L74,482 L90,486 L96,500 L88,514 L70,518 L56,508 Z"><title>Islas Canarias</title></path>
-          <!-- Gran Canaria -->
-          <path class="map-region level-low" d="M104,492 L120,486 L134,492 L138,506 L128,518 L112,520 L100,510 Z"><title>Islas Canarias</title></path>
-          <!-- Lanzarote -->
-          <path class="map-region level-low" d="M176,482 L190,478 L200,484 L198,496 L184,500 L172,494 Z"><title>Islas Canarias</title></path>
-          <!-- Fuerteventura -->
-          <path class="map-region level-low" d="M206,490 L220,484 L232,490 L232,508 L220,516 L206,510 Z"><title>Islas Canarias</title></path>
-          <!-- La Palma -->
-          <path class="map-region level-low" d="M50,528 L60,522 L70,526 L70,540 L60,546 L50,540 Z"><title>Islas Canarias</title></path>
-          <!-- La Gomera -->
-          <path class="map-region level-low" d="M80,530 L90,526 L98,532 L96,542 L84,546 L76,538 Z"><title>Islas Canarias</title></path>
-          <!-- El Hierro -->
-          <path class="map-region level-low" d="M106,540 L114,536 L120,542 L116,552 L106,552 Z"><title>Islas Canarias</title></path>
-        </svg>
-
-        <div>
-          <div class="map-legend">
-            <div class="map-legend-title">Nivel salarial relativo</div>
-            <div class="legend-item">
-              <svg class="legend-dot" viewBox="0 0 10 10"><rect width="10" height="10" fill="#2E7D52"/></svg>
-              Alto (+10% sobre media)
-            </div>
-            <div class="legend-item">
-              <svg class="legend-dot" viewBox="0 0 10 10"><rect width="10" height="10" fill="#C17B3E"/></svg>
-              Medio (±10% de la media)
-            </div>
-            <div class="legend-item">
-              <svg class="legend-dot" viewBox="0 0 10 10"><rect width="10" height="10" fill="#9B8E88"/></svg>
-              Bajo (–10% bajo media)
-            </div>
-          </div>
-          <div class="map-stats" id="mapStats"></div>
-        </div>
-      </div>
+    <!-- CITY SALARY RANKING -->
+    <div class="range-card" id="cityRankingCard">
+      <div class="range-title">Ranking salarial por ciudad — <span id="rankingProfTitle">tu profesión</span></div>
+      <div id="cityRankingList" style="margin-top:16px;"></div>
     </div>
 
     <!-- ACCORDION 1: Stats by region -->
@@ -1965,6 +1955,9 @@
     // Map stats
     updateMapStats();
 
+    // City ranking
+    buildCityRanking();
+
     // Accordions
     buildCityTable();
     buildUrbanCompare();
@@ -2096,6 +2089,93 @@
     document.getElementById('rangeMax').textContent = fmt(max);
     document.getElementById('rangeBarFill').style.width = pos + '%';
     document.getElementById('rangeBarMarker').style.left = pos + '%';
+  }
+
+  // ─── CITY SALARY RANKING ─────────────────────────────────────
+  function buildCityRanking() {
+    const d = salaryData[currentProf];
+    const profLabel = currentProfInput || 'tu profesión';
+
+    // Calcular media y mediana españolas
+    const allMedians = Object.values(d).map(v => v[1]);
+    const spainMean = Math.round(allMedians.reduce((a,b) => a+b, 0) / allMedians.length);
+    const sorted = [...allMedians].sort((a,b) => a-b);
+    const spainMedian = sorted[Math.floor(sorted.length/2)];
+
+    // Ordenar ciudades por mediana descendente
+    const cities = Object.keys(cityNames).map(c => ({
+      key: c,
+      name: cityNames[c],
+      median: d[c][1],
+      min: d[c][0],
+      max: d[c][2]
+    })).sort((a,b) => b.median - a.median);
+
+    const maxMedian = cities[0].median;
+
+    // Actualizar título
+    document.getElementById('rankingProfTitle').textContent = profLabel;
+
+    let html = '';
+    cities.forEach((city, i) => {
+      const isCurrentCity = city.key === currentCity;
+      const isClosestToMean = Math.abs(city.median - spainMean) === Math.min(...cities.map(c => Math.abs(c.median - spainMean)));
+      const isClosestToMedian = Math.abs(city.median - spainMedian) === Math.min(...cities.map(c => Math.abs(c.median - spainMedian)));
+      const barWidth = Math.round((city.median / maxMedian) * 100);
+
+      // Color de la barra
+      let barColor = 'var(--cream-300)';
+      if (isCurrentCity) barColor = 'var(--ink)';
+      else if (city.median >= spainMean * 1.05) barColor = 'var(--green)';
+      else if (city.median <= spainMean * 0.95) barColor = 'var(--red)';
+      else barColor = 'var(--gold)';
+
+      // Tags
+      let tags = '';
+      if (isCurrentCity) tags += '<span class="ranking-tag ranking-tag-tu">Tu ciudad</span>';
+      if (isClosestToMean) tags += '<span class="ranking-tag ranking-tag-media">Media ES</span>';
+      if (isClosestToMedian && !isClosestToMean) tags += '<span class="ranking-tag ranking-tag-mediana">Mediana ES</span>';
+
+      html += `
+        <div class="ranking-row" style="${isCurrentCity ? 'background:var(--cream-50);padding:10px 8px;margin:0 -8px;' : ''}">
+          <div class="ranking-pos">${i+1}</div>
+          <div>
+            <div class="ranking-city-name">${city.name}${tags}</div>
+            <div class="ranking-bar-wrap" style="width:100%;max-width:220px;">
+              <div class="ranking-bar-fill" style="width:${barWidth}%;background:${barColor};"></div>
+            </div>
+          </div>
+          <div></div>
+          <div class="ranking-salary">${fmt(city.median)}<br><span style="font-size:10px;font-weight:400;color:var(--ink-lighter);">${fmt(city.min)} – ${fmt(city.max)}</span></div>
+        </div>`;
+    });
+
+    // Líneas de referencia al pie
+    html += `
+      <div class="ranking-legend">
+        <div class="ranking-legend-item">
+          <div class="ranking-legend-dot" style="background:var(--green);"></div>
+          Por encima de la media española (${fmt(spainMean)})
+        </div>
+        <div class="ranking-legend-item">
+          <div class="ranking-legend-dot" style="background:var(--gold);"></div>
+          En torno a la media española
+        </div>
+        <div class="ranking-legend-item">
+          <div class="ranking-legend-dot" style="background:var(--red);"></div>
+          Por debajo de la media española
+        </div>
+        <div class="ranking-legend-item">
+          <div class="ranking-legend-dot" style="background:var(--ink);"></div>
+          Tu ciudad
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:var(--ink-lighter);">
+        Media salarial española para este perfil: <strong style="color:var(--ink);">${fmt(spainMean)}/año</strong> · 
+        Mediana española: <strong style="color:var(--gold);">${fmt(spainMedian)}/año</strong>
+      </div>`;
+
+    document.getElementById('cityRankingList').innerHTML = html;
   }
 
   // ─── MAP STATS ───────────────────────────────────────────────
