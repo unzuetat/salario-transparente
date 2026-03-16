@@ -30,14 +30,9 @@ module.exports = async function handler(req, res) {
 
   const prompt = `Eres un experto en el mercado laboral español con datos de 2024-2025.
 
-Perfil del usuario:
-- Profesión: ${profession}
-- Salario bruto anual: ${gross.toLocaleString('es-ES')} €
-- Ciudad: ${cityLabel}
-- Situación: ${situationNames[situation] || situation}
-- Neto estimado: ${netMonthly} / ${netAnnual}
+Perfil: profesión "${profession}", ciudad ${cityLabel}, salario bruto ${gross.toLocaleString('es-ES')}€, situación ${situationNames[situation] || situation}, neto estimado ${netMonthly}.
 
-Devuelve ÚNICAMENTE este JSON, sin texto adicional ni markdown:
+Devuelve ÚNICAMENTE este JSON sin texto extra ni markdown:
 
 {
   "ranges": {
@@ -55,8 +50,7 @@ Devuelve ÚNICAMENTE este JSON, sin texto adicional ni markdown:
   "analysis": "Párrafo situación vs mercado.\\n\\nPárrafo derechos Ley Transparencia 2026.\\n\\nPárrafo recomendación concreta."
 }
 
-Reglas rangos: valores enteros en euros, mínimo >= 15876 (SMI 2025), Madrid/Barcelona 20-35% más que ciudades medianas, Murcia/LPalmas/Palma 15-20% menos que Madrid, datos realistas mercado español.
-Reglas análisis: directo, sin IA, sin bullets, 3 párrafos separados por doble salto.`;
+Reglas: valores enteros en euros, mínimo >= 15876 (SMI 2025), Madrid/Barcelona 20-35% más que ciudades medianas, datos realistas mercado español 2024-2025. Análisis directo en 3 párrafos, sin bullets.`;
 
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
@@ -67,14 +61,14 @@ Reglas análisis: directo, sin IA, sin bullets, 3 párrafos separados por doble 
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5',
+        model: 'claude-haiku-4-5-20251001',
         max_tokens: 1200,
         messages: [{ role: 'user', content: prompt }]
       })
     });
 
     if (!response.ok) {
-      console.error('Anthropic error:', await response.text());
+      console.error('Anthropic error:', response.status, await response.text());
       return res.status(200).json({ ranges: null, analysis: '', percentile: 50, cityMedian: 0, spainMean: 0 });
     }
 
