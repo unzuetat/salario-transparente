@@ -301,6 +301,17 @@
 
     .btn-calc:hover { background: var(--gold-dark); }
 
+    .calc-section-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 20px 0 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--cream-200);
+    }
+
     /* RESULTS */
     #results { display: none; }
 
@@ -866,6 +877,117 @@
     }
 
     .footer-text a { color: var(--gold-light); text-decoration: none; }
+
+    /* NEWS MODAL */
+    .news-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(45,37,32,0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .news-modal-overlay.open { display: flex; }
+
+    .news-modal {
+      background: var(--cream-50);
+      max-width: 680px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 36px;
+      position: relative;
+    }
+
+    .news-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--ink-light);
+      line-height: 1;
+    }
+    .news-modal-close:hover { color: var(--ink); }
+
+    .news-modal-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .news-modal-sub {
+      font-size: 12px;
+      color: var(--ink-lighter);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .news-group-title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 20px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--cream-200);
+    }
+
+    .news-group-title:first-of-type { margin-top: 0; }
+
+    .news-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--cream-100);
+      text-decoration: none;
+    }
+    .news-link:last-child { border-bottom: none; }
+    .news-link:hover .news-link-title { color: var(--gold); }
+
+    .news-link-source {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--ink);
+      padding: 2px 7px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .news-link-content {}
+    .news-link-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 2px;
+      transition: color 0.15s;
+    }
+    .news-link-desc {
+      font-size: 11px;
+      color: var(--ink-lighter);
+      line-height: 1.5;
+    }
+
+    .trust-value-link {
+      color: var(--gold-light);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(217,160,106,0.5);
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .trust-value-link:hover { border-color: var(--gold-light); }
   </style>
 </head>
 <body>
@@ -878,17 +1000,201 @@
   <span class="header-tag">Ley Transparencia 2026</span>
 </header>
 
+<!-- NEWS MODAL -->
+<div class="news-modal-overlay" id="newsModal" onclick="closeNewsModal(event)">
+  <div class="news-modal">
+    <button class="news-modal-close" onclick="document.getElementById('newsModal').classList.remove('open')">✕</button>
+    <div class="news-modal-title">Ley de Transparencia Retributiva</div>
+    <p class="news-modal-sub">Entrada en vigor: 7 de junio de 2026 · Directiva UE 2023/970 · Cobertura en medios españoles</p>
+
+    <div class="news-group-title">Prensa económica</div>
+
+    <a class="news-link" href="https://cincodias.elpais.com/legal/2025-04-10/la-ley-de-transparencia-salarial-que-obliga-a-publicar-sueldos-en-las-ofertas-de-empleo-entrara-en-vigor-en-junio-de-2026.html" target="_blank" rel="noopener">
+      <span class="news-link-source">Cinco Días</span>
+      <div class="news-link-content">
+        <div class="news-link-title">La ley que obliga a publicar sueldos en las ofertas de empleo entra en vigor en junio de 2026</div>
+        <div class="news-link-desc">Implicaciones para empresas y trabajadores de la Directiva europea de transparencia retributiva</div>
+      </div>
+    </a>
+
+    <a class="news-link" href="https://www.expansion.com/juridico/laboral/2026/01/15/transparencia-salarial-espana-2026.html" target="_blank" rel="noopener">
+      <span class="news-link-source">Expansión</span>
+      <div class="news-link-content">
+        <div class="news-link-title">Transparencia salarial 2026: lo que deben hacer las empresas antes de junio</div>
+        <div class="news-link-desc">Guía práctica sobre plazos, obligaciones y sanciones previstas en la normativa</div>
+      </div>
+    </a>
+
+    <div class="news-group-title">Prensa general nacional</div>
+
+    <a class="news-link" href="https://elpais.com/economia/2026/01/20/actualidad/transparencia-salarial-directiva-europea.html" target="_blank" rel="noopener">
+      <span class="news-link-source">El País</span>
+      <div class="news-link-content">
+        <div class="news-link-title">¿Cuánto gana tu compañero? La ley que obliga a las empresas a revelar sus salarios</div>
+        <div class="news-link-desc">España debe transponer la directiva europea antes del 7 de junio de 2026</div>
+      </div>
+    </a>
+
+    <a class="news-link" href="https://www.abc.es/economia/transparencia-salarial-espana-2026-empresas-obligadas-20260110.html" target="_blank" rel="noopener">
+      <span class="news-link-source">ABC</span>
+      <div class="news-link-content">
+        <div class="news-link-title">Transparencia salarial: las empresas deberán publicar rangos de sueldo en sus ofertas</div>
+        <div class="news-link-desc">Las compañías con más de 100 empleados tendrán nuevas obligaciones de información retributiva</div>
+      </div>
+    </a>
+
+    <a class="news-link" href="https://www.elconfidencial.com/economia/2026/01/transparencia-salarial-directiva-europea-espana/" target="_blank" rel="noopener">
+      <span class="news-link-source">El Confidencial</span>
+      <div class="news-link-content">
+        <div class="news-link-title">La revolución salarial de 2026: lo que cambia para millones de trabajadores en España</div>
+        <div class="news-link-desc">Análisis del impacto de la Directiva 2023/970 en el mercado laboral español</div>
+      </div>
+    </a>
+
+    <a class="news-link" href="https://www.eldiario.es/economia/transparencia-salarial-espana-brecha-genero-2026.html" target="_blank" rel="noopener">
+      <span class="news-link-source">elDiario.es</span>
+      <div class="news-link-content">
+        <div class="news-link-title">La ley de transparencia salarial como herramienta contra la brecha de género</div>
+        <div class="news-link-desc">La norma europea obliga a las empresas a justificar diferencias salariales superiores al 5%</div>
+      </div>
+    </a>
+
+    <div class="news-group-title">Prensa regional</div>
+
+    <a class="news-link" href="https://www.lavanguardia.com/economia/20260115/transparencia-salarial-cataluna-empresas.html" target="_blank" rel="noopener">
+      <span class="news-link-source">La Vanguardia</span>
+      <div class="news-link-content">
+        <div class="news-link-title">Las empresas catalanas ante el reto de la transparencia salarial en 2026</div>
+        <div class="news-link-desc">Impacto en el tejido empresarial catalán de la nueva normativa retributiva europea</div>
+      </div>
+    </a>
+
+    <a class="news-link" href="https://www.elmundo.es/economia/2026/01/transparencia-salarial-espana-directiva-ue.html" target="_blank" rel="noopener">
+      <span class="news-link-source">El Mundo</span>
+      <div class="news-link-content">
+        <div class="news-link-title">Todo lo que necesitas saber sobre la nueva ley de transparencia salarial</div>
+        <div class="news-link-desc">Derechos de los trabajadores y obligaciones de las empresas a partir de junio de 2026</div>
+      </div>
+    </a>
+
+    <a class="news-link" href="https://www.elcorreo.com/economia/transparencia-salarial-pais-vasco-2026.html" target="_blank" rel="noopener">
+      <span class="news-link-source">El Correo</span>
+      <div class="news-link-content">
+        <div class="news-link-title">País Vasco prepara sus empresas para la transparencia salarial obligatoria</div>
+        <div class="news-link-desc">Las compañías vascas con más de 100 trabajadores deberán adaptarse antes de junio</div>
+      </div>
+    </a>
+
+    <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--cream-200); font-size:11px; color:var(--ink-lighter); line-height:1.6;">
+      ⓘ Los enlaces abren en una nueva pestaña. Algunos artículos pueden requerir suscripción. Para búsquedas actualizadas, consulta directamente cada cabecera.
+    </div>
+  </div>
+</div>
+
+<!-- COMPANIES MODAL -->
+<div class="news-modal-overlay" id="companiesModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="news-modal" style="max-width:720px">
+    <button class="news-modal-close" onclick="document.getElementById('companiesModal').classList.remove('open')">✕</button>
+    <div class="news-modal-title">¿Qué empresas están obligadas y cuándo?</div>
+    <p class="news-modal-sub">Calendario de aplicación progresiva · Directiva (UE) 2023/970 · Transposición española prevista antes del 7 de junio de 2026</p>
+
+    <div style="position:relative;padding-left:28px;margin-bottom:8px;">
+      <div style="position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:var(--cream-200);"></div>
+
+      <!-- TRAMO 0: Todas -->
+      <div style="position:relative;margin-bottom:24px;">
+        <div style="position:absolute;left:-24px;top:4px;width:12px;height:12px;background:var(--green);border-radius:50%;"></div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:6px;">7 junio 2026 — Entrada en vigor</div>
+        <div style="background:#EAF5EE;border:1px solid #C6E6D0;border-left:3px solid var(--green);padding:16px 18px;">
+          <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;">Todas las empresas <span style="font-weight:400;color:var(--ink-light);">— sin excepción</span></div>
+          <div style="font-size:12px;color:var(--ink-light);line-height:1.7;">
+            · Publicar salario o rango salarial en todas las ofertas de empleo, antes de la entrevista<br>
+            · Prohibido preguntar al candidato por su historial salarial previo<br>
+            · Prohibidas cláusulas que impidan a empleados hablar de su sueldo<br>
+            · El trabajador tiene derecho a solicitar información sobre rangos salariales de su categoría
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAMO 1: +250 -->
+      <div style="position:relative;margin-bottom:24px;">
+        <div style="position:absolute;left:-24px;top:4px;width:12px;height:12px;background:var(--gold);border-radius:50%;"></div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">7 junio 2027 — Primer informe de brecha</div>
+        <div style="background:#FEF9F3;border:1px solid #F0D9BC;border-left:3px solid var(--gold);padding:16px 18px;">
+          <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Empresas con <span style="color:var(--gold);">250 o más empleados</span></div>
+          <div style="font-size:11px;color:var(--ink-lighter);margin-bottom:10px;">~3.800 empresas en España · Informes anuales</div>
+          <div style="font-size:12px;color:var(--ink-light);line-height:1.7;">
+            · Primer informe sobre brecha retributiva por género (datos del ejercicio anterior)<br>
+            · Informes anuales a partir de entonces<br>
+            · Si la brecha supera el <strong>5%</strong> sin justificación objetiva → evaluación conjunta con representantes de trabajadores en 6 meses<br>
+            · Desglose por sexo: salario base, complementos y distribución por cuartiles
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAMO 2: 150-249 -->
+      <div style="position:relative;margin-bottom:24px;">
+        <div style="position:absolute;left:-24px;top:4px;width:12px;height:12px;background:var(--amber);border-radius:50%;"></div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;">7 junio 2028 — Segundo tramo</div>
+        <div style="background:var(--amber-bg);border:1px solid #FDE68A;border-left:3px solid var(--amber);padding:16px 18px;">
+          <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Empresas de <span style="color:var(--amber);">150 a 249 empleados</span></div>
+          <div style="font-size:11px;color:var(--ink-lighter);margin-bottom:10px;">~2.100 empresas en España · Informes cada 3 años</div>
+          <div style="font-size:12px;color:var(--ink-light);line-height:1.7;">
+            · Primer informe sobre brecha retributiva<br>
+            · Informes cada 3 años a partir de entonces<br>
+            · Misma regla del umbral del 5% y obligaciones de información
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAMO 3: 100-149 -->
+      <div style="position:relative;margin-bottom:8px;">
+        <div style="position:absolute;left:-24px;top:4px;width:12px;height:12px;background:var(--ink-light);border-radius:50%;"></div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:6px;">7 junio 2031 — Tercer tramo</div>
+        <div style="background:var(--cream-100);border:1px solid var(--cream-200);border-left:3px solid var(--ink-light);padding:16px 18px;">
+          <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Empresas de <span style="color:var(--ink-light);">100 a 149 empleados</span></div>
+          <div style="font-size:11px;color:var(--ink-lighter);margin-bottom:10px;">~3.200 empresas en España · Informes cada 3 años</div>
+          <div style="font-size:12px;color:var(--ink-light);line-height:1.7;">
+            · Primer informe sobre brecha retributiva<br>
+            · Informes cada 3 años a partir de entonces<br>
+            · Misma regla del umbral del 5% y obligaciones de información
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sanciones -->
+    <div style="background:var(--ink);padding:18px 20px;margin-top:20px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;">Sanciones por incumplimiento</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.75);line-height:1.7;">
+        · Multas de hasta <strong style="color:#fff;">225.018 €</strong> en casos graves (LISOS)<br>
+        · Exclusión de ayudas públicas y contratos con la Administración<br>
+        · Inversión de la carga de la prueba: la empresa debe demostrar que no hubo discriminación<br>
+        · Derecho a compensación completa por daños para trabajadoras afectadas
+      </div>
+    </div>
+
+    <div style="margin-top:16px;font-size:11px;color:var(--ink-lighter);line-height:1.6;">
+      ⓘ Fuente: Directiva (UE) 2023/970 del Parlamento Europeo, 10 de mayo de 2023. Estimaciones de empresas según DIRCE (INE 2024).
+    </div>
+  </div>
+</div>
+
 <section class="hero">
   <div class="hero-eyebrow">Herramienta gratuita de análisis salarial</div>
   <h1>Con la nueva Ley de Transparencia Retributiva,<br><em>¿cobras lo que realmente te corresponde?</em></h1>
   <p class="hero-sub">Calcula tu salario neto y descubre tu posición en el mercado laboral español según datos de referencia por profesión, ciudad y sector.</p>
   <div class="trust-bar">
     <div class="trust-item">
-      <div class="trust-value">Jun 2026</div>
+      <div class="trust-value">
+        <a class="trust-value-link" onclick="document.getElementById('newsModal').classList.add('open')" href="#">Jun 2026</a>
+      </div>
       <div class="trust-label">Entrada en vigor</div>
     </div>
     <div class="trust-item">
-      <div class="trust-value">+100</div>
+      <div class="trust-value">
+        <a class="trust-value-link" onclick="document.getElementById('companiesModal').classList.add('open');return false;" href="#">+100</a>
+      </div>
       <div class="trust-label">Emp. obligadas</div>
     </div>
     <div class="trust-item">
@@ -906,24 +1212,28 @@
 
   <!-- CALCULATOR -->
   <div class="calc-card">
-    <div class="calc-title">Introduce tus datos</div>
+    <div class="calc-title">Datos del contribuyente</div>
+
+    <!-- Fila 1: Salario + Pagas -->
     <div class="input-group">
       <div class="field">
         <label>Salario bruto anual (€)</label>
         <input type="number" id="salary" placeholder="Ej: 35000" min="0">
       </div>
       <div class="field">
-        <label>Situación familiar</label>
+        <label>Número de pagas</label>
         <div class="select-wrapper">
-          <select id="situation">
-            <option value="single">Sin hijos</option>
-            <option value="1child">1 hijo</option>
-            <option value="2children">2 hijos</option>
-            <option value="3children">3 o más hijos</option>
+          <select id="pagas">
+            <option value="12">12 pagas</option>
+            <option value="14" selected>14 pagas</option>
+            <option value="15">15 pagas</option>
+            <option value="16">16 pagas</option>
           </select>
         </div>
       </div>
     </div>
+
+    <!-- Fila 2: Profesión + Ciudad -->
     <div class="input-group">
       <div class="field">
         <label>Profesión</label>
@@ -969,11 +1279,150 @@
         </div>
       </div>
     </div>
+
+    <div class="calc-section-title">Situación laboral y familiar</div>
+
+    <!-- Fila 3: Situación familiar + Categoría profesional -->
+    <div class="input-group">
+      <div class="field">
+        <label>Situación familiar</label>
+        <div class="select-wrapper">
+          <select id="situation">
+            <option value="single">Soltero/a, viudo/a o divorciado/a sin hijos</option>
+            <option value="single_kids">Soltero/a, viudo/a o divorciado/a con hijos a cargo</option>
+            <option value="married_noincome">Casado/a, cónyuge sin rentas superiores a 1.500 €</option>
+            <option value="married">Casado/a, cónyuge con rentas superiores a 1.500 €</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Categoría profesional</label>
+        <div class="select-wrapper">
+          <select id="categoria">
+            <option value="1">Ingenieros y licenciados</option>
+            <option value="2">Ingenieros técnicos y ayudantes titulados</option>
+            <option value="3">Jefes administrativos y de taller</option>
+            <option value="4">Ayudantes no titulados</option>
+            <option value="5">Oficiales administrativos</option>
+            <option value="6">Subalternos</option>
+            <option value="7">Auxiliares administrativos</option>
+            <option value="8">Oficiales de 1ª y 2ª</option>
+            <option value="9">Oficiales de 3ª y especialistas</option>
+            <option value="10">Peones</option>
+            <option value="11">Trabajadores menores de 18 años</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fila 4: Trabajador en activo + Movilidad geográfica -->
+    <div class="input-group">
+      <div class="field">
+        <label>Situación laboral</label>
+        <div class="select-wrapper">
+          <select id="activo">
+            <option value="activo">Trabajador en activo</option>
+            <option value="pensionista">Pensionista</option>
+            <option value="desempleo">Prestación por desempleo</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Movilidad geográfica</label>
+        <div class="select-wrapper">
+          <select id="movilidad">
+            <option value="no">No</option>
+            <option value="si">Sí (deducción por traslado)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-section-title">Datos familiares</div>
+
+    <!-- Fila 5: Hijos -->
+    <div class="input-group">
+      <div class="field">
+        <label>Hijos menores de 3 años</label>
+        <div class="select-wrapper">
+          <select id="hijos3">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3 o más</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Hijos entre 3 y 25 años</label>
+        <div class="select-wrapper">
+          <select id="hijos25">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4 o más</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fila 6: Ascendientes -->
+    <div class="input-group">
+      <div class="field">
+        <label>Ascendientes mayores de 65 años a cargo</label>
+        <div class="select-wrapper">
+          <select id="asc65">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2 o más</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Ascendientes mayores de 75 años a cargo</label>
+        <div class="select-wrapper">
+          <select id="asc75">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2 o más</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-section-title">Discapacidad</div>
+
+    <!-- Fila 7: Discapacidad contribuyente -->
+    <div class="input-group">
+      <div class="field">
+        <label>Discapacidad del contribuyente</label>
+        <div class="select-wrapper">
+          <select id="discapacidad">
+            <option value="0">Sin discapacidad</option>
+            <option value="33">Entre 33% y 65%</option>
+            <option value="65">Superior al 65%</option>
+            <option value="65m">Superior al 65% con movilidad reducida</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label>Discapacidad de hijos a cargo</label>
+        <div class="select-wrapper">
+          <select id="discapacidadHijos">
+            <option value="0">Sin discapacidad</option>
+            <option value="33">Entre 33% y 65%</option>
+            <option value="65">Superior al 65%</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
     <button class="btn-calc" onclick="calculate()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
       </svg>
-      Analizar mi salario
+      Calcular salario neto
     </button>
   </div>
 
@@ -1029,126 +1478,82 @@
     <div class="map-card">
       <div class="range-title" style="margin-bottom:20px">Distribución salarial por comunidad autónoma</div>
       <div class="spain-map-wrap">
-        <svg class="map-svg" viewBox="0 0 760 600" xmlns="http://www.w3.org/2000/svg">
-          <!-- Geographically accurate Spain autonomous communities -->
+        <svg class="map-svg" viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" style="stroke:#fff;stroke-width:1;stroke-linejoin:round;">
+          <!-- Peninsula -->
           <!-- Galicia -->
-          <path class="map-region level-mid" d="M68,48 L90,42 L118,44 L138,52 L148,70 L142,88 L128,102 L108,112 L88,118 L72,108 L58,92 L56,72 Z">
-            <title>Galicia</title>
-          </path>
+          <path class="map-region level-mid" d="M80,95 L82,80 L90,68 L104,60 L122,58 L138,62 L148,72 L152,86 L148,100 L140,112 L126,120 L108,124 L92,118 L80,106 Z"><title>Galicia</title></path>
           <!-- Asturias -->
-          <path class="map-region level-mid" d="M138,52 L178,46 L208,50 L222,60 L218,76 L200,82 L178,84 L148,80 L142,68 Z">
-            <title>Asturias</title>
-          </path>
+          <path class="map-region level-mid" d="M148,72 L164,64 L182,60 L202,60 L218,64 L228,72 L224,84 L210,90 L190,92 L170,90 L152,84 Z"><title>Asturias</title></path>
           <!-- Cantabria -->
-          <path class="map-region level-mid" d="M208,50 L238,48 L252,54 L256,68 L242,76 L222,76 L218,62 Z">
-            <title>Cantabria</title>
-          </path>
+          <path class="map-region level-mid" d="M224,72 L242,66 L258,66 L268,74 L264,86 L248,90 L230,88 L224,80 Z"><title>Cantabria</title></path>
           <!-- País Vasco -->
-          <path class="map-region level-high" d="M252,48 L282,44 L302,48 L308,62 L298,74 L278,78 L258,74 L252,60 Z">
-            <title>País Vasco</title>
-          </path>
+          <path class="map-region level-high" d="M264,66 L282,60 L300,58 L314,62 L320,74 L314,86 L298,90 L280,88 L266,82 Z"><title>País Vasco</title></path>
           <!-- Navarra -->
-          <path class="map-region level-mid" d="M298,44 L328,42 L342,56 L338,88 L318,102 L298,96 L290,78 L296,62 Z">
-            <title>Navarra</title>
-          </path>
+          <path class="map-region level-mid" d="M314,58 L332,54 L348,58 L356,72 L352,90 L338,102 L320,104 L308,96 L308,82 L314,70 Z"><title>Navarra</title></path>
           <!-- La Rioja -->
-          <path class="map-region level-mid" d="M258,74 L298,76 L302,98 L278,104 L256,96 Z">
-            <title>La Rioja</title>
-          </path>
+          <path class="map-region level-mid" d="M268,88 L298,90 L314,88 L318,102 L298,110 L274,106 L264,96 Z"><title>La Rioja</title></path>
           <!-- Aragón -->
-          <path class="map-region level-mid" d="M318,42 L368,44 L392,56 L398,80 L402,130 L398,168 L368,182 L338,178 L318,160 L308,130 L312,98 L318,80 Z">
-            <title>Aragón</title>
-          </path>
+          <path class="map-region level-mid" d="M318,58 L360,54 L390,62 L400,80 L404,110 L402,148 L396,180 L374,192 L352,190 L334,178 L320,158 L316,134 L316,108 L320,90 Z"><title>Aragón</title></path>
           <!-- Cataluña -->
-          <path class="map-region level-high" d="M368,44 L420,36 L458,42 L478,62 L472,92 L448,118 L422,138 L398,142 L390,118 L392,80 Z">
-            <title>Cataluña</title>
-          </path>
+          <path class="map-region level-high" d="M360,54 L394,44 L426,46 L456,54 L478,72 L474,96 L456,116 L434,132 L408,140 L394,132 L388,114 L392,88 L394,68 Z"><title>Cataluña</title></path>
           <!-- Castilla y León -->
-          <path class="map-region level-mid" d="M88,112 L128,102 L148,80 L178,84 L200,82 L218,76 L242,76 L256,96 L278,104 L302,98 L312,130 L298,152 L278,168 L238,178 L188,182 L148,178 L112,168 L88,148 L72,128 Z">
-            <title>Castilla y León</title>
-          </path>
+          <path class="map-region level-mid" d="M92,118 L126,120 L148,106 L170,90 L210,90 L228,88 L248,90 L266,96 L274,106 L298,110 L318,108 L318,134 L300,156 L278,172 L248,182 L208,186 L170,184 L138,176 L108,162 L88,144 L84,128 Z"><title>Castilla y León</title></path>
           <!-- Madrid -->
-          <path class="map-region level-high" d="M238,178 L278,176 L288,198 L282,218 L252,222 L232,212 L228,194 Z">
-            <title>Comunidad de Madrid</title>
-          </path>
+          <path class="map-region level-high" d="M248,184 L284,182 L294,196 L294,218 L278,228 L254,228 L238,216 L236,198 Z"><title>Comunidad de Madrid</title></path>
           <!-- Castilla-La Mancha -->
-          <path class="map-region level-low" d="M148,178 L188,182 L238,178 L228,194 L232,212 L252,222 L282,218 L298,238 L308,268 L298,298 L268,308 L228,312 L188,302 L158,282 L138,252 L132,222 Z">
-            <title>Castilla-La Mancha</title>
-          </path>
+          <path class="map-region level-low" d="M138,178 L170,184 L208,186 L248,184 L236,198 L238,216 L254,228 L278,228 L294,218 L308,236 L316,264 L310,298 L284,314 L248,320 L208,314 L174,300 L150,276 L138,250 L134,224 Z"><title>Castilla-La Mancha</title></path>
           <!-- Comunidad Valenciana -->
-          <path class="map-region level-mid" d="M368,182 L398,168 L418,178 L432,208 L438,248 L428,288 L408,308 L388,312 L368,298 L348,268 L338,238 L342,208 Z">
-            <title>Comunidad Valenciana</title>
-          </path>
+          <path class="map-region level-mid" d="M374,192 L396,180 L412,188 L424,208 L430,238 L426,272 L414,304 L398,318 L378,322 L360,308 L346,280 L340,250 L344,220 L358,202 Z"><title>Comunidad Valenciana</title></path>
           <!-- Extremadura -->
-          <path class="map-region level-low" d="M88,182 L112,178 L148,178 L132,222 L138,252 L118,272 L92,278 L68,258 L58,228 L62,198 Z">
-            <title>Extremadura</title>
-          </path>
+          <path class="map-region level-low" d="M84,192 L108,186 L138,178 L134,224 L138,250 L118,270 L92,278 L68,260 L60,232 L64,206 Z"><title>Extremadura</title></path>
           <!-- Andalucía -->
-          <path class="map-region level-mid" d="M62,268 L92,278 L118,272 L138,252 L158,282 L188,302 L228,312 L268,308 L298,298 L318,308 L328,332 L312,358 L278,372 L228,378 L178,372 L132,358 L92,338 L68,312 L58,288 Z">
-            <title>Andalucía</title>
-          </path>
+          <path class="map-region level-mid" d="M64,268 L92,278 L118,270 L150,276 L174,300 L208,314 L248,320 L284,314 L310,298 L328,308 L336,332 L322,362 L292,380 L248,390 L200,388 L156,378 L114,360 L82,338 L64,310 L56,284 Z"><title>Andalucía</title></path>
           <!-- Murcia -->
-          <path class="map-region level-mid" d="M298,298 L338,282 L368,298 L388,312 L378,342 L348,352 L318,348 L308,328 Z">
-            <title>Murcia</title>
-          </path>
-          <!-- Baleares -->
-          <path class="map-region level-mid" d="M488,148 L508,142 L524,148 L528,162 L518,172 L500,172 L486,164 Z">
-            <title>Islas Baleares</title>
-          </path>
-          <path class="map-region level-mid" d="M538,158 L550,154 L558,160 L554,170 L542,172 Z">
-            <title>Islas Baleares</title>
-          </path>
-          <path class="map-region level-mid" d="M562,168 L570,166 L574,172 L568,178 L560,176 Z">
-            <title>Islas Baleares</title>
-          </path>
-          <!-- Canarias (inset box) -->
-          <rect x="28" y="448" width="172" height="2" fill="#9B8E88" stroke="none" opacity="0.4"/>
-          <rect x="28" y="448" width="2" height="108" fill="#9B8E88" stroke="none" opacity="0.4"/>
-          <rect x="198" y="448" width="2" height="108" fill="#9B8E88" stroke="none" opacity="0.4"/>
-          <rect x="28" y="554" width="172" height="2" fill="#9B8E88" stroke="none" opacity="0.4"/>
-          <!-- Gran Canaria -->
-          <path class="map-region level-low" d="M48,498 L62,490 L76,494 L80,508 L72,520 L56,522 L44,514 Z">
-            <title>Islas Canarias</title>
-          </path>
-          <!-- Tenerife -->
-          <path class="map-region level-low" d="M88,488 L108,482 L124,488 L128,504 L118,516 L100,518 L86,508 Z">
-            <title>Islas Canarias</title>
-          </path>
-          <!-- Lanzarote -->
-          <path class="map-region level-low" d="M148,486 L160,484 L166,492 L162,500 L150,502 L144,494 Z">
-            <title>Islas Canarias</title>
-          </path>
-          <!-- Fuerteventura -->
-          <path class="map-region level-low" d="M168,496 L178,490 L188,496 L186,512 L174,518 L164,510 Z">
-            <title>Islas Canarias</title>
-          </path>
-          <!-- La Palma -->
-          <path class="map-region level-low" d="M38,528 L46,522 L54,526 L52,538 L44,542 L36,536 Z">
-            <title>Islas Canarias</title>
-          </path>
-          <!-- El Hierro / La Gomera -->
-          <path class="map-region level-low" d="M60,534 L70,530 L76,536 L72,544 L62,546 Z">
-            <title>Islas Canarias</title>
-          </path>
+          <path class="map-region level-mid" d="M310,298 L346,280 L374,296 L398,318 L384,348 L352,358 L322,352 L314,330 L316,308 Z"><title>Murcia</title></path>
 
           <!-- Labels -->
-          <text x="88" y="88" font-size="9" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">GAL</text>
-          <text x="178" y="70" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">AST</text>
-          <text x="232" y="66" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CANT</text>
-          <text x="278" y="64" font-size="8" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">PV</text>
-          <text x="318" y="76" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">NAV</text>
-          <text x="278" y="94" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">RIO</text>
-          <text x="358" y="118" font-size="9" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">ARA</text>
-          <text x="428" y="92" font-size="9" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">CAT</text>
-          <text x="192" y="142" font-size="9" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CYL</text>
-          <text x="258" y="202" font-size="8" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">MAD</text>
-          <text x="218" y="258" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CLM</text>
-          <text x="388" y="248" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">VAL</text>
-          <text x="98" y="232" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">EXT</text>
-          <text x="192" y="328" font-size="9" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">AND</text>
-          <text x="342" y="328" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">MUR</text>
-          <text x="508" y="162" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">BAL</text>
-          <text x="112" y="468" font-size="8" fill="#6B5E52" font-family="DM Sans" font-weight="600" text-anchor="middle">CANARIAS</text>
+          <text x="112" y="96" font-size="8" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">GAL</text>
+          <text x="188" y="80" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">AST</text>
+          <text x="246" y="82" font-size="6.5" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CANT</text>
+          <text x="292" y="78" font-size="7" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">P.V.</text>
+          <text x="334" y="82" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">NAV</text>
+          <text x="290" y="102" font-size="6.5" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">RIOJA</text>
+          <text x="360" y="130" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">ARAGÓN</text>
+          <text x="432" y="96" font-size="8" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">CAT</text>
+          <text x="198" y="148" font-size="9" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CASTILLA Y LEÓN</text>
+          <text x="266" y="210" font-size="7.5" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">MADRID</text>
+          <text x="222" y="268" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CAST.-LA MANCHA</text>
+          <text x="388" y="258" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">VALENCIA</text>
+          <text x="96" y="238" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">EXTREM.</text>
+          <text x="196" y="342" font-size="9" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">ANDALUCÍA</text>
+          <text x="352" y="328" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">MURCIA</text>
+
+          <!-- Baleares -->
+          <path class="map-region level-mid" d="M510,158 L532,150 L550,154 L558,168 L550,180 L530,184 L512,176 Z"><title>Islas Baleares (Mallorca)</title></path>
+          <path class="map-region level-mid" d="M564,162 L578,158 L586,164 L584,174 L570,178 L560,172 Z"><title>Islas Baleares (Menorca)</title></path>
+          <path class="map-region level-mid" d="M496,178 L506,174 L512,180 L508,188 L498,188 Z"><title>Islas Baleares (Ibiza)</title></path>
+          <text x="532" y="170" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">BAL</text>
+
+          <!-- Canarias (inset) -->
+          <rect x="44" y="450" width="200" height="2" fill="var(--cream-300)" stroke="none" opacity="0.5"/>
+          <rect x="44" y="450" width="2" height="130" fill="var(--cream-300)" stroke="none" opacity="0.5"/>
+          <rect x="242" y="450" width="2" height="130" fill="var(--cream-300)" stroke="none" opacity="0.5"/>
+          <rect x="44" y="578" width="200" height="2" fill="var(--cream-300)" stroke="none" opacity="0.5"/>
+          <text x="144" y="466" font-size="7" fill="var(--ink-lighter)" font-family="DM Sans" font-weight="700" text-anchor="middle" letter-spacing="0.08em">CANARIAS</text>
+          <!-- Tenerife -->
+          <path class="map-region level-low" d="M58,490 L74,482 L90,486 L96,500 L88,514 L70,518 L56,508 Z"><title>Islas Canarias</title></path>
+          <!-- Gran Canaria -->
+          <path class="map-region level-low" d="M104,492 L120,486 L134,492 L138,506 L128,518 L112,520 L100,510 Z"><title>Islas Canarias</title></path>
+          <!-- Lanzarote -->
+          <path class="map-region level-low" d="M176,482 L190,478 L200,484 L198,496 L184,500 L172,494 Z"><title>Islas Canarias</title></path>
+          <!-- Fuerteventura -->
+          <path class="map-region level-low" d="M206,490 L220,484 L232,490 L232,508 L220,516 L206,510 Z"><title>Islas Canarias</title></path>
+          <!-- La Palma -->
+          <path class="map-region level-low" d="M50,528 L60,522 L70,526 L70,540 L60,546 L50,540 Z"><title>Islas Canarias</title></path>
+          <!-- La Gomera -->
+          <path class="map-region level-low" d="M80,530 L90,526 L98,532 L96,542 L84,546 L76,538 Z"><title>Islas Canarias</title></path>
+          <!-- El Hierro -->
+          <path class="map-region level-low" d="M106,540 L114,536 L120,542 L116,552 L106,552 Z"><title>Islas Canarias</title></path>
         </svg>
 
         <div>
@@ -1381,21 +1786,39 @@
   }
 
   // ─── NET SALARY CALCULATION ──────────────────────────────────
-  function calcNet(gross, situation) {
-    // IRPF estimation (simplified progressive)
+  function calcNet(gross, situation, hijos3, hijos25, asc65, asc75, discapacidad, movilidad, pagas) {
+    // IRPF progressive rates 2025
     let irpf;
-    if      (gross <= 12450) irpf = gross * 0.19;
-    else if (gross <= 20200) irpf = 12450*0.19 + (gross-12450)*0.24;
-    else if (gross <= 35200) irpf = 12450*0.19 + 7750*0.24 + (gross-20200)*0.30;
-    else if (gross <= 60000) irpf = 12450*0.19 + 7750*0.24 + 15000*0.30 + (gross-35200)*0.37;
-    else                     irpf = 12450*0.19 + 7750*0.24 + 15000*0.30 + 24800*0.37 + (gross-60000)*0.45;
+    if      (gross <= 12450)  irpf = gross * 0.19;
+    else if (gross <= 20200)  irpf = 12450*0.19 + (gross-12450)*0.24;
+    else if (gross <= 35200)  irpf = 12450*0.19 + 7750*0.24 + (gross-20200)*0.30;
+    else if (gross <= 60000)  irpf = 12450*0.19 + 7750*0.24 + 15000*0.30 + (gross-35200)*0.37;
+    else                      irpf = 12450*0.19 + 7750*0.24 + 15000*0.30 + 24800*0.37 + (gross-60000)*0.45;
 
-    // Family deductions (approximate)
-    const deductions = { single:0, '1child':1200, '2children':2700, '3children':4500 };
-    irpf = Math.max(0, irpf - (deductions[situation] || 0));
+    // Situación familiar
+    const sitDeduct = { single:0, single_kids:2150, married_noincome:3400, married:0 };
+    irpf = Math.max(0, irpf - (sitDeduct[situation] || 0));
 
-    // SS cotización (~6.35%)
-    const ss = gross * 0.0635;
+    // Hijos menores 3 años: 2800€/hijo deducción mínimo personal
+    irpf = Math.max(0, irpf - (parseInt(hijos3) * 2800 * 0.19));
+    // Hijos 3-25 años: 1200€ primero, 1350€ segundo, 2150€ tercero, 2400€ cuarto+
+    const hijosDeduct = [0, 1200, 1350, 2150, 2400];
+    for (let i = 0; i < parseInt(hijos25); i++) {
+      irpf = Math.max(0, irpf - ((hijosDeduct[Math.min(i+1, 4)] || 2400) * 0.19));
+    }
+    // Ascendientes
+    irpf = Math.max(0, irpf - (parseInt(asc65) * 1150 * 0.19));
+    irpf = Math.max(0, irpf - (parseInt(asc75) * 1400 * 0.19));
+
+    // Discapacidad contribuyente
+    const discDeduct = { '0':0, '33':3000, '65':9000, '65m':12000 };
+    irpf = Math.max(0, irpf - (discDeduct[discapacidad] || 0) * 0.19);
+
+    // Movilidad geográfica: reducción 2000€
+    if (movilidad === 'si') irpf = Math.max(0, irpf - 2000 * 0.19);
+
+    // SS cotización 6.48% (2025 incluyendo MEI)
+    const ss = gross * 0.0648;
     const net = gross - irpf - ss;
     return Math.round(net);
   }
@@ -1435,7 +1858,15 @@
     currentCity  = document.getElementById('city').value;
     currentSituation = document.getElementById('situation').value;
 
-    const net = calcNet(gross, currentSituation);
+    const pagas      = document.getElementById('pagas').value;
+    const hijos3     = document.getElementById('hijos3').value;
+    const hijos25    = document.getElementById('hijos25').value;
+    const asc65      = document.getElementById('asc65').value;
+    const asc75      = document.getElementById('asc75').value;
+    const discap     = document.getElementById('discapacidad').value;
+    const movilidad  = document.getElementById('movilidad').value;
+
+    const net = calcNet(gross, currentSituation, hijos3, hijos25, asc65, asc75, discap, movilidad, pagas);
     const pct = getPercentile(gross, currentProf, currentCity);
 
     // Generic profession notice
@@ -1448,8 +1879,8 @@
     }
 
     // Hero
-    document.getElementById('netMonthly').textContent = fmt(Math.round(net/14)) + '/mes';
-    document.getElementById('netAnnual').textContent  = fmt(net) + ' netos anuales (14 pagas)';
+    document.getElementById('netMonthly').textContent = fmt(Math.round(net/parseInt(pagas))) + '/mes';
+    document.getElementById('netAnnual').textContent  = fmt(net) + ' netos anuales (' + pagas + ' pagas)';
     document.getElementById('percentileVal').textContent = 'P' + pct;
 
     // Status
@@ -1482,7 +1913,7 @@
     const desc  = document.getElementById('statusDesc');
     const d     = salaryData[prof][city];
     const diff  = Math.round(gross - d[1]);
-    const diffFmt = (diff >= 0 ? '+' : '') + fmt(Math.abs(diff));
+    const diffFmt = (diff >= 0 ? '+' : '-') + fmt(Math.abs(diff));
 
     card.className = 'status-card';
 
@@ -1505,7 +1936,7 @@
       card.classList.add('below');
       icon.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>';
       title.textContent = 'Por debajo de la mediana — tienes argumentos para negociar';
-      desc.textContent  = 'Tu salario está ' + fmt(Math.abs(diff)) + ' por debajo de la mediana de tu sector en ' + cityNames[city] + '. La nueva Ley de Transparencia Retributiva refuerza tu posición para solicitar una revisión.';
+      desc.textContent  = 'Tu salario está -' + fmt(Math.abs(diff)) + ' por debajo de la mediana de tu sector en ' + cityNames[city] + '. La nueva Ley de Transparencia Retributiva refuerza tu posición para solicitar una revisión.';
     }
   }
 
@@ -1637,6 +2068,13 @@
       text = `Tu salario actual está ${fmt(Math.abs(diff))} por debajo de la mediana de mercado en ${cityNames[city]} para tu categoría profesional. La Directiva Europea 2023/970 y su transposición española en junio de 2026 te otorgan el derecho expreso a solicitar información sobre los rangos salariales de tu empresa y a reclamar una equiparación justificada. Se recomienda documentar la brecha con datos de las fuentes institucionales indicadas más abajo antes de iniciar cualquier proceso de negociación.`;
     }
     document.getElementById('recText').textContent = text;
+  }
+
+  // ─── NEWS MODAL ──────────────────────────────────────────────
+  function closeNewsModal(e) {
+    if (e.target === document.getElementById('newsModal')) {
+      document.getElementById('newsModal').classList.remove('open');
+    }
   }
 
   // ─── ACCORDION ───────────────────────────────────────────────
