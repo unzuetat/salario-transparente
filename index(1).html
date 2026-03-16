@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXJ8V2FBW9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MXJ8V2FBW9');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SalarioJusto — ¿Cobras lo que te corresponde según la nueva Ley de Transparencia Retributiva?</title>
+  <meta name="description" content="Calcula tu salario neto, descubre tu posición en el mercado laboral español y comprueba si cobras lo que mereces según la nueva Ley de Transparencia Retributiva 2026.">
+  <meta name="google-site-verification" content="qulnpWWDH3WT-dIJQiD9n4wd3MOIRgG6y7nH-qLoS_M" />
+  <meta name="keywords" content="calculadora salario neto, transparencia salarial, ley transparencia retributiva, salario por ciudad, sueldo neto España">
+  <meta property="og:title" content="SalarioJusto — ¿Cobras lo que te corresponde?">
+  <meta property="og:description" content="Calcula tu salario neto y descubre si cobras lo que mereces según la nueva Ley de Transparencia Retributiva.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream-50: #FDFBF7;
+      --cream-100: #F7F0E6;
+      --cream-200: #EDE0CE;
+      --cream-300: #E0CEBC;
+      --gold: #C17B3E;
+      --gold-dark: #A0622A;
+      --gold-light: #D9A06A;
+      --ink: #2D2520;
+      --ink-light: #6B5E52;
+      --ink-lighter: #9B8E88;
+      --green: #2E7D52;
+      --green-bg: #EAF5EE;
+      --amber: #B45309;
+      --amber-bg: #FEF3C7;
+      --red: #B91C1C;
+      --red-bg: #FEE2E2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream-50);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--ink);
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      font-family: 'DM Serif Display', serif;
+    }
+
+    .logo-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span { color: var(--gold-light); }
+
+    .header-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border: 1px solid rgba(193,123,62,0.4);
+      padding: 3px 10px;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--ink);
+      padding: 64px 32px 72px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(26px, 4vw, 42px);
+      color: #fff;
+      line-height: 1.2;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      font-weight: 400;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.65;
+    }
+
+    /* TRUST BAR */
+    .trust-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 20px 0 0;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 32px 20px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .trust-item:last-child { border-right: none; }
+
+    .trust-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+    }
+
+    .trust-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.04em;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* CALCULATOR */
+    .calc-card {
+      background: #fff;
+      border: 1px solid var(--cream-200);
+      padding: 36px;
+      margin-bottom: 32px;
+      box-shadow: 0 1px 3px rgba(45,37,32,0.06);
+    }
+
+    .calc-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .calc-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--cream-200);
+    }
+
+    .input-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .input-group { grid-template-columns: 1fr; }
+      .trust-item { padding: 0 16px 20px; }
+    }
+
+    .field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 8px;
+    }
+
+    .field select,
+    .field input {
+      width: 100%;
+      height: 44px;
+      border: 1px solid var(--cream-300);
+      background: var(--cream-50);
+      padding: 0 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+
+    .field select:focus,
+    .field input:focus {
+      border-color: var(--gold);
+    }
+
+    .select-wrapper {
+      position: relative;
+    }
+
+    .select-wrapper::after {
+      content: '';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid var(--ink-light);
+      pointer-events: none;
+    }
+
+    .btn-calc {
+      width: 100%;
+      height: 48px;
+      background: var(--ink);
+      color: #fff;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-calc:hover { background: var(--gold-dark); }
+
+    /* RESULTS */
+    #results { display: none; }
+
+    .result-hero {
+      background: var(--ink);
+      padding: 36px;
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (max-width: 600px) {
+      .result-hero { grid-template-columns: 1fr; }
+    }
+
+    .result-main-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 8px;
+    }
+
+    .result-main-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 48px;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .result-main-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .result-badge {
+      background: var(--gold);
+      padding: 20px 24px;
+      text-align: center;
+    }
+
+    .result-badge-pct {
+      font-family: 'DM Serif Display', serif;
+      font-size: 42px;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .result-badge-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .status-card {
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      border-left: 4px solid;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .status-card.excellent { background: var(--green-bg); border-color: var(--green); }
+    .status-card.good { background: #EFF6FF; border-color: #3B82F6; }
+    .status-card.average { background: var(--amber-bg); border-color: var(--amber); }
+    .status-card.below { background: var(--red-bg); border-color: var(--red); }
+
+    .status-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .status-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .status-desc {
+      font-size: 13px;
+      color: var(--ink-light);
+      line-height: 1.55;
+    }
+
+    /* RANGE BAR */
+    .range-card {
+      background: #fff;
+      border: 1px solid var(--cream-200);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    .range-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 20px;
+    }
+
+    .city-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .city-btn {
+      padding: 6px 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid var(--cream-300);
+      background: var(--cream-50);
+      color: var(--ink-light);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .city-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .city-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+    .range-bar-wrap {
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .range-bar-track {
+      height: 6px;
+      background: var(--cream-200);
+      position: relative;
+      margin: 0 0 8px;
+    }
+
+    .range-bar-fill {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-light), var(--gold));
+    }
+
+    .range-bar-marker {
+      position: absolute;
+      top: -7px;
+      width: 20px;
+      height: 20px;
+      background: var(--ink);
+      border: 2px solid #fff;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: left 0.5s ease;
+    }
+
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--ink-lighter);
+      margin-top: 12px;
+    }
+
+    .range-labels span { font-weight: 600; }
+
+    /* SPAIN MAP */
+    .map-card {
+      background: #fff;
+      border: 1px solid var(--cream-200);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    .spain-map-wrap {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 600px) {
+      .spain-map-wrap { grid-template-columns: 1fr; }
+    }
+
+    .map-svg {
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .map-region {
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .map-region:hover { opacity: 0.8; }
+    .map-region.level-high { fill: #2E7D52; }
+    .map-region.level-mid { fill: #C17B3E; }
+    .map-region.level-low { fill: #9B8E88; }
+    .map-region.active { stroke: var(--ink); stroke-width: 2; }
+
+    .map-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 140px;
+    }
+
+    .map-legend-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-lighter);
+      margin-bottom: 4px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--ink-light);
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      flex-shrink: 0;
+    }
+
+    .map-stats {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--cream-200);
+    }
+
+    .map-stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      font-size: 12px;
+      border-bottom: 1px solid var(--cream-100);
+    }
+
+    .map-stat-row:last-child { border-bottom: none; }
+    .map-stat-name { color: var(--ink-light); }
+    .map-stat-value { font-weight: 700; color: var(--ink); }
+    .map-stat-diff { font-size: 11px; }
+    .map-stat-diff.pos { color: var(--green); }
+    .map-stat-diff.neg { color: var(--red); }
+
+    /* ACCORDIONS */
+    .accordion {
+      background: #fff;
+      border: 1px solid var(--cream-200);
+      margin-bottom: 12px;
+    }
+
+    .accordion-header {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: left;
+    }
+
+    .accordion-header:hover { background: var(--cream-50); }
+
+    .accordion-chevron {
+      transition: transform 0.25s;
+      color: var(--ink-light);
+    }
+
+    .accordion.open .accordion-chevron { transform: rotate(180deg); }
+
+    .accordion-body {
+      display: none;
+      padding: 0 24px 24px;
+      border-top: 1px solid var(--cream-100);
+    }
+
+    .accordion.open .accordion-body { display: block; }
+
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 12px;
+    }
+
+    .stats-table th {
+      text-align: left;
+      padding: 8px 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-lighter);
+      border-bottom: 1px solid var(--cream-200);
+    }
+
+    .stats-table td {
+      padding: 10px 10px;
+      border-bottom: 1px solid var(--cream-100);
+      color: var(--ink-light);
+    }
+
+    .stats-table td:first-child { font-weight: 600; color: var(--ink); }
+
+    .tag-you {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: #fff;
+      padding: 2px 6px;
+      margin-left: 4px;
+    }
+
+    .urban-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .urban-box {
+      padding: 20px;
+      background: var(--cream-50);
+      border: 1px solid var(--cream-200);
+      text-align: center;
+    }
+
+    .urban-box-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-lighter);
+      margin-bottom: 8px;
+    }
+
+    .urban-box-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .urban-box-sub {
+      font-size: 11px;
+      color: var(--ink-lighter);
+    }
+
+    .urban-diff {
+      grid-column: 1 / -1;
+      background: var(--ink);
+      color: #fff;
+      padding: 14px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .urban-diff strong { color: var(--gold-light); }
+
+    /* RECOMMENDATION */
+    .rec-card {
+      background: var(--cream-100);
+      border: 1px solid var(--cream-200);
+      padding: 24px 28px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--gold);
+    }
+
+    .rec-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .rec-text {
+      font-size: 14px;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    /* ===================== */
+    /* SOURCES SECTION       */
+    /* ===================== */
+    .sources-section {
+      margin-top: 56px;
+      padding-top: 48px;
+      border-top: 1px solid var(--cream-200);
+    }
+
+    .sources-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .sources-header-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .sources-header-line {
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.3;
+    }
+
+    .sources-intro {
+      font-size: 13px;
+      color: var(--ink-light);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 700px;
+    }
+
+    .sources-intro strong { color: var(--ink); font-weight: 600; }
+
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .source-card {
+      background: #fff;
+      border: 1px solid var(--cream-200);
+      border-left: 3px solid var(--gold);
+      padding: 20px 22px;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .source-card:hover {
+      box-shadow: 0 4px 16px rgba(193,123,62,0.12);
+      border-left-color: var(--gold-dark);
+    }
+
+    .source-tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--gold);
+      padding: 2px 8px;
+      margin-bottom: 12px;
+    }
+
+    .source-tag.oficial { background: var(--ink); }
+    .source-tag.europeo { background: #1D4ED8; }
+    .source-tag.privado { background: #6B5E52; }
+    .source-tag.normativo { background: #374151; }
+
+    .source-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .source-org {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .source-desc {
+      font-size: 12px;
+      color: var(--ink-light);
+      line-height: 1.55;
+    }
+
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 14px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .sources-legal {
+      background: var(--cream-100);
+      border: 1px solid var(--cream-200);
+      padding: 18px 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .sources-legal-icon { flex-shrink: 0; color: var(--gold); margin-top: 1px; }
+
+    .sources-legal-text {
+      font-size: 12px;
+      color: var(--ink-light);
+      line-height: 1.65;
+    }
+
+    .sources-legal-text strong { color: var(--ink); }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-text a { color: var(--gold-light); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">
+    <div class="logo-icon">€</div>
+    <div class="logo-text">Salario<span>Justo</span></div>
+  </a>
+  <span class="header-tag">Ley Transparencia 2026</span>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">Herramienta gratuita de análisis salarial</div>
+  <h1>Con la nueva Ley de Transparencia Retributiva,<br><em>¿cobras lo que realmente te corresponde?</em></h1>
+  <p class="hero-sub">Calcula tu salario neto y descubre tu posición en el mercado laboral español según datos de referencia por profesión, ciudad y sector.</p>
+  <div class="trust-bar">
+    <div class="trust-item">
+      <div class="trust-value">Jun 2026</div>
+      <div class="trust-label">Entrada en vigor</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-value">+100</div>
+      <div class="trust-label">Emp. obligadas</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-value">68%</div>
+      <div class="trust-label">Desconoce su rango</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-value">&lt;60 s</div>
+      <div class="trust-label">Análisis completo</div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- CALCULATOR -->
+  <div class="calc-card">
+    <div class="calc-title">Introduce tus datos</div>
+    <div class="input-group">
+      <div class="field">
+        <label>Salario bruto anual (€)</label>
+        <input type="number" id="salary" placeholder="Ej: 35000" min="0">
+      </div>
+      <div class="field">
+        <label>Situación familiar</label>
+        <div class="select-wrapper">
+          <select id="situation">
+            <option value="single">Sin hijos</option>
+            <option value="1child">1 hijo</option>
+            <option value="2children">2 hijos</option>
+            <option value="3children">3 o más hijos</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="input-group">
+      <div class="field">
+        <label>Profesión</label>
+        <input type="text" id="profession" placeholder="Ej: Enfermero, Arquitecto, Comercial…" list="profession-suggestions" autocomplete="off">
+        <datalist id="profession-suggestions">
+          <option value="Ingeniero de Software">
+          <option value="Desarrollador Web">
+          <option value="Enfermero/a">
+          <option value="Médico/a">
+          <option value="Profesor/a">
+          <option value="Arquitecto/a">
+          <option value="Abogado/a">
+          <option value="Comercial">
+          <option value="Contable">
+          <option value="Recursos Humanos">
+          <option value="Marketing">
+          <option value="Periodista">
+          <option value="Psicólogo/a">
+          <option value="Farmacéutico/a">
+          <option value="Fisioterapeuta">
+          <option value="Diseñador/a Gráfico">
+          <option value="Economista">
+          <option value="Administrativo/a">
+          <option value="Electricista">
+          <option value="Mecánico/a">
+        </datalist>
+      </div>
+      <div class="field">
+        <label>Ciudad</label>
+        <div class="select-wrapper">
+          <select id="city">
+            <option value="madrid">Madrid</option>
+            <option value="barcelona">Barcelona</option>
+            <option value="valencia">Valencia</option>
+            <option value="sevilla">Sevilla</option>
+            <option value="bilbao">Bilbao</option>
+            <option value="malaga">Málaga</option>
+            <option value="zaragoza">Zaragoza</option>
+            <option value="murcia">Murcia</option>
+            <option value="palma">Palma de Mallorca</option>
+            <option value="laspalmas">Las Palmas de Gran Canaria</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button class="btn-calc" onclick="calculate()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+      </svg>
+      Analizar mi salario
+    </button>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results">
+
+    <!-- HERO RESULT -->
+    <div class="result-hero">
+      <div>
+        <div class="result-main-label">Tu salario neto mensual estimado</div>
+        <div class="result-main-value" id="netMonthly">—</div>
+        <div class="result-main-sub" id="netAnnual">— netos anuales</div>
+      </div>
+      <div class="result-badge">
+        <div class="result-badge-pct" id="percentileVal">—</div>
+        <div class="result-badge-label">Percentil en tu profesión</div>
+      </div>
+    </div>
+
+    <!-- AVISO PROFESIÓN GENÉRICA -->
+    <div id="genericNotice" style="display:none; background:var(--amber-bg); border:1px solid #FDE68A; border-left:4px solid var(--amber); padding:14px 20px; margin-bottom:20px; font-size:13px; color:var(--ink-light); line-height:1.6;">
+      <strong style="color:var(--amber);">Nota sobre los rangos mostrados.</strong>
+      No hemos encontrado datos específicos para "<span id="genericProfLabel"></span>" en nuestra base de referencia. Los percentiles y rangos se calculan sobre la <strong>media general del mercado laboral español</strong>. Para datos precisos de tu sector, consulta las fuentes institucionales al final de esta página.
+    </div>
+
+    <!-- STATUS -->
+    <div class="status-card" id="statusCard">
+      <div class="status-icon" id="statusIcon"></div>
+      <div>
+        <div class="status-title" id="statusTitle"></div>
+        <div class="status-desc" id="statusDesc"></div>
+      </div>
+    </div>
+
+    <!-- RANGE BAR -->
+    <div class="range-card">
+      <div class="range-title">Rango salarial por ciudad — <span id="rangeTitle">Tu zona</span></div>
+      <div class="city-selector" id="citySelectorBtns"></div>
+      <div class="range-bar-wrap">
+        <div class="range-bar-track">
+          <div class="range-bar-fill" id="rangeBarFill"></div>
+          <div class="range-bar-marker" id="rangeBarMarker"></div>
+        </div>
+      </div>
+      <div class="range-labels">
+        <div><span id="rangeMin">—</span><br>Mínimo</div>
+        <div style="text-align:center"><span id="rangeMed">—</span><br>Mediana</div>
+        <div style="text-align:right"><span id="rangeMax">—</span><br>Máximo</div>
+      </div>
+    </div>
+
+    <!-- SPAIN MAP -->
+    <div class="map-card">
+      <div class="range-title" style="margin-bottom:20px">Distribución salarial por comunidad autónoma</div>
+      <div class="spain-map-wrap">
+        <svg class="map-svg" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+          <!-- Simplified Spain regions -->
+          <!-- Galicia -->
+          <path class="map-region level-mid" d="M60,40 L130,40 L140,80 L100,100 L60,80 Z" title="Galicia">
+            <title>Galicia</title>
+          </path>
+          <!-- Asturias -->
+          <path class="map-region level-mid" d="M130,40 L190,45 L195,75 L140,80 Z">
+            <title>Asturias</title>
+          </path>
+          <!-- Cantabria -->
+          <path class="map-region level-mid" d="M190,45 L220,48 L222,72 L195,75 Z">
+            <title>Cantabria</title>
+          </path>
+          <!-- País Vasco -->
+          <path class="map-region level-high" d="M220,48 L260,44 L262,70 L222,72 Z">
+            <title>País Vasco</title>
+          </path>
+          <!-- Navarra -->
+          <path class="map-region level-mid" d="M260,44 L295,46 L290,90 L262,70 Z">
+            <title>Navarra</title>
+          </path>
+          <!-- La Rioja -->
+          <path class="map-region level-mid" d="M222,72 L262,70 L258,95 L220,95 Z">
+            <title>La Rioja</title>
+          </path>
+          <!-- Aragón -->
+          <path class="map-region level-mid" d="M262,70 L320,68 L325,150 L258,148 Z">
+            <title>Aragón</title>
+          </path>
+          <!-- Cataluña -->
+          <path class="map-region level-high" d="M295,46 L390,65 L385,140 L325,150 L320,68 Z">
+            <title>Cataluña</title>
+          </path>
+          <!-- Castilla y León -->
+          <path class="map-region level-mid" d="M60,80 L100,100 L140,80 L195,75 L220,95 L258,95 L258,148 L200,165 L130,170 L80,155 Z">
+            <title>Castilla y León</title>
+          </path>
+          <!-- Madrid -->
+          <path class="map-region level-high" d="M200,165 L240,162 L244,195 L198,198 Z">
+            <title>Comunidad de Madrid</title>
+          </path>
+          <!-- Castilla-La Mancha -->
+          <path class="map-region level-low" d="M130,170 L200,165 L198,198 L244,195 L248,255 L175,265 L120,248 L110,210 Z">
+            <title>Castilla-La Mancha</title>
+          </path>
+          <!-- Comunidad Valenciana -->
+          <path class="map-region level-mid" d="M258,148 L325,150 L340,200 L330,255 L248,255 L244,195 Z">
+            <title>Comunidad Valenciana</title>
+          </path>
+          <!-- Extremadura -->
+          <path class="map-region level-low" d="M60,155 L80,155 L110,210 L120,248 L80,270 L40,240 L38,190 Z">
+            <title>Extremadura</title>
+          </path>
+          <!-- Andalucía -->
+          <path class="map-region level-mid" d="M40,240 L80,270 L120,248 L175,265 L248,255 L260,290 L220,320 L150,335 L80,315 L40,285 Z">
+            <title>Andalucía</title>
+          </path>
+          <!-- Murcia -->
+          <path class="map-region level-mid" d="M248,255 L330,255 L325,295 L260,290 Z">
+            <title>Murcia</title>
+          </path>
+          <!-- Islas Baleares -->
+          <ellipse class="map-region level-mid" cx="420" cy="175" rx="35" ry="20">
+            <title>Islas Baleares</title>
+          </ellipse>
+          <!-- Canarias (simplified) -->
+          <rect class="map-region level-low" x="30" y="330" width="100" height="40" rx="4">
+            <title>Islas Canarias</title>
+          </rect>
+
+          <!-- Labels -->
+          <text x="85" y="70" font-size="9" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">GAL</text>
+          <text x="160" y="65" font-size="9" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">AST</text>
+          <text x="239" y="64" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CAN</text>
+          <text x="240" y="60" font-size="9" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">PV</text>
+          <text x="278" y="72" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">NAV</text>
+          <text x="292" y="115" font-size="9" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">ARA</text>
+          <text x="345" y="105" font-size="9" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">CAT</text>
+          <text x="158" y="130" font-size="9" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CYL</text>
+          <text x="220" y="185" font-size="8" fill="#fff" font-family="DM Sans" font-weight="700" text-anchor="middle">MAD</text>
+          <text x="185" y="228" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CLM</text>
+          <text x="295" y="210" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">VAL</text>
+          <text x="78" y="220" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">EXT</text>
+          <text x="155" y="295" font-size="9" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">AND</text>
+          <text x="290" y="278" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">MUR</text>
+          <text x="420" y="179" font-size="7" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">BAL</text>
+          <text x="80" y="355" font-size="8" fill="#fff" font-family="DM Sans" font-weight="600" text-anchor="middle">CANARIAS</text>
+        </svg>
+
+        <div>
+          <div class="map-legend">
+            <div class="map-legend-title">Nivel salarial relativo</div>
+            <div class="legend-item">
+              <svg class="legend-dot" viewBox="0 0 10 10"><rect width="10" height="10" fill="#2E7D52"/></svg>
+              Alto (+10% sobre media)
+            </div>
+            <div class="legend-item">
+              <svg class="legend-dot" viewBox="0 0 10 10"><rect width="10" height="10" fill="#C17B3E"/></svg>
+              Medio (±10% de la media)
+            </div>
+            <div class="legend-item">
+              <svg class="legend-dot" viewBox="0 0 10 10"><rect width="10" height="10" fill="#9B8E88"/></svg>
+              Bajo (–10% bajo media)
+            </div>
+          </div>
+          <div class="map-stats" id="mapStats"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCORDION 1: Stats by region -->
+    <div class="accordion" id="accordion1">
+      <button class="accordion-header" onclick="toggleAccordion('accordion1')">
+        Estadísticas detalladas por ciudad
+        <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="accordion-body">
+        <table class="stats-table" id="cityStatsTable"></table>
+      </div>
+    </div>
+
+    <!-- ACCORDION 2: Urban vs Rural -->
+    <div class="accordion" id="accordion2">
+      <button class="accordion-header" onclick="toggleAccordion('accordion2')">
+        Comparativa zona urbana vs. no urbana
+        <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="accordion-body">
+        <div class="urban-compare" id="urbanCompare"></div>
+      </div>
+    </div>
+
+    <!-- RECOMMENDATION -->
+    <div class="rec-card" id="recCard">
+      <div class="rec-title">Recomendación según la ley de transparencia</div>
+      <div class="rec-text" id="recText"></div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- SOURCES SECTION       -->
+    <!-- ===================== -->
+    <section class="sources-section" aria-label="Fuentes de referencia salarial">
+
+      <div class="sources-header">
+        <span class="sources-header-label">Fuentes de referencia</span>
+        <div class="sources-header-line"></div>
+      </div>
+
+      <p class="sources-intro">
+        Los rangos mostrados son <strong>estimaciones orientativas</strong> basadas en datos de mercado agregados.
+        Para consultar estadísticas salariales verificadas y de carácter oficial, le recomendamos
+        acudir directamente a las siguientes fuentes primarias de naturaleza pública e institucional.
+      </p>
+
+      <div class="sources-grid">
+
+        <a href="https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177025&menu=ultiDatos&idp=1254735976596"
+           target="_blank" rel="noopener noreferrer" class="source-card">
+          <span class="source-tag oficial">Oficial · Gratuito</span>
+          <div class="source-name">Encuesta de Estructura Salarial</div>
+          <div class="source-org">Instituto Nacional de Estadística (INE)</div>
+          <p class="source-desc">Estadística oficial de referencia. Salarios por ocupación, sector, comunidad autónoma y tipo de contrato. Actualización bienal.</p>
+          <span class="source-link">
+            ine.es
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+            </svg>
+          </span>
+        </a>
+
+        <a href="https://www.agenciatributaria.es/AEAT.internet/datospdf/sede/biblioteca/mercadolab.shtml"
+           target="_blank" rel="noopener noreferrer" class="source-card">
+          <span class="source-tag oficial">Oficial · Gratuito</span>
+          <div class="source-name">Estadísticas del Mercado Laboral (IRPF)</div>
+          <div class="source-org">Agencia Tributaria (AEAT)</div>
+          <p class="source-desc">Distribución de rendimientos del trabajo declarados en IRPF. Percentiles de renta por provincia y sector económico.</p>
+          <span class="source-link">
+            agenciatributaria.es
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+            </svg>
+          </span>
+        </a>
+
+        <a href="https://www.sepe.es/HomeSepe/que-es-el-sepe/estadisticas/mercado-trabajo/contratos.html"
+           target="_blank" rel="noopener noreferrer" class="source-card">
+          <span class="source-tag oficial">Oficial · Gratuito</span>
+          <div class="source-name">Estadísticas de Contratos y Salarios</div>
+          <div class="source-org">SEPE — Servicio Público de Empleo Estatal</div>
+          <p class="source-desc">Datos de contratación por sector y territorio. Condiciones laborales por ocupación y comunidad autónoma.</p>
+          <span class="source-link">
+            sepe.es
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+            </svg>
+          </span>
+        </a>
+
+        <a href="https://ec.europa.eu/eurostat/web/labour-market/earnings"
+           target="_blank" rel="noopener noreferrer" class="source-card">
+          <span class="source-tag europeo">Oficial · Europeo</span>
+          <div class="source-name">Earnings Statistics</div>
+          <div class="source-org">Eurostat — Oficina Estadística de la UE</div>
+          <p class="source-desc">Estadísticas salariales comparadas entre países de la UE. Referencia directa de la Directiva de Transparencia Retributiva 2023/970.</p>
+          <span class="source-link">
+            eurostat.ec.europa.eu
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+            </svg>
+          </span>
+        </a>
+
+        <a href="https://nosotros.infojobs.net/prensa/informe-anual-infojobs"
+           target="_blank" rel="noopener noreferrer" class="source-card">
+          <span class="source-tag privado">Privado · Gratuito</span>
+          <div class="source-name">Informe Anual del Mercado Laboral</div>
+          <div class="source-org">InfoJobs</div>
+          <p class="source-desc">Análisis basado en millones de ofertas reales publicadas en España. Salarios ofertados por sector, profesión y comunidad autónoma.</p>
+          <span class="source-link">
+            infojobs.net
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+            </svg>
+          </span>
+        </a>
+
+        <a href="https://www.boe.es/biblioteca_juridica/codigos/codigo.php?id=038"
+           target="_blank" rel="noopener noreferrer" class="source-card">
+          <span class="source-tag normativo">Oficial · Normativo</span>
+          <div class="source-name">Convenios Colectivos Vigentes</div>
+          <div class="source-org">Boletín Oficial del Estado (BOE)</div>
+          <p class="source-desc">Texto íntegro de todos los convenios colectivos publicados en España. Define salarios mínimos garantizados por sector y categoría profesional.</p>
+          <span class="source-link">
+            boe.es
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+            </svg>
+          </span>
+        </a>
+
+      </div>
+
+      <div class="sources-legal">
+        <svg class="sources-legal-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <p class="sources-legal-text">
+          <strong>Aviso legal.</strong> Esta herramienta proporciona estimaciones orientativas con fines exclusivamente informativos.
+          Los resultados no constituyen asesoría laboral, fiscal ni jurídica. Los rangos salariales son aproximaciones basadas
+          en datos de mercado y pueden diferir de las estadísticas oficiales. Para decisiones laborales relevantes, consulte
+          las fuentes primarias indicadas o un profesional habilitado.
+        </p>
+      </div>
+
+    </section>
+
+  </div><!-- /results -->
+
+</main>
+
+<footer>
+  <p class="footer-text">
+    SalarioJusto es una herramienta informativa independiente. Los cálculos son estimaciones orientativas basadas en la normativa fiscal vigente (IRPF 2024–2025) y datos de mercado de referencia. No constituyen asesoría laboral, fiscal ni jurídica.<br>
+    Basado en <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2023-13408" target="_blank">Directiva UE 2023/970 de Transparencia Retributiva</a> · <a href="https://www.ine.es" target="_blank">Datos de referencia: INE</a>
+  </p>
+</footer>
+
+<script>
+  // ─── SALARY DATA ───────────────────────────────────────────────
+  // [min, mediana, max] por ciudad. Ciudades: 10 principales + fallback genérico
+  const salaryData = {
+    software:    { madrid:[28000,48000,85000], barcelona:[26000,44000,78000], valencia:[22000,36000,62000], sevilla:[20000,32000,55000], bilbao:[24000,40000,70000], malaga:[19000,30000,52000], zaragoza:[21000,34000,58000], murcia:[18000,28000,50000], palma:[20000,33000,58000], laspalmas:[17000,27000,48000] },
+    nurse:       { madrid:[22000,30000,42000], barcelona:[21000,28000,40000], valencia:[19000,26000,37000], sevilla:[18000,25000,36000], bilbao:[21000,29000,41000], malaga:[18000,24000,35000], zaragoza:[19000,26000,37000], murcia:[17000,23000,34000], palma:[19000,26000,38000], laspalmas:[17000,23000,34000] },
+    teacher:     { madrid:[26000,38000,52000], barcelona:[24000,36000,50000], valencia:[23000,34000,47000], sevilla:[22000,32000,45000], bilbao:[24000,37000,50000], malaga:[21000,31000,44000], zaragoza:[22000,33000,46000], murcia:[20000,30000,43000], palma:[21000,32000,45000], laspalmas:[20000,30000,43000] },
+    architect:   { madrid:[22000,42000,75000], barcelona:[20000,38000,70000], valencia:[18000,32000,58000], sevilla:[16000,28000,50000], bilbao:[20000,36000,65000], malaga:[15000,26000,48000], zaragoza:[17000,30000,54000], murcia:[14000,24000,44000], palma:[16000,28000,52000], laspalmas:[14000,24000,44000] },
+    sales:       { madrid:[18000,35000,65000], barcelona:[17000,33000,60000], valencia:[15000,28000,52000], sevilla:[14000,26000,48000], bilbao:[16000,30000,56000], malaga:[13000,24000,45000], zaragoza:[14000,27000,50000], murcia:[12000,22000,42000], palma:[14000,26000,48000], laspalmas:[12000,22000,42000] },
+    doctor:      { madrid:[32000,58000,100000], barcelona:[30000,55000,95000], valencia:[28000,50000,85000], sevilla:[26000,46000,78000], bilbao:[30000,54000,92000], malaga:[25000,44000,75000], zaragoza:[27000,48000,82000], murcia:[24000,42000,72000], palma:[26000,46000,80000], laspalmas:[24000,42000,72000] },
+    lawyer:      { madrid:[22000,45000,90000], barcelona:[20000,42000,85000], valencia:[18000,36000,70000], sevilla:[16000,32000,62000], bilbao:[20000,40000,78000], malaga:[15000,30000,58000], zaragoza:[17000,34000,65000], murcia:[14000,28000,55000], palma:[16000,32000,62000], laspalmas:[14000,28000,55000] },
+    accountant:  { madrid:[22000,38000,65000], barcelona:[21000,36000,62000], valencia:[19000,32000,55000], sevilla:[17000,29000,50000], bilbao:[20000,35000,60000], malaga:[17000,28000,48000], zaragoza:[18000,31000,54000], murcia:[16000,26000,46000], palma:[18000,30000,52000], laspalmas:[16000,26000,46000] },
+    hr:          { madrid:[20000,35000,58000], barcelona:[19000,33000,55000], valencia:[17000,29000,48000], sevilla:[16000,27000,44000], bilbao:[18000,32000,52000], malaga:[15000,25000,42000], zaragoza:[16000,28000,46000], murcia:[14000,23000,40000], palma:[16000,27000,46000], laspalmas:[14000,23000,40000] },
+    marketing:   { madrid:[20000,36000,62000], barcelona:[19000,34000,60000], valencia:[17000,29000,50000], sevilla:[15000,26000,46000], bilbao:[18000,31000,54000], malaga:[15000,24000,44000], zaragoza:[16000,27000,48000], murcia:[13000,22000,40000], palma:[15000,26000,46000], laspalmas:[13000,22000,40000] },
+    // Perfil genérico para profesiones no reconocidas (media del mercado español)
+    generic:     { madrid:[20000,36000,65000], barcelona:[19000,34000,62000], valencia:[17000,29000,52000], sevilla:[16000,27000,48000], bilbao:[18000,32000,56000], malaga:[15000,26000,46000], zaragoza:[17000,28000,50000], murcia:[15000,24000,44000], palma:[16000,27000,50000], laspalmas:[14000,24000,44000] }
+  };
+
+  const cityNames = {
+    madrid:'Madrid', barcelona:'Barcelona', valencia:'Valencia', sevilla:'Sevilla',
+    bilbao:'Bilbao', malaga:'Málaga', zaragoza:'Zaragoza',
+    murcia:'Murcia', palma:'Palma de Mallorca', laspalmas:'Las Palmas de G.C.'
+  };
+
+  // ─── PROFESSION MATCHING ──────────────────────────────────────
+  // Mapea texto libre a clave de salaryData
+  const professionMap = [
+    { keys:['software','developer','desarrollador','programador','frontend','backend','fullstack','devops','informatica','informático'], prof:'software' },
+    { keys:['enfermero','enfermera','nurse','ats','diplomado sanitario'], prof:'nurse' },
+    { keys:['médico','medico','doctor','medicina','cirujano','cirujana','pediatra','internista'], prof:'doctor' },
+    { keys:['profesor','profesora','docente','teacher','maestro','maestra','educador'], prof:'teacher' },
+    { keys:['arquitecto','arquitecta','architect'], prof:'architect' },
+    { keys:['abogado','abogada','lawyer','juridico','jurídico','fiscal','notario'], prof:'lawyer' },
+    { keys:['comercial','ventas','sales','vendedor','vendedora','account manager','key account'], prof:'sales' },
+    { keys:['contable','contabilidad','accountant','financiero','financiera','controller','tesorero','finanzas'], prof:'accountant' },
+    { keys:['recursos humanos','rrhh','hr','talento','selección','seleccion','people'], prof:'hr' },
+    { keys:['marketing','comunicacion','comunicación','publicidad','community','seo','sem','growth','digital'], prof:'marketing' },
+  ];
+
+  function matchProfession(input) {
+    const normalized = input.toLowerCase().trim();
+    for (const entry of professionMap) {
+      if (entry.keys.some(k => normalized.includes(k))) return entry.prof;
+    }
+    return 'generic';
+  }
+
+  // ─── NET SALARY CALCULATION ──────────────────────────────────
+  function calcNet(gross, situation) {
+    // IRPF estimation (simplified progressive)
+    let irpf;
+    if      (gross <= 12450) irpf = gross * 0.19;
+    else if (gross <= 20200) irpf = 12450*0.19 + (gross-12450)*0.24;
+    else if (gross <= 35200) irpf = 12450*0.19 + 7750*0.24 + (gross-20200)*0.30;
+    else if (gross <= 60000) irpf = 12450*0.19 + 7750*0.24 + 15000*0.30 + (gross-35200)*0.37;
+    else                     irpf = 12450*0.19 + 7750*0.24 + 15000*0.30 + 24800*0.37 + (gross-60000)*0.45;
+
+    // Family deductions (approximate)
+    const deductions = { single:0, '1child':1200, '2children':2700, '3children':4500 };
+    irpf = Math.max(0, irpf - (deductions[situation] || 0));
+
+    // SS cotización (~6.35%)
+    const ss = gross * 0.0635;
+    const net = gross - irpf - ss;
+    return Math.round(net);
+  }
+
+  // ─── PERCENTILE ──────────────────────────────────────────────
+  function getPercentile(gross, profKey, city) {
+    const d = salaryData[profKey] && salaryData[profKey][city];
+    if (!d) return 50;
+    const [min, med, max] = d;
+    if (gross <= min) return 10;
+    if (gross <= med) return Math.round(10 + ((gross-min)/(med-min))*40);
+    if (gross <= max) return Math.round(50 + ((gross-med)/(max-med))*40);
+    return 95;
+  }
+
+  // ─── FORMAT ──────────────────────────────────────────────────
+  const fmt = n => new Intl.NumberFormat('es-ES').format(n) + ' €';
+
+  // ─── GLOBALS ─────────────────────────────────────────────────
+  let currentProf = 'generic';
+  let currentProfInput = '';
+  let currentCity = 'madrid';
+  let currentGross = 35000;
+  let currentSituation = 'single';
+
+  // ─── CALCULATE ───────────────────────────────────────────────
+  function calculate() {
+    const gross = parseFloat(document.getElementById('salary').value);
+    if (!gross || gross < 1000) { alert('Introduce un salario bruto anual válido.'); return; }
+
+    const profInput = document.getElementById('profession').value.trim();
+    if (!profInput) { alert('Indica tu profesión.'); return; }
+
+    currentGross = gross;
+    currentProfInput = profInput;
+    currentProf  = matchProfession(profInput);
+    currentCity  = document.getElementById('city').value;
+    currentSituation = document.getElementById('situation').value;
+
+    const net = calcNet(gross, currentSituation);
+    const pct = getPercentile(gross, currentProf, currentCity);
+
+    // Generic profession notice
+    const notice = document.getElementById('genericNotice');
+    if (currentProf === 'generic') {
+      document.getElementById('genericProfLabel').textContent = profInput;
+      notice.style.display = 'block';
+    } else {
+      notice.style.display = 'none';
+    }
+
+    // Hero
+    document.getElementById('netMonthly').textContent = fmt(Math.round(net/14)) + '/mes';
+    document.getElementById('netAnnual').textContent  = fmt(net) + ' netos anuales (14 pagas)';
+    document.getElementById('percentileVal').textContent = 'P' + pct;
+
+    // Status
+    updateStatus(pct, gross, currentProf, currentCity);
+
+    // Range bar
+    buildCitySelector();
+    updateRangeBar(currentCity);
+
+    // Map stats
+    updateMapStats();
+
+    // Accordions
+    buildCityTable();
+    buildUrbanCompare();
+
+    // Recommendation
+    buildRecommendation(pct, gross, currentProf, currentCity);
+
+    // Show
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('results').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  // ─── STATUS ──────────────────────────────────────────────────
+  function updateStatus(pct, gross, prof, city) {
+    const card  = document.getElementById('statusCard');
+    const icon  = document.getElementById('statusIcon');
+    const title = document.getElementById('statusTitle');
+    const desc  = document.getElementById('statusDesc');
+    const d     = salaryData[prof][city];
+    const diff  = Math.round(gross - d[1]);
+    const diffFmt = (diff >= 0 ? '+' : '') + fmt(Math.abs(diff));
+
+    card.className = 'status-card';
+
+    if (pct >= 85) {
+      card.classList.add('excellent');
+      icon.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D52" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>';
+      title.textContent = 'Estás en el top ' + (100-pct) + '% de tu profesión en ' + cityNames[city];
+      desc.textContent  = 'Tu retribución supera ampliamente la mediana del mercado. Estás ' + diffFmt + ' por encima de la mediana de tu sector en esta zona.';
+    } else if (pct >= 60) {
+      card.classList.add('good');
+      icon.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>';
+      title.textContent = 'Por encima de la media del mercado';
+      desc.textContent  = 'Tu salario es competitivo. Estás ' + diffFmt + ' sobre la mediana en tu sector y ciudad.';
+    } else if (pct >= 40) {
+      card.classList.add('average');
+      icon.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>';
+      title.textContent = 'En la mediana del mercado';
+      desc.textContent  = 'Tu retribución se sitúa en torno a la mediana. Hay margen para negociar: estás ' + diffFmt + ' respecto a la mediana de tu sector.';
+    } else {
+      card.classList.add('below');
+      icon.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>';
+      title.textContent = 'Por debajo de la mediana — tienes argumentos para negociar';
+      desc.textContent  = 'Tu salario está ' + fmt(Math.abs(diff)) + ' por debajo de la mediana de tu sector en ' + cityNames[city] + '. La nueva Ley de Transparencia Retributiva refuerza tu posición para solicitar una revisión.';
+    }
+  }
+
+  // ─── CITY SELECTOR ───────────────────────────────────────────
+  function buildCitySelector() {
+    const wrap = document.getElementById('citySelectorBtns');
+    wrap.innerHTML = '';
+    Object.keys(cityNames).forEach(c => {
+      const btn = document.createElement('button');
+      btn.className = 'city-btn' + (c === currentCity ? ' active' : '');
+      btn.textContent = cityNames[c];
+      btn.onclick = () => {
+        document.querySelectorAll('.city-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        updateRangeBar(c);
+      };
+      wrap.appendChild(btn);
+    });
+  }
+
+  // ─── RANGE BAR ───────────────────────────────────────────────
+  function updateRangeBar(city) {
+    const d = salaryData[currentProf][city];
+    if (!d) return;
+    const [min, med, max] = d;
+    const pct = getPercentile(currentGross, currentProf, city);
+    const pos = Math.min(95, Math.max(5, pct));
+
+    document.getElementById('rangeTitle').textContent = cityNames[city];
+    document.getElementById('rangeMin').textContent = fmt(min);
+    document.getElementById('rangeMed').textContent = fmt(med);
+    document.getElementById('rangeMax').textContent = fmt(max);
+    document.getElementById('rangeBarFill').style.width = pos + '%';
+    document.getElementById('rangeBarMarker').style.left = pos + '%';
+  }
+
+  // ─── MAP STATS ───────────────────────────────────────────────
+  function updateMapStats() {
+    const wrap = document.getElementById('mapStats');
+    const topCities = ['madrid', 'barcelona', 'bilbao', 'valencia', 'sevilla'];
+    const median = salaryData[currentProf][currentCity][1];
+    let html = '';
+    topCities.forEach(c => {
+      const d = salaryData[currentProf][c];
+      const diff = d[1] - median;
+      const cls  = diff >= 0 ? 'pos' : 'neg';
+      const sign = diff >= 0 ? '+' : '';
+      html += `<div class="map-stat-row">
+        <span class="map-stat-name">${cityNames[c]}</span>
+        <span class="map-stat-value">${fmt(d[1])}/año</span>
+        <span class="map-stat-diff ${cls}">${sign}${fmt(Math.abs(diff))}</span>
+      </div>`;
+    });
+    wrap.innerHTML = html;
+  }
+
+  // ─── CITY TABLE ──────────────────────────────────────────────
+  function buildCityTable() {
+    const d = salaryData[currentProf];
+    let html = `<thead><tr>
+      <th>Ciudad</th><th>Mínimo</th><th>Mediana</th><th>Máximo</th><th>Tu posición</th>
+    </tr></thead><tbody>`;
+    Object.keys(cityNames).forEach(c => {
+      const [min, med, max] = d[c];
+      const pct  = getPercentile(currentGross, currentProf, c);
+      const diff = Math.round(currentGross - med);
+      const diffFmt = (diff >= 0 ? '+' : '') + fmt(Math.abs(diff));
+      const isYou = c === currentCity;
+      html += `<tr style="${isYou ? 'background:var(--cream-50)' : ''}">
+        <td>${cityNames[c]}${isYou ? '<span class="tag-you">Tú</span>' : ''}</td>
+        <td>${fmt(min)}</td>
+        <td>${fmt(med)}</td>
+        <td>${fmt(max)}</td>
+        <td style="color:${diff>=0?'var(--green)':'var(--red)'};font-weight:700">${diffFmt}</td>
+      </tr>`;
+    });
+    html += '</tbody>';
+    document.getElementById('cityStatsTable').innerHTML = html;
+  }
+
+  // ─── URBAN COMPARE ───────────────────────────────────────────
+  function buildUrbanCompare() {
+    const d = salaryData[currentProf];
+    const urbanCities  = ['madrid','barcelona','bilbao'];
+    const smallCities  = ['murcia','laspalmas','malaga'];
+    const urbanAvg = Math.round(urbanCities.reduce((s,c) => s+d[c][1], 0) / urbanCities.length);
+    const smallAvg = Math.round(smallCities.reduce((s,c)  => s+d[c][1],  0) / smallCities.length);
+    const diff = urbanAvg - smallAvg;
+    const diffPct = Math.round((diff/smallAvg)*100);
+    const yourDiffUrban = Math.round(currentGross - urbanAvg);
+    const yourDiffSmall = Math.round(currentGross - smallAvg);
+
+    document.getElementById('urbanCompare').innerHTML = `
+      <div class="urban-box">
+        <div class="urban-box-label">Grandes ciudades</div>
+        <div class="urban-box-value">${fmt(urbanAvg)}</div>
+        <div class="urban-box-sub">Media Madrid · Bcn · Bilbao</div>
+        <div style="margin-top:10px;font-size:12px;color:${yourDiffUrban>=0?'var(--green)':'var(--red)'};font-weight:700">
+          Tú: ${yourDiffUrban>=0?'+':''}${fmt(Math.abs(yourDiffUrban))}
+        </div>
+      </div>
+      <div class="urban-box">
+        <div class="urban-box-label">Ciudades medianas</div>
+        <div class="urban-box-value">${fmt(smallAvg)}</div>
+        <div class="urban-box-sub">Media Murcia · Las Palmas · Málaga</div>
+        <div style="margin-top:10px;font-size:12px;color:${yourDiffSmall>=0?'var(--green)':'var(--red)'};font-weight:700">
+          Tú: ${yourDiffSmall>=0?'+':''}${fmt(Math.abs(yourDiffSmall))}
+        </div>
+      </div>
+      <div class="urban-diff">
+        La diferencia entre grandes ciudades y ciudades medianas en tu sector es de
+        <strong>${fmt(diff)} anuales (${diffPct}% más)</strong>
+      </div>
+    `;
+  }
+
+  // ─── RECOMMENDATION ──────────────────────────────────────────
+  function buildRecommendation(pct, gross, prof, city) {
+    const d    = salaryData[prof][city];
+    const diff = Math.round(gross - d[1]);
+    let text;
+    if (pct >= 85) {
+      text = `Tu retribución actual se sitúa en la parte alta del rango de mercado para tu perfil en ${cityNames[city]}. Con la entrada en vigor de la Ley de Transparencia Retributiva en junio de 2026, las empresas con más de 100 empleados deberán publicar rangos salariales por categoría. Tu posición te otorga poder de negociación para consolidar o mejorar beneficios adicionales: formación, teletrabajo, planes de pensiones o bonus variable.`;
+    } else if (pct >= 60) {
+      text = `Tu salario es competitivo respecto al mercado. La nueva normativa de transparencia salarial te permitirá acceder a información sobre los rangos publicados por tu empresa. Si detectas diferencias injustificadas superiores al 5%, la ley reconoce tu derecho a solicitar explicaciones formales a la dirección de RRHH.`;
+    } else if (pct >= 40) {
+      text = `Te encuentras en la mediana del mercado, ${fmt(Math.abs(diff))} por debajo de la media de tu sector en ${cityNames[city]}. La Ley de Transparencia Retributiva, vigente desde junio de 2026, obliga a tu empresa a justificar las diferencias salariales. Este es un momento favorable para revisar tu retribución con datos objetivos de mercado.`;
+    } else {
+      text = `Tu salario actual está ${fmt(Math.abs(diff))} por debajo de la mediana de mercado en ${cityNames[city]} para tu categoría profesional. La Directiva Europea 2023/970 y su transposición española en junio de 2026 te otorgan el derecho expreso a solicitar información sobre los rangos salariales de tu empresa y a reclamar una equiparación justificada. Se recomienda documentar la brecha con datos de las fuentes institucionales indicadas más abajo antes de iniciar cualquier proceso de negociación.`;
+    }
+    document.getElementById('recText').textContent = text;
+  }
+
+  // ─── ACCORDION ───────────────────────────────────────────────
+  function toggleAccordion(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
