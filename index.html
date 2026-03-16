@@ -1400,6 +1400,11 @@
           <option value="Policía / Guardia Civil">
           <option value="Bombero/a">
           <option value="Militar">
+          <option value="Gestor/a de Proyectos">
+          <option value="Project Manager">
+          <option value="PMO">
+          <option value="Scrum Master">
+          <option value="Jefe/a de Proyecto">
           <option value="Funcionario/a">
         </datalist>
       </div>
@@ -1821,7 +1826,8 @@
   // ─── PROFESSION MATCHING ──────────────────────────────────────
   // Mapea texto libre a clave de salaryData
   const professionMap = [
-    { keys:['software','developer','desarrollador','programador','frontend','backend','fullstack','devops','sre','informatica','informático','data scientist','data analyst','product manager','ux','ui','diseñador','ciberseguridad','cloud','ia ','inteligencia artificial'], prof:'software' },
+    { keys:['software','developer','desarrollador','programador','frontend','backend','fullstack','devops','sre','informatica','informático','data scientist','data analyst','ux','ui','diseñador','ciberseguridad','cloud','ia ','inteligencia artificial'], prof:'software' },
+    { keys:['product manager','product owner','scrum master','gestor de proyectos','gestora de proyectos','project manager','jefe de proyecto','jefa de proyecto','pmo','program manager','agile','kanban'], prof:'hr' },
     { keys:['enfermero','enfermera','nurse','ats','diplomado sanitario','técnico de laboratorio','auxiliar enfermería','auxiliar de enfermería'], prof:'nurse' },
     { keys:['médico','medico','doctor','medicina','cirujano','cirujana','pediatra','internista','odontólogo','dentista','veterinario','farmacéutico','farmaceutico','fisioterapeuta','psicólogo','psicologo','trabajador social','terapeuta'], prof:'doctor' },
     { keys:['profesor','profesora','docente','teacher','maestro','maestra','educador','orientador','pedagogo','catedrático'], prof:'teacher' },
@@ -1951,9 +1957,6 @@
     // Range bar
     buildCitySelector();
     updateRangeBar(currentCity);
-
-    // Map stats
-    updateMapStats();
 
     // City ranking
     buildCityRanking();
@@ -2176,26 +2179,6 @@
       </div>`;
 
     document.getElementById('cityRankingList').innerHTML = html;
-  }
-
-  // ─── MAP STATS ───────────────────────────────────────────────
-  function updateMapStats() {
-    const wrap = document.getElementById('mapStats');
-    const topCities = ['madrid', 'barcelona', 'bilbao', 'valencia', 'sevilla'];
-    const median = salaryData[currentProf][currentCity][1];
-    let html = '';
-    topCities.forEach(c => {
-      const d = salaryData[currentProf][c];
-      const diff = d[1] - median;
-      const cls  = diff >= 0 ? 'pos' : 'neg';
-      const sign = diff >= 0 ? '+' : '';
-      html += `<div class="map-stat-row">
-        <span class="map-stat-name">${cityNames[c]}</span>
-        <span class="map-stat-value">${fmt(d[1])}/año</span>
-        <span class="map-stat-diff ${cls}">${sign}${fmt(Math.abs(diff))}</span>
-      </div>`;
-    });
-    wrap.innerHTML = html;
   }
 
   // ─── CITY TABLE ──────────────────────────────────────────────
