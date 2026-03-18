@@ -88,6 +88,14 @@ REGLAS CRÍTICAS — LEE CON ATENCIÓN:
 - Para roles senior o de nicho, el máximo puede ser muy alto — sé honesto
 - Para roles de entrada o baja cualificación, el máximo debe ser modesto — sé honesto
 - NO ancles los rangos a ningún salario introducido por el usuario. Genera rangos objetivos de mercado.
+- ADVERTENCIA ANTI-SESGO: Si alguien gana 200.000€ como auxiliar administrativo, el rango del auxiliar NO cambia. Si alguien gana 15.000€ como CEO, el rango del CEO NO cambia. Los rangos son del PUESTO, no de la persona.
+- Ejemplos de rangos CORRECTOS por tipo de profesión:
+  * Auxiliar administrativo Madrid: [18.000, 22.000, 30.000]
+  * Médico especialista Madrid: [50.000, 75.000, 120.000]
+  * Consultor senior Madrid: [45.000, 70.000, 110.000]
+  * Director general gran empresa Madrid: [120.000, 200.000, 400.000]
+  * Cajero supermercado Madrid: [16.000, 19.000, 24.000]
+  * Ingeniero software senior Madrid: [50.000, 72.000, 100.000]
 
 Devuelve ÚNICAMENTE este JSON, sin markdown, sin texto extra:
 {
@@ -141,6 +149,7 @@ Sin bullets. Sin mencionar que eres IA. Tono directo y útil.`;
 
   try {
     // Llamada 1: rangos de mercado (SIN el salario del usuario)
+    // Usamos Sonnet + prefill para forzar JSON directo y evitar sesgo de anclaje
     const rangesRes = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
@@ -149,9 +158,12 @@ Sin bullets. Sin mencionar que eres IA. Tono directo y útil.`;
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
+        model: 'claude-sonnet-4-6',
         max_tokens: 800,
-        messages: [{ role: 'user', content: rangesPrompt }]
+        messages: [
+          { role: 'user', content: rangesPrompt },
+          { role: 'assistant', content: '{"ranges":{' }
+        ]
       })
     });
 
@@ -161,7 +173,8 @@ Sin bullets. Sin mencionar que eres IA. Tono directo y útil.`;
     }
 
     const rangesData = await rangesRes.json();
-    const rangesRaw = rangesData.content?.[0]?.text || '';
+    // El prefill hace que la respuesta empiece desde donde lo dejamos
+    const rangesRaw = '{"ranges":{' + (rangesData.content?.[0]?.text || '');
     const rangesParsed = JSON.parse(rangesRaw.replace(/```json|```/g, '').trim());
     const ranges = rangesParsed.ranges;
 
