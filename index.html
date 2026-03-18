@@ -2282,6 +2282,79 @@
   function toggleAccordion(id) {
     document.getElementById(id).classList.toggle('open');
   }
+  // ─── TABS ES ─────────────────────────────────────────────────
+  function switchTab(tab) {
+    document.getElementById('section-calc').style.display = tab==='calc'?'block':'none';
+    document.getElementById('section-comp').style.display = tab==='comp'?'block':'none';
+    const activeStyle = 'padding:14px 20px;font-size:13px;font-weight:600;color:var(--gold);background:none;border:none;cursor:pointer;border-bottom:2px solid var(--gold);margin-bottom:-1px;';
+    const inactiveStyle = 'padding:14px 20px;font-size:13px;font-weight:600;color:var(--ink-light);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;';
+    document.getElementById('tab-calc-btn').style.cssText = tab==='calc'?activeStyle:inactiveStyle;
+    document.getElementById('tab-comp-btn').style.cssText = tab==='comp'?activeStyle:inactiveStyle;
+  }
+
+  // ─── TIPOS DE CAMBIO ──────────────────────────────────────────
+  const FX = { EUR:1, USD:1.08, CAD:1.47, GBP:0.86 };
+  const FX_SYMBOL = { EUR:'€', USD:'$', CAD:'CA$', GBP:'£' };
+  function fmtComp(eur) {
+    const cur = document.getElementById('currency')?.value||'EUR';
+    return FX_SYMBOL[cur] + new Intl.NumberFormat('es-ES').format(Math.round(eur*FX[cur]));
+  }
+
+  // ─── SISTEMAS FISCALES EUROPEOS ──────────────────────────────
+  const TAX_SYSTEMS = {
+    spain:       { name:'España 🇪🇸',        note:'IRPF progresivo + 7,56% SS',
+      calcTax: g=>{let t=0;if(g<=12450)t=g*0.19;else if(g<=20200)t=2365.5+(g-12450)*0.24;else if(g<=35200)t=4225.5+(g-20200)*0.30;else if(g<=60000)t=8725.5+(g-35200)*0.37;else t=17901.5+(g-60000)*0.45;return Math.round(t);},
+      calcSS: g=>Math.round(g*0.0756) },
+    uk:          { name:'Reino Unido 🇬🇧',   note:'Income Tax + NI (£→€ ×1.17)',
+      calcTax: g=>{const p=g/1.17;let t=0;if(p>12570){const tx=p-12570;if(tx<=37700)t=tx*0.20;else if(tx<=125140)t=7540+(tx-37700)*0.40;else t=42496+(tx-125140)*0.45;}return Math.round(t*1.17);},
+      calcSS: g=>{const p=g/1.17;let ni=0;if(p>12570)ni=(Math.min(p,50270)-12570)*0.08+Math.max(0,p-50270)*0.02;return Math.round(ni*1.17);}},
+    germany:     { name:'Alemania 🇩🇪',      note:'Einkommensteuer + ~20,5% SS',
+      calcTax: g=>{let t=0;if(g>11784)t=g<=66761?(g-11784)*0.24:g<=277826?(g-11784)*0.42-9972:g*0.45-17374;return Math.round(Math.max(0,t));},
+      calcSS: g=>Math.round(g*0.205)},
+    netherlands: { name:'Países Bajos 🇳🇱',  note:'Box 1 incl. AOW/WLZ',
+      calcTax: g=>Math.round(g<=75518?g*0.3697:75518*0.3697+(g-75518)*0.495),
+      calcSS: g=>0},
+    france:      { name:'Francia 🇫🇷',       note:'IR + ~22% cotisaciones',
+      calcTax: g=>{let t=0;if(g>11294){if(g<=28797)t=(g-11294)*0.11;else if(g<=82341)t=1925.33+(g-28797)*0.30;else if(g<=177106)t=18188.53+(g-82341)*0.41;else t=57041.18+(g-177106)*0.45;}return Math.round(Math.max(0,t));},
+      calcSS: g=>Math.round(g*0.22)},
+    italy:       { name:'Italia 🇮🇹',        note:'IRPEF + ~9,5% SS',
+      calcTax: g=>{let t=0;if(g<=15000)t=g*0.23;else if(g<=28000)t=3450+(g-15000)*0.25;else if(g<=50000)t=6700+(g-28000)*0.35;else t=14400+(g-50000)*0.43;return Math.round(t);},
+      calcSS: g=>Math.round(g*0.0919)},
+    belgium:     { name:'Bélgica 🇧🇪',       note:'IPP + 13,07% SS',
+      calcTax: g=>{let t=0;if(g<=15200)t=g*0.25;else if(g<=26830)t=3800+(g-15200)*0.40;else if(g<=46440)t=8452+(g-26830)*0.45;else t=17276.5+(g-46440)*0.50;return Math.round(Math.max(0,t-2970));},
+      calcSS: g=>Math.round(g*0.1307)},
+    portugal:    { name:'Portugal 🇵🇹',      note:'IRS + 11% SS',
+      calcTax: g=>{let t=0;if(g<=7703)t=g*0.1325;else if(g<=11623)t=1020.65+(g-7703)*0.18;else if(g<=16472)t=1726.25+(g-11623)*0.23;else if(g<=21321)t=2841.52+(g-16472)*0.26;else if(g<=27146)t=4102.26+(g-21321)*0.3275;else if(g<=39791)t=6010.7+(g-27146)*0.37;else if(g<=51997)t=10698.35+(g-39791)*0.435;else if(g<=81199)t=16013.45+(g-51997)*0.45;else t=29144.35+(g-81199)*0.48;return Math.round(t);},
+      calcSS: g=>Math.round(g*0.11)},
+    ireland:     { name:'Irlanda 🇮🇪',       note:'IT + USC + PRSI',
+      calcTax: g=>{let t=g<=42000?g*0.20:(42000*0.20+(g-42000)*0.40);const usc=g<=12012?g*0.005:g<=25760?602+(g-12012)*0.02:g<=70044?1877.56+(g-25760)*0.045:g<=100000?3870.34+(g-70044)*0.08:6266.82+(g-100000)*0.08;return Math.round(t+usc-3550);},
+      calcSS: g=>Math.round(Math.max(0,g-352*52)*0.04)},
+  };
+
+  function updateComparison() {
+    const gross = parseFloat(document.getElementById('compareSalary')?.value);
+    if (!gross || gross < 5000) {
+      document.getElementById('compareBody').innerHTML='<tr><td colspan="7" style="text-align:center;padding:24px;color:var(--ink-lighter);">Introduce un salario bruto para ver la comparativa</td></tr>';
+      return;
+    }
+    const rows = Object.entries(TAX_SYSTEMS).map(([k,s])=>{
+      const tax=s.calcTax(gross), ss=s.calcSS(gross), net=gross-tax-ss;
+      return {k,s,tax,ss,net,total:tax+ss};
+    }).sort((a,b)=>b.net-a.net);
+    let html='';
+    rows.forEach(r=>{
+      html+=`<tr style="${r.k==='spain'?'background:#FEF9F3;':''}">
+        <td style="padding:12px;border-bottom:1px solid var(--cream-100);font-weight:600;">${r.s.name}<br><span style="font-size:10px;color:var(--ink-lighter);font-weight:400;">${r.s.note}</span></td>
+        <td style="padding:12px;border-bottom:1px solid var(--cream-100);">${fmtComp(gross)}</td>
+        <td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">${fmtComp(r.tax)} (${Math.round(r.tax/gross*100)}%)</td>
+        <td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">${r.ss>0?fmtComp(r.ss)+' ('+Math.round(r.ss/gross*100)+'%)':'Incluido'}</td>
+        <td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">${fmtComp(r.total)} (${Math.round(r.total/gross*100)}%)</td>
+        <td style="padding:12px;border-bottom:1px solid var(--cream-100);font-weight:700;color:var(--green);font-size:14px;">${fmtComp(r.net)}</td>
+        <td style="padding:12px;border-bottom:1px solid var(--cream-100);font-weight:700;color:var(--green);font-size:14px;">${fmtComp(Math.round(r.net/12))}</td>
+      </tr>`;
+    });
+    document.getElementById('compareBody').innerHTML=html;
+  }
 </script>
 
 </body>
