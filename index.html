@@ -969,7 +969,46 @@
     }
 
     .footer-text a { color: var(--gold-light); text-decoration: none; }
-
+/* BARRA DE GUÍAS */
+    .guides-bar {
+      background: var(--cream-100);
+      border-bottom: 1px solid var(--cream-200);
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+    }
+    .guides-bar-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-lighter);
+      padding: 10px 16px 10px 0;
+      border-right: 1px solid var(--cream-200);
+      margin-right: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .guides-bar a {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink-light);
+      text-decoration: none;
+      padding: 10px 14px;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .guides-bar a:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+    .guides-bar a.guides-all {
+      color: var(--gold);
+      font-weight: 700;
+    }
     /* NEWS MODAL */
     .news-modal-overlay {
       display: none;
