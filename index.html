@@ -2651,6 +2651,288 @@
     });
     document.getElementById('compareBody').innerHTML=html;
   }
+  /* ============================================================
+   MÓDULO CONVENIO — JS
+   Insertar al FINAL del bloque <script>, antes del cierre </script>
+   (al final del archivo, aprox después de línea 2200)
+   ============================================================ */
+
+// ── DATOS CONVENIO OFICINAS Y DESPACHOS VALENCIA 2024-2026 ──────────────────
+// Fuente: Tablas Salariales Definitivas, BOP Valencia núm. 130, 10-7-2025
+// Código: 46000805011981 | Vigencia: 1/1/2024 – 31/12/2026
+// SBA = Salario Base Anual (14 pagas) | SBA+PC = SBA + Plus Convenio anual
+
+const CONVENIOS = {
+  ofydes_vlc: {
+    nombre: 'Oficinas y Despachos — Provincia de Valencia',
+    bop: 'BOP Valencia núm. 130, 10/07/2025',
+    vigencia: '1 enero 2024 – 31 diciembre 2026',
+    pagas: 14,
+    urlBop: 'https://ofydes.es/convenio/',
+    grupos: [
+      { id: 'I',   nombre: 'Grupo I — Titulado Superior y Director',
+        puestos: ['Director/a', 'Titulado/a Grado Superior'],
+        salario: { 2024: { mes: 1712.40, sba: 23973.55, sbapc: 24848.88 },
+                   2025: { mes: 1746.64, sba: 24453.02, sbapc: 25354.62 },
+                   2026: { mes: 1781.58, sba: 24942.08, sbapc: 25870.72 } } },
+      { id: 'II',  nombre: 'Grupo II — Titulado Medio / Diplomado',
+        puestos: ['Diplomado/a Universitario/a', 'Titulado/a Grado Medio', 'Intérprete Jurado/a', 'Traductor/a Titulado/a'],
+        salario: { 2024: { mes: 1522.17, sba: 21310.33, sbapc: 22185.66 },
+                   2025: { mes: 1552.61, sba: 21736.54, sbapc: 22638.13 },
+                   2026: { mes: 1583.66, sba: 22171.27, sbapc: 23099.91 } } },
+      { id: 'III', nombre: 'Grupo III — Jefe de Proyecto / Analista',
+        puestos: ['Jefe/a de Proyecto', 'Analista', 'Jefe/a Superior', 'Jefe/a Delineante', 'Gestor/a de Proyectos', 'Project Manager', 'PMO'],
+        salario: { 2024: { mes: 1440.15, sba: 20162.04, sbapc: 21037.37 },
+                   2025: { mes: 1476.15, sba: 20666.09, sbapc: 21567.68 },
+                   2026: { mes: 1513.05, sba: 21182.74, sbapc: 22111.38 } } },
+      { id: 'IV',  nombre: 'Grupo IV — Jefe de Oficina / Contable / Programador',
+        puestos: ['Jefe/a de Oficina', 'Contable', 'Programador/a', 'Delineante Proyectista', 'Traductor/a no titulado/a'],
+        salario: { 2024: { mes: 1354.79, sba: 18967.06, sbapc: 19842.39 },
+                   2025: { mes: 1402.21, sba: 19630.91, sbapc: 20532.50 },
+                   2026: { mes: 1451.28, sba: 20317.99, sbapc: 21246.63 } } },
+      { id: 'V',   nombre: 'Grupo V — Oficial 1ª Administrativo / Encargado',
+        puestos: ['Oficial 1ª Administrativo/a', 'Delineante', 'Operador/a', 'Encargado/a'],
+        salario: { 2024: { mes: 1187.45, sba: 16624.24, sbapc: 17499.58 },
+                   2025: { mes: 1229.01, sba: 17206.09, sbapc: 18107.68 },
+                   2026: { mes: 1272.02, sba: 17808.30, sbapc: 18736.95 } } },
+      { id: 'VI',  nombre: 'Grupo VI — Oficial 2ª / Comercial / Azafata',
+        puestos: ['Oficial 2ª Administrativo/a', 'Comercial', 'Azafata/o'],
+        salario: { 2024: { mes: 1126.96, sba: 15777.50, sbapc: 16652.83 },
+                   2025: { mes: 1166.41, sba: 16329.71, sbapc: 17231.31 },
+                   2026: { mes: 1207.23, sba: 16901.25, sbapc: 17829.89 } } },
+      { id: 'VII', nombre: 'Grupo VII — Conductor / Grabador / Auxiliar Adm.',
+        puestos: ['Conductor/a', 'Grabador/a de Datos', 'Auxiliar Administrativo/a'],
+        salario: { 2024: { mes: 1097.53, sba: 15365.47, sbapc: 16240.80 },
+                   2025: { mes: 1137.59, sba: 15926.31, sbapc: 16827.90 },
+                   2026: { mes: 1177.41, sba: 16483.73, sbapc: 17412.37 } } },
+      { id: 'VIII',nombre: 'Grupo VIII — Almacenero / Ordenanza / Telefonista / Limpieza',
+        puestos: ['Almacenero/a', 'Conserje', 'Ordenanza', 'Telefonista', 'Limpiador/a', 'Peón/a', 'Mozo/a'],
+        salario: { 2024: { mes: 1076.52, sba: 15071.21, sbapc: 15946.55 },
+                   2025: { mes: 1121.19, sba: 15696.67, sbapc: 16598.26 },
+                   2026: { mes: 1160.43, sba: 16246.05, sbapc: 17174.69 } } }
+    ],
+    complementos: {
+      2024: {
+        plusConvenio:    { mes: 72.94, anual: 875.34,  nota: 'Todas las categorías' },
+        plusFestivos:    { mes: 50.19, anual: null,     nota: 'Por día trabajado' },
+        quebranto:       { mes: 55.61, anual: null,     nota: 'Por gestión de efectivo' },
+        plusComida:      { mes: 10.71, anual: null,     nota: 'Por día trabajado' },
+        teletrabajo:     { mes: null,  anual: 440,      nota: '440 €/año (40€ × 11 meses)' },
+        idiomas:         { mes: null,  anual: null,     nota: '10% del salario base' },
+        km:              { mes: null,  anual: null,     nota: '0,26 €/km recorrido' },
+        mediaDieta:      { mes: null,  anual: null,     nota: '9,30 € por desplazamiento' },
+        dietaCompleta:   { mes: null,  anual: null,     nota: '20,14 € por día fuera' }
+      },
+      2025: {
+        plusConvenio:    { mes: 75.13, anual: 901.60,  nota: 'Todas las categorías' },
+        plusFestivos:    { mes: 51.70, anual: null,     nota: 'Por día trabajado' },
+        quebranto:       { mes: 57.28, anual: null,     nota: 'Por gestión de efectivo' },
+        plusComida:      { mes: 11.03, anual: null,     nota: 'Por día trabajado' },
+        teletrabajo:     { mes: null,  anual: 440,      nota: '440 €/año (40€ × 11 meses)' },
+        idiomas:         { mes: null,  anual: null,     nota: '10% del salario base' },
+        km:              { mes: null,  anual: null,     nota: '0,26 €/km recorrido' },
+        mediaDieta:      { mes: null,  anual: null,     nota: '9,30 € por desplazamiento' },
+        dietaCompleta:   { mes: null,  anual: null,     nota: '20,14 € por día fuera' }
+      },
+      2026: {
+        plusConvenio:    { mes: 77.39, anual: 928.64,  nota: 'Todas las categorías' },
+        plusFestivos:    { mes: 53.25, anual: null,     nota: 'Por día trabajado' },
+        quebranto:       { mes: 59.00, anual: null,     nota: 'Por gestión de efectivo' },
+        plusComida:      { mes: 11.36, anual: null,     nota: 'Por día trabajado' },
+        teletrabajo:     { mes: null,  anual: 440,      nota: '440 €/año (40€ × 11 meses)' },
+        idiomas:         { mes: null,  anual: null,     nota: '10% del salario base' },
+        km:              { mes: null,  anual: null,     nota: '0,26 €/km recorrido' },
+        mediaDieta:      { mes: null,  anual: null,     nota: '9,30 € por desplazamiento' },
+        dietaCompleta:   { mes: null,  anual: null,     nota: '20,14 € por día fuera' }
+      }
+    },
+    relacionados: [
+      { nombre: 'Consultoría y Empresas de Servicios TIC (estatal)', url: 'https://www.boe.es/buscar/doc.php?q=consultoria+tecnologia+convenio', nota: 'Si tu empresa es IT pura' },
+      { nombre: 'Oficinas y Despachos — Alicante 2024-2026', url: 'https://www.dip-alicante.es/bop2/pdftotal/2025/02/11_28/2025_000802.pdf', nota: 'Si trabajas en provincia de Alicante' },
+      { nombre: 'Oficinas y Despachos — Castellón', url: 'https://ofydes.es/convenio/', nota: 'Si trabajas en provincia de Castellón' },
+      { nombre: 'Convenio Estatal de Gestorías Administrativas', url: 'https://www.boe.es/buscar/doc.php?q=gestorias+administrativas+convenio', nota: 'Para gestorías y asesorías' },
+      { nombre: 'VII Convenio Despachos Técnicos Tributarios (estatal)', url: 'https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-7400', nota: 'Si eres asesor fiscal o tributario' }
+    ]
+  }
+};
+
+// ── INICIALIZAR SELECTORES DE GRUPOS ─────────────────────────────────────────
+function updateConvenioGroups() {
+  const sel = document.getElementById('convenioSelect');
+  const grupoSel = document.getElementById('convenioGrupo');
+  const anyoSel = document.getElementById('convenioAnyo');
+  const val = sel.value;
+
+  grupoSel.innerHTML = '';
+  if (!val) {
+    grupoSel.innerHTML = '<option value="">Selecciona convenio primero</option>';
+    grupoSel.disabled = true;
+    anyoSel.disabled = true;
+    document.getElementById('convenioPanel').classList.remove('visible');
+    return;
+  }
+
+  const conv = CONVENIOS[val];
+  grupoSel.disabled = false;
+  anyoSel.disabled = false;
+
+  grupoSel.innerHTML = '<option value="">— Selecciona tu grupo —</option>';
+  conv.grupos.forEach(g => {
+    const opt = document.createElement('option');
+    opt.value = g.id;
+    opt.textContent = g.nombre;
+    grupoSel.appendChild(opt);
+  });
+
+  // Intentar autodetectar grupo por profesión introducida
+  const prof = (document.getElementById('profession').value || '').toLowerCase();
+  if (prof) {
+    const match = conv.grupos.find(g =>
+      g.puestos.some(p => prof.includes(p.toLowerCase().split('/')[0].trim()) ||
+                          p.toLowerCase().includes(prof.split(' ')[0]))
+    );
+    if (match) grupoSel.value = match.id;
+  }
+
+  updateConvenioPanel();
+}
+
+// ── RENDERIZAR PANEL ──────────────────────────────────────────────────────────
+function updateConvenioPanel() {
+  const convKey = document.getElementById('convenioSelect').value;
+  const grupoId = document.getElementById('convenioGrupo').value;
+  const anyo    = parseInt(document.getElementById('convenioAnyo').value) || 2026;
+  const panel   = document.getElementById('convenioPanel');
+
+  if (!convKey || !grupoId) {
+    panel.classList.remove('visible');
+    return;
+  }
+
+  const conv  = CONVENIOS[convKey];
+  const grupo = conv.grupos.find(g => g.id === grupoId);
+  if (!grupo) { panel.classList.remove('visible'); return; }
+
+  panel.classList.add('visible');
+
+  // Header
+  document.getElementById('convenioPanelTitle').textContent = conv.nombre;
+  document.getElementById('convenioPanelBadge').textContent = 'Grupo ' + grupo.id;
+
+  const sal    = grupo.salario[anyo];
+  const compl  = conv.complementos[anyo];
+  const brutal = parseFloat(document.getElementById('salary').value) || 0;
+  const minSBA = sal.sba;
+  const minSBAPC = sal.sbapc;
+
+  // ── Alerta ──────────────────────────────────────────────────────────────────
+  const alertEl = document.getElementById('convenioAlert');
+  const atrasosEl = document.getElementById('convenioAtrasosNote');
+  alertEl.className = 'convenio-alert';
+
+  if (brutal === 0) {
+    alertEl.innerHTML = `<strong>Introduce tu salario bruto anual</strong> arriba para verificar si está por encima o por debajo del mínimo garantizado por convenio.`;
+    alertEl.classList.add('warn');
+    atrasosEl.style.display = 'none';
+  } else if (brutal < minSBA) {
+    const diff = (minSBA - brutal).toFixed(2);
+    alertEl.innerHTML = `<strong>⚠ Tu salario está por debajo del mínimo de convenio.</strong> Tu salario bruto (${brutal.toLocaleString('es-ES')} €) está <strong>${parseFloat(diff).toLocaleString('es-ES')} € por debajo</strong> del salario base anual mínimo garantizado para el Grupo ${grupoId} en ${anyo} (${minSBA.toLocaleString('es-ES')} €). Tienes derecho a reclamar la diferencia.`;
+    alertEl.classList.add('below');
+    atrasosEl.style.display = 'block';
+  } else if (brutal >= minSBAPC) {
+    alertEl.innerHTML = `<strong>✓ Tu salario supera el mínimo de convenio + plus convenio.</strong> Con ${brutal.toLocaleString('es-ES')} €/año brutos estás por encima del mínimo garantizado (${minSBAPC.toLocaleString('es-ES')} € con Plus Convenio incluido) para el Grupo ${grupoId} en ${anyo}.`;
+    alertEl.classList.add('ok');
+    atrasosEl.style.display = 'none';
+  } else {
+    alertEl.innerHTML = `<strong>✓ Tu salario supera el salario base mínimo.</strong> Con ${brutal.toLocaleString('es-ES')} €/año brutos estás por encima del salario base anual mínimo (${minSBA.toLocaleString('es-ES')} €). Comprueba que también percibes el Plus Convenio (${compl.plusConvenio.mes} €/mes = ${compl.plusConvenio.anual} €/año).`;
+    alertEl.classList.add('ok');
+    atrasosEl.style.display = 'none';
+  }
+
+  // ── Stats grid ──────────────────────────────────────────────────────────────
+  const fmt = n => n.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  document.getElementById('convenioGrid').innerHTML = `
+    <div class="convenio-stat">
+      <div class="convenio-stat-label">Salario base / mes</div>
+      <div class="convenio-stat-val">${fmt(sal.mes)} €</div>
+      <div class="convenio-stat-sub">Grupo ${grupoId} · ${anyo}</div>
+    </div>
+    <div class="convenio-stat">
+      <div class="convenio-stat-label">Salario base anual</div>
+      <div class="convenio-stat-val">${fmt(sal.sba)} €</div>
+      <div class="convenio-stat-sub">14 pagas · sin complementos</div>
+    </div>
+    <div class="convenio-stat">
+      <div class="convenio-stat-label">Con Plus Convenio</div>
+      <div class="convenio-stat-val">${fmt(sal.sbapc)} €</div>
+      <div class="convenio-stat-sub">SBA + ${compl.plusConvenio.anual} €/año</div>
+    </div>
+    <div class="convenio-stat">
+      <div class="convenio-stat-label">Jornada anual</div>
+      <div class="convenio-stat-val">1.750 h</div>
+      <div class="convenio-stat-sub">Según art. jornada 2024-2026</div>
+    </div>
+  `;
+
+  // ── Barra comparación ───────────────────────────────────────────────────────
+  const compareEl = document.getElementById('convenioCompare');
+  const barRowsEl = document.getElementById('convenioBarRows');
+  if (brutal > 0) {
+    compareEl.style.display = 'block';
+    const maxVal = Math.max(brutal, sal.sbapc) * 1.1;
+    const pctBruto = Math.min((brutal / maxVal) * 100, 100);
+    const pctSBA   = Math.min((sal.sba / maxVal) * 100, 100);
+    const pctSBAPC = Math.min((sal.sbapc / maxVal) * 100, 100);
+    const colorBruto = brutal < sal.sba ? 'red' : 'green';
+    barRowsEl.innerHTML = `
+      <div class="convenio-bar-row">
+        <div class="convenio-bar-name">Tu salario</div>
+        <div class="convenio-bar-track"><div class="convenio-bar-fill ${colorBruto}" style="width:${pctBruto}%"></div></div>
+        <div class="convenio-bar-amount">${brutal.toLocaleString('es-ES')} €</div>
+      </div>
+      <div class="convenio-bar-row">
+        <div class="convenio-bar-name">Mín. convenio</div>
+        <div class="convenio-bar-track"><div class="convenio-bar-fill gold" style="width:${pctSBA}%"></div></div>
+        <div class="convenio-bar-amount">${fmt(sal.sba)} €</div>
+      </div>
+      <div class="convenio-bar-row">
+        <div class="convenio-bar-name">Mín. + Plus Conv.</div>
+        <div class="convenio-bar-track"><div class="convenio-bar-fill gold" style="width:${pctSBAPC}%"></div></div>
+        <div class="convenio-bar-amount">${fmt(sal.sbapc)} €</div>
+      </div>
+    `;
+  } else {
+    compareEl.style.display = 'none';
+  }
+
+  // ── Tabla complementos ──────────────────────────────────────────────────────
+  document.getElementById('convenioComplementos').innerHTML = `
+    <tr><td>Plus Convenio</td><td>Salarial — todas las categorías</td><td>${compl.plusConvenio.mes} €/mes (${compl.plusConvenio.anual} €/año)</td></tr>
+    <tr><td>Plus domingos y festivos</td><td>Salarial — por día trabajado</td><td>${compl.plusFestivos.mes} €/día</td></tr>
+    <tr><td>Quebranto de moneda</td><td>Salarial — gestión de efectivo</td><td>${compl.quebranto.mes} €/mes</td></tr>
+    <tr><td>Plus comida</td><td>Salarial — por día trabajado</td><td>${compl.plusComida.mes} €/día</td></tr>
+    <tr><td>Plus trabajo a distancia</td><td>Extrasalarial — teletrabajadores</td><td>${compl.teletrabajo.anual} €/año (40€ × 11 meses)</td></tr>
+    <tr><td>Plus idiomas</td><td>Salarial — si aplica</td><td>10% del salario base</td></tr>
+    <tr><td>Kilómetro</td><td>Extrasalarial — desplazamientos</td><td>0,26 €/km</td></tr>
+    <tr><td>Media dieta</td><td>Extrasalarial — manutención</td><td>9,30 € por desplazamiento</td></tr>
+    <tr><td>Dieta completa</td><td>Extrasalarial — día fuera</td><td>20,14 € por día</td></tr>
+    <tr><td colspan="2" style="font-size:11px;color:var(--ink-lighter);font-style:italic;">Fuente: BOP Valencia núm. 130, 10/07/2025 · Código 46000805011981</td><td><a href="https://ofydes.es/convenio/" target="_blank" style="font-size:11px;color:var(--gold);">Ver BOP oficial →</a></td></tr>
+  `;
+
+  // ── Convenios relacionados ──────────────────────────────────────────────────
+  document.getElementById('convenioRelated').innerHTML =
+    conv.relacionados.map(r =>
+      `<a class="convenio-related-link" href="${r.url}" target="_blank" rel="noopener" title="${r.nota}">${r.nombre}</a>`
+    ).join('');
+}
+
+// Enlazar el selector principal con la función de grupos
+document.getElementById('convenioSelect').addEventListener('change', updateConvenioGroups);
+
+// Actualizar panel cuando cambia el salario (para recalcular alerta)
+document.getElementById('salary').addEventListener('input', function() {
+  if (document.getElementById('convenioSelect').value) updateConvenioPanel();
+});
 </script>
 
 </body>
