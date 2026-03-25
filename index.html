@@ -2699,7 +2699,7 @@ document.getElementById('recText').textContent = '';
   // ─── ACORDEONES DESDE API ────────────────────────────────────
   function buildAccordionsFromAPI(ranges, cityKey, gross) {
     const cNames={madrid:'Madrid',barcelona:'Barcelona',valencia:'Valencia',sevilla:'Sevilla',bilbao:'Bilbao',malaga:'Málaga',zaragoza:'Zaragoza',murcia:'Murcia',palma:'Palma de Mallorca',laspalmas:'Las Palmas de G.C.'};
-    let html=`<thead><tr><th>Ciudad</th><th>Mínimo</th><th>Mediana</th><th>Máximo</th><th>Tu posición</th></tr></thead><tbody>`;
+    let html=`<thead><tr><th>Ciudad (por habitantes)</th><th>Mínimo</th><th>Mediana</th><th>Máximo</th><th>Tu posición</th></tr></thead><tbody>`;
     Object.keys(cNames).forEach(c=>{
       if(!ranges[c])return;
       const[min,med,max]=ranges[c];
