@@ -2805,198 +2805,53 @@ document.getElementById('recText').textContent = '';
     document.getElementById('compareBody').innerHTML=html;
   }
 
-// ── DATOS CONVENIO OFICINAS Y DESPACHOS VALENCIA 2024-2026 ──────────────────
-// Fuente: Tablas Salariales Definitivas, BOP Valencia núm. 130, 10-7-2025
-// Código: 46000805011981 | Vigencia: 1/1/2024 – 31/12/2026
-// SBA = Salario Base Anual (14 pagas) | SBA+PC = SBA + Plus Convenio anual
+// ══════════════════════════════════════════════════════════════════════════════
+// ÍNDICE DE CONVENIOS — Solo metadatos. Los datos se cargan bajo demanda.
+// Para añadir un convenio nuevo: 1) crea el JSON en /data/convenios/
+//                                 2) añade una entrada aquí
+// ══════════════════════════════════════════════════════════════════════════════
+const CONVENIO_INDEX = [
+  // ─── Hostelería ────────────────────────────────────────────────────────────
+  { id: 'hosteleria_vlc', sector: 'Hostelería',
+    nombre: 'Hostelería — Valencia (2022-2025)',
+    provincia: 'Valencia', ccaa: 'Comunitat Valenciana',
+    archivo: '/data/convenios/hosteleria_vlc.json' },
+  { id: 'hosteleria_mad', sector: 'Hostelería',
+    nombre: 'Hostelería — Madrid (2023-2025)',
+    provincia: 'Madrid', ccaa: 'Comunidad de Madrid',
+    archivo: '/data/convenios/hosteleria_mad.json' },
 
-const CONVENIOS = {
-  ofydes_vlc: {
-    nombre: 'Oficinas y Despachos — Provincia de Valencia',
-    bop: 'BOP Valencia núm. 130, 10/07/2025',
-    vigencia: '1 enero 2024 – 31 diciembre 2026',
-    pagas: 14,
-    urlBop: 'https://ofydes.es/convenio/',
-    grupos: [
-      { id: 'I',   nombre: 'Grupo I — Titulado Superior y Director',
-        puestos: ['Director/a', 'Titulado/a Grado Superior'],
-        salario: { 2024: { mes: 1712.40, sba: 23973.55, sbapc: 24848.88 },
-                   2025: { mes: 1746.64, sba: 24453.02, sbapc: 25354.62 },
-                   2026: { mes: 1781.58, sba: 24942.08, sbapc: 25870.72 } } },
-      { id: 'II',  nombre: 'Grupo II — Titulado Medio / Diplomado',
-        puestos: ['Diplomado/a Universitario/a', 'Titulado/a Grado Medio', 'Intérprete Jurado/a', 'Traductor/a Titulado/a'],
-        salario: { 2024: { mes: 1522.17, sba: 21310.33, sbapc: 22185.66 },
-                   2025: { mes: 1552.61, sba: 21736.54, sbapc: 22638.13 },
-                   2026: { mes: 1583.66, sba: 22171.27, sbapc: 23099.91 } } },
-      { id: 'III', nombre: 'Grupo III — Jefe de Proyecto / Analista',
-        puestos: ['Jefe/a de Proyecto', 'Analista', 'Jefe/a Superior', 'Jefe/a Delineante', 'Gestor/a de Proyectos', 'Project Manager', 'PMO'],
-        salario: { 2024: { mes: 1440.15, sba: 20162.04, sbapc: 21037.37 },
-                   2025: { mes: 1476.15, sba: 20666.09, sbapc: 21567.68 },
-                   2026: { mes: 1513.05, sba: 21182.74, sbapc: 22111.38 } } },
-      { id: 'IV',  nombre: 'Grupo IV — Jefe de Oficina / Contable / Programador',
-        puestos: ['Jefe/a de Oficina', 'Contable', 'Programador/a', 'Delineante Proyectista', 'Traductor/a no titulado/a'],
-        salario: { 2024: { mes: 1354.79, sba: 18967.06, sbapc: 19842.39 },
-                   2025: { mes: 1402.21, sba: 19630.91, sbapc: 20532.50 },
-                   2026: { mes: 1451.28, sba: 20317.99, sbapc: 21246.63 } } },
-      { id: 'V',   nombre: 'Grupo V — Oficial 1ª Administrativo / Encargado',
-        puestos: ['Oficial 1ª Administrativo/a', 'Delineante', 'Operador/a', 'Encargado/a'],
-        salario: { 2024: { mes: 1187.45, sba: 16624.24, sbapc: 17499.58 },
-                   2025: { mes: 1229.01, sba: 17206.09, sbapc: 18107.68 },
-                   2026: { mes: 1272.02, sba: 17808.30, sbapc: 18736.95 } } },
-      { id: 'VI',  nombre: 'Grupo VI — Oficial 2ª / Comercial / Azafata',
-        puestos: ['Oficial 2ª Administrativo/a', 'Comercial', 'Azafata/o'],
-        salario: { 2024: { mes: 1126.96, sba: 15777.50, sbapc: 16652.83 },
-                   2025: { mes: 1166.41, sba: 16329.71, sbapc: 17231.31 },
-                   2026: { mes: 1207.23, sba: 16901.25, sbapc: 17829.89 } } },
-      { id: 'VII', nombre: 'Grupo VII — Conductor / Grabador / Auxiliar Adm.',
-        puestos: ['Conductor/a', 'Grabador/a de Datos', 'Auxiliar Administrativo/a'],
-        salario: { 2024: { mes: 1097.53, sba: 15365.47, sbapc: 16240.80 },
-                   2025: { mes: 1137.59, sba: 15926.31, sbapc: 16827.90 },
-                   2026: { mes: 1177.41, sba: 16483.73, sbapc: 17412.37 } } },
-      { id: 'VIII',nombre: 'Grupo VIII — Almacenero / Ordenanza / Telefonista / Limpieza',
-        puestos: ['Almacenero/a', 'Conserje', 'Ordenanza', 'Telefonista', 'Limpiador/a', 'Peón/a', 'Mozo/a'],
-        salario: { 2024: { mes: 1076.52, sba: 15071.21, sbapc: 15946.55 },
-                   2025: { mes: 1121.19, sba: 15696.67, sbapc: 16598.26 },
-                   2026: { mes: 1160.43, sba: 16246.05, sbapc: 17174.69 } } }
-    ],
-    complementos: {
-      2024: {
-        plusConvenio:    { mes: 72.94, anual: 875.34,  nota: 'Todas las categorías' },
-        plusFestivos:    { mes: 50.19, anual: null,     nota: 'Por día trabajado' },
-        quebranto:       { mes: 55.61, anual: null,     nota: 'Por gestión de efectivo' },
-        plusComida:      { mes: 10.71, anual: null,     nota: 'Por día trabajado' },
-        teletrabajo:     { mes: null,  anual: 440,      nota: '440 €/año (40€ × 11 meses)' },
-        idiomas:         { mes: null,  anual: null,     nota: '10% del salario base' },
-        km:              { mes: null,  anual: null,     nota: '0,26 €/km recorrido' },
-        mediaDieta:      { mes: null,  anual: null,     nota: '9,30 € por desplazamiento' },
-        dietaCompleta:   { mes: null,  anual: null,     nota: '20,14 € por día fuera' }
-      },
-      2025: {
-        plusConvenio:    { mes: 75.13, anual: 901.60,  nota: 'Todas las categorías' },
-        plusFestivos:    { mes: 51.70, anual: null,     nota: 'Por día trabajado' },
-        quebranto:       { mes: 57.28, anual: null,     nota: 'Por gestión de efectivo' },
-        plusComida:      { mes: 11.03, anual: null,     nota: 'Por día trabajado' },
-        teletrabajo:     { mes: null,  anual: 440,      nota: '440 €/año (40€ × 11 meses)' },
-        idiomas:         { mes: null,  anual: null,     nota: '10% del salario base' },
-        km:              { mes: null,  anual: null,     nota: '0,26 €/km recorrido' },
-        mediaDieta:      { mes: null,  anual: null,     nota: '9,30 € por desplazamiento' },
-        dietaCompleta:   { mes: null,  anual: null,     nota: '20,14 € por día fuera' }
-      },
-      2026: {
-        plusConvenio:    { mes: 77.39, anual: 928.64,  nota: 'Todas las categorías' },
-        plusFestivos:    { mes: 53.25, anual: null,     nota: 'Por día trabajado' },
-        quebranto:       { mes: 59.00, anual: null,     nota: 'Por gestión de efectivo' },
-        plusComida:      { mes: 11.36, anual: null,     nota: 'Por día trabajado' },
-        teletrabajo:     { mes: null,  anual: 440,      nota: '440 €/año (40€ × 11 meses)' },
-        idiomas:         { mes: null,  anual: null,     nota: '10% del salario base' },
-        km:              { mes: null,  anual: null,     nota: '0,26 €/km recorrido' },
-        mediaDieta:      { mes: null,  anual: null,     nota: '9,30 € por desplazamiento' },
-        dietaCompleta:   { mes: null,  anual: null,     nota: '20,14 € por día fuera' }
-      }
-    },
-    relacionados: [
-      { nombre: 'Consultoría y Empresas de Servicios TIC (estatal)', url: 'https://www.boe.es/buscar/doc.php?q=consultoria+tecnologia+convenio', nota: 'Si tu empresa es IT pura' },
-      { nombre: 'Oficinas y Despachos — Alicante 2024-2026', url: 'https://www.dip-alicante.es/bop2/pdftotal/2025/02/11_28/2025_000802.pdf', nota: 'Si trabajas en provincia de Alicante' },
-      { nombre: 'Oficinas y Despachos — Castellón', url: 'https://ofydes.es/convenio/', nota: 'Si trabajas en provincia de Castellón' },
-      { nombre: 'Convenio Estatal de Gestorías Administrativas', url: 'https://www.boe.es/buscar/doc.php?q=gestorias+administrativas+convenio', nota: 'Para gestorías y asesorías' },
-      { nombre: 'VII Convenio Despachos Técnicos Tributarios (estatal)', url: 'https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-7400', nota: 'Si eres asesor fiscal o tributario' }
-   ]
-  },
+  // ─── Oficinas y Despachos ──────────────────────────────────────────────────
+  { id: 'ofydes_vlc', sector: 'Oficinas y Despachos',
+    nombre: 'Oficinas y Despachos — Valencia (2024-2026)',
+    provincia: 'Valencia', ccaa: 'Comunitat Valenciana',
+    archivo: '/data/convenios/ofydes_vlc.json' },
 
-  // ── HOSTELERÍA VALENCIA 2022-2025 ─────────────────────────────────────────
-  // Fuente: BOP Valencia núm. 26, 07/02/2023 · Código: 46001285011982
-  // Tablas 2025 publicadas con incremento 1,62% (Tabla I/III) y 1,37% (Tabla II)
-  // 15 pagas: 12 mensuales + 3 extras (junio, navidad, marzo)
-  hosteleria_vlc: {
-    nombre: 'Hostelería — Provincia de Valencia',
-    bop: 'BOP Valencia núm. 26, 07/02/2023',
-    codigo: '46001285011982',
-    vigencia: '1 enero 2022 – 31 diciembre 2025',
-    pagas: 15,
-    jornadaAnual: 1794,
-    urlBop: 'https://noticias.juridicas.com/base_datos/Laboral/747194-convenio-colectivo-intersectorial-de-hosteleria-de-la-provincia-de-valencia.html',
-    subtablas: {
-      'I':   'Restaurantes, cafeterías, bares y colectividades',
-      'II':  'Hoteles de 4 y 5 estrellas',
-      'III': 'Hoteles de 3 estrellas y viviendas turísticas'
-    },
-    grupos: [
-      { id:'I-1', subtabla:'I', nombre:'Nivel 1 — Jefe/a de Cocina, Jefe/a de Sala, Encargado/a General',
-        puestos:['Jefe/a de Cocina','Jefe/a de Restaurante','Jefe/a de Sala','Encargado/a General','Jefe/a de Administración','Gerente de Restauración Moderna'],
-        salario:{ 2024:{mes:1316.54,sba:19748.10}, 2025:{mes:1337.87,sba:20068.05} } },
-      { id:'I-2', subtabla:'I', nombre:'Nivel 2 — 2º Jefe/a de Cocina, 2º Jefe/a de Sala, Administrativo/a',
-        puestos:['Segundo/a Jefe/a de Cocina','Segundo/a Jefe/a de Sala','Administrativo/a','Encargado/a de Sección'],
-        salario:{ 2024:{mes:1268.15,sba:19022.25}, 2025:{mes:1288.69,sba:19330.35} } },
-      { id:'I-3', subtabla:'I', nombre:'Nivel 3 — Camarero/a, Cocinero/a, Barman, Recepcionista',
-        puestos:['Camarero/a','Cocinero/a','Barman','Sumiller','Repostero/a','Conserje','Recepcionista'],
-        salario:{ 2024:{mes:1195.47,sba:17932.05}, 2025:{mes:1214.84,sba:18222.60} } },
-      { id:'I-4', subtabla:'I', nombre:'Nivel 4 — Ayudante de Camarero/a, Ayudante de Cocina',
-        puestos:['Ayudante de Camarero/a','Ayudante de Cocina','Preparador/a de Catering'],
-        salario:{ 2024:{mes:1147.02,sba:17205.30}, 2025:{mes:1165.60,sba:17484.00} } },
-      { id:'I-5', subtabla:'I', nombre:'Nivel 5 — Auxiliar de Cocina, Auxiliar de Limpieza, Fregador/a',
-        puestos:['Auxiliar de Cocina','Auxiliar de Pisos y Limpieza','Auxiliar de Recepción','Fregador/a'],
-        salario:{ 2024:{mes:1082.92,sba:16243.80}, 2025:{mes:1100.46,sba:16506.90} } },
+  // ─── Próximamente (sin archivo, se muestran como disabled) ─────────────────
+  { id: null, sector: 'Hostelería',     nombre: 'Hostelería — Barcelona (próximamente)', provincia: 'Barcelona' },
+  { id: null, sector: 'Comercio',       nombre: 'Comercio — Valencia (próximamente)',    provincia: 'Valencia' },
+  { id: null, sector: 'Construcción',   nombre: 'Construcción — Valencia (próximamente)',provincia: 'Valencia' },
+  { id: null, sector: 'Consultoría/TIC',nombre: 'Consultoría / TIC estatal (próximamente)', provincia: 'Estatal' }
+];
 
-      { id:'II-1', subtabla:'II', nombre:'Nivel 1 — Jefe/a de Recepción, Jefe/a de Cocina (Hotel 4-5★)',
-        puestos:['Jefe/a de Recepción','Jefe/a de Cocina','Jefe/a de Restaurante','Gobernante/a'],
-        salario:{ 2024:{mes:1396.34,sba:20945.10}, 2025:{mes:1415.47,sba:21232.05} } },
-      { id:'II-2', subtabla:'II', nombre:'Nivel 2 — 2º Jefe/a, Administrativo/a (Hotel 4-5★)',
-        puestos:['Segundo/a Jefe/a de Cocina','Segundo/a Jefe/a de Sala','Administrativo/a'],
-        salario:{ 2024:{mes:1344.63,sba:20169.45}, 2025:{mes:1363.05,sba:20445.75} } },
-      { id:'II-3', subtabla:'II', nombre:'Nivel 3 — Camarero/a, Cocinero/a, Recepcionista (Hotel 4-5★)',
-        puestos:['Camarero/a','Cocinero/a','Recepcionista','Barman','Camarero/a de Pisos'],
-        salario:{ 2024:{mes:1267.07,sba:19006.05}, 2025:{mes:1284.43,sba:19266.45} } },
-      { id:'II-4', subtabla:'II', nombre:'Nivel 4 — Ayudante de Camarero/a, Ayudante de Cocina (Hotel 4-5★)',
-        puestos:['Ayudante de Camarero/a','Ayudante de Cocina','Preparador/a de Catering'],
-        salario:{ 2024:{mes:1215.30,sba:18229.50}, 2025:{mes:1231.95,sba:18479.25} } },
-      { id:'II-5', subtabla:'II', nombre:'Nivel 5 — Auxiliar de Cocina, Limpieza (Hotel 4-5★)',
-        puestos:['Auxiliar de Cocina','Auxiliar de Pisos y Limpieza','Mozo/a de Equipaje'],
-        salario:{ 2024:{mes:1146.77,sba:17201.55}, 2025:{mes:1162.48,sba:17437.20} } },
+// Caché de convenios cargados (evita re-descargar)
+const convenioCache = {};
 
-      { id:'III-1', subtabla:'III', nombre:'Nivel 1 — Jefe/a de Recepción, Jefe/a de Cocina (Hotel 3★)',
-        puestos:['Jefe/a de Recepción','Jefe/a de Cocina','Gobernante/a'],
-        salario:{ 2024:{mes:1219.05,sba:18285.75}, 2025:{mes:1238.80,sba:18582.00} } },
-      { id:'III-2', subtabla:'III', nombre:'Nivel 2 — 2º Jefe/a, Administrativo/a (Hotel 3★)',
-        puestos:['Segundo/a Jefe/a de Cocina','Segundo/a Jefe/a de Sala','Administrativo/a'],
-        salario:{ 2024:{mes:1198.95,sba:17984.25}, 2025:{mes:1218.37,sba:18275.55} } },
-      { id:'III-3', subtabla:'III', nombre:'Nivel 3 — Camarero/a, Cocinero/a, Recepcionista (Hotel 3★)',
-        puestos:['Camarero/a','Cocinero/a','Recepcionista','Camarero/a de Pisos'],
-        salario:{ 2024:{mes:1171.36,sba:17570.40}, 2025:{mes:1190.34,sba:17855.10} } },
-      { id:'III-4', subtabla:'III', nombre:'Nivel 4 — Ayudante de Camarero/a, Ayudante de Cocina (Hotel 3★)',
-        puestos:['Ayudante de Camarero/a','Ayudante de Cocina'],
-        salario:{ 2024:{mes:1147.85,sba:17217.75}, 2025:{mes:1166.45,sba:17496.75} } },
-      { id:'III-5', subtabla:'III', nombre:'Nivel 5 — Auxiliar de Cocina, Limpieza (Hotel 3★)',
-        puestos:['Auxiliar de Cocina','Auxiliar de Pisos y Limpieza'],
-        salario:{ 2024:{mes:1097.84,sba:16467.60}, 2025:{mes:1115.63,sba:16734.45} } }
-    ],
-    complementos: {
-      2024: {
-        nocturnidad:     { mes:null, anual:null, nota:'20% del salario base diario (solo de 00:30 a 06:00)' },
-        plusTransportePartida:  { mes:65.90, anual:null, nota:'Jornada partida — mensual' },
-        plusTransporteContinua: { mes:46.06, anual:null, nota:'Jornada continuada — mensual' },
-        plusFormacion:    { mes:20.00, anual:240, nota:'Si la empresa no ofrece formación (12 pagas)' },
-        plusManutencion:  { mes:25.00, anual:null, nota:'Coste medio comedor empresa (cotización)' },
-        festivos:        { mes:null, anual:null, nota:'Entre 93,87 € y 114,30 €/día (según nivel)' },
-        horasExtra:      { mes:null, anual:null, nota:'Entre 12,70 € y 15,45 €/hora (según nivel)' }
-      },
-      2025: {
-        nocturnidad:     { mes:null, anual:null, nota:'20% del salario base diario (solo de 00:30 a 06:00)' },
-        plusTransportePartida:  { mes:66.96, anual:null, nota:'Jornada partida — mensual' },
-        plusTransporteContinua: { mes:46.80, anual:null, nota:'Jornada continuada — mensual' },
-        plusFormacion:    { mes:20.00, anual:240, nota:'Si la empresa no ofrece formación (12 pagas)' },
-        plusManutencion:  { mes:25.00, anual:null, nota:'Coste medio comedor empresa (cotización)' },
-        festivos:        { mes:null, anual:null, nota:'Entre 95,40 € y 116,16 €/día (según nivel)' },
-        horasExtra:      { mes:null, anual:null, nota:'Entre 12,91 € y 15,70 €/hora (según nivel)' }
-      }
-    },
-    relacionados: [
-      { nombre:'V ALEH (Acuerdo Laboral Estatal Hostelería)', url:'https://www.boe.es/buscar/doc.php?q=acuerdo+laboral+hosteleria', nota:'Marco estatal de clasificación profesional' },
-      { nombre:'Hostelería — Alicante', url:'https://noticias.juridicas.com/base_datos/Laboral/947716-tabla-salarial-para-el-ano-2025-del-convenio-colectivo-de-sector-de-hosteleria.html', nota:'Si trabajas en Alicante' },
-      { nombre:'Restauración Colectiva (estatal)', url:'https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-12598', nota:'Catering y comedores' },
-      { nombre:'Marcas de Restauración Moderna (estatal)', url:'https://www.boe.es/buscar/doc.php?q=restauracion+moderna+convenio', nota:'McDonald\'s, Burger King, etc.' }
-    ]
+async function loadConvenio(id) {
+  if (convenioCache[id]) return convenioCache[id];
+  const entry = CONVENIO_INDEX.find(c => c.id === id);
+  if (!entry || !entry.archivo) return null;
+  try {
+    const res = await fetch(entry.archivo);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    convenioCache[id] = data;
+    return data;
+  } catch (err) {
+    console.error('Error cargando convenio:', id, err);
+    return null;
   }
-};
+}
 
 // ── INICIALIZAR SELECTORES DE GRUPOS ─────────────────────────────────────────
 function updateConvenioGroups() {
