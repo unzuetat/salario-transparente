@@ -2441,11 +2441,12 @@
     document.getElementById('results').scrollIntoView({ behavior:'smooth', block:'start' });
 
     // Llamar API para rangos + análisis
-    callClaudeAPI({
+   callClaudeAPI({
       salary: gross,
       profession: profInput,
       city: currentCity,
       situation: currentSituation,
+      seniority: document.getElementById('seniority').value,
       pagas, hijos3, hijos25, asc65, asc75,
       discapacidad: discap,
       movilidad,
