@@ -2701,7 +2701,7 @@ const seniorityLabels = { junior:'Junior', mid:'Mid', senior:'Senior', lead:'Lea
   function updateComparison() {
     const gross = parseFloat(document.getElementById('compareSalary')?.value);
     if (!gross || gross < 5000) {
-      document.getElementById('compareBody').innerHTML='<tr><td colspan="7" style="text-align:center;padding:24px;color:var(--ink-lighter);">Introduce un salario bruto para ver la comparativa</td></tr>';
+     document.getElementById('compareBody').innerHTML='<tr><td colspan="5" style="text-align:center;padding:20px;color:var(--ink-lighter);">Introduce un salario bruto para ver la comparativa</td></tr>';
       return;
     }
     const rows = Object.entries(TAX_SYSTEMS).map(([k,s])=>{
