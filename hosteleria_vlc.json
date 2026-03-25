@@ -1,0 +1,88 @@
+{
+  "nombre": "Hostelería — Provincia de Valencia",
+  "bop": "BOP Valencia núm. 26, 07/02/2023",
+  "codigo": "46001285011982",
+  "vigencia": "1 enero 2022 – 31 diciembre 2025",
+  "pagas": 15,
+  "jornadaAnual": 1794,
+  "urlBop": "https://noticias.juridicas.com/base_datos/Laboral/747194-convenio-colectivo-intersectorial-de-hosteleria-de-la-provincia-de-valencia.html",
+  "subtablas": {
+    "I": "Restaurantes, cafeterías, bares y colectividades",
+    "II": "Hoteles de 4 y 5 estrellas",
+    "III": "Hoteles de 3 estrellas y viviendas turísticas"
+  },
+  "grupos": [
+    { "id":"I-1", "subtabla":"I", "nombre":"Nivel 1 — Jefe/a de Cocina, Jefe/a de Sala, Encargado/a General",
+      "puestos":["Jefe/a de Cocina","Jefe/a de Restaurante","Jefe/a de Sala","Encargado/a General","Jefe/a de Administración","Gerente de Restauración Moderna"],
+      "salario":{ "2024":{"mes":1316.54,"sba":19748.10}, "2025":{"mes":1337.87,"sba":20068.05} } },
+    { "id":"I-2", "subtabla":"I", "nombre":"Nivel 2 — 2º Jefe/a de Cocina, 2º Jefe/a de Sala, Administrativo/a",
+      "puestos":["Segundo/a Jefe/a de Cocina","Segundo/a Jefe/a de Sala","Administrativo/a","Encargado/a de Sección"],
+      "salario":{ "2024":{"mes":1268.15,"sba":19022.25}, "2025":{"mes":1288.69,"sba":19330.35} } },
+    { "id":"I-3", "subtabla":"I", "nombre":"Nivel 3 — Camarero/a, Cocinero/a, Barman, Recepcionista",
+      "puestos":["Camarero/a","Cocinero/a","Barman","Sumiller","Repostero/a","Conserje","Recepcionista"],
+      "salario":{ "2024":{"mes":1195.47,"sba":17932.05}, "2025":{"mes":1214.84,"sba":18222.60} } },
+    { "id":"I-4", "subtabla":"I", "nombre":"Nivel 4 — Ayudante de Camarero/a, Ayudante de Cocina",
+      "puestos":["Ayudante de Camarero/a","Ayudante de Cocina","Preparador/a de Catering"],
+      "salario":{ "2024":{"mes":1147.02,"sba":17205.30}, "2025":{"mes":1165.60,"sba":17484.00} } },
+    { "id":"I-5", "subtabla":"I", "nombre":"Nivel 5 — Auxiliar de Cocina, Auxiliar de Limpieza, Fregador/a",
+      "puestos":["Auxiliar de Cocina","Auxiliar de Pisos y Limpieza","Auxiliar de Recepción","Fregador/a"],
+      "salario":{ "2024":{"mes":1082.92,"sba":16243.80}, "2025":{"mes":1100.46,"sba":16506.90} } },
+
+    { "id":"II-1", "subtabla":"II", "nombre":"Nivel 1 — Jefe/a de Recepción, Jefe/a de Cocina (Hotel 4-5★)",
+      "puestos":["Jefe/a de Recepción","Jefe/a de Cocina","Jefe/a de Restaurante","Gobernante/a"],
+      "salario":{ "2024":{"mes":1396.34,"sba":20945.10}, "2025":{"mes":1415.47,"sba":21232.05} } },
+    { "id":"II-2", "subtabla":"II", "nombre":"Nivel 2 — 2º Jefe/a, Administrativo/a (Hotel 4-5★)",
+      "puestos":["Segundo/a Jefe/a de Cocina","Segundo/a Jefe/a de Sala","Administrativo/a"],
+      "salario":{ "2024":{"mes":1344.63,"sba":20169.45}, "2025":{"mes":1363.05,"sba":20445.75} } },
+    { "id":"II-3", "subtabla":"II", "nombre":"Nivel 3 — Camarero/a, Cocinero/a, Recepcionista (Hotel 4-5★)",
+      "puestos":["Camarero/a","Cocinero/a","Recepcionista","Barman","Camarero/a de Pisos"],
+      "salario":{ "2024":{"mes":1267.07,"sba":19006.05}, "2025":{"mes":1284.43,"sba":19266.45} } },
+    { "id":"II-4", "subtabla":"II", "nombre":"Nivel 4 — Ayudante de Camarero/a, Ayudante de Cocina (Hotel 4-5★)",
+      "puestos":["Ayudante de Camarero/a","Ayudante de Cocina","Preparador/a de Catering"],
+      "salario":{ "2024":{"mes":1215.30,"sba":18229.50}, "2025":{"mes":1231.95,"sba":18479.25} } },
+    { "id":"II-5", "subtabla":"II", "nombre":"Nivel 5 — Auxiliar de Cocina, Limpieza (Hotel 4-5★)",
+      "puestos":["Auxiliar de Cocina","Auxiliar de Pisos y Limpieza","Mozo/a de Equipaje"],
+      "salario":{ "2024":{"mes":1146.77,"sba":17201.55}, "2025":{"mes":1162.48,"sba":17437.20} } },
+
+    { "id":"III-1", "subtabla":"III", "nombre":"Nivel 1 — Jefe/a de Recepción, Jefe/a de Cocina (Hotel 3★)",
+      "puestos":["Jefe/a de Recepción","Jefe/a de Cocina","Gobernante/a"],
+      "salario":{ "2024":{"mes":1219.05,"sba":18285.75}, "2025":{"mes":1238.80,"sba":18582.00} } },
+    { "id":"III-2", "subtabla":"III", "nombre":"Nivel 2 — 2º Jefe/a, Administrativo/a (Hotel 3★)",
+      "puestos":["Segundo/a Jefe/a de Cocina","Segundo/a Jefe/a de Sala","Administrativo/a"],
+      "salario":{ "2024":{"mes":1198.95,"sba":17984.25}, "2025":{"mes":1218.37,"sba":18275.55} } },
+    { "id":"III-3", "subtabla":"III", "nombre":"Nivel 3 — Camarero/a, Cocinero/a, Recepcionista (Hotel 3★)",
+      "puestos":["Camarero/a","Cocinero/a","Recepcionista","Camarero/a de Pisos"],
+      "salario":{ "2024":{"mes":1171.36,"sba":17570.40}, "2025":{"mes":1190.34,"sba":17855.10} } },
+    { "id":"III-4", "subtabla":"III", "nombre":"Nivel 4 — Ayudante de Camarero/a, Ayudante de Cocina (Hotel 3★)",
+      "puestos":["Ayudante de Camarero/a","Ayudante de Cocina"],
+      "salario":{ "2024":{"mes":1147.85,"sba":17217.75}, "2025":{"mes":1166.45,"sba":17496.75} } },
+    { "id":"III-5", "subtabla":"III", "nombre":"Nivel 5 — Auxiliar de Cocina, Limpieza (Hotel 3★)",
+      "puestos":["Auxiliar de Cocina","Auxiliar de Pisos y Limpieza"],
+      "salario":{ "2024":{"mes":1097.84,"sba":16467.60}, "2025":{"mes":1115.63,"sba":16734.45} } }
+  ],
+  "complementos": {
+    "2024": {
+      "nocturnidad":            { "mes":null, "anual":null, "nota":"20% del salario base diario (solo de 00:30 a 06:00)" },
+      "plusTransportePartida":  { "mes":65.90, "anual":null, "nota":"Jornada partida — mensual" },
+      "plusTransporteContinua": { "mes":46.06, "anual":null, "nota":"Jornada continuada — mensual" },
+      "plusFormacion":          { "mes":20.00, "anual":240, "nota":"Si la empresa no ofrece formación (12 pagas)" },
+      "plusManutencion":        { "mes":25.00, "anual":null, "nota":"Coste medio comedor empresa (cotización)" },
+      "festivos":               { "mes":null, "anual":null, "nota":"Entre 93,87 € y 114,30 €/día (según nivel)" },
+      "horasExtra":             { "mes":null, "anual":null, "nota":"Entre 12,70 € y 15,45 €/hora (según nivel)" }
+    },
+    "2025": {
+      "nocturnidad":            { "mes":null, "anual":null, "nota":"20% del salario base diario (solo de 00:30 a 06:00)" },
+      "plusTransportePartida":  { "mes":66.96, "anual":null, "nota":"Jornada partida — mensual" },
+      "plusTransporteContinua": { "mes":46.80, "anual":null, "nota":"Jornada continuada — mensual" },
+      "plusFormacion":          { "mes":20.00, "anual":240, "nota":"Si la empresa no ofrece formación (12 pagas)" },
+      "plusManutencion":        { "mes":25.00, "anual":null, "nota":"Coste medio comedor empresa (cotización)" },
+      "festivos":               { "mes":null, "anual":null, "nota":"Entre 95,40 € y 116,16 €/día (según nivel)" },
+      "horasExtra":             { "mes":null, "anual":null, "nota":"Entre 12,91 € y 15,70 €/hora (según nivel)" }
+    }
+  },
+  "relacionados": [
+    { "nombre":"V ALEH (Acuerdo Laboral Estatal Hostelería)", "url":"https://www.boe.es/buscar/doc.php?q=acuerdo+laboral+hosteleria", "nota":"Marco estatal" },
+    { "nombre":"Hostelería — Alicante", "url":"https://noticias.juridicas.com/base_datos/Laboral/947716-tabla-salarial-para-el-ano-2025-del-convenio-colectivo-de-sector-de-hosteleria.html", "nota":"Si trabajas en Alicante" },
+    { "nombre":"Restauración Colectiva (estatal)", "url":"https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-12598", "nota":"Catering y comedores" }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "nombre": "Hostelería — Comunidad de Madrid",
+  "bop": "BOCM 06/04/2024",
+  "codigo": "28002085011981",
+  "vigencia": "1 enero 2023 – 31 diciembre 2025",
+  "pagas": 14,
+  "jornadaAnual": 1800,
+  "urlBop": "https://qamarero.com/wp-content/uploads/2025/08/BOCM-20240406-Conv-hosteleria.pdf",
+  "subtablas": {
+    "A": "Hoteles de 5 estrellas y gran lujo",
+    "C": "Restaurantes, cafeterías, bares y colectividades"
+  },
+  "grupos": [
+    { "id":"A-I", "subtabla":"A", "nombre":"Nivel I — Jefe/a de Cocina, Jefe/a de Sala (Hotel 5★)",
+      "puestos":["Jefe/a de Cocina","Jefe/a de Restaurante","Jefe/a de Sala","Jefe/a de Administración","Jefe/a de Recepción"],
+      "salario":{ "2024":{"mes":1361.03,"sba":19054.42,"sbapc":21076.99}, "2025":{"mes":1415.47,"sba":19816.58,"sbapc":21919.80} } },
+    { "id":"A-II", "subtabla":"A", "nombre":"Nivel II — 2º Jefe/a, Jefe/a de Partida (Hotel 5★)",
+      "puestos":["Segundo/a Jefe/a de Cocina","Segundo/a Jefe/a de Sala","Jefe/a de Partida","Supervisor/a","Barman"],
+      "salario":{ "2024":{"mes":1304.59,"sba":18264.26,"sbapc":20286.83}, "2025":{"mes":1356.77,"sba":18994.78,"sbapc":21098.20} } },
+    { "id":"A-III", "subtabla":"A", "nombre":"Nivel III — Camarero/a, Cocinero/a, Recepcionista (Hotel 5★)",
+      "puestos":["Camarero/a","Cocinero/a","Recepcionista","Conserje"],
+      "salario":{ "2024":{"mes":1202.80,"sba":16839.20,"sbapc":18861.77}, "2025":{"mes":1250.91,"sba":17512.74,"sbapc":19616.16} } },
+    { "id":"A-IV", "subtabla":"A", "nombre":"Nivel IV — Ayudante de Camarero/a, Ayudante de Cocina (Hotel 5★)",
+      "puestos":["Ayudante de Camarero/a","Ayudante de Cocina","Camarero/a de Pisos"],
+      "salario":{ "2024":{"mes":1139.47,"sba":15952.58,"sbapc":17975.15}, "2025":{"mes":1185.05,"sba":16590.70,"sbapc":18694.12} } },
+    { "id":"A-V", "subtabla":"A", "nombre":"Nivel V — Auxiliar de Cocina, Limpieza (Hotel 5★)",
+      "puestos":["Auxiliar de Cocina","Auxiliar de Pisos y Limpieza","Fregador/a","Mozo/a"],
+      "salario":{ "2024":{"mes":1076.17,"sba":15066.38,"sbapc":17088.95}, "2025":{"mes":1119.22,"sba":15669.08,"sbapc":17772.50} } },
+
+    { "id":"C-I", "subtabla":"C", "nombre":"Nivel I — Jefe/a de Cocina, Jefe/a de Sala, Encargado/a",
+      "puestos":["Jefe/a de Cocina","Jefe/a de Restaurante","Jefe/a de Sala","Encargado/a General","Gerente"],
+      "salario":{ "2024":{"mes":1257.19,"sba":17600.66,"sbapc":19623.23}, "2025":{"mes":1307.48,"sba":18304.72,"sbapc":20408.14} } },
+    { "id":"C-II", "subtabla":"C", "nombre":"Nivel II — 2º Jefe/a, Jefe/a de Partida, Encargado/a Barra",
+      "puestos":["Segundo/a Jefe/a de Cocina","Segundo/a Jefe/a de Sala","Jefe/a de Partida","Encargado/a de Barra"],
+      "salario":{ "2024":{"mes":1218.59,"sba":17060.26,"sbapc":19082.83}, "2025":{"mes":1267.33,"sba":17742.62,"sbapc":19846.04} } },
+    { "id":"C-III", "subtabla":"C", "nombre":"Nivel III — Camarero/a, Cocinero/a, Barman",
+      "puestos":["Camarero/a","Cocinero/a","Barman","Repostero/a","Recepcionista"],
+      "salario":{ "2024":{"mes":1160.00,"sba":16240.00,"sbapc":18262.57}, "2025":{"mes":1206.40,"sba":16889.60,"sbapc":18993.02} } },
+    { "id":"C-IV", "subtabla":"C", "nombre":"Nivel IV — Ayudante de Camarero/a, Ayudante de Cocina",
+      "puestos":["Ayudante de Camarero/a","Ayudante de Cocina","Preparador/a de Catering"],
+      "salario":{ "2024":{"mes":1107.84,"sba":15509.76,"sbapc":17532.33}, "2025":{"mes":1152.15,"sba":16130.10,"sbapc":18233.52} } },
+    { "id":"C-V", "subtabla":"C", "nombre":"Nivel V — Auxiliar de Cocina, Limpieza, Fregador/a",
+      "puestos":["Auxiliar de Cocina","Auxiliar de Limpieza","Fregador/a","Mozo/a"],
+      "salario":{ "2024":{"mes":1058.13,"sba":14813.82,"sbapc":16836.39}, "2025":{"mes":1100.46,"sba":15406.44,"sbapc":17509.86} } }
+  ],
+  "complementos": {
+    "2024": {
+      "plusConvenio":    { "mes":183.87, "anual":2022.57, "nota":"Todas las categorías (11 meses, excluye agosto)" },
+      "nocturnidad":    { "mes":null, "anual":null, "nota":"25% entre 00:00–08:00 · 1% entre 22:00–00:00" },
+      "plusManutencion": { "mes":55.60, "anual":null, "nota":"Establecimientos que elaboren comidas" },
+      "plusFormacion":   { "mes":20.00, "anual":240, "nota":"Si la empresa no cumple requisitos formativos (12 pagas)" },
+      "festivos":        { "mes":null, "anual":null, "nota":"Compensación según acuerdo: día libre o retribución" },
+      "horasExtra":      { "mes":null, "anual":null, "nota":"100% recargo sobre hora ordinaria, o 1,5h descanso" }
+    },
+    "2025": {
+      "plusConvenio":    { "mes":191.22, "anual":2103.42, "nota":"Todas las categorías (11 meses, excluye agosto)" },
+      "nocturnidad":    { "mes":null, "anual":null, "nota":"25% entre 00:00–08:00 · 1% entre 22:00–00:00" },
+      "plusManutencion": { "mes":57.82, "anual":null, "nota":"Establecimientos que elaboren comidas" },
+      "plusFormacion":   { "mes":20.00, "anual":240, "nota":"Si la empresa no cumple requisitos formativos (12 pagas)" },
+      "festivos":        { "mes":null, "anual":null, "nota":"Compensación según acuerdo: día libre o retribución" },
+      "horasExtra":      { "mes":null, "anual":null, "nota":"100% recargo sobre hora ordinaria, o 1,5h descanso" }
+    }
+  },
+  "relacionados": [
+    { "nombre":"Hostelería — Valencia", "url":"#", "nota":"Si trabajas en provincia de Valencia" },
+    { "nombre":"Marcas de Restauración Moderna (estatal)", "url":"https://www.boe.es/buscar/doc.php?q=restauracion+moderna+convenio", "nota":"McDonald's, Burger King, etc." },
+    { "nombre":"Restauración Colectiva (estatal)", "url":"https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-12598", "nota":"Catering y comedores" }
+  ]
+}
