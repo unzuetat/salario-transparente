@@ -2582,9 +2582,7 @@ document.getElementById('recText').textContent = '';
       document.getElementById('cityRankingList').innerHTML =
         '<div style="padding:16px;color:var(--red);font-size:13px;">Error al cargar datos. Inténtalo de nuevo.</div>';
       document.getElementById('statusCard').style.display = '';
-    } finally {
-      aiLoading.style.display = 'none';
-    }
+    } finally {}
   }
 
   // ─── RANKING DESDE API ───────────────────────────────────────
