@@ -2151,27 +2151,39 @@
 
 </div><!-- /results -->
 
-  </div><!-- /section-calc -->
+</div><!-- /section-calc -->
 
-  <!-- COMPARADOR DE PAÍSES -->
-  <div id="section-comp" style="display:none;">
+</main>
 
-    <div style="background:#fff;border:1px solid var(--cream-200);padding:32px;margin-bottom:24px;">
-      <div class="calc-title">Comparador de salario neto por país</div>
-      <p style="color:var(--ink-light);font-size:14px;line-height:1.65;margin-bottom:24px;">Introduce un salario bruto y compara cuánto te llevarías a casa en España frente a otros países europeos. Usa tipos impositivos estándar 2024-2025 para un empleado soltero sin hijos.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:480px;margin-bottom:24px;">
+<!-- COMPARADOR DE PAÍSES — Acordeón secundario, fuera de results, siempre visible -->
+<div style="max-width:860px;margin:0 auto;padding:0 24px 80px;">
+
+  <div class="accordion" id="accordionCompare">
+    <button class="accordion-header" onclick="toggleAccordion('accordionCompare')" style="gap:12px;">
+      <span style="display:flex;align-items:center;gap:10px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        Comparar tu neto con otros países europeos
+      </span>
+      <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </button>
+    <div class="accordion-body">
+
+      <p style="color:var(--ink-light);font-size:13px;line-height:1.65;margin-bottom:20px;">Introduce un salario bruto y compara cuánto te llevarías a casa en España frente a otros países europeos. Tipos impositivos estándar 2024-2025, empleado soltero sin hijos.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:480px;margin-bottom:20px;">
         <div class="field">
           <label>Salario bruto anual</label>
           <input type="number" id="compareSalary" placeholder="Ej: 50000" oninput="updateComparison()">
         </div>
         <div class="field">
-          <label>Moneda de visualización</label>
+          <label>Moneda</label>
           <div class="select-wrapper">
             <select id="currency" onchange="updateComparison()">
               <option value="EUR">€ Euro</option>
-              <option value="USD">$ Dólar estadounidense</option>
-              <option value="CAD">CA$ Dólar canadiense</option>
-              <option value="GBP">£ Libra británica</option>
+              <option value="USD">$ Dólar</option>
+              <option value="CAD">CA$ Canadiense</option>
+              <option value="GBP">£ Libra</option>
             </select>
           </div>
         </div>
@@ -2181,42 +2193,43 @@
           <thead>
             <tr>
               <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">País</th>
-              <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">Bruto</th>
-              <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">IRPF / Impuesto</th>
+              <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">IRPF</th>
               <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">Seg. Social</th>
-              <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">Total deduc.</th>
               <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">Neto anual</th>
               <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">Neto mensual</th>
             </tr>
           </thead>
           <tbody id="compareBody">
-            <tr><td colspan="7" style="text-align:center;padding:24px;color:var(--ink-lighter);">Introduce un salario bruto para ver la comparativa</td></tr>
+            <tr><td colspan="5" style="text-align:center;padding:20px;color:var(--ink-lighter);">Introduce un salario bruto para ver la comparativa</td></tr>
           </tbody>
         </table>
       </div>
-      <p style="margin-top:12px;font-size:11px;color:var(--ink-lighter);line-height:1.6;">⚠ Cálculos orientativos con tipos estándar 2024-2025. No incluye variaciones regionales ni regímenes especiales. Tipos de cambio aproximados.</p>
-    </div>
+      <p style="margin-top:12px;font-size:11px;color:var(--ink-lighter);line-height:1.6;">⚠ Cálculos orientativos con tipos estándar 2024-2025. No incluye variaciones regionales ni regímenes especiales.</p>
 
-    <div style="background:#fff;border:1px solid var(--cream-200);padding:32px;margin-bottom:24px;">
-      <div class="calc-title">Ley Beckham — Régimen especial para expatriados en España</div>
-      <p style="color:var(--ink-light);font-size:14px;line-height:1.65;margin-bottom:16px;">El <strong>Régimen Especial de Impatriados</strong> permite a los nuevos residentes fiscales en España tributar al tipo fijo del <strong>24% de IRPF</strong> sobre rentas hasta 600.000 €/año, en lugar de los tipos progresivos que pueden llegar al 45%.</p>
-      <table style="width:100%;border-collapse:collapse;font-size:13px;">
-        <thead><tr>
-          <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">Salario bruto</th>
-          <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">IRPF estándar (aprox.)</th>
-          <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">Ley Beckham (24%)</th>
-          <th style="text-align:left;padding:10px 12px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);background:var(--cream-50);">Ahorro potencial</th>
-        </tr></thead>
-        <tbody>
-          <tr><td style="padding:12px;border-bottom:1px solid var(--cream-100);font-weight:600;">40.000 €</td><td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">~8.200 € (20,5%)</td><td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">9.600 € (24%)</td><td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--amber);">–1.400 € (estándar mejor)</td></tr>
-          <tr><td style="padding:12px;border-bottom:1px solid var(--cream-100);font-weight:600;">60.000 €</td><td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">~15.800 € (26,3%)</td><td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">14.400 € (24%)</td><td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--green);font-weight:700;">+1.400 € ahorro</td></tr>
-          <tr><td style="padding:12px;border-bottom:1px solid var(--cream-100);font-weight:600;">80.000 €</td><td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">~24.000 € (30%)</td><td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">19.200 € (24%)</td><td style="padding:12px;border-bottom:1px solid var(--cream-100);color:var(--green);font-weight:700;">+4.800 € ahorro</td></tr>
-          <tr><td style="padding:12px;font-weight:600;">120.000 €</td><td style="padding:12px;color:var(--ink-light);">~40.000 € (33,3%)</td><td style="padding:12px;color:var(--ink-light);">28.800 € (24%)</td><td style="padding:12px;color:var(--green);font-weight:700;">+11.200 € ahorro</td></tr>
-        </tbody>
-      </table>
-    </div>
+      <!-- Beckham Law -->
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--cream-200);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Ley Beckham — Régimen especial para expatriados</div>
+        <p style="color:var(--ink-light);font-size:12px;line-height:1.6;margin-bottom:12px;">Permite a nuevos residentes fiscales tributar al <strong>24% de IRPF</strong> sobre rentas hasta 600.000 €/año, en lugar de los tipos progresivos (hasta 45%).</p>
+        <table style="width:100%;border-collapse:collapse;font-size:12px;">
+          <thead><tr>
+            <th style="text-align:left;padding:8px 10px;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);">Bruto</th>
+            <th style="text-align:left;padding:8px 10px;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);">IRPF estándar</th>
+            <th style="text-align:left;padding:8px 10px;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);">Beckham (24%)</th>
+            <th style="text-align:left;padding:8px 10px;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);border-bottom:1px solid var(--cream-200);">Ahorro</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);font-weight:600;">40.000 €</td><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">~8.200 €</td><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">9.600 €</td><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);color:var(--amber);">–1.400 €</td></tr>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);font-weight:600;">60.000 €</td><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">~15.800 €</td><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">14.400 €</td><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);color:var(--green);font-weight:700;">+1.400 €</td></tr>
+            <tr><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);font-weight:600;">80.000 €</td><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">~24.000 €</td><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);color:var(--ink-light);">19.200 €</td><td style="padding:8px 10px;border-bottom:1px solid var(--cream-100);color:var(--green);font-weight:700;">+4.800 €</td></tr>
+            <tr><td style="padding:8px 10px;font-weight:600;">120.000 €</td><td style="padding:8px 10px;color:var(--ink-light);">~40.000 €</td><td style="padding:8px 10px;color:var(--ink-light);">28.800 €</td><td style="padding:8px 10px;color:var(--green);font-weight:700;">+11.200 €</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-  </div><!-- /section-comp -->
+    </div>
+  </div>
+
+</div>
 
 </main>
 
