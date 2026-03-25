@@ -1,3 +1,17 @@
+// Caché en memoria para rangos (TTL 24h)
+const rangesCache = new Map();
+const CACHE_TTL = 24 * 60 * 60 * 1000;
+
+function getCachedRanges(profession) {
+  const key = profession.toLowerCase().trim();
+  const cached = rangesCache.get(key);
+  if (cached && Date.now() - cached.ts < CACHE_TTL) return cached.data;
+  return null;
+}
+
+function setCachedRanges(profession, data) {
+  rangesCache.set(profession.toLowerCase().trim(), { data, ts: Date.now() });
+}
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -146,7 +160,19 @@ Escribe 3 párrafos directos y útiles:
 3. Una recomendación concreta y accionable para su situación
 
 Sin bullets. Sin mencionar que eres IA. Tono directo y útil.`;
+// ¿Tenemos rangos cacheados para esta profesión?
+let ranges = getCachedRanges(profession);
 
+if (!ranges) {
+  // Llamada 1: rangos de mercado (solo si no hay caché)
+  const rangesRes = await fetch('https://api.anthropic.com/v1/messages', { ... });
+  // ... parseo actual ...
+  ranges = rangesParsed.ranges;
+  setCachedRanges(profession, ranges);
+}
+
+// El cálculo de percentil y la llamada 2 (análisis) siguen igual
+  
   try {
     // Llamada 1: rangos de mercado (SIN el salario del usuario)
     // Usamos Sonnet + prefill para forzar JSON directo y evitar sesgo de anclaje
