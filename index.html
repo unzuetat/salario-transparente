@@ -2837,6 +2837,43 @@ async function loadConvenio(id) {
   }
 }
 
+    // Construir el <select> agrupado por sector
+function buildConvenioSelector() {
+  const sel = document.getElementById('convenioSelect');
+  const sectors = {};
+  CONVENIO_INDEX.forEach(c => {
+    if (!sectors[c.sector]) sectors[c.sector] = [];
+    sectors[c.sector].push(c);
+  });
+
+  for (const [sector, items] of Object.entries(sectors)) {
+    const optgroup = document.createElement('optgroup');
+    optgroup.label = '── ' + sector + ' ──';
+    items.forEach(c => {
+      const opt = document.createElement('option');
+      if (c.id) {
+        opt.value = c.id;
+        opt.textContent = c.nombre;
+      } else {
+        opt.value = '';
+        opt.disabled = true;
+        opt.textContent = c.nombre;
+      }
+      optgroup.appendChild(opt);
+    });
+    sel.appendChild(optgroup);
+  }
+
+  const optBOE = document.createElement('optgroup');
+  optBOE.label = '── No encuentro el mío ──';
+  const optBuscar = document.createElement('option');
+  optBuscar.value = 'buscar_bop';
+  optBuscar.textContent = '🔍 Buscar mi convenio en el BOE/BOP';
+  optBOE.appendChild(optBuscar);
+  sel.appendChild(optBOE);
+}
+
+buildConvenioSelector();
 // ── INICIALIZAR SELECTORES DE GRUPOS ─────────────────────────────────────────
 function updateConvenioGroups() {
   const sel = document.getElementById('convenioSelect');
