@@ -176,9 +176,32 @@
       font-size: 15px;
       color: rgba(255,255,255,0.55);
       max-width: 520px;
-      margin: 0 auto 48px;
+      margin: 0 auto 28px;
       line-height: 1.65;
     }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .hero-btn {
+      display: inline-block;
+      padding: 14px 26px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.15s;
+      border: 1px solid transparent;
+    }
+    .hero-btn-primary { background: var(--gold); color: #fff; }
+    .hero-btn-primary:hover { background: var(--gold-dark); }
+    .hero-btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
+    .hero-btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
 
     /* TRUST BAR */
     .trust-bar {
@@ -842,6 +865,103 @@
       font-size: 14px;
       color: var(--ink);
       line-height: 1.65;
+    }
+
+    /* ===================== */
+    /* POST-CALC CTA         */
+    /* ===================== */
+    .next-steps {
+      margin-top: 32px;
+      padding: 32px 0 0;
+      border-top: 1px solid var(--cream-200);
+      animation: fadeInUp 0.4s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .next-steps-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .next-steps-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .next-steps-sub {
+      font-size: 13px;
+      color: var(--ink-light);
+      line-height: 1.55;
+      margin-bottom: 20px;
+      max-width: 560px;
+    }
+
+    .next-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .next-step-card {
+      display: block;
+      padding: 20px 22px;
+      background: #fff;
+      border: 1px solid var(--cream-200);
+      text-decoration: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .next-step-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 16px rgba(45,37,32,0.08);
+    }
+
+    .next-step-card.highlighted {
+      border-color: var(--gold);
+      border-left: 4px solid var(--gold);
+      background: var(--cream-100);
+    }
+
+    .next-step-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .next-step-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .next-step-desc {
+      font-size: 12px;
+      color: var(--ink-light);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .next-step-link {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
     }
 
     /* ===================== */
@@ -1543,6 +1663,10 @@
   <div class="hero-eyebrow">Herramienta gratuita de análisis salarial</div>
   <h1>Con la nueva Ley de Transparencia Retributiva,<br><em>¿cobras lo que realmente te corresponde?</em></h1>
   <p class="hero-sub">Calcula tu salario neto y descubre tu posición en el mercado laboral español según datos de referencia por profesión, ciudad y sector.</p>
+  <div class="hero-cta-group">
+    <a href="#section-calc" class="hero-btn hero-btn-primary">Calcula tu salario neto →</a>
+    <a href="#convenio-section" class="hero-btn hero-btn-secondary">Verifica tu convenio →</a>
+  </div>
   <div class="trust-bar">
     <div class="trust-item">
       <div class="trust-value">
@@ -1571,7 +1695,7 @@
 
 <main>
 
-  <div id="section-calc">
+  <div id="section-calc" style="scroll-margin-top:20px;">
 
   <!-- CALCULATOR -->
   <div class="calc-card">
@@ -1878,7 +2002,7 @@
 
     </div>
 <!-- SELECTOR DE CONVENIO -->
-<div class="convenio-selector-wrap">
+<div class="convenio-selector-wrap" id="convenio-section" style="scroll-margin-top:20px;">
   <div class="convenio-selector-label">Verificación de convenio colectivo</div>
   <div class="convenio-selector-row">
     <div class="field">
@@ -2062,6 +2186,47 @@
     </div>
 
     <!-- ===================== -->
+    <!-- NEXT STEPS CTA        -->
+    <!-- ===================== -->
+    <div class="next-steps" id="nextSteps">
+      <div class="next-steps-label">Siguiente paso</div>
+      <div class="next-steps-title" id="nextStepsTitle">Ahora que conoces tu salario neto…</div>
+      <div class="next-steps-sub" id="nextStepsSub">La nueva Ley de Transparencia Retributiva entra en vigor en junio de 2026. Conoce tus derechos y actúa con información.</div>
+
+      <div class="next-steps-grid">
+
+        <a href="/reclamar-diferencias-salariales-convenio.html" class="next-step-card" id="ctaReclamar">
+          <div class="next-step-tag">Convenio colectivo</div>
+          <div class="next-step-name">¿Cobras menos que tu convenio?</div>
+          <div class="next-step-desc">Comprueba si tu empresa cumple el mínimo legal y cómo reclamar la diferencia.</div>
+          <div class="next-step-link">Leer guía →</div>
+        </a>
+
+        <a href="/rangos-salariales-empresa-transparencia-2026.html" class="next-step-card" id="ctaRangos">
+          <div class="next-step-tag">Transparencia salarial</div>
+          <div class="next-step-name">Pide los rangos salariales a tu empresa</div>
+          <div class="next-step-desc">Con la nueva ley, puedes solicitar el rango salarial de tu puesto. Te explicamos cómo.</div>
+          <div class="next-step-link">Leer guía →</div>
+        </a>
+
+        <a href="/ley-transparencia-salarial-2026.html" class="next-step-card" id="ctaLey">
+          <div class="next-step-tag">Nueva ley 2026</div>
+          <div class="next-step-name">Qué cambia con la Ley de Transparencia</div>
+          <div class="next-step-desc">Todo lo que necesitas saber sobre la Directiva UE 2023/970 y cómo te afecta.</div>
+          <div class="next-step-link">Leer guía →</div>
+        </a>
+
+        <a href="/denunciar-brecha-salarial-guia-practica-2026.html" class="next-step-card" id="ctaBrecha">
+          <div class="next-step-tag">Brecha salarial</div>
+          <div class="next-step-name">Denuncia una brecha salarial</div>
+          <div class="next-step-desc">Guía práctica paso a paso para denunciar discriminación retributiva.</div>
+          <div class="next-step-link">Leer guía →</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ===================== -->
     <!-- SOURCES SECTION       -->
     <!-- ===================== -->
     <section class="sources-section" aria-label="Fuentes de referencia salarial">
@@ -2184,6 +2349,47 @@
 </div><!-- /section-calc -->
 
 </main>
+
+<!-- VERIFICADORES DE CONVENIO — Sección para descubrir landings por sector -->
+<div id="verifica-convenio" style="max-width:860px;margin:0 auto;padding:48px 24px 0;scroll-margin-top:20px;">
+  <div style="border-top:1px solid var(--cream-200);padding-top:40px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Verifica tu convenio</div>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;color:var(--ink);margin:0 0 10px;line-height:1.2;">¿Cobras el mínimo que fija tu convenio?</h2>
+    <p style="color:var(--ink-light);font-size:14px;line-height:1.65;margin:0 0 24px;max-width:620px;">Los convenios colectivos fijan un suelo salarial por categoría profesional. Comprueba si tu empresa cumple el mínimo garantizado en tu sector y provincia.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;">
+
+      <a href="/construccion-estatal-suelo-salarial.html" style="display:block;padding:20px 22px;background:#fff;border:1px solid var(--cream-200);text-decoration:none;transition:all 0.15s;" onmouseover="this.style.borderColor='var(--gold)';this.style.boxShadow='0 4px 16px rgba(45,37,32,0.08)'" onmouseout="this.style.borderColor='var(--cream-200)';this.style.boxShadow='none'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Construcción · Estatal</div>
+        <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.3;">Suelo salarial 2022–2026</div>
+        <div style="font-size:12px;color:var(--ink-light);line-height:1.5;margin-bottom:12px;">Niveles II a XII del VII Convenio General del Sector de la Construcción.</div>
+        <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.04em;">Verificar →</div>
+      </a>
+
+      <div style="display:block;padding:20px 22px;background:var(--cream-50);border:1px dashed var(--cream-200);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);margin-bottom:8px;">Hostelería · Madrid</div>
+        <div style="font-size:15px;font-weight:700;color:var(--ink-light);margin-bottom:6px;line-height:1.3;">Tablas 2023–2025</div>
+        <div style="font-size:12px;color:var(--ink-lighter);line-height:1.5;margin-bottom:12px;">Disponible dentro de la calculadora. Landing propia próximamente.</div>
+        <div style="font-size:11px;font-weight:700;color:var(--ink-lighter);letter-spacing:0.04em;">Próximamente</div>
+      </div>
+
+      <div style="display:block;padding:20px 22px;background:var(--cream-50);border:1px dashed var(--cream-200);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);margin-bottom:8px;">Hostelería · Valencia</div>
+        <div style="font-size:15px;font-weight:700;color:var(--ink-light);margin-bottom:6px;line-height:1.3;">Tablas 2022–2025</div>
+        <div style="font-size:12px;color:var(--ink-lighter);line-height:1.5;margin-bottom:12px;">Disponible dentro de la calculadora. Landing propia próximamente.</div>
+        <div style="font-size:11px;font-weight:700;color:var(--ink-lighter);letter-spacing:0.04em;">Próximamente</div>
+      </div>
+
+      <a href="#convenio-section" style="display:block;padding:20px 22px;background:var(--ink);border:1px solid var(--ink);text-decoration:none;transition:all 0.15s;" onmouseover="this.style.background='#1a1410'" onmouseout="this.style.background='var(--ink)'">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;">Verifica tu convenio</div>
+        <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.3;">Comprueba si cobras el mínimo legal</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;margin-bottom:12px;">Selecciona tu convenio y grupo profesional en la calculadora para verificar al instante.</div>
+        <div style="font-size:11px;font-weight:700;color:var(--gold-light);letter-spacing:0.04em;">Ir al verificador →</div>
+      </a>
+
+    </div>
+  </div>
+</div>
 
 <!-- COMPARADOR DE PAÍSES — Acordeón secundario, fuera de results, siempre visible -->
 <div style="max-width:860px;margin:0 auto;padding:0 24px 80px;">
@@ -2612,12 +2818,41 @@ document.getElementById('recText').textContent = '';
         data.seniority || 'mid'
       );
 
+      // Destacar CTA según resultado
+      highlightNextSteps(pct);
+
     } catch (err) {
       console.error('API error:', err);
       document.getElementById('cityRankingList').innerHTML =
         '<div style="padding:16px;color:var(--red);font-size:13px;">Error al cargar datos. Inténtalo de nuevo.</div>';
       document.getElementById('statusCard').style.display = '';
     } finally {}
+  }
+
+  // ─── NEXT STEPS DINÁMICOS ─────────────────────────────────────
+  function highlightNextSteps(percentile) {
+    const cards = ['ctaReclamar','ctaRangos','ctaLey','ctaBrecha'];
+    cards.forEach(id => document.getElementById(id).classList.remove('highlighted'));
+
+    const titleEl = document.getElementById('nextStepsTitle');
+    const subEl   = document.getElementById('nextStepsSub');
+
+    if (percentile < 40) {
+      // Cobra por debajo: destacar reclamar y brecha
+      document.getElementById('ctaReclamar').classList.add('highlighted');
+      titleEl.textContent = 'Tu salario está por debajo de la mediana — conoce tus opciones';
+      subEl.textContent   = 'Tienes derecho a reclamar si tu empresa no cumple el convenio o si existe brecha salarial. Estas guías te ayudan paso a paso.';
+    } else if (percentile < 60) {
+      // Zona media: destacar rangos salariales
+      document.getElementById('ctaRangos').classList.add('highlighted');
+      titleEl.textContent = 'Tienes margen para negociar — prepárate con datos';
+      subEl.textContent   = 'Con la nueva Ley de Transparencia puedes pedir a tu empresa los rangos salariales de tu puesto. Negocia con información real.';
+    } else {
+      // Cobra bien: destacar ley de transparencia
+      document.getElementById('ctaLey').classList.add('highlighted');
+      titleEl.textContent = 'Tu salario es competitivo — mantente informado';
+      subEl.textContent   = 'La Ley de Transparencia Retributiva 2026 cambiará las reglas del mercado. Conoce cómo te afecta y cómo aprovecharla.';
+    }
   }
 
   // ─── RANKING DESDE API ───────────────────────────────────────
