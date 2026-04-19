@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Homepage ES -->
   <url>
     <loc>https://salariojusto.es/</loc>
     <lastmod>2026-04-16</lastmod>
@@ -11,8 +9,6 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://salariojusto.es/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://salariojusto.es/en/" />
   </url>
-
-  <!-- Homepage EN -->
   <url>
     <loc>https://salariojusto.es/en/</loc>
     <lastmod>2026-04-16</lastmod>
@@ -21,72 +17,54 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://salariojusto.es/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://salariojusto.es/en/" />
   </url>
-
-  <!-- Guias -->
   <url>
     <loc>https://salariojusto.es/guias.html</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
-
-  <!-- Ley Transparencia -->
   <url>
     <loc>https://salariojusto.es/ley-transparencia-salarial-2026.html</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <!-- Rangos salariales -->
   <url>
     <loc>https://salariojusto.es/rangos-salariales-empresa-transparencia-2026.html</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
-
-  <!-- Reclamar diferencias -->
   <url>
     <loc>https://salariojusto.es/reclamar-diferencias-salariales-convenio.html</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
-
-  <!-- Denunciar brecha salarial -->
   <url>
     <loc>https://salariojusto.es/denunciar-brecha-salarial-guia-practica-2026.html</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
-
-  <!-- Construccion estatal -->
   <url>
     <loc>https://salariojusto.es/construccion-estatal-suelo-salarial.html</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
-
-  <!-- Tramos IRPF 2026 -->
   <url>
     <loc>https://salariojusto.es/tramos-irpf-2026.html</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <!-- SMI 2026 -->
   <url>
     <loc>https://salariojusto.es/salario-minimo-interprofesional-2026.html</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <!-- Salary pages: 18000 -->
   <url>
     <loc>https://salariojusto.es/salario-neto-18000-euros-brutos-madrid.html</loc>
     <lastmod>2026-04-16</lastmod>
@@ -117,8 +95,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
-  <!-- Salary pages: 20000 -->
   <url>
     <loc>https://salariojusto.es/salario-neto-20000-euros-brutos-madrid.html</loc>
     <lastmod>2026-04-16</lastmod>
@@ -149,8 +125,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
-  <!-- Salary pages: 25000 -->
   <url>
     <loc>https://salariojusto.es/salario-neto-25000-euros-brutos-madrid.html</loc>
     <lastmod>2026-04-16</lastmod>
@@ -181,8 +155,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
-  <!-- Salary pages: 30000 -->
   <url>
     <loc>https://salariojusto.es/salario-neto-30000-euros-brutos-madrid.html</loc>
     <lastmod>2026-04-16</lastmod>
@@ -213,8 +185,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
-  <!-- Salary pages: 35000 -->
   <url>
     <loc>https://salariojusto.es/salario-neto-35000-euros-brutos-madrid.html</loc>
     <lastmod>2026-04-16</lastmod>
@@ -245,8 +215,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
-  <!-- Salary pages: 40000 -->
   <url>
     <loc>https://salariojusto.es/salario-neto-40000-euros-brutos-madrid.html</loc>
     <lastmod>2026-04-16</lastmod>
@@ -277,8 +245,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
-  <!-- Salary pages: 50000 -->
   <url>
     <loc>https://salariojusto.es/salario-neto-50000-euros-brutos-madrid.html</loc>
     <lastmod>2026-04-16</lastmod>
@@ -309,8 +275,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
-  <!-- Salary pages: 60000 -->
   <url>
     <loc>https://salariojusto.es/salario-neto-60000-euros-brutos-madrid.html</loc>
     <lastmod>2026-04-16</lastmod>
@@ -341,5 +305,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
 </urlset>
