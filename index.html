@@ -3444,10 +3444,15 @@ const CONVENIO_INDEX = [
     provincia: 'Valencia', ccaa: 'Comunitat Valenciana',
     archivo: '/data/convenios/ofydes_vlc.json' },
 
+  // ─── Ámbito estatal (enlaza a su landing propia porque fija suelo anual, no mensual) ──
+  { id: 'construccion_estatal', sector: 'Construcción',
+    nombre: 'Construcción — Suelo salarial estatal (2022-2026)',
+    provincia: 'Estatal', ccaa: null,
+    externalUrl: '/construccion-estatal-suelo-salarial.html' },
+
   // ─── Próximamente (sin archivo, se muestran como disabled) ─────────────────
   { id: null, sector: 'Comercio',       nombre: 'Comercio — Valencia (próximamente)',    provincia: 'Valencia' },
-  { id: null, sector: 'Construcción',   nombre: 'Construcción — Valencia (próximamente)',provincia: 'Valencia' },
-  { id: null, sector: 'Consultoría/TIC',nombre: 'Consultoría / TIC estatal (próximamente)', provincia: 'Estatal' }
+  { id: null, sector: 'Construcción',   nombre: 'Construcción — Valencia (próximamente)',provincia: 'Valencia' }
 ];
 
 // Caché de convenios cargados (evita re-descargar)
@@ -3750,9 +3755,11 @@ function showConveniosForProvincia(provincia) {
     list.forEach(c => {
       const title = c.nombre.replace(' — ' + c.provincia, '').replace(' (próximamente)', '');
       if (c.id) {
-        html += '<div class="convenio-picker-convenio" data-id="' + c.id + '" data-provincia="' + c.provincia + '">' +
+        const extAttr = c.externalUrl ? ' data-ext-url="' + c.externalUrl + '"' : '';
+        const sub = c.externalUrl ? 'Abrir guía →' : (c.ccaa || '');
+        html += '<div class="convenio-picker-convenio" data-id="' + c.id + '" data-provincia="' + c.provincia + '"' + extAttr + '>' +
                 '<div class="convenio-picker-convenio-title">' + title + '</div>' +
-                (c.ccaa ? '<div class="convenio-picker-convenio-sub">' + c.ccaa + '</div>' : '') +
+                (sub ? '<div class="convenio-picker-convenio-sub">' + sub + '</div>' : '') +
                 '</div>';
       } else {
         html += '<div class="convenio-picker-convenio disabled">' +
@@ -3766,7 +3773,13 @@ function showConveniosForProvincia(provincia) {
 
   // bind click
   panel.querySelectorAll('.convenio-picker-convenio:not(.disabled)').forEach(el => {
-    el.addEventListener('click', () => selectConvenio(el.dataset.provincia, el.dataset.id, el.querySelector('.convenio-picker-convenio-title').textContent));
+    el.addEventListener('click', () => {
+      if (el.dataset.extUrl) {
+        window.location.href = el.dataset.extUrl;
+        return;
+      }
+      selectConvenio(el.dataset.provincia, el.dataset.id, el.querySelector('.convenio-picker-convenio-title').textContent);
+    });
   });
 }
 
