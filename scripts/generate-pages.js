@@ -77,9 +77,12 @@ function footerHTML() {
 <footer style="background:#2D2520;padding:24px 32px;text-align:center;">
   <p style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;">
     SalarioJusto · Herramienta gratuita para trabajadores · Sin empresas detrás<br>
-    <a href="/" style="color:#D9A06A;text-decoration:none;">Calculadora de salario neto</a> ·
-    <a href="/guias.html" style="color:#D9A06A;text-decoration:none;">Guías para trabajadores</a> ·
-    <a href="/en/" style="color:#D9A06A;text-decoration:none;">English version</a>
+    <a href="/" style="color:#D9A06A;text-decoration:none;">Calculadora</a> ·
+    <a href="/salarios.html" style="color:#D9A06A;text-decoration:none;">Cálculos por ciudad</a> ·
+    <a href="/convenios.html" style="color:#D9A06A;text-decoration:none;">Convenios</a> ·
+    <a href="/guias.html" style="color:#D9A06A;text-decoration:none;">Guías</a> ·
+    <a href="/mapa-del-sitio.html" style="color:#D9A06A;text-decoration:none;">Mapa del sitio</a> ·
+    <a href="/en/" style="color:#D9A06A;text-decoration:none;">English</a>
   </p>
 </footer>`;
 }
@@ -731,6 +734,156 @@ ${footerHTML()}
   return { fileName: 'salarios.html', html };
 }
 
+// ── Generar mapa del sitio HTML /mapa-del-sitio.html ───────────────
+function generateSiteMapHTML(salaryPages, convenios) {
+  const url = 'https://salariojusto.es/mapa-del-sitio.html';
+  const title = 'Mapa del sitio | SalarioJusto';
+  const desc = `Índice completo de SalarioJusto: ${salaryPages.length} cálculos de salario neto, ${convenios.length} convenios colectivos, guías fiscales y herramientas para trabajadores en España.`;
+
+  const breadcrumbSchema = JSON.stringify({
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "SalarioJusto", "item": "https://salariojusto.es/" },
+      { "@type": "ListItem", "position": 2, "name": "Mapa del sitio", "item": url }
+    ]
+  }, null, 2);
+
+  // Agrupar landings por tramo
+  const porTramo = {};
+  SALARIES.forEach(s => { porTramo[s] = []; });
+  salaryPages.forEach(p => {
+    const match = p.fileName.match(/salario-neto-(\d+)-euros-brutos-(.+)\.html/);
+    if (match) {
+      const gross = parseInt(match[1]);
+      const cityId = match[2];
+      const city = CITIES.find(c => c.id === cityId);
+      if (city) porTramo[gross].push({ city: city.name, href: '/' + p.fileName });
+    }
+  });
+
+  const tramosHTML = SALARIES.map(s => `
+    <div class="sm-section">
+      <h3>${fmt(s)} € brutos anuales</h3>
+      <ul>
+${porTramo[s].map(l => `        <li><a href="${l.href}">Salario neto en ${l.city}</a></li>`).join('\n')}
+      </ul>
+    </div>`).join('');
+
+  const conveniosHTML = convenios.map(c =>
+    `      <li><a href="${c.href}">${c.nombreCorto}${c.vigencia ? ' <span class="sm-meta">(' + c.vigencia + ')</span>' : ''}</a></li>`
+  ).join('\n');
+
+  return {
+    fileName: 'mapa-del-sitio.html',
+    html: `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${title}</title>
+  <meta name="description" content="${desc}">
+  <link rel="canonical" href="${url}">
+  <meta property="og:title" content="Mapa del sitio — SalarioJusto">
+  <meta property="og:description" content="${desc}">
+  <meta property="og:url" content="${url}">
+  <meta property="og:image" content="https://salariojusto.es/preview.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="application/ld+json">${breadcrumbSchema}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXJ8V2FBW9"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MXJ8V2FBW9');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1841567088579486" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  ${headCSS()}
+  <style>
+    .sm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+    .sm-section h3{font-family:'DM Serif Display',serif;font-size:18px;font-weight:400;color:var(--ink);margin:0 0 10px;padding-bottom:8px;border-bottom:2px solid var(--gold);}
+    .sm-section ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;}
+    .sm-section li a{display:block;padding:4px 0;font-size:13px;color:var(--gold);text-decoration:none;}
+    .sm-section li a:hover{text-decoration:underline;}
+    .sm-meta{font-size:11px;color:var(--ink-lighter);font-weight:400;}
+    .sm-counter{display:inline-block;font-size:11px;font-weight:700;color:var(--gold-dark);background:var(--cream-100);padding:2px 8px;margin-left:8px;vertical-align:middle;}
+  </style>
+</head>
+<body>
+
+${navHTML()}
+
+<div style="background:var(--cream-100);border-bottom:1px solid var(--cream-200);padding:10px 32px;font-size:12px;color:var(--ink-lighter);"><a href="/" style="color:var(--gold);">SalarioJusto</a> › Mapa del sitio</div>
+
+<section class="hero">
+  <div class="hero-badge">Índice completo del sitio</div>
+  <h1>Mapa del sitio — <em>SalarioJusto</em></h1>
+  <p class="hero-sub">Listado completo de cálculos, convenios y guías disponibles. ${salaryPages.length + convenios.length + 10} páginas en total.</p>
+</section>
+
+<main>
+
+  <div class="card">
+    <div class="card-title">Calculadoras <span class="sm-counter">3</span></div>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+      <li><a href="/" style="font-size:14px;font-weight:600;">Calculadora de salario neto (personalizada)</a> — situación familiar exacta, IRPF 2026</li>
+      <li><a href="/salarios.html" style="font-size:14px;font-weight:600;">Matriz de cálculos precomputados</a> — ${salaryPages.length} combinaciones ciudad × tramo</li>
+      <li><a href="/#verifica-convenio" style="font-size:14px;font-weight:600;">Verificador de convenio colectivo</a> — comprueba si tu salario cumple el mínimo legal</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Salario neto por ciudad y tramo <span class="sm-counter">${salaryPages.length}</span></div>
+    <div class="sm-grid">${tramosHTML}
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Convenios colectivos <span class="sm-counter">${convenios.length}</span></div>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+      <li><a href="/convenios.html" style="font-size:14px;font-weight:600;">Hub de convenios colectivos</a> — todos agrupados por sector</li>
+${conveniosHTML}
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Guías y referencias fiscales</div>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+      <li><a href="/guias.html">Todas las guías para trabajadores</a></li>
+      <li><a href="/tramos-irpf-2026.html">Tramos IRPF 2026 — tabla completa y ejemplos</a></li>
+      <li><a href="/salario-minimo-interprofesional-2026.html">Salario Mínimo Interprofesional 2026</a></li>
+      <li><a href="/ley-transparencia-salarial-2026.html">Ley de Transparencia Salarial 2026</a></li>
+      <li><a href="/rangos-salariales-empresa-transparencia-2026.html">Rangos salariales en empresa — Transparencia</a></li>
+      <li><a href="/reclamar-diferencias-salariales-convenio.html">Reclamar diferencias salariales de convenio</a></li>
+      <li><a href="/denunciar-brecha-salarial-guia-practica-2026.html">Denunciar brecha salarial — guía práctica</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Idiomas</div>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+      <li><a href="/">Español (principal)</a></li>
+      <li><a href="/en/">English version</a></li>
+    </ul>
+  </div>
+
+  <div class="related">
+    <h2 style="font-size:18px;">¿Buscas algo más?</h2>
+    <ul>
+      <li><a href="/sitemap.xml">Sitemap XML</a> (para Google y otros buscadores)</li>
+      <li><a href="/">← Volver a la calculadora principal</a></li>
+    </ul>
+  </div>
+
+</main>
+
+${footerHTML()}
+
+</body>
+</html>`
+  };
+}
+
 // ── Generar sitemap ────────────────────────────────────────────────
 function generateSitemap(pages, convenios = []) {
   const existingPages = [
@@ -746,6 +899,7 @@ function generateSitemap(pages, convenios = []) {
     { url: 'https://salariojusto.es/salario-minimo-interprofesional-2026.html', priority: '0.85', freq: 'monthly' },
     { url: 'https://salariojusto.es/salarios.html', priority: '0.90', freq: 'weekly' },
     { url: 'https://salariojusto.es/convenios.html', priority: '0.90', freq: 'weekly' },
+    { url: 'https://salariojusto.es/mapa-del-sitio.html', priority: '0.60', freq: 'weekly' },
   ];
 
   // Add generated salary pages
@@ -821,11 +975,17 @@ function main() {
   console.log('\nGenerating convenio landings...');
   const convenios = generateConvenios.main();
 
+  // Generate /mapa-del-sitio.html (human-readable sitemap)
+  console.log('\nGenerating /mapa-del-sitio.html...');
+  const siteMapPage = generateSiteMapHTML(salaryPages, convenios);
+  fs.writeFileSync(path.join(ROOT, siteMapPage.fileName), siteMapPage.html, 'utf8');
+  console.log(`  ✓ ${siteMapPage.fileName}`);
+
   // Generate sitemap
   console.log('\nGenerating sitemap.xml...');
   const sitemap = generateSitemap(salaryPages, convenios);
   fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap, 'utf8');
-  const totalUrls = salaryPages.length + 12 + convenios.filter(c => c.href !== '/construccion-estatal-suelo-salarial.html').length;
+  const totalUrls = salaryPages.length + 13 + convenios.filter(c => c.href !== '/construccion-estatal-suelo-salarial.html').length;
   console.log(`  ✓ sitemap.xml (${totalUrls} URLs)`);
 
   console.log(`\nDone!`);

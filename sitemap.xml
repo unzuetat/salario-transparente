@@ -78,6 +78,12 @@
     <priority>0.90</priority>
   </url>
   <url>
+    <loc>https://salariojusto.es/mapa-del-sitio.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
     <loc>https://salariojusto.es/salario-neto-15000-euros-brutos-madrid.html</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
