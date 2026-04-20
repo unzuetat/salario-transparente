@@ -1,10 +1,33 @@
-module.exports = async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+const ALLOWED_HOSTS = new Set(['salariojusto.com', 'www.salariojusto.com', 'localhost', '127.0.0.1']);
+function isAllowedOrigin(req) {
+  const raw = req.headers.origin || req.headers.referer;
+  if (!raw) return false;
+  try {
+    const { hostname } = new URL(raw);
+    if (ALLOWED_HOSTS.has(hostname)) return true;
+    if (hostname.endsWith('.vercel.app')) return true;
+    return false;
+  } catch { return false; }
+}
 
-  if (req.method === 'OPTIONS') return res.status(200).end();
+const RATE_WINDOW_MS = 60 * 1000;
+const RATE_MAX = 10;
+const rateHits = new Map();
+function rateLimit(ip) {
+  const now = Date.now();
+  const hits = (rateHits.get(ip) || []).filter(t => now - t < RATE_WINDOW_MS);
+  hits.push(now);
+  rateHits.set(ip, hits);
+  if (rateHits.size > 5000) for (const [k, v] of rateHits) if (!v.some(t => now - t < RATE_WINDOW_MS)) rateHits.delete(k);
+  return hits.length <= RATE_MAX;
+}
+
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+  if (!isAllowedOrigin(req)) return res.status(403).json({ error: 'Forbidden' });
+
+  const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket?.remoteAddress || 'unknown';
+  if (!rateLimit(ip)) return res.status(429).json({ error: 'Demasiadas peticiones. Espera un minuto.' });
 
   const { salary, profession, city, situation, netMonthly, netAnnual } = req.body;
 
