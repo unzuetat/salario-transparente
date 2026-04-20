@@ -9,6 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const { calcNet, calcDetailed } = require('../lib/irpf2026');
+const { escalaParaCiudad, datosCcaa, ccaaDeCiudad } = require('../lib/irpf-autonomico');
 const generateConvenios = require('./generate-convenios');
 
 const ROOT = path.join(__dirname, '..');
@@ -141,10 +142,17 @@ function generateSalaryPage(gross, city) {
   const title = `Salario neto de ${grossFmt} € brutos en ${city.name} (2026) | SalarioJusto`;
   const desc = `Si cobras ${grossFmt} € brutos anuales en ${city.name}, descubre cuánto es tu salario neto en 2026 tras IRPF y Seguridad Social. Cálculo oficial AEAT.`;
 
+  // Escala autonómica específica de esta ciudad — neto varía por CCAA.
+  // Fuentes citadas en lib/irpf-autonomico.js.
+  const escalaCity = escalaParaCiudad(city.id);
+  const ccaaId = ccaaDeCiudad(city.id);
+  const ccaaInfo = datosCcaa(ccaaId);
+  const esForal = ccaaId === 'BIZKAIA';
+
   // Calcular para cada situación
   const results = SITUATIONS.map(sit => {
     const hijos3 = sit.id === 'single_kids' ? '1' : '0';
-    const r = calcNet(gross, sit.id, hijos3, '0', '0', '0', '0', 'no', '14', 1985, 'ACTIVO', 'NINGUNA', false);
+    const r = calcNet(gross, sit.id, hijos3, '0', '0', '0', '0', 'no', '14', 1985, 'ACTIVO', 'NINGUNA', false, escalaCity);
     return {
       ...sit,
       net: r.net,
@@ -294,13 +302,23 @@ ${results.map(r => `        <tr>
     </table>
   </div>
 
+  <div class="card">
+    <div class="card-title">Fiscalidad en ${ccaaInfo.ccaaNombre}</div>
+    <p>${esForal
+      ? `${city.name} se encuentra en el <strong>${ccaaInfo.ccaaNombre}</strong>, territorio con <strong>régimen foral pleno</strong>. La Hacienda Foral de Bizkaia aplica una tarifa propia del IRPF — <em>no suma tarifa estatal y autonómica</em> como el régimen común. Norma aplicable: ${ccaaInfo.norma}. ${ccaaInfo.notaPresupuestos}`
+      : `${city.name} aplica la escala autonómica del IRPF de <strong>${ccaaInfo.ccaaNombre}</strong>, que se suma a la escala estatal. Norma aplicable: ${ccaaInfo.norma}. ${ccaaInfo.notaPresupuestos}`}</p>
+    ${esForal
+      ? `<p style="font-size:13px;color:#7a6f60;margin-top:12px;"><strong>Nota:</strong> la cifra mostrada es una aproximación que aplica la tarifa foral de Bizkaia sobre la base calculada con las reglas generales del IRPF común. El cálculo foral exacto usa mínimos y reducciones forales propios — para una cifra definitiva consulta a la <a href="${ccaaInfo.fuenteEnlace}" target="_blank" rel="noopener">Diputación Foral de Bizkaia</a>.</p>`
+      : `<p style="font-size:13px;color:#7a6f60;margin-top:12px;">Fuente oficial: <a href="${ccaaInfo.fuenteEnlace}" target="_blank" rel="noopener">${ccaaInfo.fuenteEnlace.replace(/^https?:\/\//, '').replace(/\/.*$/, '')}</a>. Confirmación de vigencia para 2026: Ministerio de Hacienda, "Tributación Autonómica 2026" (Cap. II, actualizado 10/03/2026).</p>`}
+  </div>
+
   <div class="cta-box">
     <p>¿Quieres un cálculo exacto con hijos, ascendientes, discapacidad o Ley Beckham?</p>
     <a href="/" class="cta-btn">Usar la calculadora completa →</a>
   </div>
 
   <h2>${grossFmt} € brutos en otras ciudades</h2>
-  <p>El IRPF estatal es el mismo en toda España, pero tu poder adquisitivo varía por ciudad. Compara:</p>
+  <p>Cada comunidad autónoma fija su propia escala del IRPF (y Bizkaia aplica régimen foral), así que el neto difiere entre ciudades de distintas CCAA. Compara:</p>
   <div class="cities-grid">
     <a href="/salario-neto-${gross}-euros-brutos-${city.id}.html" class="city-link active">${city.name}</a>
 ${otherCities.map(c => `    <a href="/salario-neto-${gross}-euros-brutos-${c.id}.html" class="city-link">${c.name}</a>`).join('\n')}
