@@ -1,1 +1,10 @@
 RESUMEN-SESION-30MAR.md
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Editor / harness state
+.claude/
+.vscode/
+.idea/
