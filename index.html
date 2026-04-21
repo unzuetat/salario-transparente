@@ -1577,6 +1577,84 @@
   .convenio-picker-provinces { border-right: none; border-bottom: 1px solid var(--cream-200); max-height: 180px; }
 }
 
+/* Panel de resultados del resolver (sector × ubicación) */
+.convenio-results {
+  margin-top: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.convenio-results-empty {
+  padding: 18px 20px;
+  background: var(--cream-100);
+  border: 1px dashed var(--cream-200);
+  color: var(--ink-lighter);
+  font-size: 13.5px;
+  text-align: center;
+}
+.convenio-result-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid var(--cream-200);
+  border-left: 4px solid var(--cream-200);
+  transition: border-color 0.15s, background 0.15s;
+}
+.convenio-result-card.primary { border-left-color: var(--green); background: var(--green-bg); }
+.convenio-result-card.provincial { border-left-color: var(--gold); }
+.convenio-result-card.estatal { border-left-color: var(--ink-lighter); }
+.convenio-result-card-body { flex: 1; min-width: 0; }
+.convenio-result-card-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-lighter);
+  margin-bottom: 3px;
+}
+.convenio-result-card.primary .convenio-result-card-tag { color: var(--green); }
+.convenio-result-card.provincial .convenio-result-card-tag { color: var(--gold); }
+.convenio-result-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 2px;
+}
+.convenio-result-card-sub {
+  font-size: 12.5px;
+  color: var(--ink-light);
+  line-height: 1.45;
+}
+.convenio-result-action {
+  flex-shrink: 0;
+  padding: 9px 16px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--cream-100);
+  border: 1px solid var(--cream-200);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.convenio-result-action:hover { background: var(--ink); color: #fff; text-decoration: none; }
+.convenio-result-card.primary .convenio-result-action { background: var(--green); color: #fff; border-color: var(--green); }
+.convenio-result-card.primary .convenio-result-action:hover { background: var(--ink); }
+.convenio-result-card.provincial .convenio-result-action { background: var(--gold); color: #fff; border-color: var(--gold); }
+.convenio-result-card.provincial .convenio-result-action:hover { background: var(--gold-dark); }
+@media (max-width: 600px) {
+  .convenio-result-card { flex-direction: column; align-items: flex-start; }
+  .convenio-result-action { width: 100%; text-align: center; }
+}
+
 /* Panel de resultados del convenio */
 .convenio-panel {
   display: none;
@@ -2410,27 +2488,40 @@
 <!-- SELECTOR DE CONVENIO -->
 <div class="convenio-selector-wrap" id="convenio-section" style="scroll-margin-top:120px;">
   <div class="convenio-selector-label">Verificación de convenio colectivo</div>
+
+  <!-- Fila 1 · filtros paralelos: sector + ubicación -->
   <div class="convenio-selector-row">
-    <div class="field convenio-picker-field">
-      <label>Provincia y convenio aplicable</label>
-      <div class="convenio-picker" id="convenioPicker">
-        <button type="button" class="convenio-picker-trigger" id="convenioPickerTrigger" aria-haspopup="true" aria-expanded="false">
-          <span class="convenio-picker-text placeholder">Elige tu provincia y convenio</span>
-          <span class="convenio-picker-arrow">▾</span>
-        </button>
-        <div class="convenio-picker-panel" id="convenioPickerPanel" role="menu">
-          <div class="convenio-picker-provinces" id="convenioPickerProvinces"></div>
-          <div class="convenio-picker-convenios" id="convenioPickerConvenios">
-            <div class="convenio-picker-placeholder">Pasa el cursor sobre una provincia para ver los convenios disponibles.</div>
-          </div>
-        </div>
+    <div class="field">
+      <label>Sector</label>
+      <div class="select-wrapper">
+        <select id="sectorSelect" onchange="resolveConvenioAndRender()">
+          <option value="">Elige el sector de tu empresa</option>
+        </select>
       </div>
-      <!-- Selects ocultos: mantienen la integración con el JS existente -->
-      <select id="provinciaSelect" style="display:none" onchange="filterConveniosByProvincia()"></select>
-      <select id="convenioSelect" style="display:none" onchange="updateConvenioGroups()">
-        <option value="">— Selecciona tu convenio —</option>
-      </select>
     </div>
+    <div class="field">
+      <label>Ubicación</label>
+      <div class="select-wrapper">
+        <select id="ubicacionSelect" onchange="resolveConvenioAndRender()">
+          <option value="">Elige provincia o ámbito estatal</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selects ocultos: mantienen la integración con el flujo de verificación existente -->
+  <select id="provinciaSelect" style="display:none" onchange="filterConveniosByProvincia()"></select>
+  <select id="convenioSelect" style="display:none" onchange="updateConvenioGroups()">
+    <option value="">— Selecciona tu convenio —</option>
+  </select>
+
+  <!-- Panel de resultados: cards según resolver (verificación / provincial / estatal) -->
+  <div class="convenio-results" id="convenioResults">
+    <div class="convenio-results-empty">Elige sector y ubicación para ver tu convenio aplicable.</div>
+  </div>
+
+  <!-- Fila 2 · grupo + año (sólo visible cuando hay verificación activa) -->
+  <div class="convenio-selector-row" id="convenioDetailsRow" style="display:none;">
     <div class="field">
       <label>Grupo profesional en el convenio</label>
       <div class="select-wrapper">
@@ -3505,15 +3596,30 @@ const CONVENIO_INDEX = [
     provincia: 'Valencia', ccaa: 'Comunitat Valenciana',
     archivo: '/data/convenios/ofydes_vlc.json' },
 
-  // ─── Ámbito estatal (enlaza a su landing propia porque fija suelo anual, no mensual) ──
-  { id: 'construccion_estatal', sector: 'Construcción',
-    nombre: 'Construcción — Suelo salarial estatal (2022-2026)',
-    provincia: 'Estatal', ccaa: null,
-    externalUrl: '/construccion-estatal-suelo-salarial.html' },
+];
 
-  // ─── Próximamente (sin archivo, se muestran como disabled) ─────────────────
-  { id: null, sector: 'Comercio',       nombre: 'Comercio — Valencia (próximamente)',    provincia: 'Valencia' },
-  { id: null, sector: 'Construcción',   nombre: 'Construcción — Valencia (próximamente)',provincia: 'Valencia' }
+// ══════════════════════════════════════════════════════════════════════════════
+// SECTOR_GUIDES — Guías sectoriales informativas (pilar estatal + landings
+// provinciales). Complementan CONVENIO_INDEX: mientras ese verifica cifras
+// con JSON, estas son guías de derechos, marco legal y tablas no-JSON.
+// Añadir una landing provincial = 1 línea en `provincias` del sector.
+// ══════════════════════════════════════════════════════════════════════════════
+const SECTOR_GUIDES = [
+  {
+    sector: 'Limpieza de Edificios y Locales',
+    estatalUrl: '/convenio-limpieza-edificios-locales.html',
+    estatalLabel: 'Guía sectorial · subrogación, LGTBI+, directorio 52 provincias',
+    provincias: {
+      'Madrid':    { url: '/convenio-limpieza-madrid.html',    label: 'Tabla 2025 · ultraactividad 2026' },
+      'Barcelona': { url: '/convenio-limpieza-barcelona.html', label: 'Tabla 2026 · convenio 2026-2030' }
+    }
+  },
+  {
+    sector: 'Construcción',
+    estatalUrl: '/construccion-estatal-suelo-salarial.html',
+    estatalLabel: 'Suelo salarial estatal · 2022-2026',
+    provincias: {}
+  }
 ];
 
 // Caché de convenios cargados (evita re-descargar)
@@ -3732,177 +3838,193 @@ function filterConveniosByProvincia() {
 
 buildProvinciaSelector();
 
-// ── CONVENIO PICKER — dropdown custom con hover en provincia ────────────────
-function buildConvenioPicker() {
-  const provList = document.getElementById('convenioPickerProvinces');
-  if (!provList) return;
+// ── RESOLVER SECTOR × UBICACIÓN ─────────────────────────────────────────────
+// Dos índices distintos:
+//   CONVENIO_INDEX → convenios con JSON verificable (cifras)
+//   SECTOR_GUIDES  → guías informativas (pilar estatal + landings provinciales)
+// El resolver combina ambos: para una tupla (sector, provincia) devuelve
+// { verify, provincialGuide, estatalGuide } en capas no excluyentes.
 
-  // Agrupar provincias por CCAA
-  const byCcaa = {};
-  CONVENIO_INDEX.forEach(c => {
-    const key = c.provincia === 'Estatal' ? '_estatal' : (c.ccaa || '_sin_ccaa');
-    if (!byCcaa[key]) byCcaa[key] = new Set();
-    byCcaa[key].add(c.provincia);
+function _escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, ch => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[ch]));
+}
+
+function buildSectorSelect() {
+  const sel = document.getElementById('sectorSelect');
+  if (!sel) return;
+  const sectors = new Set([
+    ...CONVENIO_INDEX.map(c => c.sector),
+    ...SECTOR_GUIDES.map(g => g.sector)
+  ]);
+  [...sectors].sort((a, b) => a.localeCompare(b, 'es')).forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s; opt.textContent = s;
+    sel.appendChild(opt);
+  });
+}
+
+function buildUbicacionSelect() {
+  const sel = document.getElementById('ubicacionSelect');
+  if (!sel) return;
+
+  // Agrupación por CCAA, 'Estatal' primero si algún sector lo ofrece
+  const locations = new Set();
+  CONVENIO_INDEX.forEach(c => locations.add(c.provincia));
+  SECTOR_GUIDES.forEach(g => {
+    Object.keys(g.provincias).forEach(p => locations.add(p));
+    if (g.estatalUrl) locations.add('Estatal');
   });
 
-  // Orden: Estatal primero, luego CCAA alfabéticamente, "sin ccaa" al final
-  const ccaaOrder = Object.keys(byCcaa).sort((a, b) => {
+  const provToCcaa = {};
+  CONVENIO_INDEX.forEach(c => { if (c.ccaa) provToCcaa[c.provincia] = c.ccaa; });
+
+  const byCcaa = {};
+  locations.forEach(loc => {
+    const group = (loc === 'Estatal') ? '_estatal' : (provToCcaa[loc] || 'Otras');
+    if (!byCcaa[group]) byCcaa[group] = new Set();
+    byCcaa[group].add(loc);
+  });
+
+  const order = Object.keys(byCcaa).sort((a, b) => {
     if (a === '_estatal') return -1;
     if (b === '_estatal') return 1;
-    if (a === '_sin_ccaa') return 1;
-    if (b === '_sin_ccaa') return -1;
+    if (a === 'Otras') return 1;
+    if (b === 'Otras') return -1;
     return a.localeCompare(b, 'es');
   });
 
-  const ccaaLabels = {
-    '_estatal': 'Ámbito estatal',
-    '_sin_ccaa': 'Otras'
-  };
-
-  const renderProvinceRow = (p, withoutCcaa) => {
-    const count = CONVENIO_INDEX.filter(c => c.provincia === p && c.id).length;
-    const total = CONVENIO_INDEX.filter(c => c.provincia === p).length;
-    const row = document.createElement('div');
-    row.className = 'convenio-picker-province' + (withoutCcaa ? ' no-ccaa' : '');
-    row.dataset.provincia = p;
-    row.innerHTML =
-      '<span>' + (p === 'Estatal' ? 'Convenio estatal' : p) + '</span>' +
-      '<span class="convenio-picker-province-meta">' +
-        (count > 0
-          ? '<span class="convenio-picker-province-count">' + count + '</span>'
-          : '<span class="convenio-picker-province-count" style="background:transparent;color:var(--ink-lighter);">' + total + '</span>') +
-      ' <span class="convenio-picker-province-arrow">›</span></span>';
-    row.addEventListener('mouseenter', () => showConveniosForProvincia(p));
-    row.addEventListener('focus',      () => showConveniosForProvincia(p));
-    row.tabIndex = 0;
-    return row;
-  };
-
-  provList.innerHTML = '';
-  ccaaOrder.forEach(ccaaKey => {
-    // header de CCAA (solo si tiene etiqueta significativa y no es el bloque estatal con 1 entrada)
-    const isEstatal = ccaaKey === '_estatal';
-    const label = ccaaLabels[ccaaKey] || ccaaKey;
-    const header = document.createElement('div');
-    header.className = 'convenio-picker-ccaa';
-    header.textContent = label;
-    provList.appendChild(header);
-
-    // provincias dentro de esta CCAA, alfabético
-    const provincias = [...byCcaa[ccaaKey]].sort((a, b) => a.localeCompare(b, 'es'));
-    provincias.forEach(p => provList.appendChild(renderProvinceRow(p, isEstatal)));
+  order.forEach(group => {
+    const items = [...byCcaa[group]].sort((a, b) => a.localeCompare(b, 'es'));
+    if (!items.length) return;
+    const og = document.createElement('optgroup');
+    og.label = group === '_estatal' ? 'Ámbito estatal' : group;
+    items.forEach(loc => {
+      const opt = document.createElement('option');
+      opt.value = loc;
+      opt.textContent = (loc === 'Estatal') ? 'Convenio estatal' : loc;
+      og.appendChild(opt);
+    });
+    sel.appendChild(og);
   });
 }
 
-function showConveniosForProvincia(provincia) {
-  // highlight activo
-  document.querySelectorAll('.convenio-picker-province').forEach(r => {
-    r.classList.toggle('active', r.dataset.provincia === provincia);
-  });
+// Resolver puro: dado (sector, provincia), devuelve capas aplicables
+function resolveConvenio(sector, provincia) {
+  const verify = CONVENIO_INDEX.find(c => c.sector === sector && c.provincia === provincia && c.id) || null;
+  const guide = SECTOR_GUIDES.find(g => g.sector === sector);
+  const provincialGuide = (guide && guide.provincias[provincia]) || null;
+  const estatalGuide = (guide && guide.estatalUrl)
+    ? { url: guide.estatalUrl, label: guide.estatalLabel || guide.sector }
+    : null;
+  return { verify, provincialGuide, estatalGuide };
+}
 
-  const panel = document.getElementById('convenioPickerConvenios');
-  const items = CONVENIO_INDEX.filter(c => c.provincia === provincia);
+// Handler onchange de los dos selects
+function resolveConvenioAndRender() {
+  const sector = document.getElementById('sectorSelect').value;
+  const provincia = document.getElementById('ubicacionSelect').value;
+  const out = document.getElementById('convenioResults');
+  const detailsRow = document.getElementById('convenioDetailsRow');
 
-  // agrupar por sector
-  const sectors = {};
-  items.forEach(c => {
-    if (!sectors[c.sector]) sectors[c.sector] = [];
-    sectors[c.sector].push(c);
-  });
+  // Reset de estado de verificación: al cambiar cualquier filtro, exigimos
+  // que el usuario vuelva a clicar "Usar verificación →" para evitar datos stale.
+  detailsRow.style.display = 'none';
+  document.getElementById('convenioPanel').classList.remove('visible');
 
-  let html = '';
-  for (const [sector, list] of Object.entries(sectors)) {
-    html += '<div class="convenio-picker-sector">' + sector + '</div>';
-    list.forEach(c => {
-      const title = c.nombre.replace(' — ' + c.provincia, '').replace(' (próximamente)', '');
-      if (c.id) {
-        const extAttr = c.externalUrl ? ' data-ext-url="' + c.externalUrl + '"' : '';
-        const sub = c.externalUrl ? 'Abrir guía →' : (c.ccaa || '');
-        html += '<div class="convenio-picker-convenio" data-id="' + c.id + '" data-provincia="' + c.provincia + '"' + extAttr + '>' +
-                '<div class="convenio-picker-convenio-title">' + title + '</div>' +
-                (sub ? '<div class="convenio-picker-convenio-sub">' + sub + '</div>' : '') +
-                '</div>';
-      } else {
-        html += '<div class="convenio-picker-convenio disabled">' +
-                '<div class="convenio-picker-convenio-title">' + title + '</div>' +
-                '<div class="convenio-picker-convenio-sub">Próximamente</div>' +
-                '</div>';
-      }
-    });
+  if (!sector || !provincia) {
+    out.innerHTML = '<div class="convenio-results-empty">Elige sector y ubicación para ver tu convenio aplicable.</div>';
+    return;
   }
-  panel.innerHTML = html;
 
-  // bind click
-  panel.querySelectorAll('.convenio-picker-convenio:not(.disabled)').forEach(el => {
-    el.addEventListener('click', () => {
-      if (el.dataset.extUrl) {
-        window.location.href = el.dataset.extUrl;
-        return;
-      }
-      selectConvenio(el.dataset.provincia, el.dataset.id, el.querySelector('.convenio-picker-convenio-title').textContent);
+  const r = resolveConvenio(sector, provincia);
+  const cards = [];
+
+  // Capa 1 · verificación con tabla JSON (primaria si existe)
+  if (r.verify) {
+    const title = r.verify.nombre.replace(' — ' + r.verify.provincia, '');
+    cards.push(
+      '<div class="convenio-result-card primary">' +
+        '<div class="convenio-result-card-body">' +
+          '<div class="convenio-result-card-tag">Verificación de cifras disponible</div>' +
+          '<div class="convenio-result-card-title">' + _escapeHtml(title) + '</div>' +
+          '<div class="convenio-result-card-sub">Introduce tu grupo profesional y año para comparar tu nómina con las tablas oficiales del convenio.</div>' +
+        '</div>' +
+        '<button type="button" class="convenio-result-action" data-action="verify" data-id="' + _escapeHtml(r.verify.id) + '" data-provincia="' + _escapeHtml(r.verify.provincia) + '">Usar verificación →</button>' +
+      '</div>'
+    );
+  }
+
+  // Capa 2 · landing provincial (primaria si no hay verify)
+  if (r.provincialGuide) {
+    const klass = r.verify ? 'provincial' : 'primary';
+    const tag = r.verify ? 'Ficha provincial complementaria' : 'Ficha provincial';
+    cards.push(
+      '<div class="convenio-result-card ' + klass + '">' +
+        '<div class="convenio-result-card-body">' +
+          '<div class="convenio-result-card-tag">' + tag + '</div>' +
+          '<div class="convenio-result-card-title">' + _escapeHtml(sector) + ' — ' + _escapeHtml(provincia) + '</div>' +
+          '<div class="convenio-result-card-sub">' + _escapeHtml(r.provincialGuide.label) + '</div>' +
+        '</div>' +
+        '<a class="convenio-result-action" href="' + r.provincialGuide.url + '">Abrir ficha →</a>' +
+      '</div>'
+    );
+  }
+
+  // Capa 3 · guía sectorial estatal (siempre como complemento si existe; primaria si es lo único)
+  if (r.estatalGuide) {
+    const klass = (r.verify || r.provincialGuide) ? 'estatal' : 'primary';
+    const tag = (r.verify || r.provincialGuide) ? 'Marco estatal · complemento' : 'Guía sectorial estatal';
+    cards.push(
+      '<div class="convenio-result-card ' + klass + '">' +
+        '<div class="convenio-result-card-body">' +
+          '<div class="convenio-result-card-tag">' + tag + '</div>' +
+          '<div class="convenio-result-card-title">' + _escapeHtml(sector) + ' — guía sectorial</div>' +
+          '<div class="convenio-result-card-sub">' + _escapeHtml(r.estatalGuide.label) + '</div>' +
+        '</div>' +
+        '<a class="convenio-result-action" href="' + r.estatalGuide.url + '">Ver guía →</a>' +
+      '</div>'
+    );
+  }
+
+  if (!cards.length) {
+    out.innerHTML =
+      '<div class="convenio-results-empty">Todavía no tenemos material específico para <strong>' + _escapeHtml(sector) + '</strong> en <strong>' + _escapeHtml(provincia) + '</strong>. ' +
+      'Puedes explorar el <a href="/convenios.html" style="color:var(--gold);">hub de convenios</a> o buscar tu convenio en el <a href="https://expinterweb.mites.gob.es/regcon/" target="_blank" rel="noopener" style="color:var(--gold);">registro oficial REGCON</a>.</div>';
+    return;
+  }
+
+  out.innerHTML = cards.join('');
+
+  // Bind click de la card de verificación
+  out.querySelectorAll('[data-action="verify"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activateVerification(btn.dataset.provincia, btn.dataset.id);
     });
   });
 }
 
-function selectConvenio(provincia, convenioId, titleShort) {
-  // actualizar selects ocultos + disparar flujo existente
+function activateVerification(provincia, convenioId) {
   const provSel = document.getElementById('provinciaSelect');
   const convSel = document.getElementById('convenioSelect');
 
-  // asegurarse de que provinciaSelect tiene la opción (el hidden select se construye dinámicamente)
+  // Añadir opción si no estaba (selects ocultos se construyen dinámicamente)
   if (![...provSel.options].some(o => o.value === provincia)) {
     const opt = document.createElement('option');
     opt.value = provincia; opt.textContent = provincia;
     provSel.appendChild(opt);
   }
   provSel.value = provincia;
-  filterConveniosByProvincia(); // esto rebuildea convSel con los de la provincia
+  filterConveniosByProvincia();
 
   convSel.value = convenioId;
   updateConvenioGroups();
 
-  // actualizar trigger UI
-  const trigger = document.querySelector('.convenio-picker-text');
-  trigger.textContent = titleShort + (provincia !== 'Estatal' ? ' · ' + provincia : '');
-  trigger.classList.remove('placeholder');
-
-  // cerrar panel
-  document.getElementById('convenioPicker').classList.remove('open');
-  document.getElementById('convenioPickerTrigger').setAttribute('aria-expanded', 'false');
+  // Revelar fila de grupo + año
+  document.getElementById('convenioDetailsRow').style.display = '';
 }
 
-// abrir/cerrar panel del picker
-document.getElementById('convenioPickerTrigger').addEventListener('click', function(e) {
-  e.stopPropagation();
-  const picker = document.getElementById('convenioPicker');
-  const isOpen = picker.classList.toggle('open');
-  this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  if (isOpen) {
-    // resetear hover al abrir
-    document.querySelectorAll('.convenio-picker-province').forEach(r => r.classList.remove('active'));
-    document.getElementById('convenioPickerConvenios').innerHTML =
-      '<div class="convenio-picker-placeholder">Pasa el cursor sobre una provincia para ver los convenios disponibles.</div>';
-  }
-});
-
-// click fuera cierra panel
-document.addEventListener('click', function(e) {
-  const picker = document.getElementById('convenioPicker');
-  if (picker && !picker.contains(e.target)) {
-    picker.classList.remove('open');
-    document.getElementById('convenioPickerTrigger').setAttribute('aria-expanded', 'false');
-  }
-});
-
-// tecla Escape cierra
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    document.getElementById('convenioPicker').classList.remove('open');
-    document.getElementById('convenioPickerTrigger').setAttribute('aria-expanded', 'false');
-  }
-});
-
-buildConvenioPicker();
+buildSectorSelect();
+buildUbicacionSelect();
 // ── INICIALIZAR SELECTORES DE GRUPOS ─────────────────────────────────────────
 async function updateConvenioGroups() {
   const sel = document.getElementById('convenioSelect');
