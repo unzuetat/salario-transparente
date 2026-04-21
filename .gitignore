@@ -8,3 +8,8 @@ Thumbs.db
 .claude/
 .vscode/
 .idea/
+
+# Secretos locales — NUNCA commitear
+.env
+.env.local
+.env.*.local
