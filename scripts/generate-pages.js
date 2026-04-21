@@ -77,7 +77,7 @@ function footerHTML() {
   return `
 <footer style="background:#2D2520;padding:24px 32px;text-align:center;">
   <p style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;">
-    SalarioJusto · Herramienta gratuita para trabajadores · Sin empresas detrás<br>
+    SalarioJusto · Herramienta gratuita para trabajadores y trabajadoras · Sin empresas detrás<br>
     <a href="/" style="color:#D9A06A;text-decoration:none;">Calculadora</a> ·
     <a href="/salarios.html" style="color:#D9A06A;text-decoration:none;">Cálculos por ciudad</a> ·
     <a href="/convenios.html" style="color:#D9A06A;text-decoration:none;">Convenios</a> ·

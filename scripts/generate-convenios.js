@@ -187,7 +187,7 @@ function footerHTML() {
   return `
 <footer>
   <p class="footer-text">
-    SalarioJusto · Herramienta gratuita para trabajadores · Sin empresas detrás<br>
+    SalarioJusto · Herramienta gratuita para trabajadores y trabajadoras · Sin empresas detrás<br>
     <a href="/">Calculadora</a> ·
     <a href="/salarios.html">Cálculos por ciudad</a> ·
     <a href="/convenios.html">Convenios</a> ·
