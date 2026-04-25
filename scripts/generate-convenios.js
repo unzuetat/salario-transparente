@@ -638,6 +638,7 @@ function main() {
     { sector: 'Limpieza de Edificios y Locales', provincia: 'Las Palmas', href: '/convenio-limpieza-laspalmas.html', nombreCorto: 'Limpieza — Las Palmas', vigencia: 'Tabla 2026 vigente · +3% sobre 2025' },
     { sector: 'Limpieza de Edificios y Locales', provincia: 'Bizkaia', href: '/convenio-limpieza-bizkaia.html', nombreCorto: 'Limpieza — Bizkaia', vigencia: 'Jornada 35 h/sem · 0 cats bajo SMI' },
     { sector: 'Limpieza de Edificios y Locales', provincia: 'Zaragoza', href: '/convenio-limpieza-zaragoza.html', nombreCorto: 'Limpieza — Zaragoza', vigencia: 'Tabla 2025 · prorrogado 2026 (Art. 5) · jornada 1.766 h' },
+    { sector: 'Limpieza de Edificios y Locales', provincia: 'Asturias', href: '/convenio-limpieza-asturias.html', nombreCorto: 'Limpieza — Asturias', vigencia: 'Tabla 2025 (corregida) · 3 pagas extras · jornada 1.758 h' },
     { sector: 'Construcción', ambito: 'Estatal', provincia: null, href: '/construccion-estatal-suelo-salarial.html', nombreCorto: 'Construcción — Suelo salarial estatal', vigencia: '1 enero 2022 – 31 diciembre 2026' },
   ];
   for (const m of MANUAL_CONVENIOS) generated.push(m);

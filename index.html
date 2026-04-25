@@ -2913,9 +2913,9 @@
       </a>
 
       <a href="/convenio-limpieza-edificios-locales.html" style="display:block;padding:20px 22px;background:#fff;border:1px solid var(--cream-200);text-decoration:none;transition:all 0.15s;" onmouseover="this.style.borderColor='var(--gold)';this.style.boxShadow='0 4px 16px rgba(45,37,32,0.08)'" onmouseout="this.style.borderColor='var(--cream-200)';this.style.boxShadow='none'">
-        <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Limpieza · 8 provincias</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Limpieza · 9 provincias</div>
         <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.3;">Edificios y Locales</div>
-        <div style="font-size:12px;color:var(--ink-light);line-height:1.5;margin-bottom:12px;">Pilar estatal + tablas verificadas: Madrid, Barcelona, Valencia, Sevilla, Málaga, Las Palmas, Bizkaia y Zaragoza.</div>
+        <div style="font-size:12px;color:var(--ink-light);line-height:1.5;margin-bottom:12px;">Pilar estatal + tablas verificadas: Madrid, Barcelona, Valencia, Sevilla, Málaga, Las Palmas, Bizkaia, Zaragoza y Asturias.</div>
         <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.04em;">Ver pilar y provincias →</div>
       </a>
 
@@ -3666,7 +3666,8 @@ const SECTOR_GUIDES = [
       'Málaga':    { url: '/convenio-limpieza-malaga.html',    label: 'Tabla 2025 · ultraactividad 2026 · jornada 40 h · 6/14 cats bajo SMI' },
       'Las Palmas':{ url: '/convenio-limpieza-laspalmas.html', label: 'Tabla 2026 vigente · +3% sobre 2025 · 10/24 cats bajo SMI con plus a cuenta' },
       'Bizkaia':   { url: '/convenio-limpieza-bizkaia.html',   label: 'Tabla 2025 vigente · jornada 35 h/sem · antigüedad escalada · 0 cats bajo SMI' },
-      'Zaragoza':  { url: '/convenio-limpieza-zaragoza.html',  label: 'Tabla 2025 · prorrogado 2026 (Art. 5) · jornada 1.766 h · solo Aprendiz bajo SMI' }
+      'Zaragoza':  { url: '/convenio-limpieza-zaragoza.html',  label: 'Tabla 2025 · prorrogado 2026 (Art. 5) · jornada 1.766 h · solo Aprendiz bajo SMI' },
+      'Asturias':  { url: '/convenio-limpieza-asturias.html',  label: 'Tabla 2025 (corregida) · 3 pagas extras · jornada 1.758 h · equiparación SESPA' }
     }
   },
   {
@@ -3918,20 +3919,46 @@ function buildSectorSelect() {
   });
 }
 
-function buildUbicacionSelect() {
+function buildUbicacionSelect(filterSector) {
   const sel = document.getElementById('ubicacionSelect');
   if (!sel) return;
 
-  // Agrupación por CCAA, 'Estatal' primero si algún sector lo ofrece
+  // Reset: vaciar opciones previas, mantener placeholder
+  sel.innerHTML = '<option value="">Elige provincia o ámbito estatal</option>';
+
+  // Agrupación por CCAA, 'Estatal' primero si algún sector lo ofrece.
+  // Si se pasa filterSector, solo incluye provincias/estatal de ese sector
+  // (reduce el scroll del dropdown nativo cuando ya hay sector elegido).
   const locations = new Set();
-  CONVENIO_INDEX.forEach(c => locations.add(c.provincia));
-  SECTOR_GUIDES.forEach(g => {
-    Object.keys(g.provincias).forEach(p => locations.add(p));
-    if (g.estatalUrl) locations.add('Estatal');
-  });
+  if (filterSector) {
+    CONVENIO_INDEX.forEach(c => { if (c.sector === filterSector) locations.add(c.provincia); });
+    SECTOR_GUIDES.forEach(g => {
+      if (g.sector !== filterSector) return;
+      Object.keys(g.provincias).forEach(p => locations.add(p));
+      if (g.estatalUrl) locations.add('Estatal');
+    });
+  } else {
+    CONVENIO_INDEX.forEach(c => locations.add(c.provincia));
+    SECTOR_GUIDES.forEach(g => {
+      Object.keys(g.provincias).forEach(p => locations.add(p));
+      if (g.estatalUrl) locations.add('Estatal');
+    });
+  }
 
   const provToCcaa = {};
   CONVENIO_INDEX.forEach(c => { if (c.ccaa) provToCcaa[c.provincia] = c.ccaa; });
+  // Mapeo manual para provincias que solo están en SECTOR_GUIDES (no en CONVENIO_INDEX)
+  // Garantiza que aparezcan agrupadas por CCAA y no en "Otras"
+  const PROV_CCAA_MANUAL = {
+    'Madrid': 'Comunidad de Madrid',
+    'Sevilla': 'Andalucía',
+    'Málaga': 'Andalucía',
+    'Las Palmas': 'Canarias',
+    'Bizkaia': 'País Vasco',
+    'Zaragoza': 'Aragón',
+    'Asturias': 'Principado de Asturias',
+  };
+  Object.keys(PROV_CCAA_MANUAL).forEach(p => { if (!provToCcaa[p]) provToCcaa[p] = PROV_CCAA_MANUAL[p]; });
 
   const byCcaa = {};
   locations.forEach(loc => {
@@ -3977,7 +4004,17 @@ function resolveConvenio(sector, provincia) {
 // Handler onchange de los dos selects
 function resolveConvenioAndRender() {
   const sector = document.getElementById('sectorSelect').value;
-  const provincia = document.getElementById('ubicacionSelect').value;
+  const ubicacionSel = document.getElementById('ubicacionSelect');
+
+  // Refiltrar ubicaciones por sector (acorta dropdown). Preservar selección
+  // previa si sigue siendo válida tras el filtro; vaciar si ya no aplica.
+  const previousProvincia = ubicacionSel.value;
+  buildUbicacionSelect(sector || null);
+  if (previousProvincia && [...ubicacionSel.options].some(o => o.value === previousProvincia)) {
+    ubicacionSel.value = previousProvincia;
+  }
+
+  const provincia = ubicacionSel.value;
   const out = document.getElementById('convenioResults');
   const detailsRow = document.getElementById('convenioDetailsRow');
 
