@@ -987,6 +987,7 @@ function generateSitemap(pages, convenios = []) {
     { url: 'https://salariojusto.es/convenio-limpieza-sevilla.html', priority: '0.80', freq: 'monthly' },
     { url: 'https://salariojusto.es/convenio-limpieza-malaga.html', priority: '0.80', freq: 'monthly' },
     { url: 'https://salariojusto.es/convenio-limpieza-laspalmas.html', priority: '0.80', freq: 'monthly' },
+    { url: 'https://salariojusto.es/convenio-limpieza-bizkaia.html', priority: '0.80', freq: 'monthly' },
     { url: 'https://salariojusto.es/tramos-irpf-2026.html', priority: '0.85', freq: 'monthly' },
     { url: 'https://salariojusto.es/salario-minimo-interprofesional-2026.html', priority: '0.85', freq: 'monthly' },
     { url: 'https://salariojusto.es/salarios.html', priority: '0.90', freq: 'weekly' },
