@@ -496,6 +496,7 @@ ${lista.map(c => `      <a href="${c.href}" style="display:block;padding:14px 16
         <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">${c.provincia || c.ambito || ''}</div>
         <div style="font-size:14px;font-weight:600;color:var(--ink);line-height:1.35;">${c.nombreCorto}</div>
         <div style="font-size:11px;color:var(--ink-lighter);margin-top:4px;">${c.vigencia || ''}</div>
+        ${c.enUltraactividad ? `<div style="display:inline-block;margin-top:6px;padding:2px 8px;background:#FEF3C7;border:1px solid #B45309;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#B45309;">⚠ Ultraactividad</div>` : ''}
       </a>`).join('\n')}
     </div>
   </div>`;
@@ -601,6 +602,7 @@ function main() {
           href: '/' + page.fileName,
           nombreCorto: `${meta.sector} — ${prov.nombre}`,
           vigencia: data.vigencia,
+          enUltraactividad: detectaUltraactividad(data.vigencia),
         });
       }
     } else {
@@ -617,6 +619,7 @@ function main() {
         href: '/' + page.fileName,
         nombreCorto: `${meta.sector} — ${meta.provincia}`,
         vigencia: data.vigencia,
+        enUltraactividad: detectaUltraactividad(data.vigencia),
       });
     }
   }

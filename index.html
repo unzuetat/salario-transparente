@@ -3584,6 +3584,16 @@ document.getElementById('recText').textContent = '';
 // Para añadir un convenio nuevo: 1) crea el JSON en /data/convenios/
 //                                 2) añade una entrada aquí
 // ══════════════════════════════════════════════════════════════════════════════
+// Detecta ultraactividad por el rango de años del nombre del convenio.
+// Ej. "Hostelería — Madrid (2023-2025)" → fin = 2025 → en ultraactividad si < año actual.
+function convenioEnUltraactividad(entry) {
+  if (!entry || !entry.nombre) return false;
+  const m = entry.nombre.match(/\((\d{4})[^\d]+(\d{4})\)/);
+  if (!m) return false;
+  const fin = Number(m[2]);
+  return fin < new Date().getFullYear();
+}
+const ULTRA_BADGE = '<span style="display:inline-block;margin-left:8px;padding:2px 8px;background:#FEF3C7;border:1px solid #B45309;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#B45309;vertical-align:2px;">⚠ Ultraactividad</span>';
 const CONVENIO_INDEX = [
   // ─── Hostelería ────────────────────────────────────────────────────────────
   { id: 'hosteleria_vlc', sector: 'Hostelería',
@@ -3972,8 +3982,8 @@ function resolveConvenioAndRender() {
       '<div class="convenio-result-card primary">' +
         '<div class="convenio-result-card-body">' +
           '<div class="convenio-result-card-tag">Verificación de cifras disponible</div>' +
-          '<div class="convenio-result-card-title">' + _escapeHtml(title) + '</div>' +
-          '<div class="convenio-result-card-sub">Introduce tu grupo profesional y año para comparar tu nómina con las tablas oficiales del convenio.</div>' +
+          '<div class="convenio-result-card-title">' + _escapeHtml(title) + (convenioEnUltraactividad(r.verify) ? ULTRA_BADGE : '') + '</div>' +
+          '<div class="convenio-result-card-sub">' + (convenioEnUltraactividad(r.verify) ? 'Convenio en ultraactividad: las tablas siguen vigentes mientras se negocia un nuevo texto. ' : '') + 'Introduce tu grupo profesional y año para comparar tu nómina con las tablas oficiales del convenio.</div>' +
         '</div>' +
         '<button type="button" class="convenio-result-action" data-action="verify" data-id="' + _escapeHtml(r.verify.id) + '" data-provincia="' + _escapeHtml(r.verify.provincia) + '">Usar verificación →</button>' +
       '</div>'
@@ -4124,8 +4134,10 @@ async function updateConvenioGroups() {
 
   const primerGrupo = conv.grupos[0];
   const anyosDisponibles = Object.keys(primerGrupo.salario).sort().reverse();
+  const entryActual = CONVENIO_INDEX.find(c => c.id === val);
+  const ultra = convenioEnUltraactividad(entryActual);
   anyoSel.innerHTML = anyosDisponibles.map((a, i) =>
-    `<option value="${a}">${a}${i === 0 ? ' (vigente)' : ''}</option>`
+    `<option value="${a}">${a}${i === 0 ? (ultra ? ' (en ultraactividad)' : ' (vigente)') : ''}</option>`
   ).join('');
 
   updateConvenioPanel();
