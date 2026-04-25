@@ -3968,7 +3968,7 @@ function resolveConvenioAndRender() {
   document.getElementById('convenioPanel').classList.remove('visible');
 
   if (!sector || !provincia) {
-    out.innerHTML = '<div class="convenio-results-empty">Elige sector y ubicación para ver tu convenio aplicable.</div>';
+    out.innerHTML = '<div class="convenio-results-empty">Elige sector y ubicación para ver tu convenio aplicable, o <a href="/convenios.html" style="color:var(--gold);font-weight:600;">explorar la lista completa de convenios →</a></div>';
     return;
   }
 
@@ -4028,6 +4028,18 @@ function resolveConvenioAndRender() {
       'Puedes explorar el <a href="/convenios.html" style="color:var(--gold);">hub de convenios</a> o buscar tu convenio en el <a href="https://expinterweb.mites.gob.es/regcon/" target="_blank" rel="noopener" style="color:var(--gold);">registro oficial REGCON</a>.</div>';
     return;
   }
+
+  // Capa final · atajo siempre visible al hub completo
+  cards.push(
+    '<div class="convenio-result-card estatal">' +
+      '<div class="convenio-result-card-body">' +
+        '<div class="convenio-result-card-tag">Explorar todos</div>' +
+        '<div class="convenio-result-card-title">Ver todos los convenios disponibles</div>' +
+        '<div class="convenio-result-card-sub">' + CONVENIO_INDEX.length + ' convenios verificables + guías sectoriales por provincia.</div>' +
+      '</div>' +
+      '<a class="convenio-result-action" href="/convenios.html">Abrir hub →</a>' +
+    '</div>'
+  );
 
   out.innerHTML = cards.join('');
 
