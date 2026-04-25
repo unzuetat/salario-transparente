@@ -78,6 +78,12 @@
     <priority>0.90</priority>
   </url>
   <url>
+    <loc>https://salariojusto.es/sobre.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://salariojusto.es/mapa-del-sitio.html</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -1090,42 +1096,6 @@
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://salariojusto.es/convenio-limpieza-edificios-locales.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://salariojusto.es/convenio-limpieza-madrid.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://salariojusto.es/convenio-limpieza-barcelona.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://salariojusto.es/convenio-limpieza-valencia.html</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://salariojusto.es/convenio-limpieza-sevilla.html</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://salariojusto.es/convenio-limpieza-malaga.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://salariojusto.es/convenio-hosteleria-madrid.html</loc>

@@ -18,6 +18,75 @@ const slug = s => s.toLowerCase()
   .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
+// ── Schema Organization global (E-E-A-T) ─────────────────────────────
+const ORGANIZATION_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SalarioJusto",
+  "alternateName": "Salario Justo",
+  "url": "https://salariojusto.es/",
+  "logo": "https://salariojusto.es/preview.jpg",
+  "description": "Herramienta gratuita de transparencia salarial para España: cálculo IRPF 2026, verificación de convenios colectivos y guías de derechos laborales.",
+  "areaServed": { "@type": "Country", "name": "España" },
+  "knowsAbout": [
+    "Derecho laboral español",
+    "Convenios colectivos",
+    "IRPF 2026",
+    "Salario Mínimo Interprofesional",
+    "Ley de Transparencia Retributiva (Directiva UE 2023/970)"
+  ],
+  "sameAs": [
+    "https://salariojusto.es/sobre.html"
+  ]
+}, null, 2);
+
+// ── Helper: detectar si el convenio está en ultraactividad ───────────
+// Si el último año mencionado en `vigencia` es anterior al año actual,
+// el convenio ha vencido y sus tablas siguen aplicándose por ultraactividad.
+const CURRENT_YEAR = 2026;
+function detectaUltraactividad(vigencia) {
+  if (!vigencia) return false;
+  const years = (String(vigencia).match(/\d{4}/g) || []).map(Number);
+  if (years.length === 0) return false;
+  return Math.max(...years) < CURRENT_YEAR;
+}
+
+// ── Helper: interlinking por provincia ───────────────────────────────
+const PROVINCIA_A_CIUDAD_SLUG = {
+  'madrid': 'madrid', 'barcelona': 'barcelona', 'valencia': 'valencia',
+  'sevilla': 'sevilla', 'bilbao': 'bilbao', 'malaga': 'malaga',
+  'zaragoza': 'zaragoza', 'alicante': 'alicante', 'murcia': 'murcia',
+  'palma': 'palma', 'laspalmas': 'laspalmas', 'acoruna': 'acoruna',
+  'tarragona': null, 'maresme': null, 'girona': null,
+};
+const TRAMOS_DESTACADOS = [20000, 25000, 30000, 35000, 45000];
+
+function relatedSalarioNetoLinksHTML(provinciaSlug, provinciaNombre) {
+  const ciudadSlug = PROVINCIA_A_CIUDAD_SLUG[provinciaSlug];
+  if (!ciudadSlug) return '';
+  return TRAMOS_DESTACADOS.map(tramo => {
+    const fmtTramo = new Intl.NumberFormat('es-ES').format(tramo);
+    return `      <li><a href="/salario-neto-${tramo}-euros-brutos-${ciudadSlug}.html">Salario neto de ${fmtTramo} € brutos en ${provinciaNombre}</a></li>`;
+  }).join('\n');
+}
+
+function relatedConvenioLinksHTML(provinciaSlug, provinciaNombre, sectorActual) {
+  const ciudadSlug = PROVINCIA_A_CIUDAD_SLUG[provinciaSlug];
+  if (!ciudadSlug) return '';
+  const otrosSectores = ['hosteleria', 'limpieza', 'oficinas'].filter(s => s !== sectorActual);
+  const links = [];
+  for (const sec of otrosSectores) {
+    const file = path.join(ROOT, `convenio-${sec}-${provinciaSlug}.html`);
+    if (fs.existsSync(file)) {
+      const sectorLabel = sec === 'hosteleria' ? 'Hostelería'
+        : sec === 'limpieza' ? 'Limpieza de Edificios y Locales'
+        : 'Oficinas y Despachos';
+      links.push(`      <li><a href="/convenio-${sec}-${provinciaSlug}.html">Convenio de ${sectorLabel} en ${provinciaNombre}</a></li>`);
+    }
+  }
+  return links.join('\n');
+}
+
 // ── Configuración por convenio ───────────────────────────────────────
 // Mapea archivos JSON a metadatos de landing (slug URL, keyword, H1)
 const CONVENIO_CONFIG = {
@@ -192,6 +261,7 @@ function footerHTML() {
     <a href="/salarios.html">Cálculos por ciudad</a> ·
     <a href="/convenios.html">Convenios</a> ·
     <a href="/guias.html">Guías</a> ·
+    <a href="/sobre.html">Sobre</a> ·
     <a href="/mapa-del-sitio.html">Mapa del sitio</a>
   </p>
 </footer>`;
@@ -203,8 +273,18 @@ function generateConvenioPage(data, meta) {
   const fileName = `convenio-${meta.sectorSlug}-${meta.provinciaSlug}.html`;
   const url = `https://salariojusto.es/${fileName}`;
 
-  const title = `Convenio de ${meta.sector} en ${meta.provincia} (${anyo}): tablas salariales y jornada | SalarioJusto`;
-  const desc = `Tablas salariales ${anyo} del convenio de ${meta.sector} en ${meta.provincia}. Jornada ${data.jornadaAnual}h/año, ${data.pagas} pagas. Vigencia ${data.vigencia}. Datos oficiales ${data.bop}.`;
+  // Ultraactividad: si las tablas son de un año anterior pero siguen vigentes
+  const enUltraactividad = detectaUltraactividad(data.vigencia);
+  const anyoMostrado = enUltraactividad ? CURRENT_YEAR : anyo;
+  const title = enUltraactividad
+    ? `Convenio de ${meta.sector} en ${meta.provincia} ${CURRENT_YEAR} (en ultraactividad): tablas y jornada | SalarioJusto`
+    : `Convenio de ${meta.sector} en ${meta.provincia} (${anyo}): tablas salariales y jornada | SalarioJusto`;
+  const desc = enUltraactividad
+    ? `Convenio de ${meta.sector} de ${meta.provincia}: las tablas salariales ${anyo} siguen vigentes en ${CURRENT_YEAR} al estar en ultraactividad. Jornada ${data.jornadaAnual}h/año, ${data.pagas} pagas. ${data.bop}.`
+    : `Tablas salariales ${anyo} del convenio de ${meta.sector} en ${meta.provincia}. Jornada ${data.jornadaAnual}h/año, ${data.pagas} pagas. Vigencia ${data.vigencia}. Datos oficiales ${data.bop}.`;
+  const ogTitle = enUltraactividad
+    ? `Convenio de ${meta.sector} en ${meta.provincia} ${CURRENT_YEAR} (en ultraactividad)`
+    : `Convenio de ${meta.sector} en ${meta.provincia} (${anyo})`;
 
   // Construir tabla de grupos (máximo 15 filas, mostramos todos pero responsive)
   const subtablasKeys = Object.keys(data.subtablas);
@@ -269,7 +349,9 @@ function generateConvenioPage(data, meta) {
   <title>${title}</title>
   <meta name="description" content="${desc}">
   <link rel="canonical" href="${url}">
-  <meta property="og:title" content="Convenio de ${meta.sector} en ${meta.provincia} (${anyo})">
+  <link rel="alternate" hreflang="es" href="${url}">
+  <link rel="alternate" hreflang="x-default" href="${url}">
+  <meta property="og:title" content="${ogTitle}">
   <meta property="og:description" content="${desc}">
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="https://salariojusto.es/preview.jpg">
@@ -279,6 +361,7 @@ function generateConvenioPage(data, meta) {
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+  <script type="application/ld+json">${ORGANIZATION_SCHEMA}</script>
   <script type="application/ld+json">${breadcrumbSchema}</script>
   <script type="application/ld+json">${faqSchema}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXJ8V2FBW9"></script>
@@ -345,13 +428,28 @@ ${faqs.map(f => `  <h3>${f.q}</h3>\n  <p>${f.a}</p>`).join('\n\n')}
   <p>Si tu nómina está por debajo de las cantidades de la tabla, puedes reclamar las diferencias salariales. Tienes <strong>1 año por mensualidad</strong> de plazo desde que debió pagarse (art. 59.2 ET). Presentar papeleta de conciliación ante el SMAC de ${meta.provincia} interrumpe el plazo y es gratuito.</p>
   <p>Consulta nuestra <a href="/reclamar-diferencias-salariales-convenio.html">guía completa para reclamar diferencias salariales</a> paso a paso.</p>
 
+  ${(() => {
+    const salarioNetoLinks = relatedSalarioNetoLinksHTML(meta.provinciaSlug, meta.provincia);
+    const convenioCruzadoLinks = relatedConvenioLinksHTML(meta.provinciaSlug, meta.provincia, meta.sectorSlug);
+    const localBlock = (salarioNetoLinks || convenioCruzadoLinks)
+      ? `<div class="related">
+    <h2 style="font-size:18px;">Más recursos para ${meta.provincia}</h2>
+    <ul>
+${convenioCruzadoLinks}${convenioCruzadoLinks && salarioNetoLinks ? '\n' : ''}${salarioNetoLinks}
+    </ul>
+  </div>`
+      : '';
+    return localBlock;
+  })()}
+
   <div class="related">
-    <h2 style="font-size:18px;">Otros convenios</h2>
+    <h2 style="font-size:18px;">Guías y herramientas</h2>
     <ul>
       <li><a href="/convenios.html">← Ver todos los convenios colectivos</a></li>
       <li><a href="/">Calculadora de salario neto</a></li>
       <li><a href="/reclamar-diferencias-salariales-convenio.html">Cómo reclamar diferencias salariales</a></li>
       <li><a href="/salario-minimo-interprofesional-2026.html">Salario Mínimo Interprofesional 2026</a></li>
+      <li><a href="/ley-transparencia-salarial-2026.html">Ley de Transparencia Salarial 2026</a></li>
     </ul>
   </div>
 
@@ -411,6 +509,8 @@ ${lista.map(c => `      <a href="${c.href}" style="display:block;padding:14px 16
   <title>${title}</title>
   <meta name="description" content="${desc}">
   <link rel="canonical" href="${url}">
+  <link rel="alternate" hreflang="es" href="${url}">
+  <link rel="alternate" hreflang="x-default" href="${url}">
   <meta property="og:title" content="Convenios colectivos: tablas salariales por sector y provincia">
   <meta property="og:description" content="${desc}">
   <meta property="og:url" content="${url}">
@@ -419,6 +519,7 @@ ${lista.map(c => `      <a href="${c.href}" style="display:block;padding:14px 16
   <meta name="twitter:card" content="summary_large_image">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="application/ld+json">${ORGANIZATION_SCHEMA}</script>
   <script type="application/ld+json">${breadcrumbSchema}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXJ8V2FBW9"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MXJ8V2FBW9');</script>

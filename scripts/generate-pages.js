@@ -41,6 +41,45 @@ const fmt = n => new Intl.NumberFormat('es-ES').format(n);
 const fmtEur = n => fmt(n) + ' €';
 const today = '2026-04-16';
 
+// ── Schema Organization global (E-E-A-T) ─────────────────────────────
+const ORGANIZATION_SCHEMA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SalarioJusto",
+  "alternateName": "Salario Justo",
+  "url": "https://salariojusto.es/",
+  "logo": "https://salariojusto.es/preview.jpg",
+  "description": "Herramienta gratuita de transparencia salarial para España: cálculo IRPF 2026, verificación de convenios colectivos y guías de derechos laborales.",
+  "areaServed": { "@type": "Country", "name": "España" },
+  "knowsAbout": [
+    "Derecho laboral español",
+    "Convenios colectivos",
+    "IRPF 2026",
+    "Salario Mínimo Interprofesional",
+    "Ley de Transparencia Retributiva (Directiva UE 2023/970)"
+  ],
+  "sameAs": ["https://salariojusto.es/sobre.html"]
+}, null, 2);
+
+// ── Helper: bloque interlinking convenio por ciudad ──────────────────
+// Para cada landing salario-neto-{tramo}-{ciudad}, busca convenios
+// existentes en esa ciudad y los enlaza.
+function relatedConveniosForCity(cityId, cityName) {
+  const sectores = [
+    { slug: 'hosteleria', label: 'Hostelería' },
+    { slug: 'limpieza', label: 'Limpieza de Edificios y Locales' },
+    { slug: 'oficinas', label: 'Oficinas y Despachos' },
+  ];
+  const links = [];
+  for (const s of sectores) {
+    const file = path.join(ROOT, `convenio-${s.slug}-${cityId}.html`);
+    if (fs.existsSync(file)) {
+      links.push(`<li><a href="/convenio-${s.slug}-${cityId}.html">Convenio de ${s.label} en ${cityName}</a></li>`);
+    }
+  }
+  return links;
+}
+
 // ── Escala IRPF para la página de tramos ───────────────────────────
 const TRAMOS = [
   { desde: 0, hasta: 12450, tipo: 19 },
@@ -82,6 +121,7 @@ function footerHTML() {
     <a href="/salarios.html" style="color:#D9A06A;text-decoration:none;">Cálculos por ciudad</a> ·
     <a href="/convenios.html" style="color:#D9A06A;text-decoration:none;">Convenios</a> ·
     <a href="/guias.html" style="color:#D9A06A;text-decoration:none;">Guías</a> ·
+    <a href="/sobre.html" style="color:#D9A06A;text-decoration:none;">Sobre</a> ·
     <a href="/mapa-del-sitio.html" style="color:#D9A06A;text-decoration:none;">Mapa del sitio</a> ·
     <a href="/en/" style="color:#D9A06A;text-decoration:none;">English</a>
   </p>
@@ -218,6 +258,8 @@ function generateSalaryPage(gross, city) {
   <title>${title}</title>
   <meta name="description" content="${desc}">
   <link rel="canonical" href="${url}">
+  <link rel="alternate" hreflang="es" href="${url}">
+  <link rel="alternate" hreflang="x-default" href="${url}">
   <meta property="og:title" content="Salario neto de ${grossFmt} € brutos en ${city.name} (2026)">
   <meta property="og:description" content="${desc}">
   <meta property="og:url" content="${url}">
@@ -228,6 +270,7 @@ function generateSalaryPage(gross, city) {
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+  <script type="application/ld+json">${ORGANIZATION_SCHEMA}</script>
   <script type="application/ld+json">${breadcrumbSchema}</script>
   <script type="application/ld+json">${faqSchema}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXJ8V2FBW9"></script>
@@ -333,6 +376,18 @@ ${SALARIES.filter(s => s !== gross).map(s => `    <a href="/salario-neto-${s}-eu
 ${faqs.map(f => `  <h3>${f.q}</h3>
   <p>${f.a}</p>`).join('\n\n')}
 
+  ${(() => {
+    const conv = relatedConveniosForCity(city.id, city.name);
+    if (conv.length === 0) return '';
+    return `<div class="related">
+    <h2 style="font-size:18px;">Convenios colectivos en ${city.name}</h2>
+    <p style="font-size:13px;color:#7a6f60;margin-bottom:8px;">¿Tu salario coincide con tu convenio? Verifícalo en estas guías:</p>
+    <ul>
+      ${conv.join('\n      ')}
+    </ul>
+  </div>`;
+  })()}
+
   <div class="related">
     <h2 style="font-size:18px;">Guías relacionadas</h2>
     <ul>
@@ -387,6 +442,8 @@ function generateSMIPage() {
   <title>Salario Mínimo Interprofesional (SMI) 2026: cuantía, neto y evolución | SalarioJusto</title>
   <meta name="description" content="SMI 2026 en España: ${fmtEur(smi2026.anual)} brutos anuales (${fmtEur(smi2026.mensual)}/mes en 14 pagas). Cuánto es en neto, si paga IRPF y evolución histórica desde 2020.">
   <link rel="canonical" href="https://salariojusto.es/salario-minimo-interprofesional-2026.html">
+  <link rel="alternate" hreflang="es" href="https://salariojusto.es/salario-minimo-interprofesional-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://salariojusto.es/salario-minimo-interprofesional-2026.html">
   <meta property="og:title" content="SMI 2026: cuantía, neto y evolución histórica">
   <meta property="og:description" content="Salario Mínimo Interprofesional 2026: ${fmtEur(smi2026.anual)} brutos/año. Descubre cuánto es en neto y si paga IRPF.">
   <meta property="og:url" content="https://salariojusto.es/salario-minimo-interprofesional-2026.html">
@@ -397,6 +454,7 @@ function generateSMIPage() {
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+  <script type="application/ld+json">${ORGANIZATION_SCHEMA}</script>
   <script type="application/ld+json">${breadcrumbSchema}</script>
   <script type="application/ld+json">${faqSchema}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXJ8V2FBW9"></script>
@@ -514,6 +572,8 @@ function generateTramosPage() {
   <title>Tramos IRPF 2026: tabla completa, tipos y ejemplos prácticos | SalarioJusto</title>
   <meta name="description" content="Tabla de tramos del IRPF 2026 en España: tipos marginales del 19% al 47%. Con ejemplos reales de retención para salarios de 12.450 € a 100.000 € brutos.">
   <link rel="canonical" href="https://salariojusto.es/tramos-irpf-2026.html">
+  <link rel="alternate" hreflang="es" href="https://salariojusto.es/tramos-irpf-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://salariojusto.es/tramos-irpf-2026.html">
   <meta property="og:title" content="Tramos IRPF 2026: tabla completa y ejemplos">
   <meta property="og:description" content="Los 6 tramos del IRPF 2026 con tipos del 19% al 47%. Ejemplos reales de cuánto pagas según tu salario.">
   <meta property="og:url" content="https://salariojusto.es/tramos-irpf-2026.html">
@@ -524,6 +584,7 @@ function generateTramosPage() {
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+  <script type="application/ld+json">${ORGANIZATION_SCHEMA}</script>
   <script type="application/ld+json">${breadcrumbSchema}</script>
   <script type="application/ld+json">${faqSchema}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXJ8V2FBW9"></script>
@@ -651,6 +712,8 @@ function generateHubPage() {
   <title>${title}</title>
   <meta name="description" content="${desc}">
   <link rel="canonical" href="${url}">
+  <link rel="alternate" hreflang="es" href="${url}">
+  <link rel="alternate" hreflang="x-default" href="${url}">
   <meta property="og:title" content="Calculadora de salario neto por ciudad y tramo (IRPF 2026)">
   <meta property="og:description" content="${desc}">
   <meta property="og:url" content="${url}">
@@ -661,6 +724,7 @@ function generateHubPage() {
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+  <script type="application/ld+json">${ORGANIZATION_SCHEMA}</script>
   <script type="application/ld+json">${breadcrumbSchema}</script>
   <script type="application/ld+json">${collectionSchema}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXJ8V2FBW9"></script>
@@ -801,6 +865,8 @@ ${porTramo[s].map(l => `        <li><a href="${l.href}">Salario neto en ${l.city
   <title>${title}</title>
   <meta name="description" content="${desc}">
   <link rel="canonical" href="${url}">
+  <link rel="alternate" hreflang="es" href="${url}">
+  <link rel="alternate" hreflang="x-default" href="${url}">
   <meta property="og:title" content="Mapa del sitio — SalarioJusto">
   <meta property="og:description" content="${desc}">
   <meta property="og:url" content="${url}">
@@ -809,6 +875,7 @@ ${porTramo[s].map(l => `        <li><a href="${l.href}">Salario neto en ${l.city
   <meta name="twitter:card" content="summary_large_image">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="application/ld+json">${ORGANIZATION_SCHEMA}</script>
   <script type="application/ld+json">${breadcrumbSchema}</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXJ8V2FBW9"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MXJ8V2FBW9');</script>
@@ -917,6 +984,7 @@ function generateSitemap(pages, convenios = []) {
     { url: 'https://salariojusto.es/salario-minimo-interprofesional-2026.html', priority: '0.85', freq: 'monthly' },
     { url: 'https://salariojusto.es/salarios.html', priority: '0.90', freq: 'weekly' },
     { url: 'https://salariojusto.es/convenios.html', priority: '0.90', freq: 'weekly' },
+    { url: 'https://salariojusto.es/sobre.html', priority: '0.70', freq: 'monthly' },
     { url: 'https://salariojusto.es/mapa-del-sitio.html', priority: '0.60', freq: 'weekly' },
   ];
 
