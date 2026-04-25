@@ -379,9 +379,11 @@ ${navHTML()}
 <div class="breadcrumb"><a href="/">SalarioJusto</a> › <a href="/convenios.html">Convenios</a> › ${meta.sector} ${meta.provincia}</div>
 
 <section class="hero">
-  <div class="hero-badge">Tablas salariales ${anyo}</div>
-  <h1>Convenio de <em>${meta.sector}</em> en ${meta.provincia}</h1>
+  <div class="hero-badge">Tablas salariales ${anyo}${enUltraactividad ? ` · vigentes en ${CURRENT_YEAR}` : ''}</div>
+  <h1>Convenio de <em>${meta.sector}</em> en ${meta.provincia}${enUltraactividad ? ` ${CURRENT_YEAR}` : ''}</h1>
   <p class="hero-sub">Tablas oficiales, jornada anual, pagas extras y complementos. ${data.bop}. Vigencia ${data.vigencia}.</p>
+  ${enUltraactividad ? `<div style="display:inline-block;margin-top:18px;padding:8px 16px;background:rgba(193,123,62,0.15);border:1px solid rgba(193,123,62,0.5);font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold-light);">⚠ Convenio en ultraactividad desde ${CURRENT_YEAR}</div>
+  <p style="font-size:13px;color:rgba(255,255,255,0.55);max-width:620px;margin:12px auto 0;line-height:1.6;">El convenio expiró el 31/12/${anyo} pero las tablas siguen aplicándose por ultraactividad (art. 86.3 ET) mientras se negocia un nuevo texto. No hay incremento automático.</p>` : ''}
 </section>
 
 <main>
