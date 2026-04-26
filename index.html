@@ -176,6 +176,13 @@
       padding: 3px 10px;
     }
 
+    .site-top {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--ink);
+    }
+
     /* NAVBAR */
     .navbar {
       background: var(--cream-100);
@@ -1832,12 +1839,22 @@
 </head>
 <body>
 
-<header>
-  <a href="/" class="logo">
-    <div class="logo-text">Salario<span>Justo</span></div>
-  </a>
-  <span class="header-tag">Ley Transparencia 2026</span>
-</header>
+<!-- Wrapper sticky · banner aviso 7-jun + header bajan juntos en el scroll
+     TODO 2026-06-07: cambiar el texto del banner a algo en presente/pasado
+     ("Ley en vigor · Conoce tus derechos →" u otra opción). Recordatorio
+     programado vía RemoteTrigger trig_014BRNoKYMrZp5ZXYwH2b5oo. -->
+<div class="site-top">
+  <div style="background:#2D2520;color:rgba(255,255,255,0.85);padding:10px 16px;text-align:center;font-size:13px;letter-spacing:0.01em;border-bottom:1px solid rgba(255,255,255,0.1);line-height:1.5;">
+    <strong style="color:#D9A06A;">7 de junio de 2026</strong> · entrada en vigor de la Directiva UE de transparencia retributiva · <a href="/ley-transparencia-salarial-2026.html" style="color:#D9A06A;text-decoration:underline;font-weight:500;">Saber qué cambia →</a>
+  </div>
+
+  <header>
+    <a href="/" class="logo">
+      <div class="logo-text">Salario<span>Justo</span></div>
+    </a>
+    <span class="header-tag">Ley Transparencia 2026</span>
+  </header>
+</div>
 
 <!-- NAVBAR -->
 <nav class="navbar">
@@ -2166,12 +2183,13 @@
 </div>
 
 <section class="hero">
-  <div class="hero-eyebrow">Herramienta gratuita de análisis salarial</div>
+  <div class="hero-eyebrow">Kit del trabajador para la Directiva UE 2023/970</div>
   <h1>Con la nueva Ley de Transparencia Retributiva,<br><em>¿cobras lo que realmente te corresponde?</em></h1>
-  <p class="hero-sub">Calcula tu salario neto y descubre tu posición en el mercado laboral español según datos de referencia por profesión, ciudad y sector.</p>
+  <p class="hero-sub">Calcula tu salario neto, verifica tu convenio y prepárate para ejercer tus derechos antes del 7 de junio.</p>
   <div class="hero-cta-group">
     <a href="#section-calc" class="hero-btn hero-btn-primary">Calcula tu salario neto →</a>
     <a href="#convenio-section" class="hero-btn hero-btn-secondary">Verifica tu convenio →</a>
+    <a href="/ley-transparencia-salarial-2026.html" class="hero-btn hero-btn-secondary">La ley en 2 minutos →</a>
   </div>
   <div class="trust-bar">
     <div class="trust-item">
