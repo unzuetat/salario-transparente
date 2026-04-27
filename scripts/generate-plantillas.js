@@ -26,10 +26,24 @@ function escapeHtml(s) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 }
-// `escapeHtmlPre` solo escapa los caracteres mínimos para que el contenido
-// se muestre correctamente dentro de un <pre> (los saltos de línea y los
-// espacios los preserva el propio <pre>).
-const escapeHtmlPre = escapeHtml;
+
+// Convierte el texto plano de una carta en HTML preservando saltos de línea
+// (vía `white-space: pre-wrap` en CSS) y resaltando las variables del tipo
+// [TEXTO] en negrita.
+function formatCarta(text) {
+  return escapeHtml(text).replace(/(\[[^\]]+\])/g, '<strong>$1</strong>');
+}
+
+// URLs canónicas en BOE.es de las normas referenciadas en las plantillas.
+// Verificadas el 2026-04-27.
+const LEY = {
+  directiva2023_970: 'https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668',
+  et: 'https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430',
+  rd901_2020: 'https://www.boe.es/buscar/act.php?id=BOE-A-2020-12214',
+  rd902_2020: 'https://www.boe.es/buscar/act.php?id=BOE-A-2020-12215',
+  lo3_2007: 'https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115',
+  constitucion: 'https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229',
+};
 
 // ── Texto del modelo de carta (plantilla #1) ─────────────────────────
 const CARTA_BANDA_SALARIAL = `[CIUDAD], [FECHA]
@@ -91,10 +105,10 @@ const BODY_BANDA_SALARIAL = `
 
   <div class="template-text-wrap">
     <div class="template-actions">
-      <button type="button" class="btn-copy" data-target="template-text">📋 Copiar al portapapeles</button>
-      <button type="button" class="btn-download" data-target="template-text" data-filename="solicitud-banda-salarial.txt">⬇️ Descargar como .txt</button>
+      <button type="button" class="btn-copy" data-target="template-text">Copiar al portapapeles</button>
+      <button type="button" class="btn-download" data-target="template-text" data-filename="solicitud-banda-salarial.txt">Descargar como .txt</button>
     </div>
-    <pre id="template-text" class="template-text">${escapeHtmlPre(CARTA_BANDA_SALARIAL)}</pre>
+    <div id="template-text" class="template-text">${formatCarta(CARTA_BANDA_SALARIAL)}</div>
   </div>
 
   <h2>Cómo enviarla</h2>
@@ -114,19 +128,19 @@ const BODY_BANDA_SALARIAL = `
     <li><strong>Reiterar la solicitud por escrito</strong> recordando el plazo del art. 7.4 ya superado y advirtiendo de que se procederá a denuncia. Sirve para dejar constancia de la negativa.</li>
     <li><strong>Denunciar ante la Inspección de Trabajo y Seguridad Social</strong> (<a href="https://www.mites.gob.es/itss/web/index.html" target="_blank" rel="noopener">mites.gob.es/itss</a>). El incumplimiento del derecho de información retributiva es sancionable.</li>
     <li><strong>Acudir a la representación legal de los trabajadores</strong> (comité, delegados sindicales) o a un sindicato sectorial. La presión colectiva suele desbloquear la información sin necesidad de juicio.</li>
-    <li><strong>Demanda ante el juzgado de lo social</strong>. Si la negativa de la empresa forma parte de un patrón de discriminación, puede combinarse con una reclamación por desigualdad retributiva — y entonces la <strong>carga de la prueba se invierte</strong> (art. 19 Directiva).</li>
+    <li><strong>Demanda ante el juzgado de lo social</strong>. Si la negativa de la empresa forma parte de un patrón de discriminación, puede combinarse con una reclamación por desigualdad retributiva — y entonces la <strong>carga de la prueba se invierte</strong> (<a href="${LEY.directiva2023_970}" target="_blank" rel="noopener">art. 18 Directiva 2023/970</a>).</li>
   </ul>
 
   <h2>Marco legal aplicable</h2>
   <div class="legal-box">
-    <p class="legal-title">Citas literales</p>
+    <p class="legal-title">Citas literales · Directiva (UE) 2023/970</p>
     <ul>
-      <li><strong>Art. 7.1</strong> — Los trabajadores tienen derecho a solicitar y recibir información por escrito sobre su nivel retributivo individual y los niveles retributivos medios, desglosados por sexo, para las categorías de trabajadores que realicen el mismo trabajo o un trabajo de igual valor al suyo.</li>
-      <li><strong>Art. 7.3</strong> — Los empleadores informarán anualmente a todos los trabajadores de su derecho a recibir la información y de los pasos que deben seguir para ejercerlo.</li>
-      <li><strong>Art. 7.4</strong> — Los empleadores facilitarán la información solicitada en un plazo razonable y, en cualquier caso, en un plazo de dos meses a contar desde la fecha en que se cursó la solicitud.</li>
-      <li><strong>Art. 7.5</strong> — No se impedirá a los trabajadores revelar su retribución a efectos de la aplicación del principio de igualdad de retribución. Las cláusulas contractuales que impidan revelar información sobre la retribución son nulas.</li>
+      <li><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener"><strong>Art. 7.1</strong></a> — Los trabajadores tienen derecho a solicitar y recibir información por escrito sobre su nivel retributivo individual y los niveles retributivos medios, desglosados por sexo, para las categorías de trabajadores que realicen el mismo trabajo o un trabajo de igual valor al suyo.</li>
+      <li><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener"><strong>Art. 7.3</strong></a> — Los empleadores informarán anualmente a todos los trabajadores de su derecho a recibir la información y de los pasos que deben seguir para ejercerlo.</li>
+      <li><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener"><strong>Art. 7.4</strong></a> — Los empleadores facilitarán la información solicitada en un plazo razonable y, en cualquier caso, en un plazo de dos meses a contar desde la fecha en que se cursó la solicitud.</li>
+      <li><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener"><strong>Art. 7.5</strong></a> — No se impedirá a los trabajadores revelar su retribución a efectos de la aplicación del principio de igualdad de retribución. Las cláusulas contractuales que impidan revelar información sobre la retribución son nulas.</li>
     </ul>
-    <p class="legal-source"><a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">Texto consolidado de la Directiva (UE) 2023/970 en BOE.es →</a></p>
+    <p class="legal-source"><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener">Texto consolidado de la Directiva (UE) 2023/970 en BOE.es →</a></p>
   </div>
 
   <h2>Preguntas frecuentes sobre esta plantilla</h2>
@@ -149,7 +163,7 @@ const BODY_BANDA_SALARIAL = `
   </div>
   <div class="faq-mini">
     <p class="faq-q">¿La empresa puede sancionarme por enviar esta carta?</p>
-    <p class="faq-a">No. La Directiva incluye protección expresa frente a represalias (art. 24). Cualquier despido o medida desfavorable que se produzca tras ejercer este derecho puede ser declarado nulo en juicio. Aun así, conviene leer el <a href="/reclamar-diferencias-salariales-convenio.html#escenario-serpico">escenario Serpico</a> para entender los matices reales de "represalia" más allá del papel.</p>
+    <p class="faq-a">No. La Directiva incluye protección expresa frente a represalias en su <a href="${LEY.directiva2023_970}" target="_blank" rel="noopener">artículo 25 (Victimización y protección frente a un trato menos favorable)</a>. Cualquier despido o medida desfavorable que se produzca tras ejercer este derecho puede ser declarado nulo en juicio. Aun así, conviene leer el <a href="/reclamar-diferencias-salariales-convenio.html#escenario-serpico">escenario Serpico</a> para entender los matices reales de "represalia" más allá del papel.</p>
   </div>
 
   <script>
@@ -159,7 +173,7 @@ const BODY_BANDA_SALARIAL = `
         const text = target.innerText;
         navigator.clipboard.writeText(text).then(() => {
           const orig = btn.textContent;
-          btn.textContent = '✓ Copiado';
+          btn.textContent = 'Copiado';
           btn.classList.add('btn-success');
           setTimeout(() => { btn.textContent = orig; btn.classList.remove('btn-success'); }, 1800);
         }).catch(() => alert('No se pudo copiar. Selecciona el texto manualmente.'));
@@ -192,8 +206,8 @@ const PLANTILLAS = [
     breadcrumb: 'Pedir banda salarial a tu empresa',
     hook: 'A partir del 7 de junio de 2026, en cualquier momento de tu relación laboral. La empresa está obligada a darte el rango salarial medio de tu categoría y trabajos de igual valor, desglosado por sexo. Es el derecho individual más directo de la Directiva.',
     legal: [
-      'Directiva (UE) 2023/970 — artículo 7 (derecho individual a información retributiva)',
-      'Directiva (UE) 2023/970 — artículo 9 (transparencia retributiva ex-ante)',
+      { text: 'Directiva (UE) 2023/970 — artículo 7 (Derecho a la información retributiva del trabajador)', href: LEY.directiva2023_970 },
+      { text: 'Directiva (UE) 2023/970 — artículo 5 (Transparencia retributiva previa al empleo)', href: LEY.directiva2023_970 },
     ],
     body: BODY_BANDA_SALARIAL,
   },
@@ -206,9 +220,9 @@ const PLANTILLAS = [
     breadcrumb: 'Solicitar información salarial a RRHH',
     hook: 'Antes del 7 de junio de 2026 (basada en el RD 902/2020) o como complemento a la #1, cuando necesitas pedir acceso al registro retributivo de tu empresa para detectar diferencias por sexo o categoría.',
     legal: [
-      'Real Decreto 902/2020 — artículo 5 (derecho de acceso al registro retributivo)',
-      'Real Decreto 901/2020 — planes de igualdad y auditoría retributiva',
-      'Directiva (UE) 2023/970 — artículos 7 y 9',
+      { text: 'Real Decreto 902/2020 — artículo 5 (acceso al registro retributivo: íntegro vía representación legal; sin representación, sólo diferencias porcentuales)', href: LEY.rd902_2020 },
+      { text: 'Real Decreto 901/2020 — planes de igualdad y auditoría retributiva', href: LEY.rd901_2020 },
+      { text: 'Directiva (UE) 2023/970 — artículos 7 y 9', href: LEY.directiva2023_970 },
     ],
   },
   {
@@ -220,8 +234,8 @@ const PLANTILLAS = [
     breadcrumb: 'Reclamar grupo profesional superior',
     hook: 'Haces tareas correspondientes a un grupo profesional superior al que tienes reconocido en contrato. Tienes derecho a reclamar el reconocimiento del grupo y la diferencia retributiva — con apoyo en el convenio y el art. 39 ET.',
     legal: [
-      'Estatuto de los Trabajadores — artículo 39 (movilidad funcional)',
-      'Convenio colectivo aplicable (definición de grupos profesionales)',
+      { text: 'Estatuto de los Trabajadores — artículo 39 (movilidad funcional)', href: LEY.et },
+      { text: 'Convenio colectivo aplicable (definición de grupos profesionales)', href: 'https://www.boe.es/buscar/' },
     ],
   },
   {
@@ -233,8 +247,8 @@ const PLANTILLAS = [
     breadcrumb: 'Reclamar atrasos del convenio',
     hook: 'Tu convenio se ha actualizado con efectos retroactivos desde el 1 de enero y la empresa no te ha aplicado las diferencias. Plazo de prescripción: 1 año desde que debieron abonarse (art. 59.1 ET).',
     legal: [
-      'Estatuto de los Trabajadores — artículo 59.1 (prescripción de salarios)',
-      'Convenio colectivo aplicable (cláusula de revisión salarial)',
+      { text: 'Estatuto de los Trabajadores — artículo 59.1 (prescripción de salarios: un año desde que debieron abonarse)', href: LEY.et },
+      { text: 'Convenio colectivo aplicable (cláusula de revisión salarial)', href: 'https://www.boe.es/buscar/' },
     ],
   },
   {
@@ -246,10 +260,11 @@ const PLANTILLAS = [
     breadcrumb: 'Denunciar discriminación salarial',
     hook: 'Tienes indicios sólidos de que cobras menos que un compañero/a por razón de sexo. La carga de la prueba se invierte: si aportas indicios, es la empresa quien debe demostrar que no hay discriminación. Vía: Inspección de Trabajo y/o juzgado social.',
     legal: [
-      'Directiva (UE) 2023/970 — artículo 18 (compensación íntegra)',
-      'Directiva (UE) 2023/970 — artículo 19 (carga de la prueba)',
-      'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)',
-      'Ley Orgánica 3/2007, de igualdad efectiva de mujeres y hombres',
+      { text: 'Directiva (UE) 2023/970 — artículo 16 (Derecho a indemnización)', href: LEY.directiva2023_970 },
+      { text: 'Directiva (UE) 2023/970 — artículo 18 (Inversión de la carga de la prueba)', href: LEY.directiva2023_970 },
+      { text: 'Directiva (UE) 2023/970 — artículo 25 (Victimización y protección frente a un trato menos favorable)', href: LEY.directiva2023_970 },
+      { text: 'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)', href: LEY.et },
+      { text: 'Ley Orgánica 3/2007, para la igualdad efectiva de mujeres y hombres', href: LEY.lo3_2007 },
     ],
   },
   {
@@ -261,9 +276,9 @@ const PLANTILLAS = [
     breadcrumb: 'Absorción indebida de complementos por SMI',
     hook: 'Al subir el SMI, la empresa ha reducido o eliminado complementos para que no notes el incremento. El Tribunal Supremo establece que los complementos con naturaleza específica (nocturnidad, peligrosidad, transporte) no pueden absorberse.',
     legal: [
-      'Estatuto de los Trabajadores — artículo 26.5 (compensación y absorción)',
-      'Real Decreto del SMI vigente (cláusula de no absorción)',
-      'Doctrina del Tribunal Supremo sobre complementos de naturaleza específica',
+      { text: 'Estatuto de los Trabajadores — artículo 26.5 (compensación y absorción)', href: LEY.et },
+      { text: 'Real Decreto del SMI vigente (cláusula de no absorción)', href: 'https://www.boe.es/buscar/' },
+      { text: 'Doctrina del Tribunal Supremo sobre complementos de naturaleza específica (verificable en el CENDOJ)', href: 'https://www.poderjudicial.es/search/' },
     ],
   },
   {
@@ -275,8 +290,9 @@ const PLANTILLAS = [
     breadcrumb: 'Documentar evidencias de desigualdad',
     hook: 'Sospechas que algo no encaja y quieres reunir indicios sólidos antes de mover ficha. No es una carta — es un checklist + formato de tabla para registrar lo que vas observando (correos, conversaciones, ofertas, anuncios, comparaciones de funciones) sin levantar ruido.',
     legal: [
-      'Directiva (UE) 2023/970 — artículo 19 (carga de la prueba)',
-      'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)',
+      { text: 'Directiva (UE) 2023/970 — artículo 18 (Inversión de la carga de la prueba)', href: LEY.directiva2023_970 },
+      { text: 'Directiva (UE) 2023/970 — artículo 20 (Acceso a las pruebas)', href: LEY.directiva2023_970 },
+      { text: 'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)', href: LEY.et },
     ],
   },
   {
@@ -288,9 +304,9 @@ const PLANTILLAS = [
     breadcrumb: 'Calcular la brecha salarial',
     hook: 'Quieres medir si la brecha entre mujeres y hombres de tu misma categoría supera el 5% sin justificación objetiva — el umbral que activa la evaluación retributiva conjunta obligatoria. Hoja de cálculo + guía paso a paso para hacerlo con los datos que tu empresa está obligada a darte.',
     legal: [
-      'Directiva (UE) 2023/970 — artículo 10 (informe sobre brecha retributiva)',
-      'Directiva (UE) 2023/970 — artículo 12 (evaluación retributiva conjunta · umbral 5%)',
-      'Real Decreto 902/2020 — auditoría retributiva',
+      { text: 'Directiva (UE) 2023/970 — artículo 9 (Información sobre la brecha retributiva entre trabajadores y trabajadoras)', href: LEY.directiva2023_970 },
+      { text: 'Directiva (UE) 2023/970 — artículo 10 (Evaluación retributiva conjunta · umbral del 5 %)', href: LEY.directiva2023_970 },
+      { text: 'Real Decreto 902/2020 — auditoría retributiva (artículo 7)', href: LEY.rd902_2020 },
     ],
   },
   {
@@ -302,9 +318,10 @@ const PLANTILLAS = [
     breadcrumb: 'Trabajo de igual valor',
     hook: 'Tu trabajo no es idéntico al de tu comparador, pero tiene responsabilidades, formación y condiciones equivalentes. La Directiva protege también este escenario, donde puestos ocupados mayoritariamente por mujeres están infravalorados respecto a otros equivalentes ocupados por hombres.',
     legal: [
-      'Directiva (UE) 2023/970 — artículo 4 (concepto de trabajo de igual valor)',
-      'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)',
-      'Real Decreto 902/2020 — artículo 4 (sistema de valoración de puestos)',
+      { text: 'Directiva (UE) 2023/970 — artículo 4 (Mismo trabajo y trabajo de igual valor)', href: LEY.directiva2023_970 },
+      { text: 'Directiva (UE) 2023/970 — artículo 19 (Probar la realización del mismo trabajo o de un trabajo de igual valor)', href: LEY.directiva2023_970 },
+      { text: 'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)', href: LEY.et },
+      { text: 'Real Decreto 902/2020 — artículo 4 (sistema de valoración de puestos de trabajo)', href: LEY.rd902_2020 },
     ],
   },
   {
@@ -316,9 +333,9 @@ const PLANTILLAS = [
     breadcrumb: 'Reclamación por art. 28 ET',
     hook: 'Cobras menos que un compañero/a haciendo el mismo trabajo, pero la causa no es el género. La vía es el art. 28 del Estatuto de los Trabajadores y el convenio colectivo aplicable, no la Directiva 2023/970.',
     legal: [
-      'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)',
-      'Convenio colectivo aplicable',
-      'Constitución Española — artículo 14 (principio de igualdad)',
+      { text: 'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)', href: LEY.et },
+      { text: 'Convenio colectivo aplicable', href: 'https://www.boe.es/buscar/' },
+      { text: 'Constitución Española — artículo 14 (principio de igualdad)', href: LEY.constitucion },
     ],
   },
 ];
@@ -329,7 +346,13 @@ const GUIA_URL = '/ley-transparencia-salarial-2026.html';
 
 function render(p) {
   const canonical = `https://salariojusto.es/${p.slug}.html`;
-  const legalItems = p.legal.map(l => `        <li>${escapeHtml(l)}</li>`).join('\n');
+  const legalItems = p.legal.map(l => {
+    const text = typeof l === 'string' ? l : l.text;
+    const href = typeof l === 'string' ? null : l.href;
+    return href
+      ? `        <li><a href="${href}" target="_blank" rel="noopener">${escapeHtml(text)}</a></li>`
+      : `        <li>${escapeHtml(text)}</li>`;
+  }).join('\n');
 
   return `<!DOCTYPE html>
 <html lang="es">
@@ -521,7 +544,7 @@ function render(p) {
     <h1>${escapeHtml(p.h1)}</h1>
     <div class="article-meta">
       <span>Actualizado: 27 abril 2026</span>
-      <span>${p.body ? '✅ Modelo listo para usar' : '🚧 En preparación'}</span>
+      <span>${p.body ? 'Modelo listo para usar' : 'En preparación'}</span>
     </div>
   </div>
 </div>
@@ -529,7 +552,7 @@ function render(p) {
 <main>
 ${p.body ? p.body : `
   <div class="construction-banner">
-    <h2 style="font-family:'DM Sans',sans-serif;font-size:15px;margin-bottom:6px;border:none;padding:0;">🚧 Esta plantilla está en preparación</h2>
+    <h2 style="font-family:'DM Sans',sans-serif;font-size:15px;margin-bottom:6px;border:none;padding:0;">Esta plantilla está en preparación</h2>
     <p>Estamos terminando de redactarla con todos los detalles legales y los campos personalizables. Mientras tanto, aquí abajo tienes el contexto: cuándo usarla y los artículos en los que se apoya. Vuelve en los próximos días para ver el modelo completo descargable.</p>
   </div>
 
