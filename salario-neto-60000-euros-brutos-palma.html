@@ -102,16 +102,17 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1110009006533891" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=Newsreader:wght@500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
   
   <style>
     :root{--cream-50:#FDFBF7;--cream-100:#F7F0E6;--cream-200:#EDE0CE;--gold:#C17B3E;--gold-dark:#A0622A;--gold-light:#D9A06A;--ink:#2D2520;--ink-light:#6B5E52;--ink-lighter:#9B8E88;--green:#2E7D52;--green-bg:#EAF5EE;--red:#B91C1C;--red-bg:#FEE2E2;--amber:#B45309;--amber-bg:#FEF3C7;--blue:#1D4ED8;--blue-bg:#EFF6FF;}
     *{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:'DM Sans',sans-serif;background:var(--cream-50);color:var(--ink);line-height:1.75;}
     header{background:var(--ink);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px;}
-    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-    .logo-text{font-size:15px;font-weight:700;color:#fff;letter-spacing:-0.02em;}
-    .logo-text span{color:var(--gold-light);}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .logo-mark{width:28px;height:28px;border:1px solid rgba(217,160,106,0.5);display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:17px;font-weight:500;color:var(--gold-light);line-height:1;padding-top:2px;}
+    .logo-text{font-family:'Newsreader',serif;font-size:22px;font-weight:600;color:var(--gold-light);letter-spacing:-0.025em;line-height:1;font-feature-settings:"kern" 1,"liga" 1;}
+    .logo-text span{color:#fff;}
     .header-cta{background:var(--gold);color:#fff;padding:8px 16px;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;}
     .header-cta:hover{background:var(--gold-dark);}
     .hero{background:var(--ink);padding:48px 32px 40px;text-align:center;}
@@ -152,6 +153,7 @@
 
 <header style="position:sticky;top:0;z-index:100;">
   <a href="/" class="logo">
+    <div class="logo-mark">§</div>
     <div class="logo-text">Salario<span>Justo</span></div>
   </a>
   <a href="/" class="header-cta">Calculadora completa →</a>

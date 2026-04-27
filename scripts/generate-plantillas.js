@@ -1688,6 +1688,239 @@ const BODY_CALCULAR_BRECHA = `
   </script>
 `;
 
+// ── Modelo de carta + body redactado de la plantilla #6 ─────────────
+const CARTA_ABSORCION_SMI = `[CIUDAD], [FECHA]
+
+A la atención de la Dirección de [RAZÓN SOCIAL] / Departamento de Recursos Humanos
+[DOMICILIO]
+
+Asunto: Reclamación previa por absorción indebida de complementos retributivos con la subida del SMI [AÑO]
+
+Estimados/as:
+
+Mediante el presente escrito, yo [NOMBRE Y APELLIDOS], con NIF [NIF], empleado/a de [RAZÓN SOCIAL] desde el [FECHA DE INCORPORACIÓN], con la categoría profesional de [CATEGORÍA SEGÚN CONVENIO] y el puesto de [PUESTO], formulo RECLAMACIÓN PREVIA por la operación de absorción y compensación que la empresa ha aplicado a mis complementos retributivos tras la entrada en vigor del Real Decreto del Salario Mínimo Interprofesional para el año [AÑO].
+
+ANTECEDENTES
+
+PRIMERO. Hasta la nómina de [MES Y AÑO ANTERIOR], venía percibiendo los siguientes complementos retributivos:
+  · [CONCEPTO]: [CUANTÍA] €/mes — naturaleza: [salarial / extrasalarial / indemnizatoria, según convenio]
+  · [CONCEPTO]: [CUANTÍA] €/mes — naturaleza: [...]
+  · [CONCEPTO]: [CUANTÍA] €/mes — naturaleza: [...]
+
+SEGUNDO. En la nómina de [MES POSTERIOR A LA SUBIDA DEL SMI], la empresa ha [eliminado / minorado / absorbido en el salario base] el siguiente concepto:
+  · [CONCEPTO ABSORBIDO]: [CUANTÍA ABSORBIDA] €/mes
+
+TERCERO. Esta absorción se ha producido con el objetivo de cumplir con la cuantía mínima del SMI vigente para [AÑO], establecida en el Real Decreto [Nº/AÑO], sin haberme comunicado previamente la modificación de la estructura retributiva ni haber tramitado el procedimiento del artículo 41 ET.
+
+FUNDAMENTACIÓN
+
+La doctrina consolidada del Tribunal Supremo en materia de compensación y absorción del SMI — entre otras, la STS 1100/2020 de 9 de diciembre (ROJ STS 4229/2020, Rec. 121/2019), la STS 272/2022 de 29 de marzo (ROJ STS 1353/2022, Rec. 162/2019) y la STS 446/2024 de 7 de marzo (Rec. 47/2022) — establece tres causas que impiden la absorción válida de complementos:
+
+1. Naturaleza extrasalarial del concepto absorbido. La STS 1100/2020 declara expresamente que "la absorción y compensación prevista en el artículo 26.5 ET no es posible cuando uno de los conceptos retributivos que interviene en la operación es inabsorbible por su propia naturaleza, cual ocurre cuando se trata de un complemento no salarial".
+
+2. Falta de homogeneidad entre los conceptos comparados. Conforme a la doctrina de la STS de 14 de abril de 2010 (Rcud. 2721/09), reiterada en STS 1100/2020 y 446/2024: "la absorción y compensación no rige en principio entre conceptos salariales por unidad de tiempo y devengos en función del esfuerzo laboral, ni entre complementos personales que no se vinculan a resultado alguno o a particulares condiciones de trabajo y aquéllos que se ligan al puesto de trabajo".
+
+3. Disposición expresa del convenio colectivo o de la norma legal que prohíba la absorción. La STS 446/2024 reitera que "solo cabe bloquear la compensación y absorción por heterogeneidad de los conceptos salariales, cuando se haya convenido así en el convenio colectivo".
+
+En mi caso, la absorción aplicada por la empresa es contraria a Derecho porque [SELECCIONAR Y CONCRETAR EL/LOS SUPUESTOS APLICABLES]:
+
+  [ ] El complemento [CONCEPTO ABSORBIDO] tiene naturaleza extrasalarial, al constituir compensación de un gasto efectuado por mí en razón de la actividad laboral (art. 26.2 ET) y no retribución por la prestación de servicios.
+
+  [ ] Los conceptos comparados no son homogéneos: [el complemento absorbido] retribuye [esfuerzo / condiciones específicas / circunstancia personal] y no es comparable con el salario base.
+
+  [ ] El artículo [Nº] del convenio colectivo de aplicación dispone expresamente que los complementos tienen carácter "no compensable ni absorbible" con incrementos del SMI.
+
+[SOLICITO]
+
+1. La REPOSICIÓN inmediata de mi estructura retributiva al estado anterior a la subida del SMI [AÑO], con el restablecimiento del concepto [COMPLEMENTO ABSORBIDO] en su cuantía original de [CUANTÍA] €/mes.
+
+2. El ABONO RETROACTIVO de las diferencias salariales correspondientes al período comprendido entre [FECHA DE LA ABSORCIÓN] y la fecha de regularización, calculadas como [CUANTÍA ABSORBIDA] € multiplicadas por las mensualidades transcurridas, más la incidencia que corresponda en pagas extraordinarias y vacaciones.
+
+3. La RESPUESTA POR ESCRITO en plazo razonable a la dirección de correo electrónico [TU EMAIL] o a la dirección postal [TU DIRECCIÓN POSTAL], con la justificación detallada de la operación de absorción aplicada o, en su caso, el reconocimiento expreso de la pretensión.
+
+ADVERTENCIA. En caso de no obtener respuesta favorable, o de no recibir respuesta en plazo razonable (15 días laborables), ejerceré las acciones legales pertinentes mediante presentación de papeleta de conciliación ante el Servicio de Mediación, Arbitraje y Conciliación (SMAC) y, en su caso, demanda ante el Juzgado de lo Social, dentro del plazo de prescripción de un año por mensualidad establecido en el artículo 59.2 ET. La presentación de la papeleta interrumpe la prescripción.
+
+Quedo a la espera de su respuesta.
+
+Atentamente,
+
+
+
+[FIRMA]
+
+[NOMBRE Y APELLIDOS]
+[NIF]
+`;
+
+// ── Body redactado de la plantilla #6 ────────────────────────────────
+const BODY_ABSORCION_SMI = `
+  <p class="lede-quote">La subida del SMI te <em>"come"</em> los complementos.</p>
+
+  <h2>Para qué sirve esta plantilla</h2>
+  <p>Cada vez que sube el Salario Mínimo Interprofesional, muchas empresas reordenan la nómina <em>absorbiendo</em> complementos para que el coste laboral no aumente: te suben el salario base hasta el nuevo SMI mensual, pero a cambio te reducen o eliminan el plus de transporte, nocturnidad, antigüedad o lo que tengas. Esa operación se llama <strong>compensación y absorción</strong> (art. 26.5 ET) y, según la jurisprudencia consolidada del Tribunal Supremo, <strong>solo es válida en algunos supuestos</strong>. En otros, es ilegal — y puedes reclamar las diferencias salariales más la reposición de tu estructura retributiva.</p>
+  <p>Esta plantilla no afirma que cualquier absorción sea injusta: lo importante es saber distinguir cuándo la empresa ha actuado dentro de la ley y cuándo se ha extralimitado. Si tu caso encaja en alguno de los tres supuestos de absorción ilegal que recoge la doctrina del TS — concepto extrasalarial, falta de homogeneidad, prohibición expresa del convenio — el escrito que generas con esta plantilla es la reclamación previa formal a la empresa antes de escalar a SMAC y Juzgado de lo Social.</p>
+
+  <h2>Cuándo usar esta plantilla</h2>
+  <div class="when-box">
+    <p><strong>Cuando una subida del SMI te ha "comido" complementos.</strong> El patrón típico: tu nómina del primer mes del año (enero o febrero, según cuándo se publique el RD del SMI) muestra un salario base más alto pero con uno o varios complementos eliminados o minorados, y el cómputo total te queda igual o casi igual que antes. Si esos complementos eran extrasalariales (transporte como compensación de gasto, dietas), no homogéneos con el salario base (esfuerzo, condiciones específicas), o si tu convenio colectivo los declara expresamente "no compensables ni absorbibles", la operación es ilegal y tienes derecho a reclamar la reposición y los atrasos.</p>
+  </div>
+
+  <h2>Antes de redactarla, ten a mano…</h2>
+  <ul>
+    <li>Tu <strong>nómina del mes anterior</strong> a la subida del SMI y la <strong>nómina del mes posterior</strong>. Necesitas las dos para acreditar exactamente qué concepto se ha absorbido y por qué cuantía.</li>
+    <li>El <strong>texto de tu convenio colectivo</strong> aplicable. Busca específicamente la cláusula sobre estructura salarial y, si existe, la frase "no compensable ni absorbible". Si no localizas tu convenio, en el <a href="/convenios.html">verificador de convenios</a> tienes 19 convenios oficiales indexados; alternativamente, está en el <a href="https://expinterweb.mites.gob.es/regcon/" target="_blank" rel="noopener">REGCON</a> y en el BOE/BOP correspondiente.</li>
+    <li>El <strong>Real Decreto del SMI</strong> vigente que motivó la operación de la empresa (cada año tiene el suyo: RD 1462/2018 para 2019, RD 231/2020 para 2020, RD 817/2021 para 2021, etc.). Su artículo 3 regula la compensación y absorción.</li>
+    <li>Tus datos personales: <strong>nombre y apellidos, NIF, fecha de incorporación, categoría profesional, puesto</strong>.</li>
+    <li>Datos de la empresa: <strong>razón social, CIF, domicilio social</strong> y nombre de la persona responsable de RRHH si lo conoces.</li>
+  </ul>
+
+  <h2>Cuándo la absorción ES legal (para no reclamar en falso)</h2>
+  <p>El TS ha consolidado en sentencias como la <strong>STS 272/2022</strong> (29 de marzo) y la <strong>STS 446/2024</strong> (7 de marzo) que la absorción <strong>SÍ es válida</strong> cuando concurren todas estas condiciones:</p>
+  <ul>
+    <li>Los complementos absorbidos tienen <strong>naturaleza salarial</strong> — pluses de antigüedad, sobrecargo, nocturnidad cuando su finalidad es retributiva (no compensación de gasto), pagas de beneficios, primas de productividad y similares.</li>
+    <li>El <strong>convenio colectivo no contiene una cláusula expresa</strong> que prohíba la compensación y absorción de esos conceptos.</li>
+    <li>El <strong>cómputo anual</strong> de tu salario sigue siendo igual o superior al SMI anual del año correspondiente (art. 27.1 último párrafo ET).</li>
+  </ul>
+  <p>Si tu caso encaja en este escenario, la operación de la empresa es jurídicamente correcta — aunque te resulte injusta. La protección frente a esta situación habría tenido que negociarse en el convenio colectivo previamente.</p>
+
+  <h2>Cuándo la absorción es ILEGAL — los tres supuestos del TS</h2>
+
+  <h3>Supuesto 1 · Concepto extrasalarial absorbido</h3>
+  <p>La <a href="https://www.poderjudicial.es/search/" target="_blank" rel="noopener"><strong>STS 1100/2020</strong></a> (9 de diciembre, ROJ STS 4229/2020, Rec. 121/2019) declara la <strong>nulidad</strong> de la absorción cuando el concepto absorbido tiene naturaleza extrasalarial. Cita literal:</p>
+  <div class="callout">
+    "La absorción y compensación prevista en el artículo 26.5 ET no es posible cuando uno de los conceptos retributivos que interviene en la operación es inabsorbible por su propia naturaleza, cual ocurre cuando se trata de un complemento no salarial."
+  </div>
+  <p>El <strong>plus de transporte</strong>, cuando se configura en convenio como <em>compensación de un gasto</em> que el trabajador asume por desplazarse al centro de trabajo (art. 26.2 ET), es el caso paradigmático. Lo confirma la <strong>STS 446/2024</strong>: aunque cotice como salario y se abone en cuantía fija mensual, la naturaleza jurídica del concepto la determina <em>la finalidad real</em> del devengo — no el tratamiento contable que la empresa le dé en el recibo de nómina. Las dietas, el plus distancia y otros conceptos del art. 26.2 ET siguen la misma lógica.</p>
+
+  <h3>Supuesto 2 · Conceptos no homogéneos</h3>
+  <p>Aunque ambos conceptos sean salariales, la absorción exige <strong>homogeneidad</strong> entre ellos. La doctrina sentada por la STS de 14 de abril de 2010 (Rcud. 2721/09), reiterada en la STS 1100/2020 y la STS 446/2024, establece tres principios:</p>
+  <ul>
+    <li>La compensación y absorción debe operar sobre retribuciones que presenten la <strong>necesaria homogeneidad</strong>: la finalidad de la norma es evitar la superposición de mejoras salariales — superposición que <em>no se produce</em> cuando los conceptos son heterogéneos.</li>
+    <li>Las posibilidades de compensación y absorción deben valorarse atendiendo a <strong>los términos, modo y extensión en los que han sido pactadas</strong> las remuneraciones implicadas.</li>
+    <li>La absorción <strong>no rige</strong>, en principio, entre: (a) conceptos salariales por unidad de tiempo y devengos en función del esfuerzo laboral; (b) complementos personales no vinculados a resultado o condiciones específicas y aquellos que se ligan al puesto de trabajo.</li>
+  </ul>
+
+  <h3>Supuesto 3 · Disposición expresa del convenio</h3>
+  <p>Si el convenio colectivo de aplicación contiene una cláusula del tipo "<em>las cantidades pactadas tendrán carácter no compensable ni absorbible</em>", esa disposición prohíbe la operación con independencia de la naturaleza de los conceptos. La <strong>STS 446/2024</strong> resume la doctrina actual: "solo cabe bloquear la compensación y absorción por heterogeneidad de los conceptos salariales, cuando se haya convenido así en el convenio colectivo". Si tu convenio incluye una cláusula de este tipo, llévala como argumento principal; el resto de fundamentación es subsidiaria.</p>
+
+  <h2>Modelo de carta — reclamación previa a la empresa</h2>
+  <p>Personaliza los campos en <strong>[CORCHETES]</strong> con tus datos, los conceptos retributivos concretos, las cuantías y el supuesto del TS aplicable. Mantén las citas legales y jurisprudenciales tal cual: ese es el contenido jurídico que da peso a la reclamación.</p>
+
+  <div class="template-text-wrap">
+    <div class="template-actions">
+      <button type="button" class="btn-copy" data-target="template-text">Copiar al portapapeles</button>
+      <button type="button" class="btn-download" data-target="template-text" data-filename="reclamacion-absorcion-complementos-smi.txt">Descargar como .txt</button>
+    </div>
+    <div id="template-text" class="template-text">${formatCarta(CARTA_ABSORCION_SMI)}</div>
+  </div>
+
+  <h2>Cómo enviarla</h2>
+  <p>La reclamación previa a la empresa <strong>interrumpe la prescripción</strong> del año del art. 59.2 ET. Para que sea inatacable como prueba, necesitas dejar constancia del envío y de la fecha de recepción:</p>
+  <ol>
+    <li><strong>Burofax con acuse de recibo y certificación de contenido</strong> (Correos). Es la opción más sólida ante un eventual juicio: tienes prueba de qué dijiste y de cuándo lo recibieron. Coste 25-40 €.</li>
+    <li><strong>Correo electrónico</strong> a la cuenta corporativa de Dirección/RRHH solicitando confirmación de lectura y acuse de recibo expreso. Adjunta carta firmada en PDF junto con copias de las dos nóminas (anterior y posterior).</li>
+    <li><strong>Registro de entrada presencial</strong> en las oficinas de la empresa. Lleva dos copias y exige que te sellen una con fecha y firma.</li>
+    <li><strong>A través de la representación legal de los trabajadores o tu sindicato.</strong> Si en tu empresa hay delegados, comité o sección sindical, planteales la reclamación: las absorciones suelen afectar a colectivos enteros y la presión colectiva es más eficaz.</li>
+  </ol>
+
+  <h2>Qué pasa si la empresa no responde o rechaza la reclamación</h2>
+  <p>El siguiente paso es la <strong>papeleta de conciliación ante el SMAC</strong> de tu provincia (gratuita), que interrumpe la prescripción de forma definitiva e intenta una solución amistosa. Si no hay acuerdo o la empresa no comparece, queda expedita la vía de la <strong>demanda de cantidad ante el Juzgado de lo Social</strong>, donde podrás reclamar las diferencias salariales devengadas en el último año (art. 59.2 ET) más los intereses legales. Si la situación afecta a un colectivo, los sindicatos pueden plantear la cuestión como <strong>conflicto colectivo</strong> ante la Sala de lo Social de la Audiencia Nacional o el TSJ correspondiente — esta vía suele tener más eficacia y es la que las STS verificadas en esta plantilla resuelven.</p>
+
+  <div class="callout">
+    <strong>Plazo crítico:</strong> el art. 59.2 ET fija un año de prescripción <em>por cada mensualidad</em> desde que debió pagarse. Cuanto más tardes, más mensualidades pierdes por la "cola" del año. Reclama cuanto antes.
+  </div>
+
+  <h2>Marco legal aplicable</h2>
+
+  <div class="legal-box">
+    <p class="legal-title">Citas literales y enlaces verificables</p>
+    <ul>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 26.2 ET</strong></a> — No tendrán la consideración de salario las cantidades percibidas por el trabajador en concepto de indemnizaciones o suplidos por los gastos realizados como consecuencia de su actividad laboral, las prestaciones e indemnizaciones de la Seguridad Social y las indemnizaciones correspondientes a traslados, suspensiones o despidos.</li>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 26.5 ET</strong></a> — Operará la compensación y absorción cuando los salarios realmente abonados, en su conjunto y cómputo anual, sean más favorables para los trabajadores que los fijados en el orden normativo o convencional de referencia.</li>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 27.1 ET</strong></a> (último párrafo) — La revisión del salario mínimo interprofesional no afectará a la estructura ni a la cuantía de los salarios profesionales cuando estos, en su conjunto y cómputo anual, fueran superiores a aquel.</li>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 59.2 ET</strong></a> — La acción para exigir percepciones económicas o para el cumplimiento de obligaciones de tracto único, que no puedan tener lugar después de extinguido el contrato, prescribirá al año de su terminación. Esta prescripción cuenta por mensualidad.</li>
+      <li><strong>Real Decreto del SMI</strong> aplicable al año correspondiente (RD 1462/2018 para 2019, RD 231/2020 para 2020, RD 817/2021 para 2021, RDs sucesivos). Su artículo 3 regula la compensación y absorción del incremento del SMI.</li>
+    </ul>
+  </div>
+
+  <h3>Jurisprudencia del Tribunal Supremo (Sala IV · Social)</h3>
+  <div class="legal-box">
+    <ul>
+      <li><strong>STS 1100/2020 de 9 de diciembre de 2020</strong> · ROJ STS 4229/2020 · Rec. 121/2019 · Ponente: Ángel Blasco Pellicer. <em>Caso Avanza</em>. Declara la nulidad de la absorción del plus transporte (extrasalarial) con la subida del SMI. Establece que la absorción "no es posible cuando uno de los conceptos retributivos que interviene en la operación es inabsorbible por su propia naturaleza, cual ocurre cuando se trata de un complemento no salarial".</li>
+      <li><strong>STS 272/2022 de 29 de marzo de 2022</strong> · ROJ STS 1353/2022 · Rec. 162/2019 · Ponente: Antonio V. Sempere Navarro. <em>Caso Incatema</em>. Confirma que los complementos salariales (incluida la prima de productividad) sí son absorbibles cuando el convenio no contiene cláusula expresa que lo prohíba. Sintetiza la doctrina sobre homogeneidad y cómputo anual del SMI.</li>
+      <li><strong>STS 446/2024 de 7 de marzo de 2024</strong> · Rec. 47/2022 · Ponente: Sebastián Moralo Gallego. <em>Caso Air Nostrum</em>. Confirma que pluses de sobrecargo, nocturnidad y paga de beneficios (de naturaleza salarial) sí son absorbibles si el convenio no lo prohíbe; el plus transporte (extrasalarial / indemnizatorio) NO lo es. Reitera: "solo cabe bloquear la compensación y absorción por heterogeneidad de los conceptos salariales, cuando se haya convenido así en el convenio colectivo".</li>
+      <li><strong>STS de 14 de abril de 2010</strong> · Rcud. 2721/09. Doctrina nuclear sobre los tres principios de homogeneidad para que opere la absorción y compensación. Citada literalmente en STS 1100/2020 y 446/2024.</li>
+      <li><strong>STS 74/2022 de 26 de enero de 2022</strong> · Rec. 89/2020. Confirma que el complemento de antigüedad sí entra en el cómputo del SMI cuando el convenio no lo excluye expresamente.</li>
+    </ul>
+    <p class="legal-source">Todas las sentencias son consultables en el <a href="https://www.poderjudicial.es/search/" target="_blank" rel="noopener">CENDOJ</a> introduciendo el ROJ o el número de sentencia.</p>
+  </div>
+
+  <h2>Preguntas frecuentes</h2>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Cómo sé si mi complemento es salarial o extrasalarial?</p>
+    <p class="faq-a">Lo determina el <strong>convenio colectivo aplicable</strong> y la <strong>finalidad real</strong> del devengo, no el tratamiento que le dé la empresa en la nómina o en la cotización. Pista práctica: si el complemento <em>compensa un gasto</em> que el trabajador asume por su actividad laboral (transporte de su casa al centro de trabajo, dietas de comida, distancia, herramientas), es extrasalarial (art. 26.2 ET). Si <em>retribuye</em> trabajo (esfuerzo, condiciones específicas, antigüedad, productividad), es salarial. La STS 446/2024 confirma que aunque el plus transporte cotice como salario o se abone en cuantía fija mensual, sigue siendo extrasalarial si el convenio lo califica como tal y su finalidad real es indemnizar un gasto.</p>
+  </div>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿La nocturnidad puede absorberse con la subida del SMI?</p>
+    <p class="faq-a">Según la <strong>STS 446/2024</strong>, sí — siempre que (a) el plus de nocturnidad tenga naturaleza salarial en el convenio (que es lo habitual, art. 36.2 ET), y (b) el convenio colectivo no contenga una cláusula expresa que prohíba la compensación y absorción. Si tu convenio sí lo prohíbe, la absorción es ilegal y tienes argumento para reclamar. La intuición de que "la nocturnidad no puede comerse porque retribuye un esfuerzo singular" pierde apoyo jurisprudencial frente a esta sentencia: el TS rechaza ese argumento salvo cuando el convenio lo contempla expresamente.</p>
+  </div>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Y el plus de antigüedad?</p>
+    <p class="faq-a">La <strong>STS 74/2022</strong> y la <strong>STS 272/2022</strong> establecen que el complemento de antigüedad <em>se computa</em> dentro del salario anual a comparar con el SMI. Es decir: si entre tu salario base y tu antigüedad superas el SMI anual, no hay obligación de subirte. Y la antigüedad puede entrar en la operación de absorción si el convenio no lo prohíbe. Para reclamar contra la absorción de la antigüedad necesitas, por tanto, una cláusula convencional expresa de "no compensable ni absorbible" o una pugna sobre la homogeneidad.</p>
+  </div>
+
+  <div class="faq-mini">
+    <p class="faq-q">Mi convenio dice "las cantidades tendrán carácter no compensable ni absorbible". ¿Eso resuelve mi caso?</p>
+    <p class="faq-a">Es el <strong>argumento más fuerte</strong>. La STS 446/2024 establece que esa cláusula bloquea la operación con independencia de la naturaleza de los conceptos. Lleva el texto literal del artículo del convenio en la reclamación previa y solicita expresamente la reposición. Cuidado con la interpretación de la cláusula: el TS ha analizado en varias sentencias si se refiere a cualquier incremento o solo a las revalorizaciones del propio convenio. Si tu cláusula es ambigua (por ejemplo, sin coma o sin "ni absorbible"), la empresa podría argumentar que solo aplica a las subidas pactadas en convenio. Si es clara, prevalece.</p>
+  </div>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Cuánto tiempo hacia atrás puedo reclamar?</p>
+    <p class="faq-a">El plazo de prescripción es de <strong>un año por mensualidad</strong> desde que debió pagarse cada cantidad (art. 59.2 ET). Si la absorción comenzó en enero y reclamas en diciembre del mismo año, todavía conservas las 11 mensualidades anteriores. Si reclamas dos años después, habrás perdido las primeras 12 mensualidades. La presentación de la reclamación previa a la empresa y, sobre todo, la papeleta de conciliación ante el SMAC, <strong>interrumpen la prescripción</strong> y reinician el cómputo del año.</p>
+  </div>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Qué hago si la empresa rechaza la reclamación?</p>
+    <p class="faq-a">Presenta <strong>papeleta de conciliación ante el SMAC</strong> de tu provincia. Es gratuita y obligatoria como paso previo a la demanda judicial. Si en el SMAC no hay acuerdo o la empresa no comparece, el secretario judicial te emite el correspondiente certificado y queda expedita la vía judicial: presentas demanda de cantidad ante el Juzgado de lo Social en el plazo de 20 días hábiles desde el acto de conciliación (no del rechazo extrajudicial inicial). Si el problema afecta a un colectivo y hay sindicato implantado, valora la vía del conflicto colectivo: las STS verificadas en esta plantilla resuelven precisamente conflictos colectivos.</p>
+  </div>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Necesito abogado para esto?</p>
+    <p class="faq-a">Para la reclamación previa a la empresa y la papeleta de conciliación al SMAC, no. Para la demanda al Juzgado de lo Social, en cantidad inferior a 6.000 € puedes ir sin abogado ni graduado social, aunque suele ser recomendable contar con asesoría — de tu sindicato si estás afiliado/a (suelen darla gratuita), de un graduado social, o de un abogado laboralista. Para reclamaciones por cuantía superior o con cierta complejidad jurídica, la representación letrada o de graduado social es obligatoria.</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.btn-copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          const orig = btn.textContent;
+          btn.textContent = 'Copiado';
+          btn.classList.add('btn-success');
+          setTimeout(() => { btn.textContent = orig; btn.classList.remove('btn-success'); }, 1800);
+        }).catch(() => alert('No se pudo copiar. Selecciona el texto manualmente.'));
+      });
+    });
+    document.querySelectorAll('.btn-download').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        const filename = btn.dataset.filename || 'plantilla.txt';
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    });
+  </script>
+`;
+
 // ── Plantillas del Kit (SSOT) ────────────────────────────────────────
 const PLANTILLAS = [
   {
@@ -1774,14 +2007,20 @@ const PLANTILLAS = [
     slug: 'plantilla-reclamar-absorcion-complementos-smi',
     title: 'Plantilla para reclamar la absorción indebida de complementos por subida del SMI',
     h1: 'Plantilla para reclamar la absorción indebida de complementos por subida del SMI',
-    metaDescription: 'Modelo de carta para reclamar cuando tu empresa reduce complementos al subir el SMI. Los complementos con naturaleza específica no pueden absorberse.',
+    metaDescription: 'Modelo de reclamación previa a la empresa cuando ha absorbido o eliminado complementos al subir el SMI. La doctrina del TS (SSTS 1100/2020, 272/2022 y 446/2024) impide la absorción cuando el concepto es extrasalarial, no homogéneo o el convenio lo prohíbe expresamente.',
     breadcrumb: 'Absorción indebida de complementos por SMI',
-    hook: 'Al subir el SMI, la empresa ha reducido o eliminado complementos para que no notes el incremento. El Tribunal Supremo establece que los complementos con naturaleza específica (nocturnidad, peligrosidad, transporte) no pueden absorberse.',
+    hook: 'Al subir el SMI, la empresa ha reducido o eliminado complementos para mantener el coste laboral igual. La doctrina del Tribunal Supremo establece que la absorción es ilegal en tres supuestos: complemento extrasalarial, falta de homogeneidad entre conceptos, o prohibición expresa del convenio colectivo.',
     legal: [
+      { text: 'Estatuto de los Trabajadores — artículo 26.2 (definición de conceptos extrasalariales)', href: LEY.et },
       { text: 'Estatuto de los Trabajadores — artículo 26.5 (compensación y absorción)', href: LEY.et },
-      { text: 'Real Decreto del SMI vigente (cláusula de no absorción)', href: 'https://www.boe.es/buscar/' },
-      { text: 'Doctrina del Tribunal Supremo sobre complementos de naturaleza específica (verificable en el CENDOJ)', href: 'https://www.poderjudicial.es/search/' },
+      { text: 'Estatuto de los Trabajadores — artículo 27.1 (revisión del SMI no afecta a salarios profesionales superiores en cómputo anual)', href: LEY.et },
+      { text: 'Estatuto de los Trabajadores — artículo 59.2 (prescripción de un año por mensualidad)', href: LEY.et },
+      { text: 'Real Decreto del SMI aplicable al año correspondiente — artículo 3 sobre compensación y absorción', href: 'https://www.boe.es/' },
+      { text: 'STS 1100/2020 de 9 de diciembre de 2020 (ROJ STS 4229/2020, Rec. 121/2019) — caso Avanza: nulidad de la absorción del plus transporte extrasalarial', href: 'https://www.poderjudicial.es/search/' },
+      { text: 'STS 272/2022 de 29 de marzo de 2022 (ROJ STS 1353/2022, Rec. 162/2019) — caso Incatema: complementos salariales sí absorbibles si el convenio no lo prohíbe', href: 'https://www.poderjudicial.es/search/' },
+      { text: 'STS 446/2024 de 7 de marzo de 2024 (Rec. 47/2022) — caso Air Nostrum: nocturnidad/sobrecargo absorbibles, plus transporte indemnizatorio NO', href: 'https://www.poderjudicial.es/search/' },
     ],
+    body: BODY_ABSORCION_SMI,
   },
   {
     num: 7,
@@ -1933,7 +2172,7 @@ function render(p) {
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=Newsreader:wght@500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -1954,10 +2193,10 @@ function render(p) {
     body { font-family: 'DM Sans', sans-serif; background: var(--cream-50); color: var(--ink); line-height: 1.75; }
 
     header { background: var(--ink); padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 56px; }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-icon { width: 30px; height: 30px; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #fff; font-family: 'DM Serif Display', serif; }
-    .logo-text { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
-    .logo-text span { color: var(--gold-light); }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark { width: 28px; height: 28px; border: 1px solid rgba(217,160,106,0.5); display: flex; align-items: center; justify-content: center; font-family: 'Newsreader', serif; font-size: 17px; font-weight: 500; color: var(--gold-light); line-height: 1; padding-top: 2px; }
+    .logo-text { font-family: 'Newsreader', serif; font-size: 22px; font-weight: 600; color: var(--gold-light); letter-spacing: -0.025em; line-height: 1; font-feature-settings: "kern" 1, "liga" 1; }
+    .logo-text span { color: #fff; }
     .header-cta { background: var(--gold); color: #fff; padding: 8px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; }
     .header-cta:hover { background: var(--gold-dark); }
 
@@ -2045,6 +2284,11 @@ function render(p) {
     /* Código inline (nombres de fichero) */
     code { background: var(--cream-100); padding: 1px 6px; font-family: 'Courier New', Courier, monospace; font-size: 12px; color: var(--ink); border: 1px solid var(--cream-200); }
 
+    /* Lede destacado (idea principal de la plantilla, opcional) */
+    .lede-quote { font-family: 'DM Serif Display', serif; font-size: clamp(17px, 2vw, 22px); line-height: 1.35; color: var(--ink); font-weight: 400; margin: 0 0 32px; padding: 4px 0 22px 22px; border-left: 4px solid var(--gold); }
+    .lede-quote em { font-style: italic; color: var(--gold-dark); }
+
+
     footer { background: var(--ink); padding: 32px; text-align: center; margin-top: 0; }
     .footer-text { font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 600px; margin: 0 auto; }
     .footer-text a { color: var(--gold-light); text-decoration: none; }
@@ -2062,8 +2306,8 @@ function render(p) {
 <body>
 
 <header>
-  <a href="https://salariojusto.es" class="logo">
-    <div class="logo-icon">€</div>
+  <a href="/" class="logo">
+    <div class="logo-mark">§</div>
     <div class="logo-text">Salario<span>Justo</span></div>
   </a>
   <a href="https://salariojusto.es" class="header-cta">Calcular mi salario →</a>

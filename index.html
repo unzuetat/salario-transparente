@@ -90,7 +90,8 @@
   <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=Newsreader:wght@500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
@@ -131,55 +132,77 @@
       align-items: center;
       justify-content: space-between;
       height: 56px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
       flex-shrink: 0;
     }
 
-    .logo-icon {
-      width: 30px;
-      height: 30px;
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    .logo-mark {
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(217,160,106,0.5);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
-      font-weight: 700;
-      color: #fff;
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Newsreader', serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--gold-light);
+      line-height: 1;
+      padding-top: 2px;
     }
 
     .logo-text {
-      font-size: 15px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.02em;
+      font-family: 'Newsreader', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: -0.025em;
+      line-height: 1;
+      font-feature-settings: "kern" 1, "liga" 1;
     }
 
-    .logo-text span { color: var(--gold-light); }
+    .logo-text span { color: #fff; }
 
     .header-tag {
+      font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      font-weight: 500;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--gold-light);
-      border: 1px solid rgba(193,123,62,0.4);
-      padding: 3px 10px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .header-notice {
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      line-height: 1.4;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+      margin-left: 24px;
+    }
+    .header-notice strong { color: var(--gold-light); font-weight: 600; }
+    .header-notice .cta { color: var(--gold-light); text-decoration: underline; font-weight: 500; margin-left: 4px; }
+    @media (max-width: 720px) {
+      .header-notice .full { display: none; }
+    }
+    @media (min-width: 721px) {
+      .header-notice .short { display: none; }
     }
 
     .site-top {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
       background: var(--ink);
     }
 
@@ -191,9 +214,6 @@
       display: flex;
       align-items: center;
       gap: 0;
-      position: sticky;
-      top: 56px;
-      z-index: 99;
     }
 
     .nav-items {
@@ -1905,17 +1925,16 @@
      ("Ley en vigor · Conoce tus derechos →" u otra opción). Recordatorio
      programado vía RemoteTrigger trig_014BRNoKYMrZp5ZXYwH2b5oo. -->
 <div class="site-top">
-  <div style="background:#2D2520;color:rgba(255,255,255,0.85);padding:10px 16px;text-align:center;font-size:13px;letter-spacing:0.01em;border-bottom:1px solid rgba(255,255,255,0.1);line-height:1.5;">
-    <strong style="color:#D9A06A;">7 de junio de 2026</strong> · entrada en vigor de la Directiva UE de transparencia retributiva · <a href="/ley-transparencia-salarial-2026.html" style="color:#D9A06A;text-decoration:underline;font-weight:500;">Saber qué cambia →</a>
-  </div>
-
   <header>
     <a href="/" class="logo">
+      <div class="logo-mark">§</div>
       <div class="logo-text">Salario<span>Justo</span></div>
     </a>
-    <span class="header-tag">Ley Transparencia 2026</span>
+    <a href="/ley-transparencia-salarial-2026.html" class="header-notice">
+      <span class="full"><strong>7 de junio de 2026</strong> · entrada en vigor de la Directiva UE de transparencia retributiva<span class="cta">Saber qué cambia →</span></span>
+      <span class="short"><strong>7 jun 2026</strong><span class="cta">Ley UE →</span></span>
+    </a>
   </header>
-</div>
 
 <!-- NAVBAR -->
 <nav class="navbar">
@@ -2048,6 +2067,8 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
 </nav>
+</div>
+<!-- /.site-top -->
 
 <!-- NEWS MODAL -->
 
