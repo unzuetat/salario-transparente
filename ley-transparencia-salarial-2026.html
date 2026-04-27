@@ -251,17 +251,33 @@
     tbody tr:nth-child(even) { background: var(--cream-50); }
     td { padding: 11px 14px; color: var(--ink-light); vertical-align: top; }
     td:first-child { color: var(--ink); font-weight: 500; }
+    td .td-list { margin: 0; padding-left: 18px; }
+    td .td-list li { font-size: 13px; line-height: 1.55; margin-bottom: 4px; color: var(--ink-light); }
+    td .td-list li:last-child { margin-bottom: 0; }
 
     /* STEP BOX */
     .step { display: flex; gap: 16px; margin-bottom: 24px; padding: 20px 22px; background: #fff; border: 1px solid var(--cream-200); }
     .step-num { width: 32px; height: 32px; min-width: 32px; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; font-family: 'DM Serif Display', serif; }
     .step-content h3 { margin: 0 0 6px; font-size: 15px; }
     .step-content p { margin: 0; font-size: 14px; }
+    .step-content p + p { margin-top: 12px; }
+    .step-content ul, .step-content ol { margin: 10px 0 0; padding-left: 22px; }
+    .step-content li { font-size: 14px; margin-bottom: 6px; line-height: 1.6; }
+    .step-content p + ul, .step-content p + ol { margin-top: 8px; }
+    .step-content ul + p, .step-content ol + p { margin-top: 12px; }
+
+    /* Glossary box: definition list para términos clave */
+    .glossary { background: var(--cream-100); border: 1px solid var(--cream-200); border-left: 4px solid var(--gold); padding: 20px 24px; margin: 16px 0 28px; }
+    .glossary dl { margin: 0; }
+    .glossary dt { font-size: 14px; font-weight: 700; color: var(--ink); margin-top: 14px; }
+    .glossary dt:first-child { margin-top: 0; }
+    .glossary dd { font-size: 14px; color: var(--ink-light); margin: 4px 0 0 0; line-height: 1.6; }
+    .glossary a { color: var(--gold); }
 
     /* RIGHTS BOX */
     .rights-block { background: #fff; border: 1px solid var(--cream-200); border-left: 4px solid var(--gold); padding: 20px 24px; margin-bottom: 16px; }
     .rights-block h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin: 0 0 10px; font-weight: 700; }
-    .rights-block ul { margin: 0; padding-left: 18px; }
+    .rights-block ul, .rights-block ol { margin: 0; padding-left: 22px; }
     .rights-block li { font-size: 14px; margin-bottom: 6px; }
 
     /* FAQ */
@@ -360,39 +376,52 @@
   <p>España ya tenía normativa en este campo. El <strong>Real Decreto 902/2020</strong> obligó a las empresas a tener un registro retributivo y, a partir de 50 trabajadores, a elaborar planes de igualdad con auditoría salarial. Pero la directiva europea va bastante más allá en tres aspectos clave:</p>
 
   <ol>
-    <li><strong>Amplía el derecho individual</strong>: cualquier trabajador, haya o no representación sindical, puede pedir información sobre su categoría y los salarios medios por sexo.</li>
+    <li><strong>Amplía el derecho individual</strong>: cualquier trabajador/a, haya o no representación sindical, puede pedir información sobre su categoría y los salarios medios por sexo.</li>
     <li><strong>La Ley actúa antes de que empieces a trabajar</strong>: obliga a publicar la banda salarial en las ofertas de empleo y prohíbe que se te pregunte en la entrevista cuánto cobrabas en tu trabajo anterior.</li>
     <li><strong>Crea un mecanismo automático de corrección</strong>: si la brecha supera el 5% sin justificación objetiva, la empresa tiene que actuar.</li>
   </ol>
 
   <h2 id="derechos">Qué derechos concretos tienes desde junio de 2026</h2>
 
-  <p>Esta es la parte que más te afecta como trabajador. La Directiva 2023/970 te reconoce tres bloques de derechos según la fase de la relación laboral:</p>
+  <p>Esta es la parte que más te afecta como trabajador/a. La Directiva 2023/970 te reconoce tres bloques de derechos según la fase de la relación laboral. Cada uno tiene su forma concreta de ejercerse — y cada uno tiene su <a href="/plantillas-transparencia-retributiva-2026.html">plantilla en el Kit</a> cuando llega el momento de pasar a la acción.</p>
 
   <div class="rights-block">
     <h3>Antes de que te contraten</h3>
     <ul>
-      <li>Toda oferta de empleo debe incluir el rango salarial <strong>antes de la primera entrevista</strong>. Si una empresa te llama sin haberte dado esta información, está incumpliendo la ley.</li>
-      <li>La empresa <strong>no puede preguntarte cuánto cobrabas</strong> en tu trabajo anterior. Esta práctica queda prohibida.</li>
+      <li>Toda oferta de empleo debe incluir el <strong>rango salarial antes de la primera entrevista</strong>. Si una empresa te cita sin haberte dado esta información o te dice "ya hablaremos del sueldo más adelante", está incumpliendo el <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">artículo 5 de la Directiva</a>. Puedes denunciar el incumplimiento ante la <a href="https://www.mites.gob.es/itss/web/index.html" target="_blank" rel="noopener">Inspección de Trabajo</a> aunque no te hayan acabado contratando.</li>
+      <li>La empresa <strong>no puede preguntarte cuánto cobrabas en tu trabajo anterior</strong>, ni en el cuestionario de candidatura, ni en la entrevista, ni en ningún momento del proceso. Si lo hace y te ves obligado/a a contestar para no perder la oportunidad, déjalo por escrito (correo, mensaje) — es prueba de incumplimiento.</li>
     </ul>
   </div>
 
   <div class="rights-block">
     <h3>Durante tu relación laboral</h3>
     <ul>
-      <li>Tienes derecho a solicitar por escrito los <strong>datos salariales medios desglosados por sexo</strong> para personas que realizan el mismo trabajo o trabajo de igual valor que tú.</li>
-      <li>Las cláusulas que te prohíban comentar tu sueldo con compañeros/as son <strong>nulas de pleno derecho</strong>. No tienen validez jurídica.</li>
-      <li>Los criterios de progresión salarial deben estar a tu disposición.</li>
+      <li>Tienes derecho a solicitar por escrito los <strong>datos salariales medios desglosados por sexo</strong> para personas que realizan el mismo trabajo o un trabajo de igual valor al tuyo. La empresa debe responder en un plazo máximo de <strong>2 meses</strong> desde tu solicitud (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 7.4 Directiva</a>). → <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a>.</li>
+      <li>Las cláusulas que te prohíban comentar tu sueldo con compañeros/as son <strong>nulas de pleno derecho</strong> (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 7.5 Directiva</a>). Si tu contrato vigente incluye una de estas cláusulas, no necesitas firmar nada para que deje de aplicarse: pierde validez automáticamente desde el 7 de junio de 2026. Si la empresa intenta sancionarte por hablar de tu retribución, esa sanción es nula y reclamable.</li>
+      <li>Los <strong>criterios de progresión salarial</strong> deben estar a tu disposición. Esto significa: el documento o sistema interno (banda salarial por nivel, matriz de competencias, criterios de promoción, política retributiva) que la empresa usa para decidir cuánto sube cada cual y cuándo. No puede ser opaco ni discrecional. Puedes solicitarlo por la misma vía que la información retributiva — el <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 7.1 de la Directiva</a> incluye expresamente "los criterios utilizados para determinar la retribución, los niveles retributivos y la progresión profesional". → Misma <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a> — el modelo ya incluye este apartado en la solicitud.</li>
     </ul>
   </div>
 
   <div class="rights-block">
     <h3>Si sufres discriminación salarial</h3>
     <ul>
-      <li>Tienes derecho a <strong>compensación íntegra</strong>: atrasos, primas, pagos en especie y daños y perjuicios.</li>
-      <li><strong>La carga de la prueba se invierte</strong>: si acreditas indicios de discriminación, es la empresa quien debe demostrar que no existe.</li>
+      <li>Tienes derecho a <strong>compensación íntegra</strong>: atrasos salariales, primas y bonus dejados de percibir, pagos en especie equivalentes y daños y perjuicios (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 16 Directiva</a>).</li>
+      <li><strong>La carga de la prueba se invierte</strong> (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 18 Directiva</a>): si aportas <em>indicios</em> de discriminación, es la empresa quien debe demostrar que no existe — no tú quien debe probar que sí existe.</li>
+      <li>Estás <strong>protegido frente a represalias</strong> (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 25 Directiva</a>): la empresa no puede sancionarte, despedirte, trasladarte ni perjudicarte por ejercer estos derechos. Cualquier medida desfavorable posterior puede ser declarada nula. Conviene leer el <a href="/reclamar-diferencias-salariales-convenio.html#escenario-serpico">escenario Serpico</a> para entender los matices reales más allá del papel.</li>
     </ul>
   </div>
+
+  <div class="rights-block">
+    <h3>Cómo actuar si has detectado discriminación</h3>
+    <ol>
+      <li><strong>Documenta antes de mover ficha</strong>. Reúne lo que tengas: nóminas tuyas y, si las tienes, las que conoces de compañeros/as comparables; ofertas internas que confirmen banda salarial de tu posición; correos donde se te asignen funciones; comparaciones de responsabilidades. → <a href="/plantilla-documentar-evidencias-desigualdad-salarial.html">Plantilla 7: documentar evidencias</a>.</li>
+      <li><strong>Pide la información formalmente</strong>. La empresa está obligada a darte los datos retributivos medios desglosados por sexo de tu categoría. Si los datos confirman tu sospecha, son prueba directa. → <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a>.</li>
+      <li><strong>Reclama internamente por escrito</strong>. Antes de ir a Inspección o juzgado conviene dar a la empresa la oportunidad de corregir — y dejar constancia de que se le pidió y no lo hizo. → <a href="/plantilla-denunciar-discriminacion-salarial.html">Plantilla 5: denunciar discriminación salarial</a>.</li>
+      <li><strong>Escala si no responde o no corrige</strong>. Vías compatibles entre sí: <a href="https://www.mites.gob.es/itss/web/index.html" target="_blank" rel="noopener">Inspección de Trabajo</a>, representación legal de los trabajadores o sindicato sectorial, demanda ante el juzgado de lo social. La carga de la prueba ya estará invertida si llevas indicios documentados.</li>
+    </ol>
+  </div>
+
+  <p><strong>¿Y si la empresa incumple cualquiera de estos derechos?</strong> El primer paso siempre es dejar constancia por escrito (correo, burofax, registro) de la solicitud o queja. Sin ese rastro, en juicio cuesta probar que se intentó resolver. Cuando hay constancia documentada y la empresa no cumple, se puede denunciar el incumplimiento ante la <a href="https://www.mites.gob.es/itss/web/index.html" target="_blank" rel="noopener">Inspección de Trabajo y Seguridad Social</a> sin necesidad de despido previo: el incumplimiento de las obligaciones de transparencia retributiva está tipificado como infracción sancionable.</p>
 
   <h2 id="paso-a-paso">Cómo ejercer tus derechos paso a paso</h2>
 
@@ -401,8 +430,15 @@
   <div class="step">
     <div class="step-num">1</div>
     <div class="step-content">
-      <h3>Localiza tu convenio colectivo en el BOE</h3>
-      <p>Tu empresa está obligada a comunicarte qué convenio colectivo te aplica. Si no lo sabes, busca en <a href="https://www.boe.es/buscar/doc.php?q=convenio+colectivo" target="_blank" rel="noopener">boe.es</a> por sector y provincia. El convenio establece los grupos profesionales y los salarios mínimos garantizados por categoría.</p>
+      <h3>Localiza tu convenio colectivo</h3>
+      <p>Tu empresa está obligada a comunicarte por escrito qué convenio colectivo te aplica (suele aparecer en tu nómina y en tu contrato). El convenio se determina por la <strong>actividad principal de la empresa</strong> + el <strong>ámbito territorial</strong> donde prestas servicios — no por tu puesto concreto. Tres formas de localizarlo:</p>
+      <ol>
+        <li><strong>Pregunta a RRHH por escrito</strong>. Tienen obligación de responder, y la respuesta te sirve si después surgen discrepancias.</li>
+        <li><strong>Buscador del BOE</strong>: <a href="https://www.boe.es/buscar/doc.php?q=convenio+colectivo" target="_blank" rel="noopener">boe.es</a> filtra por sector y provincia. Para convenios provinciales/autonómicos, los publica también el boletín del territorio (<a href="https://www.boe.es/buscar/legislacion.php?ambito_geografico=true" target="_blank" rel="noopener">índice de boletines en BOE.es</a>).</li>
+        <li><strong>REGCON</strong> (<a href="https://expinterweb.mites.gob.es/regcon/" target="_blank" rel="noopener">expinterweb.mites.gob.es/regcon</a>) — Registro de Convenios y Acuerdos Colectivos del Ministerio de Trabajo. Búsqueda oficial por sector/territorio/empresa.</li>
+      </ol>
+      <p><strong>¿Y si tu empresa dice que no tiene convenio aplicable?</strong> Es muy poco habitual. Casi todas las actividades tienen convenio sectorial estatal o provincial. Antes de aceptar esa respuesta: pídela por escrito, contrasta en REGCON, y consulta con el sindicato del sector — pueden indicarte qué convenio te corresponde por la actividad real de la empresa. Sólo en supuestos muy concretos (algunas relaciones laborales especiales o actividades sin convenio sectorial) se aplica directamente el Estatuto de los Trabajadores como norma supletoria.</p>
+      <p><strong>¿Y si tu empresa tiene convenio propio?</strong> Las empresas pueden negociar su propio convenio que prevalece sobre el sectorial en muchas materias (salario base, complementos, jornada — <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">art. 84.2 ET</a>). Si lo tienen, la empresa debe entregártelo o indicarte dónde consultarlo.</p>
     </div>
   </div>
 
@@ -410,7 +446,13 @@
     <div class="step-num">2</div>
     <div class="step-content">
       <h3>Identifica tu grupo profesional real</h3>
-      <p>Compara las funciones que realizas día a día con la descripción de los grupos profesionales del convenio. Si haces funciones de un grupo superior al que tienes reconocido, tienes derecho a reclamar la diferencia.</p>
+      <p>Compara las funciones que realizas <strong>día a día</strong> (no las que pone tu contrato) con la <strong>descripción de los grupos profesionales</strong> del convenio. Cada grupo lleva asociado un salario base mínimo y, normalmente, complementos específicos.</p>
+      <p>Si haces funciones de un grupo superior al que tienes reconocido en contrato, la <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">ley distingue dos casos</a>:</p>
+      <ul>
+        <li><strong>De forma puntual o por necesidades organizativas temporales</strong>: tienes derecho a la diferencia retributiva durante el tiempo que estés haciendo las funciones superiores.</li>
+        <li><strong>De forma continuada</strong>: si llevas <strong>6 meses dentro de un año o 8 meses dentro de dos años</strong> haciendo funciones de grupo superior, tienes derecho a <strong>reclamar el ascenso</strong> al grupo superior y la consolidación de la diferencia retributiva (art. 39.2 ET).</li>
+      </ul>
+      <p>→ <a href="/plantilla-reclamar-grupo-profesional-superior.html">Plantilla 3: reclamar el grupo profesional superior</a> (en preparación).</p>
     </div>
   </div>
 
@@ -418,15 +460,24 @@
     <div class="step-num">3</div>
     <div class="step-content">
       <h3>Compara con datos de mercado</h3>
-      <p>El convenio es el mínimo legal. Para saber si tu salario es competitivo consulta: INE (Encuesta Anual de Estructura Salarial), Informe anual InfoJobs, Guía Salarial Randstad, o la <a href="https://salariojusto.es">calculadora gratuita de SalarioJusto.es</a>.</p>
+      <p>El convenio establece el <strong>mínimo legal</strong>, no el salario justo. Para saber si lo que cobras está alineado con tu sector y experiencia consulta:</p>
+      <ul>
+        <li><strong>Calculadora de SalarioJusto.es</strong> (<a href="https://salariojusto.es">salariojusto.es</a>) — bruto a neto exacto con escala IRPF 2026 + IRPF autonómico, listo para comparar con lo que aparece en tu nómina.</li>
+        <li><strong>Encuesta Anual de Estructura Salarial del INE</strong> (<a href="https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177025" target="_blank" rel="noopener">INEbase</a>) — datos oficiales por sector, ocupación, sexo y CCAA.</li>
+        <li><strong>Guía Salarial Randstad</strong> y <strong>Informe Anual InfoJobs</strong> — útiles para tramos por puesto, especialmente en sector privado.</li>
+        <li><strong>Tu propia red profesional</strong> — comparar con compañeros/as del mismo nivel y sector da una referencia más fina que cualquier encuesta.</li>
+      </ul>
+      <p>Una mediana sectorial no es tu "salario justo" — es una referencia. Tu posición depende de antigüedad, formación, responsabilidades y contexto del puesto.</p>
     </div>
   </div>
 
   <div class="step">
     <div class="step-num">4</div>
     <div class="step-content">
-      <h3>Calcula tu neto real</h3>
-      <p>El salario bruto de tu contrato no es lo que recibes. Hay que descontar las cotizaciones a la Seguridad Social (~7,56% para el trabajador) y la retención de IRPF. El SMI 2026 está exento de IRPF. <a href="https://salariojusto.es">Calcula tu neto exacto aquí →</a></p>
+      <h3>Calcula tu neto real y aprende a leer tu nómina</h3>
+      <p>El salario bruto de tu contrato no es lo que te llega al banco. Hay que descontar las cotizaciones a la Seguridad Social (≈ 7,56 % a cargo de la persona trabajadora) y la retención de IRPF (variable según tu base, situación familiar y comunidad autónoma). El SMI 2026 está exento de IRPF. → <a href="https://salariojusto.es">Calcula tu neto exacto aquí</a>.</p>
+      <p><strong>La empresa está obligada a entregarte la nómina firmada y desglosada</strong> en el momento del pago (<a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">art. 29.1 ET</a>). Si no te la entrega, o te la entrega incompleta, está incumpliendo la ley. Te debe entregar también una copia básica de tu contrato.</p>
+      <p>Saber leer tu nómina es esencial: te dice tu salario base real, qué complementos cobras, qué cotizaciones se te aplican y, sobre todo, te permite detectar cuándo algo no cuadra con tu convenio. → <a href="/lee-tu-nomina-2026.html">Aprende a leer tu nómina paso a paso</a> (en preparación).</p>
     </div>
   </div>
 
@@ -434,7 +485,13 @@
     <div class="step-num">5</div>
     <div class="step-content">
       <h3>Documenta y actúa si hay diferencia</h3>
-      <p>Reúne nóminas, contrato y descripción de funciones. Solicita información a RRHH por escrito. Desde junio 2026 puedes pedir formalmente los datos salariales medios por categoría y sexo de tu empresa. Si la empresa no responde, acude a la Inspección de Trabajo o a tu sindicato.</p>
+      <p>Si tras los pasos anteriores ves que cobras menos de lo que te corresponde, el orden recomendado es: documentar → solicitar formalmente → reclamar internamente → escalar.</p>
+      <ol>
+        <li><strong>Reúne nóminas, contrato y descripción real de funciones.</strong> Si sospechas discriminación por sexo o categoría, documenta también las pruebas: correos, ofertas, comparaciones con compañeros/as. → <a href="/plantilla-documentar-evidencias-desigualdad-salarial.html">Plantilla 7: documentar evidencias de desigualdad</a> (en preparación).</li>
+        <li><strong>Solicita formalmente la información retributiva por escrito.</strong> Desde el 7 de junio de 2026 puedes pedir directamente los datos salariales medios desglosados por sexo. → <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a>.</li>
+        <li><strong>Reclama internamente</strong> a RRHH por escrito (correo, burofax o registro), exponiendo la diferencia detectada. Dale a la empresa la oportunidad de corregir antes de escalar — y deja constancia.</li>
+        <li><strong>Si no responde o no corrige, escala</strong>: <a href="https://www.mites.gob.es/itss/web/index.html" target="_blank" rel="noopener">Inspección de Trabajo</a>, representación sindical o demanda ante el juzgado de lo social. Si tu reclamación es por discriminación por sexo, la carga de la prueba se invierte una vez aportes indicios.</li>
+      </ol>
     </div>
   </div>
 
@@ -446,66 +503,179 @@
 
   <h2 id="calendario">El calendario de obligaciones según el tamaño de tu empresa</h2>
 
+  <p>La Directiva entra en vigor para <strong>todas las empresas el 7 de junio de 2026</strong>, pero las obligaciones más exigentes (informe periódico de brecha y evaluación retributiva conjunta cuando hay desigualdad ≥ 5 %) se escalonan por tamaño hasta 2031. Cada fila acumula las obligaciones de las filas anteriores:</p>
+
   <div class="table-wrap">
     <table>
       <thead>
         <tr>
           <th>Tamaño de empresa</th>
-          <th>Cuándo entra en vigor</th>
-          <th>Frecuencia del informe de brecha</th>
+          <th>Entrada en vigor</th>
+          <th>Obligaciones que aplican</th>
+          <th>Frecuencia del informe</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Todas (cualquier tamaño)</td><td>7 junio 2026</td><td>Transparencia previa + derechos individuales</td></tr>
-        <tr><td>250 o más trabajadores</td><td>7 junio 2027</td><td>Anual</td></tr>
-        <tr><td>150–249 trabajadores</td><td>7 junio 2028</td><td>Cada 3 años</td></tr>
-        <tr><td>100–149 trabajadores</td><td>7 junio 2031</td><td>Cada 3 años</td></tr>
-        <tr><td>Menos de 100 trabajadores</td><td>—</td><td>Sin obligación de informe de brecha</td></tr>
+        <tr>
+          <td>Todas (cualquier tamaño)</td>
+          <td>7 junio 2026</td>
+          <td>
+            <ul class="td-list">
+              <li>Banda salarial en ofertas de empleo (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 5</a>)</li>
+              <li>Prohibición de preguntar el historial salarial (art. 5)</li>
+              <li>Transparencia de criterios de progresión retributiva (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 6</a>)</li>
+              <li>Derecho individual a información retributiva (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 7</a>)</li>
+              <li>Nulidad de cláusulas de confidencialidad salarial (art. 7.5)</li>
+              <li>Protección frente a represalias (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 25</a>)</li>
+            </ul>
+          </td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>250 o más trabajadores</td>
+          <td>+ 7 junio 2027</td>
+          <td>
+            <ul class="td-list">
+              <li>Todas las anteriores</li>
+              <li><strong>Informe periódico sobre la brecha retributiva</strong> (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 9</a>)</li>
+            </ul>
+          </td>
+          <td>Anual</td>
+        </tr>
+        <tr>
+          <td>150–249 trabajadores</td>
+          <td>+ 7 junio 2027</td>
+          <td>
+            <ul class="td-list">
+              <li>Todas las anteriores</li>
+              <li>Informe periódico sobre la brecha retributiva</li>
+            </ul>
+          </td>
+          <td>Cada 3 años</td>
+        </tr>
+        <tr>
+          <td>100–149 trabajadores</td>
+          <td>+ 7 junio 2031</td>
+          <td>
+            <ul class="td-list">
+              <li>Todas las anteriores</li>
+              <li>Informe periódico sobre la brecha retributiva</li>
+            </ul>
+          </td>
+          <td>Cada 3 años</td>
+        </tr>
+        <tr>
+          <td>Menos de 100 trabajadores</td>
+          <td>—</td>
+          <td>Sólo las obligaciones generales (todas las empresas)</td>
+          <td>Sin obligación de informe</td>
+        </tr>
       </tbody>
     </table>
   </div>
 
-  <p><strong>Importante:</strong> que tu empresa tenga menos de 100 trabajadores no te quita tus <a href="#derechos">derechos individuales</a>. La <a href="#derechos">obligación de publicar salario en ofertas</a> y la <a href="#derechos">nulidad de cláusulas de confidencialidad</a> aplican a <strong>todas las empresas</strong> desde junio de 2026. Fuente: Directiva (UE) 2023/970, artículo 9.</p>
+  <p><strong>Si el informe del art. 9 revela una brecha de al menos el 5 % sin justificación objetiva en alguna categoría</strong>, la empresa debe iniciar una <strong>evaluación retributiva conjunta</strong> con la representación legal de los trabajadores en un plazo máximo de <strong>seis meses</strong>, identificar las causas y aplicar medidas correctoras (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 10 Directiva 2023/970</a>).</p>
+
+  <p><strong>Importante:</strong> que tu empresa tenga menos de 100 trabajadores no te quita tus <a href="#derechos">derechos individuales</a>. La <a href="#derechos">obligación de publicar salario en ofertas</a> y la <a href="#derechos">nulidad de cláusulas de confidencialidad</a> aplican a <strong>todas las empresas</strong> desde junio de 2026 (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">arts. 5, 7 y 25 de la Directiva (UE) 2023/970</a>).</p>
+
+  <h3 style="margin-top:32px;">¿Cómo es un informe de brecha retributiva?</h3>
+
+  <p>El Estado pone a disposición de las empresas una <strong>herramienta oficial gratuita</strong> en formato Excel (la herramienta <em>"IR!"</em>, desarrollada por los Ministerios de Trabajo e Igualdad) para elaborar el registro retributivo y calcular automáticamente la brecha por categoría:</p>
+
+  <p>→ <a href="https://www.mites.gob.es/es/portada/herramienta_registro_retributivo/index.htm" target="_blank" rel="noopener"><strong>Herramienta de Registro Retributivo · Ministerio de Trabajo y Economía Social</strong></a> (Excel descargable + guía explicativa).</p>
+
+  <p>Como mínimo, un informe de brecha retributiva debe desglosar por <strong>categoría profesional</strong> y por <strong>sexo</strong>, distinguiendo: salario base, complementos salariales y percepciones extrasalariales. La media y la mediana se calculan separadamente para mujeres y hombres en cada categoría, y la brecha se expresa en porcentaje.</p>
+
+  <p>Así se vería una versión simplificada de la tabla principal de un informe de brecha (<em>ejemplo ilustrativo · datos ficticios para mostrar el formato, no corresponde a ninguna empresa real</em>):</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Categoría profesional</th>
+          <th>Nº mujeres</th>
+          <th>Nº hombres</th>
+          <th>Salario medio anual · mujeres</th>
+          <th>Salario medio anual · hombres</th>
+          <th>Brecha (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Grupo 1 — Dirección</td><td>4</td><td>8</td><td>65.200 €</td><td>71.800 €</td><td>9,2 %</td></tr>
+        <tr><td>Grupo 2 — Técnicos/as</td><td>12</td><td>18</td><td>38.400 €</td><td>41.700 €</td><td>7,9 %</td></tr>
+        <tr><td>Grupo 3 — Administración</td><td>22</td><td>6</td><td>22.100 €</td><td>22.500 €</td><td>1,8 %</td></tr>
+        <tr><td>Grupo 4 — Operación</td><td>5</td><td>30</td><td>19.800 €</td><td>21.400 €</td><td>7,5 %</td></tr>
+        <tr style="background:var(--cream-100);font-weight:600;"><td>Total empresa</td><td>43</td><td>62</td><td>27.350 €</td><td>30.460 €</td><td>10,2 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>El informe completo añade además: el desglose por componente retributivo (base / complementos / extrasalariales), la <strong>mediana</strong> junto a la media, una <strong>justificación objetiva</strong> de cada brecha que supere el umbral del 5 %, y, si la justificación no es suficiente, la <strong>evaluación retributiva conjunta</strong> con la representación legal de los trabajadores. El contenido y la metodología están regulados en el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-12215" target="_blank" rel="noopener">Real Decreto 902/2020 sobre igualdad retributiva</a> (arts. 5–7) y se refuerzan con la Directiva (UE) 2023/970 desde 2027.</p>
 
   <h2 id="errores">Errores comunes que hacen que te paguen menos</h2>
 
   <h3>Error 1 — No conocer tu grupo profesional en el convenio</h3>
-  <p>Muchos trabajadores firman un contrato sin verificar que la categoría asignada corresponde a sus funciones reales. La empresa puede estar pagando el mínimo de un grupo inferior. Resultado: cobras menos de lo legal sin saberlo.</p>
+  <p>Muchas personas trabajadoras firman un contrato sin verificar que la categoría asignada corresponde a sus funciones reales. La empresa puede estar pagando el mínimo de un grupo inferior. Resultado: cobras menos de lo legal sin saberlo.</p>
+  <p><strong>Qué hacer.</strong> Lee tu contrato y compáralo con la <strong>tabla de grupos profesionales</strong> de tu convenio (se publica en el propio convenio, normalmente como anexo). En SalarioJusto auditamos los convenios provinciales y sectoriales más consultados con su tabla de grupos, salarios mínimos y complementos resumidos — antes de empezar a leer el BOE, comprueba si el tuyo está en nuestro <a href="/convenios.html">verificador de convenios</a>. Si tus funciones reales coinciden con un grupo superior al que figura en tu contrato, cuantifica desde cuándo lo vienes haciendo: si llevas 6 meses dentro de un año o 8 dentro de dos haciendo funciones de un grupo superior, tienes derecho al ascenso (<a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">art. 39.2 ET</a>). Reclama por escrito antes de escalar. → <a href="/plantilla-reclamar-grupo-profesional-superior.html">Plantilla 3: reclamar el grupo profesional superior</a> (en preparación).</p>
 
   <h3>Error 2 — Confundir salario base con retribución total</h3>
   <p>El convenio garantiza un salario base, pero también puede reconocerte plus de antigüedad, nocturnidad, transporte o peligrosidad. Si tu empresa no te los aplica, está incumpliendo.</p>
+  <p><strong>Qué hacer.</strong> Revisa la sección de complementos de tu convenio y márcalos uno a uno: ¿a cuáles tienes derecho según tus condiciones reales (turno, horario, lugar de trabajo, antigüedad)? Si tu convenio está entre los que <a href="/convenios.html">desgranamos en SalarioJusto</a>, ahí encontrarás esa lista resumida; si no, está en el texto del propio convenio publicado en BOE/boletín provincial. Cruza la lista con tu nómina y detecta los que faltan. Si alguno no se aplica, reclama por escrito a RRHH la diferencia desde la fecha en que debió empezar a abonarse — recuerda que el plazo de prescripción es de un año (art. 59.1 ET). Si la subida no se aplicó cuando se actualizó el convenio, ver Error 3.</p>
 
   <h3>Error 3 — No reclamar atrasos cuando sube el convenio</h3>
-  <p>Cuando se publica una revisión salarial en el BOE, los efectos suelen ser retroactivos desde el 1 de enero. El plazo de prescripción para reclamar salarios es de <strong>un año</strong> desde que debieron abonarse (artículo 59 del Estatuto de los Trabajadores).</p>
+  <p>Cuando se publica una revisión salarial en el BOE, los efectos suelen ser retroactivos desde el 1 de enero. El plazo de prescripción para reclamar salarios es de <strong>un año</strong> desde que debieron abonarse (<a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">artículo 59.1 del Estatuto de los Trabajadores</a>).</p>
+  <p><strong>Qué hacer.</strong> En cuanto se publique la revisión: revisa la <strong>fecha de efectos</strong> del nuevo convenio (no la de publicación), localiza tus nóminas desde esa fecha, calcula la diferencia mes a mes y reclama el total como atrasos. El plazo de un año cuenta <strong>desde que cada mensualidad debió abonarse</strong>, no desde la publicación del convenio en el BOE — si han pasado más de doce meses desde algún mes concreto, esa parte ya estará prescrita aunque otras sigan vigentes. → <a href="/plantilla-reclamar-atrasos-convenio-salarial.html">Plantilla 4: reclamar atrasos por revisión del convenio</a> (en preparación).</p>
 
   <h3>Error 4 — Aceptar que el SMI absorbe tus complementos</h3>
-  <p>Cuando sube el SMI, algunas empresas reducen complementos salariales ya establecidos para que el trabajador no note ningún incremento real. El Tribunal Supremo y la normativa del SMI 2026 establecen que los complementos con naturaleza específica no pueden absorberse.</p>
+  <p>Cuando sube el SMI, algunas empresas reducen complementos salariales ya establecidos para que la persona trabajadora no note ningún incremento real. La regla general del <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">art. 26.5 ET</a> permite la compensación y absorción salvo pacto en contrario, pero los Reales Decretos anuales del SMI suelen incluir cláusulas específicas que limitan ese juego, y la doctrina del Tribunal Supremo ha matizado que ciertos complementos vinculados a condiciones específicas del puesto (nocturnidad, peligrosidad, transporte) no pueden absorberse sin más.</p>
+  <p><strong>Qué hacer.</strong> Compara tu nómina del último mes antes de la subida del SMI con la del primer mes después. ¿Qué complementos han bajado o desaparecido coincidiendo con el incremento? Localiza el RD del SMI vigente (publicado cada año en el BOE), busca su artículo sobre compensación y absorción, y contrasta con tu convenio: si el convenio reconoce esos complementos como específicos del puesto, su absorción suele ser ilegal. Reclama por escrito y, si la empresa no recula, escala. → <a href="/plantilla-reclamar-absorcion-complementos-smi.html">Plantilla 6: reclamar la absorción indebida de complementos</a> (en preparación).</p>
 
   <h3>Error 5 — No documentar cuando detectas una desigualdad</h3>
-  <p>Si sospechas que cobras menos que un compañero/a de igual categoría, guarda evidencias: conversaciones, correos, documentos. La carga de la prueba te favorece si presentas indicios de discriminación, pero los indicios hay que poder mostrarlos.</p>
+  <p>Si sospechas que cobras menos que un compañero/a de igual categoría, guarda evidencias: conversaciones, correos, documentos. La carga de la prueba te favorece si presentas indicios de discriminación, pero los indicios hay que poder acreditarlos.</p>
+  <p><strong>Qué hacer.</strong> Antes de mover ficha, monta tu archivo de evidencias con un mínimo de orden — una tabla con fecha, hecho, fuente y prueba adjunta vale mucho más que un montón de capturas sueltas. Incluye: nóminas tuyas, descripción real de funciones, ofertas internas o externas que confirmen banda salarial, correos donde se te asignen tareas, comparaciones con compañeros/as, anuncios de promoción que no llegaron a notificarse a todo el equipo. → <a href="/plantilla-documentar-evidencias-desigualdad-salarial.html">Plantilla 7: documentar evidencias de desigualdad</a> (en preparación). Una vez tengas el archivo, la <strong>carga de la prueba se invierte</strong> en cuanto presentas indicios sólidos: es la empresa quien debe demostrar que no hay discriminación (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 18 Directiva 2023/970</a>).</p>
 
   <h2 id="por-que">Por qué mucha gente sigue cobrando menos de lo que le corresponde en 2026</h2>
 
   <p>Aunque la Directiva entra en vigor el 7 de junio, la realidad española de partida es complicada. Estas son las cinco razones por las que la desigualdad salarial persiste y por las que la nueva ley trata de corregir cada una.</p>
 
   <h3>1. El convenio colectivo se aplica mal o directamente no se aplica</h3>
-  <p>El convenio establece un salario mínimo por categoría profesional. Pero muchas empresas clasifican a sus trabajadores en grupos inferiores a los que corresponden por sus funciones reales. Si haces tareas de técnico pero tienes categoría de auxiliar, tu empresa puede pagarte menos legalmente... hasta que alguien lo reclama.</p>
+  <p>El convenio establece un salario mínimo por categoría profesional. Pero muchas empresas clasifican a sus trabajadores en grupos inferiores a los que corresponden por sus funciones reales. Si haces tareas de técnico pero tienes categoría de auxiliar, tu empresa puede pagarte menos legalmente… hasta que alguien lo reclama.</p>
+  <p><strong>Cómo descubrirlo y reclamarlo.</strong> El primer paso es localizar el convenio aplicable y leer su tabla de grupos profesionales — lo cubre el <a href="#paso-a-paso">paso 1 de "Cómo ejercer tus derechos"</a>. Después: documenta tus funciones reales (un día tipo, las herramientas que usas, las decisiones que tomas, los proyectos que lideras) y compáralas con la descripción del grupo superior. Si coinciden, calcula la diferencia retributiva acumulada — los plazos están en el <a href="#errores">Error 1 de "Errores comunes"</a>. Reúne pruebas (correos donde se te asignan tareas del grupo superior, organigrama, comunicaciones internas) y reclama por escrito antes de escalar a Inspección o juzgado. → <a href="/plantilla-reclamar-grupo-profesional-superior.html">Plantilla 3: reclamar el grupo profesional superior</a> (en preparación).</p>
 
   <h3>2. La información asimétrica en la negociación</h3>
-  <p>Cuando negocias tu salario de entrada, la empresa sabe perfectamente qué paga a personas en tu mismo puesto. Tú no lo sabes. Esa asimetría hace que muchos trabajadores acepten ofertas por debajo de lo que podrían haber conseguido. La nueva ley elimina esta asimetría.</p>
+  <p>Cuando negocias tu salario de entrada, la empresa sabe perfectamente qué paga a personas en tu mismo puesto. Tú no lo sabes. Esa asimetría hace que muchas personas trabajadoras acepten ofertas por debajo de lo que podrían haber conseguido. La nueva ley elimina esta asimetría.</p>
+  <p><strong>Qué hacer con el nuevo marco.</strong> Antes de la entrevista, exige el rango salarial — las ofertas deben publicarlo desde el 7 de junio de 2026 (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 5 Directiva</a>). Una vez dentro de la empresa, si crees que tu salario de entrada quedó por debajo de lo que cobran personas en tu mismo puesto, puedes solicitar formalmente los datos retributivos medios desglosados por sexo de tu categoría — la empresa tiene <strong>dos meses</strong> para responder (art. 7.4). → <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a>.</p>
 
   <h3>3. Los complementos salariales se ignoran en la comparación</h3>
-  <p>El salario base es solo una parte de lo que cobras: a él se suman complementos (plus de nocturnidad, peligrosidad, transporte, antigüedad, productividad, primas variables) que, al depender de criterios menos transparentes, son el lugar donde más fácilmente se acumulan diferencias injustificadas. Muchos trabajadores desconocen a qué complementos tienen derecho según su convenio, y muchas brechas de género se manifiestan precisamente ahí: según la Encuesta Anual de Estructura Salarial del INE (datos 2023), las mujeres ganaron de media <strong>4.781 € brutos menos al año</strong> que los hombres (25.591 € frente a 30.372 €).</p>
+  <p>El salario base es solo una parte de lo que cobras: a él se suman complementos (plus de nocturnidad, peligrosidad, transporte, antigüedad, productividad, primas variables) que, al depender de criterios menos transparentes, son el lugar donde más fácilmente se acumulan diferencias injustificadas. Muchas personas trabajadoras desconocen a qué complementos tienen derecho según su convenio, y muchas brechas de género se manifiestan precisamente ahí: según la <a href="https://www.ine.es/dyngs/Prensa/EAES2023.htm" target="_blank" rel="noopener">Encuesta Anual de Estructura Salarial del INE (datos 2023)</a>, las mujeres ganaron de media <strong>4.781 € brutos menos al año</strong> que los hombres (25.591 € frente a 30.372 €).</p>
 
   <h3>4. El miedo a represalias frena las reclamaciones</h3>
-  <p>Muchos trabajadores saben que cobran menos pero no reclaman por miedo. La nueva directiva introduce protección explícita frente a represalias: la empresa no puede sancionarte, despedirte ni perjudicarte por ejercer tus derechos de información retributiva. Aun así, la realidad de reclamar tiene matices que conviene conocer antes de dar el paso — los desarrollamos en <a href="/reclamar-diferencias-salariales-convenio.html#escenario-serpico">el escenario Serpico</a>.</p>
+  <p>Muchas personas trabajadoras saben que cobran menos pero no reclaman por miedo. La nueva directiva introduce protección explícita frente a represalias: la empresa no puede sancionarte, despedirte ni perjudicarte por ejercer tus derechos de información retributiva (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 25 Directiva 2023/970</a>). Aun así, la realidad de reclamar tiene matices que conviene conocer antes de dar el paso — los desarrollamos en <a href="/reclamar-diferencias-salariales-convenio.html#escenario-serpico">el escenario Serpico</a>.</p>
 
   <h3>5. La precariedad estructural concentra el problema</h3>
-  <p>El SMI 2026 se ha fijado en <strong>1.221 euros brutos mensuales en 14 pagas (17.094 euros anuales)</strong>, según el Real Decreto 126/2026, publicado en el BOE el 18 de febrero de 2026 (+3,1% respecto a 2025). El 65,8% de las personas que perciben el SMI son mujeres (dato SEPE, 2025).</p>
+  <p>El SMI 2026 se ha fijado en <strong>1.221 euros brutos mensuales en 14 pagas (17.094 euros anuales)</strong>, según el Real Decreto 126/2026, publicado en el BOE el 18 de febrero de 2026 (+3,1 % respecto a 2025). Y la precariedad no se reparte por igual: según los datos oficiales del Gobierno sobre la subida del SMI 2025, el <strong>65,8 % de las personas beneficiarias del SMI son mujeres</strong>, y el <strong>17,6 % de las mujeres ocupadas</strong> percibe el SMI frente al <strong>8,5 % de los hombres</strong> (<a href="https://www.lamoncloa.gob.es/consejodeministros/resumenes/Documents/2025/110225-CMinSMI2025.pdf" target="_blank" rel="noopener">Memoria del SMI 2025, Consejo de Ministros 11 de febrero de 2025</a>). Es decir: las mujeres tienen aproximadamente el doble de probabilidad de cobrar el mínimo legal — la transparencia retributiva está entre las palancas que pueden empezar a mover esa cifra.</p>
 
   <h2 id="rd902">La diferencia real entre el RD 902/2020 y la nueva ley</h2>
 
-  <p>España ya contaba con normativa de igualdad retributiva antes de la Directiva. El Real Decreto 902/2020 introdujo el registro retributivo y las auditorías para empresas con plan de igualdad. La nueva ley europea no lo deroga: lo amplía y lo refuerza. Esta tabla aclara qué cambia exactamente:</p>
+  <p>España ya contaba con normativa de igualdad retributiva antes de la Directiva. El <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-12215" target="_blank" rel="noopener">Real Decreto 902/2020</a> introdujo el registro retributivo y las auditorías para empresas con plan de igualdad. La nueva Directiva no lo deroga: lo amplía y lo refuerza. Antes de comparar las dos normas, conviene aclarar los cuatro términos que se mezclan en este apartado:</p>
+
+  <div class="glossary">
+    <dl>
+      <dt>Registro retributivo</dt>
+      <dd>"Foto" interna de los salarios de la empresa desglosados por sexo y categoría profesional, con la media y la mediana de cada componente retributivo (salario base, complementos, percepciones extrasalariales). Es <strong>obligatorio para todas las empresas</strong> desde el RD 902/2020 — independientemente de su tamaño.</dd>
+
+      <dt>Auditoría retributiva</dt>
+      <dd>Análisis profundo de las causas de las brechas detectadas en el registro y plan de medidas correctoras. <strong>Solo obligatoria para empresas con plan de igualdad</strong>, es decir, las de 50 o más personas trabajadoras (RD 901/2020 y RD 902/2020).</dd>
+
+      <dt>Informe sobre la brecha retributiva (art. 9 Directiva)</dt>
+      <dd>Informe periódico que la empresa <strong>debe publicar hacia el exterior</strong>. Escalonado por tamaño: desde 2027 para empresas de 250+ y 150–249, desde 2031 para las de 100–149. Ver el <a href="#calendario">calendario completo</a>.</dd>
+
+      <dt>Evaluación retributiva conjunta (art. 10 Directiva)</dt>
+      <dd>Procedimiento que se <strong>activa cuando el informe revela una brecha ≥ 5 % sin justificación objetiva</strong> en alguna categoría. La empresa debe iniciarla con la representación legal de los trabajadores en un plazo de seis meses, identificar las causas y aplicar medidas correctoras.</dd>
+    </dl>
+  </div>
+
+  <p>Con eso claro, así queda el cambio entre el régimen del RD 902/2020 y el que se suma con la Directiva 2023/970:</p>
 
   <div class="table-wrap">
     <table>
@@ -513,84 +683,89 @@
         <tr>
           <th>Aspecto</th>
           <th>RD 902/2020 (vigente)</th>
-          <th>Directiva 2023/970 (junio 2026)</th>
+          <th>Directiva 2023/970 (desde junio 2026)</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Registro retributivo</td><td>Obligatorio para todas las empresas</td><td>Se mantiene y refuerza</td></tr>
-        <tr><td>Auditoría salarial</td><td>Solo empresas con plan de igualdad (+50 trabajadores)</td><td>Obligatoria para empresas +100 trabajadores</td></tr>
-        <tr><td>Derecho a info individual</td><td>Limitado, a través de representantes</td><td>Directo, sin intermediarios, para cualquier trabajador</td></tr>
+        <tr><td>Registro retributivo</td><td>Obligatorio para todas las empresas</td><td>Se mantiene y refuerza el contenido (medias, medianas y desglose por componente)</td></tr>
+        <tr><td>Auditoría retributiva</td><td>Obligatoria si la empresa tiene plan de igualdad (≥ 50 trabajadores)</td><td>Se mantiene + se añade la evaluación retributiva conjunta del art. 10 cuando hay brecha ≥ 5 %</td></tr>
+        <tr><td>Informe periódico de brecha hacia el exterior</td><td>No existe</td><td>Sí, con frecuencia variable según tamaño (anual para 250+, cada 3 años para tramos inferiores)</td></tr>
+        <tr><td>Umbral que obliga a actuar</td><td>No existe</td><td>5 % — activa evaluación retributiva conjunta obligatoria</td></tr>
+        <tr><td>Derecho individual a información retributiva</td><td>Limitado: la persona trabajadora accede al registro <strong>a través de la representación legal</strong>; sin representación, sólo a las diferencias porcentuales</td><td><strong>Directo y por escrito</strong>: cualquier trabajador/a puede solicitarlo personalmente (carta, email o registro), con respuesta obligatoria de la empresa en máximo 2 meses</td></tr>
         <tr><td>Oferta de empleo</td><td>Sin obligación de incluir salario</td><td>Obligatorio publicar rango salarial antes de la entrevista</td></tr>
-        <tr><td>Historial salarial del candidato</td><td>Sin restricción</td><td>Prohibido pedirlo</td></tr>
-        <tr><td>Hablar del sueldo con compañeros/as</td><td>Cláusulas de confidencialidad permitidas</td><td>Nulas de pleno derecho</td></tr>
-        <tr><td>Umbral que obliga a actuar</td><td>No existe</td><td>5% — activa evaluación conjunta obligatoria</td></tr>
-        <tr><td>Informe periódico de brecha</td><td>No existe</td><td>Sí, con frecuencia variable según tamaño</td></tr>
+        <tr><td>Historial salarial del candidato/a</td><td>Sin restricción</td><td>Prohibido pedirlo</td></tr>
+        <tr><td>Hablar del sueldo con compañeros/as</td><td>Cláusulas de confidencialidad permitidas en contrato</td><td>Nulas de pleno derecho — no necesitas firmar nada para que dejen de aplicarse</td></tr>
+        <tr><td>Protección frente a represalias</td><td>Vía general del Estatuto de los Trabajadores</td><td>Garantía explícita y reforzada (art. 25)</td></tr>
       </tbody>
     </table>
   </div>
+
+  <p><strong>"Directo, sin intermediarios" en la práctica</strong> significa que ya no necesitas pasar por el comité, los delegados sindicales ni RRHH como filtro: puedes redactar tu propia solicitud y enviarla por el canal con prueba que prefieras (correo electrónico con confirmación, burofax o registro presencial), citando el art. 7 de la Directiva. La empresa está obligada a responderte por escrito en un plazo máximo de dos meses. → <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a> (modelo listo).</p>
+
+  <p><strong>¿Y si tu contrato actual tiene una cláusula de confidencialidad salarial?</strong> No tienes que hacer nada: <a href="#derechos">la cláusula es nula de pleno derecho</a> desde el 7 de junio de 2026. Si la empresa intenta sancionarte por hablar de tu retribución apoyándose en ella, esa sanción es nula y reclamable en juzgado.</p>
 
   <h2 id="faq">Preguntas frecuentes sobre la Ley de Transparencia Salarial 2026</h2>
 
   <div class="faq-item">
     <p class="faq-q">¿Cuándo entra exactamente en vigor la ley en España?</p>
-    <p class="faq-a">La Directiva (UE) 2023/970 fija el plazo máximo de transposición en el <strong>7 de junio de 2026</strong> (artículo 34). Si España no la transpone antes de esa fecha, la directiva es de aplicación directa en los aspectos suficientemente claros y precisos.</p>
+    <p class="faq-a">La Directiva (UE) 2023/970 fija el plazo máximo de transposición en el <strong>7 de junio de 2026</strong> (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 34 Directiva</a>). Si España no aprueba a tiempo la ley de transposición, los preceptos de la directiva que sean <strong>suficientemente claros, precisos e incondicionales</strong> tienen efecto directo: en concreto el derecho individual a información retributiva (art. 7) y la prohibición de cláusulas de confidencialidad sobre el salario (art. 7.5). En la práctica, contra la <strong>Administración Pública</strong> como empleadora puedes invocarlos directamente; frente a una <strong>empresa privada</strong>, el efecto directo no es automático, pero los tribunales españoles deben interpretar el derecho nacional vigente (RD 902/2020, ET) "a la luz" de la directiva — y eso ya da margen de reclamación.</p>
   </div>
 
   <div class="faq-item">
     <p class="faq-q">¿Qué diferencia hay entre registro retributivo y auditoría salarial?</p>
-    <p class="faq-a">El <strong>registro retributivo</strong> es un documento anual con los salarios medios y medianos desglosados por sexo y categoría — obligatorio para todas las empresas. La <strong>auditoría retributiva</strong> analiza las causas de las brechas y propone medidas correctoras — obligatoria para empresas con plan de igualdad (a partir de 50 trabajadores).</p>
+    <p class="faq-a">El <strong>registro retributivo</strong> es la "foto" anual de los salarios desglosados por sexo y categoría — obligatoria para todas las empresas desde el RD 902/2020. La <strong>auditoría retributiva</strong> es un análisis profundo de las causas de la brecha más un plan de medidas correctoras — sólo obligatoria para empresas con plan de igualdad (≥ 50 trabajadores). La Directiva añade dos figuras nuevas en 2026: el <strong>informe periódico de brecha</strong> hacia el exterior (art. 9, escalonado por tamaño) y la <strong>evaluación retributiva conjunta</strong> que se activa cuando se detecta brecha ≥ 5 % sin justificación (art. 10). Las cuatro figuras conviven — ver el <a href="#rd902">glosario completo en la sección anterior</a>.</p>
   </div>
 
   <div class="faq-item">
     <p class="faq-q">¿Puedo pedir información salarial si en mi empresa no hay sindicatos?</p>
-    <p class="faq-a">Sí. El derecho a información salarial es <strong>individual y directo</strong>. No necesitas representantes. Puedes solicitarlo tú mismo a RRHH y la empresa debe responderte.</p>
+    <p class="faq-a">Depende de cuándo. Hasta el 7 de junio de 2026, el cauce vigente es el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-12215" target="_blank" rel="noopener">art. 5 del RD 902/2020</a>: si tu empresa tiene representación legal de los trabajadores, ésta accede al registro íntegro; si no la hay, individualmente sólo puedes acceder a las diferencias porcentuales (no al desglose). A partir del 7 de junio de 2026, el <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 7 de la Directiva</a> te da derecho directo y por escrito sobre tu nivel retributivo individual y los niveles medios desglosados por sexo de tu categoría — sin necesidad de representación, con respuesta obligatoria de la empresa en 2 meses. → <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a>.</p>
   </div>
 
   <div class="faq-item">
     <p class="faq-q">¿La ley me protege si hablo de mi sueldo con compañeros/as?</p>
-    <p class="faq-a">Sí. Las cláusulas contractuales que prohíban compartir información sobre la retribución serán <strong>nulas de pleno derecho</strong> desde junio de 2026. No pueden sancionarte por ello.</p>
+    <p class="faq-a">Sí. Las cláusulas contractuales que prohíban compartir información sobre la retribución serán <strong>nulas de pleno derecho</strong> desde junio de 2026 (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 7.5 Directiva</a>). Si la empresa intenta sancionarte, la sanción es nula y reclamable, y además quedas protegido/a frente a represalias por el <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 25 Directiva</a>.</p>
   </div>
 
   <div class="faq-item">
-    <p class="faq-q">¿Qué es el umbral del 5% y cómo me afecta?</p>
-    <p class="faq-a">Si la brecha retributiva entre mujeres y hombres de una misma categoría supera el 5% sin justificación objetiva, la empresa debe iniciar una <strong>evaluación retributiva conjunta</strong> con los representantes de los trabajadores en un plazo máximo de seis meses.</p>
+    <p class="faq-q">¿Qué es el umbral del 5 % y cómo me afecta?</p>
+    <p class="faq-a">Si el informe periódico de brecha (art. 9) revela una diferencia retributiva media entre mujeres y hombres ≥ <strong>5 %</strong> en alguna categoría sin justificación objetiva, la empresa debe iniciar una <strong>evaluación retributiva conjunta</strong> con la representación legal de los trabajadores en un plazo máximo de <strong>seis meses</strong>, identificar las causas y aplicar medidas correctoras (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 10 Directiva</a>). <strong>¿Cómo medir la brecha tú mismo/a?</strong> No tienes que improvisar: la información que necesitas (medias por categoría desglosadas por sexo) es exactamente la que la empresa está obligada a darte por el art. 7 — no es información clandestina ni hace falta espiar nóminas. <strong>Cómo cubrirte</strong>: ejercer este derecho está expresamente protegido frente a represalias (art. 25); cualquier sanción posterior puede declararse nula. Si quieres dejar trazado tu interés profesional sin connotación conflictiva, la solicitud por escrito basta para activar el plazo de respuesta + dejar prueba de tu diligencia.</p>
   </div>
 
   <div class="faq-item">
-    <p class="faq-q">¿Qué es el "trabajo de igual valor"?</p>
-    <p class="faq-a">La ley no solo protege a personas que hacen exactamente el mismo trabajo, sino también a quienes hacen trabajos distintos pero de igual valor: responsabilidades similares, formación equivalente, condiciones comparables. Es clave para detectar discriminaciones donde puestos ocupados mayoritariamente por mujeres están infravalorados.</p>
+    <p class="faq-q">¿Qué es el "trabajo de igual valor" y cómo se demuestra?</p>
+    <p class="faq-a">La ley no sólo protege a personas que hacen el mismo trabajo, sino también a quienes hacen trabajos distintos pero de <strong>igual valor</strong>. La definición es literal: dos trabajos tienen igual valor "cuando la naturaleza de las funciones efectivamente encomendadas, las condiciones educativas, profesionales o de formación exigidas, los factores estrictamente relacionados con su desempeño y las condiciones laborales son equivalentes" (<a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">art. 28.1 ET</a>; lo refuerza el <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 4 Directiva 2023/970</a>). Para demostrarlo se comparan cuatro factores: formación, esfuerzo, responsabilidad y condiciones de trabajo. Es la vía clave para detectar discriminaciones donde puestos ocupados mayoritariamente por mujeres están infravalorados respecto a otros equivalentes (típicamente: cajera vs. reponedor, limpiadora vs. mantenimiento). → <a href="/plantilla-reclamar-trabajo-igual-valor.html">Plantilla 9: reclamar igualdad por trabajo de igual valor</a> (en preparación).</p>
   </div>
 
   <div class="faq-item">
     <p class="faq-q">¿Cuánto tiempo tengo para reclamar si me han pagado de menos?</p>
-    <p class="faq-a">El plazo general de prescripción para reclamar salarios es de <strong>un año</strong> desde que debieron abonarse (artículo 59.1 del Estatuto de los Trabajadores). Para reclamaciones de igualdad salarial, los plazos pueden ser más amplios. Consulta con tu sindicato.</p>
+    <p class="faq-a">El plazo general de prescripción es de <strong>un año desde que cada cantidad debió abonarse</strong> (<a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">art. 59.1 ET</a>). Importante el "desde cuándo": si reclamas en mayo de 2026, puedes pedir las diferencias devengadas desde mayo de 2025 hacia adelante; las anteriores ya prescribieron <strong>como cantidad económica</strong>. Lo que <em>no</em> prescribe en el mismo plazo es el <strong>derecho a la categoría correcta o al grupo profesional</strong>: si llevas años haciendo funciones superiores, puedes reclamar que se te reconozca el grupo a partir de ahora aunque no recuperes los atrasos de los años anteriores. Y para acciones por <strong>discriminación retributiva</strong> los tribunales han admitido recuperar diferencias salariales más allá del año cuando la conducta es continuada — es un terreno donde merece la pena consultar con un sindicato o abogado/a laboralista antes de presentar la demanda. → <a href="/plantilla-reclamar-atrasos-convenio-salarial.html">Plantilla 4: reclamar atrasos por revisión del convenio</a> (en preparación).</p>
   </div>
 
   <div class="faq-item">
     <p class="faq-q">¿La ley aplica igual a contratos temporales y a tiempo parcial?</p>
-    <p class="faq-a">Sí. La directiva es explícita: aplica a todos los tipos de contratos, incluidos temporales, de duración determinada, a tiempo parcial y fijos discontinuos.</p>
+    <p class="faq-a">Sí. La directiva es explícita: aplica a todos los tipos de contratos, incluidos temporales, de duración determinada, a tiempo parcial y fijos discontinuos. La igualdad retributiva por trabajo igual o de igual valor no admite distinción por tipo de contrato.</p>
   </div>
 
   <div class="faq-item">
     <p class="faq-q">¿Puedo reclamar por cobrar menos que un compañero/a aunque no sea cuestión de género?</p>
-    <p class="faq-a">La directiva se centra en la igualdad retributiva entre hombres y mujeres. Para reclamaciones no relacionadas con el género, la vía es el convenio colectivo y el artículo 28 del Estatuto de los Trabajadores.</p>
+    <p class="faq-a">Sí, pero por una vía distinta. La Directiva 2023/970 y el art. 28 ET se centran específicamente en la discriminación por <strong>razón de sexo</strong>. Para diferencias salariales por otras causas protegidas (edad, discapacidad, condición social, religión, orientación sexual, ideas políticas, adhesión sindical, lengua…), la base legal es el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">art. 17 ET (igualdad de trato y no discriminación)</a> — declara nulas las cláusulas y decisiones que generen estas diferencias. Si tu convenio colectivo establece igualdad estricta dentro de un grupo profesional, puedes apoyarte también en él. Cuando no hay causa protegida (la empresa simplemente paga más a unas personas que a otras por mérito, antigüedad o negociación individual), la jurisprudencia es más restrictiva: la empresa puede tener razones objetivas y la diferencia no es automáticamente ilegal. En esos casos, la vía suele ser la negociación colectiva o la propia.</p>
   </div>
 
   <div class="faq-item">
     <p class="faq-q">¿Qué pasa si mi empresa no tiene plan de igualdad?</p>
-    <p class="faq-a">Las empresas de 50 o más trabajadores están obligadas a tener plan de igualdad desde el RD 901/2020. Si tu empresa supera ese umbral y no lo tiene, está incumpliendo la normativa. Puedes denunciarlo ante la <a href="https://www.mites.gob.es/itss/web/index.html" target="_blank" rel="noopener">Inspección de Trabajo</a>.</p>
+    <p class="faq-a">Las empresas de <strong>50 o más trabajadores</strong> están obligadas a tener plan de igualdad desde el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-12214" target="_blank" rel="noopener">RD 901/2020</a>. <strong>Cómo localizar el plan de tu empresa</strong>: 1) tienes derecho a pedirlo por escrito a RRHH (forma parte del plan su comunicación a la plantilla); 2) consulta el <a href="https://expinterweb.mites.gob.es/regcon/" target="_blank" rel="noopener">REGCON</a>, donde se inscriben los planes de igualdad y los acuerdos colectivos — busca por nombre de empresa. <strong>Cómo verificar que es válido</strong>: el RD 901/2020 exige que el plan tenga diagnóstico previo de la situación, conjunto ordenado de medidas con indicadores y plazos, sistema de seguimiento, y haya sido <strong>negociado con la representación legal</strong> de los trabajadores (no impuesto unilateralmente). Si tu empresa supera el umbral y no tiene plan — o lo tiene pero sin negociar / sin diagnóstico / sin medidas — está incumpliendo. Puedes denunciarlo ante la <a href="https://www.mites.gob.es/itss/web/index.html" target="_blank" rel="noopener">Inspección de Trabajo</a>.</p>
   </div>
 
   <h2 id="conclusion">Conclusión: la información es poder, y ahora la ley te da el derecho a tenerla</h2>
 
-  <p>La Ley de Transparencia Salarial no es solo una norma técnica. Es una herramienta para que tú, como trabajador, puedas saber si estás siendo tratado de forma justa. Y a partir de junio de 2026, tienes el marco legal para exigirlo.</p>
+  <p>La Ley de Transparencia Salarial no es solo una norma técnica. Es una herramienta para que tú, como trabajador/a, puedas saber si estás siendo tratado/a de forma justa. Y a partir de junio de 2026, tienes el marco legal para exigirlo. La diferencia entre tener un derecho y ejercerlo está en pasar a la acción — y en hacerlo con orden.</p>
 
   <p>Lo que puedes hacer ya mismo:</p>
   <ol>
-    <li><strong>Localiza tu convenio colectivo</strong> en el BOE y verifica tu grupo profesional.</li>
-    <li><strong>Calcula tu salario neto real</strong> y compara con la mediana de tu profesión.</li>
-    <li><strong>Prepárate para usar tus nuevos derechos</strong> en junio: información salarial, nulidad de confidencialidad, salario en ofertas.</li>
-    <li><strong>Documenta cualquier indicio de desigualdad</strong> antes de hacer una reclamación formal.</li>
+    <li><strong>Localiza tu convenio colectivo</strong> y verifica tu grupo profesional. Empieza por nuestro <a href="/convenios.html">verificador de convenios</a> (auditados con sus tablas de salarios y complementos resumidos); si el tuyo no está, ve al <a href="https://www.boe.es/buscar/doc.php?q=convenio+colectivo" target="_blank" rel="noopener">buscador del BOE</a> o al <a href="https://expinterweb.mites.gob.es/regcon/" target="_blank" rel="noopener">REGCON</a>.</li>
+    <li><strong>Calcula tu salario neto real</strong> y compara con la mediana de tu profesión. La <a href="https://salariojusto.es">calculadora de SalarioJusto</a> aplica el IRPF 2026 estatal + autonómico exacto a tu bruto; cruza el resultado con la <a href="https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177025" target="_blank" rel="noopener">Encuesta Anual de Estructura Salarial del INE</a> para tu sector y CCAA.</li>
+    <li><strong>Prepárate para usar tus nuevos derechos</strong> en junio: información salarial, nulidad de confidencialidad, salario en ofertas. El <a href="/plantillas-transparencia-retributiva-2026.html">Kit de plantillas para ejercer la Directiva</a> tiene los modelos listos para personalizar — empezando por la <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a>.</li>
+    <li><strong>Documenta cualquier indicio de desigualdad</strong> antes de hacer una reclamación formal. La forma corta: una tabla con cuatro columnas — <strong>fecha · hecho · fuente · prueba adjunta</strong> — vale más que un montón de capturas sueltas. La forma operativa con campos a rellenar y el detalle de qué evidencias recoger, en la <a href="/plantilla-documentar-evidencias-desigualdad-salarial.html">Plantilla 7: documentar evidencias de desigualdad</a> (en preparación). Recuerda: una vez aportes indicios sólidos, la <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">carga de la prueba se invierte (art. 18 Directiva)</a> — es la empresa quien debe demostrar que no hay discriminación.</li>
   </ol>
 
   <div class="cta-box">
