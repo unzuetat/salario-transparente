@@ -1015,6 +1015,175 @@ const BODY_IGUALDAD_NO_DISCRIMINACION = `
   </script>
 `;
 
+// ── Modelo de carta + body redactado de la plantilla #9 ─────────────
+const CARTA_TRABAJO_IGUAL_VALOR = `[CIUDAD], [FECHA]
+
+A la atención de [NOMBRE DEL/DE LA RESPONSABLE DE RECURSOS HUMANOS]
+[RAZÓN SOCIAL DE LA EMPRESA]
+[DOMICILIO DE LA EMPRESA]
+
+Asunto: Reclamación de igualdad retributiva por trabajo de igual valor (art. 28 ET y art. 4 Directiva (UE) 2023/970)
+
+Estimado/a [NOMBRE]:
+
+Mediante el presente escrito, yo [TU NOMBRE Y APELLIDOS], con NIF [TU NIF], empleado/a de [RAZÓN SOCIAL] desde el [FECHA DE INCORPORACIÓN], con la categoría profesional de [TU CATEGORÍA] (grupo profesional [TU GRUPO]), pongo en su conocimiento los siguientes hechos y formulo la siguiente reclamación:
+
+PRIMERO. Mi puesto, denominado [TU PUESTO O CATEGORÍA], es desempeñado mayoritariamente por [INDICAR: mujeres / hombres / personas con característica X]. Mi retribución actual asciende a [TU RETRIBUCIÓN ANUAL] € brutos anuales (salario base + complementos), conforme a las nóminas que se acompañan.
+
+SEGUNDO. En la empresa existe otro puesto, denominado [PUESTO COMPARABLE], desempeñado mayoritariamente por personas del sexo opuesto, cuya retribución es superior a la mía: [RETRIBUCIÓN COMPARABLE ESTIMADA] € brutos anuales aproximadamente, según [FUENTE VERIFICABLE: oferta interna, comunicación, datos del registro retributivo, etc.].
+
+TERCERO. Aunque las funciones de ambos puestos son distintas, son de IGUAL VALOR conforme al artículo 28.1 del Estatuto de los Trabajadores y al artículo 4 de la Directiva (UE) 2023/970, por las siguientes razones, evaluadas desde los cuatro factores reconocidos por la normativa (formación, esfuerzo, responsabilidad y condiciones de trabajo):
+
+A. FORMACIÓN Y CUALIFICACIÓN EXIGIDA. [DESCRIBIR TU FORMACIÓN/EXPERIENCIA EXIGIDA Y LA DEL PUESTO COMPARABLE; INDICAR EQUIVALENCIA. Ej.: "Mi puesto exige formación profesional grado medio + 2 años de experiencia. El puesto comparable exige idéntica formación y experiencia equivalente."]
+
+B. ESFUERZO. [DESCRIBIR ESFUERZO FÍSICO, MENTAL Y EMOCIONAL EN AMBOS PUESTOS. Ej.: "Mi puesto requiere atención sostenida durante toda la jornada y manejo de situaciones con clientes; el comparable requiere esfuerzo físico continuado en almacén. Ambos esfuerzos son equivalentes en intensidad y exigencia."]
+
+C. RESPONSABILIDAD. [DESCRIBIR RESPONSABILIDAD ECONÓMICA, SOBRE PERSONAS, MATERIALES O DECISIONES. Ej.: "Mi puesto asume responsabilidad sobre la caja diaria y la atención al cliente; el comparable asume responsabilidad sobre el inventario y la disposición de productos. Ambas responsabilidades son comparables."]
+
+D. CONDICIONES DE TRABAJO. [DESCRIBIR HORARIO, ENTORNO, ESTACIONALIDAD, ETC. Ej.: "Ambos puestos comparten horario, entorno y exigencias temporales."]
+
+CUARTO. La diferencia retributiva entre dos puestos de igual valor desempeñados mayoritariamente por personas de distinto sexo constituye, conforme al artículo 28 del Estatuto de los Trabajadores y a los artículos 4 y 18 de la Directiva (UE) 2023/970, un indicio de discriminación retributiva indirecta por razón de sexo, salvo que la empresa acredite una justificación objetiva, neutra y verificable.
+
+Por todo lo anterior, SOLICITO:
+
+1. La equiparación retributiva entre mi puesto y el puesto comparable identificado, en aplicación del principio de igual retribución por trabajo de igual valor (art. 28.1 ET).
+
+2. El abono de las diferencias retributivas devengadas desde [FECHA] hasta la fecha de regularización efectiva.
+
+3. La explicación por escrito de los motivos objetivos, neutros y verificables que, en su caso, fundamenten la diferencia retributiva — para poder valorar si concurren razones que la justifiquen, en los términos del art. 4.4 de la Directiva (UE) 2023/970.
+
+4. [SI APLICA — empresa con plan de igualdad obligatorio (≥ 50 trabajadores)] Acceso al sistema de valoración de puestos de trabajo previsto en el art. 4 del RD 902/2020, así como al registro retributivo y, en su caso, a la auditoría retributiva.
+
+A los efectos del artículo 59.1 del Estatuto de los Trabajadores, dejo expresa constancia de la fecha de la presente reclamación, que interrumpe la prescripción de las cantidades reclamadas. Asimismo, conforme al artículo 25 de la Directiva (UE) 2023/970, cualquier represalia o trato desfavorable que se produjera tras la presentación de esta reclamación se entenderá nula de pleno derecho.
+
+Quedo a su disposición para aportar la documentación que estime oportuna y le ruego me confirme por escrito la recepción de esta solicitud y me responda en un plazo razonable.
+
+Atentamente,
+
+
+
+[FIRMA]
+
+[TU NOMBRE Y APELLIDOS]
+[TU NIF]
+`;
+
+const BODY_TRABAJO_IGUAL_VALOR = `
+  <h2>Para qué sirve esta plantilla</h2>
+  <p>El principio de igualdad retributiva no se limita al "mismo trabajo": cubre también el <strong>trabajo de igual valor</strong>, aunque las funciones sean distintas. Es la pieza clave para detectar y reclamar discriminaciones donde puestos ocupados mayoritariamente por mujeres están infravalorados respecto a otros equivalentes ocupados por hombres — el caso clásico de <em>cajera vs reponedor</em>, <em>limpiadora vs mantenimiento</em>, <em>cuidadora vs vigilante</em>. Esta plantilla convierte ese principio en una reclamación formal con la estructura argumental que utilizan los tribunales: comparación de puestos a partir de los cuatro factores reconocidos por el art. 4 de la Directiva (UE) 2023/970 — formación, esfuerzo, responsabilidad y condiciones de trabajo.</p>
+
+  <h2>Cuándo usar esta plantilla</h2>
+  <div class="when-box">
+    <p>Tu puesto y el de la persona o personas comparables tienen <strong>funciones distintas</strong> pero <strong>responsabilidades, formación, esfuerzo y condiciones equivalentes</strong>. Tu puesto está desempeñado mayoritariamente por personas de un sexo y el comparable mayoritariamente por personas del sexo opuesto. La retribución es desigual y no hay justificación objetiva. Si los puestos hicieran exactamente <em>el mismo trabajo</em>, la vía sería la <a href="/plantilla-denunciar-discriminacion-salarial.html">Plantilla 5: denunciar discriminación salarial por género</a>; aquí estamos en el escenario más sutil pero más frecuente: trabajos distintos de igual valor.</p>
+  </div>
+
+  <h2>Antes de redactarla, ten a mano…</h2>
+  <ul>
+    <li>Tus datos personales y de contrato: <strong>nombre y apellidos, NIF, fecha de incorporación, categoría, retribución bruta anual desglosada</strong>.</li>
+    <li>Identificación del <strong>puesto comparable</strong>: denominación, perfil de las personas que lo ocupan, retribución estimada con fuente verificable (oferta interna, comunicación, registro retributivo, etc.).</li>
+    <li>Análisis ordenado de los <strong>cuatro factores</strong> de comparación entre tu puesto y el comparable:
+      <ul>
+        <li><strong>Formación y cualificación</strong>: titulación o experiencia exigida en cada puesto.</li>
+        <li><strong>Esfuerzo</strong>: físico, mental y emocional. Aunque sean distintos, ¿son comparables en intensidad?</li>
+        <li><strong>Responsabilidad</strong>: económica, sobre personas, sobre materiales, sobre decisiones.</li>
+        <li><strong>Condiciones de trabajo</strong>: horario, entorno, estacionalidad, exigencias temporales.</li>
+      </ul>
+    </li>
+    <li>Si la empresa tiene <strong>50 o más personas trabajadoras</strong>, el sistema de valoración de puestos del <a href="${LEY.rd902_2020}" target="_blank" rel="noopener">art. 4 del RD 902/2020</a> debe usarse para la auditoría retributiva. Pídelo si aplica.</li>
+    <li>Tu <strong>archivo de evidencias</strong> con fechas y fuentes — ver <a href="/plantilla-documentar-evidencias-desigualdad-salarial.html">Plantilla 7: documentar evidencias de desigualdad</a> (en preparación).</li>
+  </ul>
+
+  <h2>Modelo de carta</h2>
+  <p>El modelo despliega los cuatro factores (A, B, C, D) que los tribunales y la Directiva utilizan para valorar si dos puestos son de igual valor. Sustituye los campos en <strong>[CORCHETES]</strong> por tu análisis concreto. Cuanto más específico y comprobable, más sólida será la reclamación.</p>
+
+  <div class="template-text-wrap">
+    <div class="template-actions">
+      <button type="button" class="btn-copy" data-target="template-text">Copiar al portapapeles</button>
+      <button type="button" class="btn-download" data-target="template-text" data-filename="reclamacion-trabajo-igual-valor.txt">Descargar como .txt</button>
+    </div>
+    <div id="template-text" class="template-text">${formatCarta(CARTA_TRABAJO_IGUAL_VALOR)}</div>
+  </div>
+
+  <h2>Cómo enviarla</h2>
+  <ol>
+    <li><strong>Burofax con acuse de recibo y certificación de contenido</strong> (Correos). La opción más sólida ante un eventual juicio: prueba de qué dijiste y de cuándo lo recibió la empresa. Coste aproximado: 25–40 €.</li>
+    <li><strong>Correo electrónico</strong> a la cuenta corporativa de RRHH, con confirmación de lectura y solicitud expresa de acuse de recibo.</li>
+    <li><strong>Registro de entrada presencial</strong> en las oficinas de la empresa, con dos copias y una sellada para ti.</li>
+  </ol>
+
+  <h2>Qué pasa si la empresa no responde o rechaza la reclamación</h2>
+  <ul>
+    <li><strong>Reiterar por escrito</strong>, recordando el plazo y el incumplimiento del principio de igualdad retributiva del art. 28 ET. Sirve para reforzar la prueba.</li>
+    <li><strong>Acudir a la representación legal de los trabajadores o al sindicato</strong>: las reclamaciones por trabajo de igual valor suelen afectar a colectivos enteros (todas las personas en el puesto infravalorado), y la presión colectiva es más eficaz que la individual.</li>
+    <li><strong>Denunciar ante la Inspección de Trabajo</strong> (<a href="https://www.mites.gob.es/itss/web/index.html" target="_blank" rel="noopener">mites.gob.es/itss</a>): la falta de un sistema de valoración objetivo y la diferencia retributiva injustificada entre puestos de igual valor están tipificadas como infracción. → También aplica la <a href="/plantilla-denunciar-discriminacion-salarial.html">Plantilla 5: denunciar discriminación salarial por género</a> si quieres formalizar la denuncia administrativa.</li>
+    <li><strong>Conciliación previa en el SMAC</strong> y, si no hay acuerdo, demanda ante el juzgado de lo social. La <strong>carga de la prueba se invierte</strong> (<a href="${LEY.directiva2023_970}" target="_blank" rel="noopener">art. 18 Directiva 2023/970</a>): si aportas indicios sólidos del trato desigual entre puestos de igual valor, la empresa debe justificar la diferencia con criterios objetivos y neutros.</li>
+  </ul>
+
+  <h2>Marco legal aplicable</h2>
+  <div class="legal-box">
+    <p class="legal-title">Citas literales</p>
+    <ul>
+      <li><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener"><strong>Art. 4.1 Directiva 2023/970</strong></a> — Los Estados miembros adoptarán las medidas necesarias para garantizar que los empleadores dispongan de estructuras retributivas que aseguren la igualdad de retribución entre trabajadores y trabajadoras por el mismo trabajo o por un trabajo de igual valor.</li>
+      <li><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener"><strong>Art. 4.4 Directiva 2023/970</strong></a> — El valor del trabajo se evaluará y comparará sobre la base de criterios objetivos y neutros desde el punto de vista del género acordados con los representantes de los trabajadores […], que incluirán las capacidades, el esfuerzo, la responsabilidad y las condiciones de trabajo y, si procede, cualesquiera otros factores que sean pertinentes para el empleo o el puesto específico de que se trate.</li>
+      <li><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener"><strong>Art. 18 Directiva 2023/970</strong></a> — Cuando los trabajadores […] establezcan ante un órgano jurisdiccional u otra autoridad competente hechos a partir de los cuales pueda presumirse que se ha producido una discriminación directa o indirecta, corresponderá a la parte reclamada demostrar que no se ha producido tal discriminación directa o indirecta en relación con la retribución.</li>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 28.1 ET</strong></a> — El empresario está obligado a pagar por la prestación de un trabajo de igual valor la misma retribución, satisfecha directa o indirectamente, y cualquiera que sea la naturaleza de la misma, salarial o extrasalarial, sin que pueda producirse discriminación alguna por razón de sexo en ninguno de los elementos o condiciones de aquella. Un trabajo tendrá igual valor que otro cuando la naturaleza de las funciones o tareas efectivamente encomendadas, las condiciones educativas, profesionales o de formación exigidas para su ejercicio, los factores estrictamente relacionados con su desempeño y las condiciones laborales en las que dichas actividades se llevan a cabo en realidad sean equivalentes.</li>
+      <li><a href="${LEY.rd902_2020}" target="_blank" rel="noopener"><strong>RD 902/2020 · Art. 4</strong></a> — Sistema de valoración de los puestos de trabajo. Define los criterios de adecuación, totalidad y objetividad en la valoración para garantizar la igualdad retributiva.</li>
+    </ul>
+    <p class="legal-source"><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener">Directiva (UE) 2023/970 en BOE.es</a> · <a href="${LEY.et}" target="_blank" rel="noopener">Estatuto de los Trabajadores en BOE.es</a> · <a href="${LEY.rd902_2020}" target="_blank" rel="noopener">RD 902/2020 en BOE.es</a></p>
+  </div>
+
+  <h2>Preguntas frecuentes sobre esta plantilla</h2>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Cómo sé si dos puestos distintos son "de igual valor"?</p>
+    <p class="faq-a">El art. 4.4 de la Directiva 2023/970 y el art. 28.1 ET marcan los <strong>cuatro factores</strong> de comparación: <strong>formación / cualificación</strong> exigida, <strong>esfuerzo</strong> (físico, mental, emocional), <strong>responsabilidad</strong> (económica, sobre personas, sobre decisiones) y <strong>condiciones de trabajo</strong> (horario, entorno, exigencias temporales). Si los cuatro factores son equivalentes — aunque las funciones sean distintas — los puestos son "de igual valor" y deben retribuirse igual. La normativa española añade en el RD 902/2020 los criterios de "adecuación, totalidad y objetividad" para que la valoración no sea arbitraria.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Necesito una valoración formal de puestos para reclamar?</p>
+    <p class="faq-a">Si la empresa tiene 50 o más personas trabajadoras y plan de igualdad obligatorio, debería tener un <strong>sistema de valoración de puestos</strong> (RD 902/2020, art. 4). Si no lo tiene, está incumpliendo — y la falta del sistema juega contra la empresa al activar la inversión de la carga de la prueba. Si lo tiene, pídelo y úsalo en tu argumentación. Si no lo tiene o si trabajas en empresa más pequeña, basta con que tu análisis comparativo de los cuatro factores sea razonable y verificable: los tribunales aceptan esa argumentación cuando está bien construida.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Vale como comparador un solo compañero/a o tengo que comparar puestos colectivos?</p>
+    <p class="faq-a">Vale el comparador individual si las circunstancias son objetivamente equivalentes. Pero la jurisprudencia del Tribunal de Justicia de la UE (sentencia <em>Tesco Stores</em>, C-624/19, entre otras) admite también la comparación entre <strong>colectivos de puestos</strong> cuando hay un denominador común de empleador y la valoración es coherente. Lo más sólido suele ser comparar grupos: "los puestos de cajera (mayoritariamente mujeres)" frente a "los puestos de reponedor (mayoritariamente hombres)" en la misma empresa.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Qué pasa si la empresa alega que las funciones no son comparables?</p>
+    <p class="faq-a">La defensa típica es decir que los trabajos son distintos. Pero la Directiva y el ET establecen literalmente que el "igual valor" es independiente de que las funciones sean idénticas — lo que importa son los cuatro factores objetivos. Si la empresa quiere mantener la diferencia retributiva, le corresponde acreditar que los factores no son equivalentes (carga de la prueba invertida, art. 18 Directiva). Tu argumentación debe centrarse en demostrar la equivalencia de los cuatro factores, no en negar que las funciones sean distintas.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Puedo combinar esta plantilla con otras?</p>
+    <p class="faq-a">Sí. Lo habitual es: pedir antes la información retributiva con la <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a> para tener cifras objetivas; documentar evidencias con la Plantilla 7; y, si la empresa rechaza la reclamación o no responde, presentar la <a href="/plantilla-denunciar-discriminacion-salarial.html">Plantilla 5: denunciar discriminación salarial por género</a> ante la Inspección de Trabajo. Los tres escritos forman un itinerario coherente.</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.btn-copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          const orig = btn.textContent;
+          btn.textContent = 'Copiado';
+          btn.classList.add('btn-success');
+          setTimeout(() => { btn.textContent = orig; btn.classList.remove('btn-success'); }, 1800);
+        }).catch(() => alert('No se pudo copiar. Selecciona el texto manualmente.'));
+      });
+    });
+    document.querySelectorAll('.btn-download').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        const filename = btn.dataset.filename || 'plantilla.txt';
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    });
+  </script>
+`;
+
 // ── Plantillas del Kit (SSOT) ────────────────────────────────────────
 const PLANTILLAS = [
   {
@@ -1141,17 +1310,19 @@ const PLANTILLAS = [
   {
     num: 9,
     slug: 'plantilla-reclamar-trabajo-igual-valor',
-    title: 'Plantilla para reclamar igualdad por "trabajo de igual valor"',
+    title: 'Plantilla para reclamar igualdad salarial por trabajo de igual valor',
     h1: 'Plantilla para reclamar igualdad salarial por "trabajo de igual valor"',
-    metaDescription: 'Modelo para reclamar igualdad retributiva cuando tu trabajo no es idéntico pero tiene responsabilidades, formación y condiciones equivalentes a las del comparador.',
+    metaDescription: 'Modelo de carta listo para personalizar (copiar o descargar como .txt) para reclamar igualdad retributiva cuando tu trabajo no es idéntico al del comparador pero tiene formación, esfuerzo, responsabilidad y condiciones equivalentes (art. 4 Directiva 2023/970 y art. 28 ET).',
     breadcrumb: 'Trabajo de igual valor',
-    hook: 'Tu trabajo no es idéntico al de tu comparador, pero tiene responsabilidades, formación y condiciones equivalentes. La Directiva protege también este escenario, donde puestos ocupados mayoritariamente por mujeres están infravalorados respecto a otros equivalentes ocupados por hombres.',
+    hook: 'Tu trabajo no es idéntico al de tu comparador, pero tiene responsabilidades, formación, esfuerzo y condiciones equivalentes. La Directiva protege también este escenario, donde puestos ocupados mayoritariamente por mujeres están infravalorados respecto a otros equivalentes ocupados por hombres.',
     legal: [
-      { text: 'Directiva (UE) 2023/970 — artículo 4 (Mismo trabajo y trabajo de igual valor)', href: LEY.directiva2023_970 },
+      { text: 'Directiva (UE) 2023/970 — artículo 4 (Mismo trabajo y trabajo de igual valor: cuatro factores de comparación)', href: LEY.directiva2023_970 },
+      { text: 'Directiva (UE) 2023/970 — artículo 18 (Inversión de la carga de la prueba)', href: LEY.directiva2023_970 },
       { text: 'Directiva (UE) 2023/970 — artículo 19 (Probar la realización del mismo trabajo o de un trabajo de igual valor)', href: LEY.directiva2023_970 },
-      { text: 'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)', href: LEY.et },
-      { text: 'Real Decreto 902/2020 — artículo 4 (sistema de valoración de puestos de trabajo)', href: LEY.rd902_2020 },
+      { text: 'Estatuto de los Trabajadores — artículo 28.1 (definición literal de "trabajo de igual valor")', href: LEY.et },
+      { text: 'Real Decreto 902/2020 — artículo 4 (sistema de valoración de puestos: adecuación, totalidad, objetividad)', href: LEY.rd902_2020 },
     ],
+    body: BODY_TRABAJO_IGUAL_VALOR,
   },
   {
     num: 10,
