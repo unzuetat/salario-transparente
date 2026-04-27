@@ -9,6 +9,10 @@
 - [Cómo reclamar diferencias salariales](https://salariojusto.es/reclamar-diferencias-salariales-convenio.html): si tu empresa paga menos de lo que dice tu convenio colectivo
 - [Rangos salariales y transparencia](https://salariojusto.es/rangos-salariales-empresa-transparencia-2026.html): qué bandas debe publicar tu empresa según la Directiva
 
+## Plantillas para ejercer tus derechos
+
+- [Plantillas de transparencia salarial 2026](https://salariojusto.es/plantillas-transparencia-retributiva-2026.html): hub con 10 modelos prácticos para ejercer los derechos de la Directiva UE 2023/970 — solicitar banda salarial, reclamar grupo profesional, denunciar discriminación por género, reclamar atrasos del convenio, calcular la brecha del 5%, documentar evidencias, "trabajo de igual valor", art. 28 ET. Hub en construcción: las plantillas individuales se publican en abril-mayo de 2026.
+
 ## Herramientas
 
 - [Calculadora de salario neto IRPF 2026](https://salariojusto.es/): bruto-a-neto con escalas estatal y autonómica reales (9 CCAA + tarifa foral Bizkaia)

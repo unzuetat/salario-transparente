@@ -25,8 +25,14 @@
   </url>
   <url>
     <loc>https://salariojusto.es/ley-transparencia-salarial-2026.html</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://salariojusto.es/plantillas-transparencia-retributiva-2026.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
