@@ -644,7 +644,7 @@
     }
 
     /* RESULTS */
-    #results { display: none; }
+    #results { display: none; scroll-margin-top: 180px; }
 
     .result-hero {
       background: var(--ink);
@@ -702,6 +702,67 @@
       color: rgba(255,255,255,0.75);
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    /* CTA contextual post-resultado: convenio + Kit del trabajador */
+    .result-hook {
+      background: linear-gradient(135deg, var(--ink) 0%, #1d1611 100%);
+      color: #fff;
+      padding: 26px 30px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      align-items: center;
+      justify-content: space-between;
+      border-left: 4px solid var(--gold);
+    }
+    .result-hook-text { flex: 1 1 320px; min-width: 260px; }
+    .result-hook-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+    .result-hook-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(17px, 2.2vw, 21px);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.4;
+      margin: 0;
+    }
+    .result-hook-headline strong { color: var(--gold-light); font-weight: 400; }
+    .result-hook-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .result-hook-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 22px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      white-space: nowrap;
+    }
+    .result-hook-btn:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+    .result-hook-btn.secondary {
+      background: transparent;
+      color: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+    .result-hook-btn.secondary:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: #fff; }
+    @media (max-width: 600px) {
+      .result-hook { padding: 22px; flex-direction: column; align-items: stretch; }
+      .result-hook-actions { width: 100%; }
+      .result-hook-btn { flex: 1 1 auto; justify-content: center; padding: 14px 18px; font-size: 12px; }
     }
 
     .status-card {
@@ -2660,6 +2721,21 @@
       Cálculo con la <strong style="color:var(--ink-light);">escala estatal agregada del IRPF 2026</strong>. Cada Comunidad Autónoma aplica su propia escala, por lo que tu neto real puede variar unos cientos de euros al año. Para la fiscalidad exacta de tu comunidad, consulta la <a href="/salarios.html" style="color:var(--ink-light); text-decoration:underline;">landing de tu ciudad</a>.
     </div>
 
+    <!-- CTA POST-RESULTADO: tu bruto + convenio + Kit del trabajador -->
+    <div class="result-hook" id="resultHook">
+      <div class="result-hook-text">
+        <div class="result-hook-label">Tu siguiente paso</div>
+        <p class="result-hook-headline">
+          Tu salario bruto es <strong id="resultHookGross">—</strong> al año.
+          ¿Te están pagando al menos lo que marca tu convenio colectivo?
+        </p>
+      </div>
+      <div class="result-hook-actions">
+        <a href="/convenios.html" class="result-hook-btn">Buscar mi convenio →</a>
+        <a href="/plantillas-transparencia-retributiva-2026.html" class="result-hook-btn secondary">Ver el Kit del trabajador</a>
+      </div>
+    </div>
+
     <!-- AVISO PROFESIÓN GENÉRICA -->
     <div id="genericNotice" style="display:none; background:var(--amber-bg); border:1px solid #FDE68A; border-left:4px solid var(--amber); padding:14px 20px; margin-bottom:20px; font-size:13px; color:var(--ink-light); line-height:1.6;">
       <strong style="color:var(--amber);">Nota sobre los rangos mostrados.</strong>
@@ -3254,6 +3330,7 @@
     document.getElementById('netMonthly').textContent = netMonthlyStr;
     document.getElementById('netAnnual').textContent  = netAnnualStr;
     document.getElementById('percentileVal').textContent = '…';
+    document.getElementById('resultHookGross').textContent = fmt(gross);
     document.getElementById('genericNotice').style.display = 'none';
 
     // Mostrar skeleton en ranking y status mientras carga la API
