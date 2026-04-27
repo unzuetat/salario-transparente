@@ -327,7 +327,7 @@ const BODY_GRUPO_SUPERIOR = `
   </div>
   <div class="faq-mini">
     <p class="faq-q">¿Puedo combinar esta plantilla con la solicitud de banda salarial (Plantilla 1)?</p>
-    <p class="faq-a">Sí, y a menudo conviene. La <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1</a> te da los <em>datos retributivos medios</em> por categoría — eso es exactamente lo que necesitas para cuantificar la diferencia entre tu grupo actual y el superior. Si tienes margen de tiempo, pide primero los datos del art. 7 (la empresa tiene 2 meses para responder) y, con ellos en la mano, redacta esta reclamación con cifras concretas. Si la urgencia te aprieta — porque el plazo de prescripción está corriendo — envía las dos en paralelo.</p>
+    <p class="faq-a">Sí, y a menudo conviene. La <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a> te da los <em>datos retributivos medios</em> por categoría — eso es exactamente lo que necesitas para cuantificar la diferencia entre tu grupo actual y el superior. Si tienes margen de tiempo, pide primero los datos del art. 7 (la empresa tiene 2 meses para responder) y, con ellos en la mano, redacta esta reclamación con cifras concretas. Si la urgencia te aprieta — porque el plazo de prescripción está corriendo — envía las dos en paralelo.</p>
   </div>
 
   <script>
@@ -518,6 +518,186 @@ const BODY_ATRASOS_CONVENIO = `
   </script>
 `;
 
+// ── Modelo de denuncia + body redactado de la plantilla #5 ──────────
+const CARTA_DENUNCIA_DISCRIMINACION = `[CIUDAD], [FECHA]
+
+A LA INSPECCIÓN PROVINCIAL DE TRABAJO Y SEGURIDAD SOCIAL DE [PROVINCIA]
+
+DATOS DE LA PERSONA DENUNCIANTE:
+- Nombre y apellidos: [TU NOMBRE Y APELLIDOS]
+- NIF: [TU NIF]
+- Domicilio a efectos de notificaciones: [DIRECCIÓN POSTAL]
+- Email de contacto: [EMAIL]
+- Teléfono: [TELÉFONO]
+
+DATOS DE LA EMPRESA DENUNCIADA:
+- Razón social: [RAZÓN SOCIAL DE LA EMPRESA]
+- CIF: [CIF DE LA EMPRESA]
+- Domicilio del centro de trabajo: [DOMICILIO DEL CENTRO DE TRABAJO]
+- Actividad: [ACTIVIDAD PRINCIPAL]
+- Convenio colectivo aplicable: [CONVENIO]
+
+OBJETO DE LA DENUNCIA: Discriminación retributiva por razón de sexo (art. 28 del Estatuto de los Trabajadores y Directiva (UE) 2023/970).
+
+EXPONGO los siguientes HECHOS:
+
+PRIMERO. Que presto servicios para la empresa [RAZÓN SOCIAL] desde el [FECHA DE INCORPORACIÓN], con la categoría profesional de [TU CATEGORÍA] (grupo profesional [TU GRUPO]), realizando funciones de [DESCRIPCIÓN BREVE DE TUS FUNCIONES].
+
+SEGUNDO. Que mi retribución actual asciende a [TU RETRIBUCIÓN ANUAL] € brutos anuales (salario base + complementos), conforme a la nómina que se acompaña.
+
+TERCERO. Que tengo conocimiento de que en mi misma categoría profesional o en categorías que realizan trabajos de igual valor, las personas trabajadoras del sexo opuesto perciben una retribución superior a la mía, sin que dicha diferencia esté justificada por motivos objetivos, neutros y verificables. En concreto:
+
+- [HECHO CONCRETO 1: ej. "El compañero D. ___, contratado en idéntica categoría y con menor antigüedad, percibe ___ € brutos anuales según la oferta interna publicada el ___"]
+- [HECHO CONCRETO 2]
+- [HECHO CONCRETO 3]
+[AÑADIR LOS QUE APLIQUEN, CON FECHAS Y FUENTES VERIFICABLES]
+
+CUARTO. Que, conforme al artículo 28.2 del Estatuto de los Trabajadores y al Real Decreto 902/2020, la empresa está obligada a llevar un registro retributivo con los valores medios desglosados por sexo. He solicitado [HE / NO HE] tenido acceso a dicho registro, [INDICAR RESULTADO: si negaron acceso, fecha, etc.].
+
+QUINTO. Que esta situación constituye discriminación retributiva por razón de sexo, prohibida por el artículo 28 del Estatuto de los Trabajadores, el artículo 14 de la Constitución Española y la Directiva (UE) 2023/970, así como por la Ley Orgánica 3/2007 para la igualdad efectiva de mujeres y hombres.
+
+PRUEBAS QUE SE ACOMPAÑAN:
+
+1. Copia de mi contrato de trabajo y nóminas de los últimos [12 / 24] meses.
+2. [LISTAR PRUEBAS: ej. captura de la oferta interna; correos donde se asignan funciones; comunicaciones internas que evidencian la diferencia; etc.]
+3. [SI LO HUBIERA] Copia de la solicitud previa del registro retributivo y de la respuesta o falta de respuesta de la empresa.
+
+Por todo lo anterior, SOLICITO a la Inspección Provincial de Trabajo y Seguridad Social:
+
+1. Que se inicien las actuaciones inspectoras oportunas para verificar los hechos denunciados.
+
+2. Que se requiera a la empresa la entrega del registro retributivo y, en su caso, de la auditoría retributiva (RD 902/2020) y del plan de igualdad si está obligada a tenerlo.
+
+3. Que, de constatarse la infracción, se proceda a la sanción correspondiente conforme a la Ley sobre Infracciones y Sanciones en el Orden Social (LISOS).
+
+4. Que se me informe del resultado de las actuaciones inspectoras.
+
+A los efectos del artículo 25 de la Directiva (UE) 2023/970 y del artículo 17 del Estatuto de los Trabajadores, dejo constancia expresa de que cualquier represalia o trato desfavorable que se produjera tras la presentación de esta denuncia se entenderá nula de pleno derecho.
+
+Atentamente,
+
+
+
+[FIRMA]
+
+[TU NOMBRE Y APELLIDOS]
+[TU NIF]
+`;
+
+const BODY_DENUNCIA_DISCRIMINACION = `
+  <h2>Para qué sirve esta plantilla</h2>
+  <p>Cuando tienes indicios sólidos de que cobras menos que un compañero/a por razón de sexo, hay dos vías para reclamarlo y son <strong>compatibles entre sí</strong>: la <strong>denuncia ante la Inspección de Trabajo</strong> (vía administrativa, gratuita) y la <strong>demanda ante el juzgado de lo social</strong> (vía judicial, recupera diferencias y daños). Esta plantilla cubre la primera — el modelo de denuncia administrativa que abre el procedimiento inspector y, normalmente, hace que la empresa rectifique antes de llegar a juicio. Para la demanda judicial conviene contar con sindicato o abogado/a laboralista; el escrito de demanda es más complejo y requiere asesoramiento individualizado.</p>
+
+  <h2>Cuándo usar esta plantilla</h2>
+  <div class="when-box">
+    <p>Tienes <strong>indicios sólidos y verificables</strong> (no sospechas vagas) de que tu retribución es inferior a la de personas del sexo opuesto en tu misma categoría profesional o en categorías que realizan trabajos de igual valor, y no hay justificación objetiva razonable. Los indicios pueden venir del registro retributivo de la empresa, de ofertas internas con banda salarial, de información salarial obtenida vía <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a>, o de comparaciones documentadas. La <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">carga de la prueba se invierte (art. 18 Directiva)</a>: tú aportas indicios, la empresa tiene que demostrar que no hay discriminación.</p>
+  </div>
+
+  <h2>Antes de redactarla, ten a mano…</h2>
+  <ul>
+    <li><strong>Tu archivo de evidencias bien ordenado</strong>. Esta es la pieza crítica: sin pruebas verificables, la denuncia se archiva. Tabla con fecha, hecho, fuente y prueba adjunta. → <a href="/plantilla-documentar-evidencias-desigualdad-salarial.html">Plantilla 7: documentar evidencias de desigualdad</a> (en preparación).</li>
+    <li><strong>Datos personales</strong>: nombre y apellidos, NIF, domicilio postal, email y teléfono.</li>
+    <li><strong>Datos del contrato</strong>: fecha de incorporación, categoría profesional, funciones reales, retribución bruta anual desglosada (salario base + complementos).</li>
+    <li><strong>Datos de la empresa</strong>: razón social, CIF, domicilio del centro de trabajo, actividad principal, convenio aplicable.</li>
+    <li><strong>Hechos concretos</strong> con fechas y fuentes verificables. Cada hecho debe poder respaldarse con una prueba documental.</li>
+    <li><strong>Si has solicitado previamente el registro retributivo</strong> (RD 902/2020 o art. 7 Directiva), copia de tu solicitud y de la respuesta o silencio de la empresa.</li>
+    <li><strong>Provincia</strong> a la que dirigir la denuncia: la <a href="https://www.mites.gob.es/itss/web/atencion_al_ciudadano/atencion_ciudadano.html" target="_blank" rel="noopener">Inspección Provincial</a> donde radica tu centro de trabajo.</li>
+  </ul>
+
+  <h2>Modelo de denuncia ante la Inspección de Trabajo</h2>
+  <p>Sustituye los campos en <strong>[CORCHETES]</strong> por tus datos. La estructura "EXPONGO los HECHOS / PRUEBAS / SOLICITO" es el formato administrativo estándar. La cláusula final sobre represalias es importante: anticipa la protección del art. 25 de la Directiva y del art. 17 ET y deja constancia desde el inicio.</p>
+
+  <div class="template-text-wrap">
+    <div class="template-actions">
+      <button type="button" class="btn-copy" data-target="template-text">Copiar al portapapeles</button>
+      <button type="button" class="btn-download" data-target="template-text" data-filename="denuncia-discriminacion-salarial.txt">Descargar como .txt</button>
+    </div>
+    <div id="template-text" class="template-text">${formatCarta(CARTA_DENUNCIA_DISCRIMINACION)}</div>
+  </div>
+
+  <h2>Cómo presentarla</h2>
+  <p>Hay tres vías oficiales para presentar la denuncia ante la Inspección de Trabajo. Las tres son válidas y dejan registro:</p>
+  <ol>
+    <li><strong>Sede electrónica del Ministerio de Trabajo</strong>: <a href="https://expinterweb.mites.gob.es/itss_consultas/" target="_blank" rel="noopener">Formulario de denuncias online</a>. Requiere identificación con certificado digital, DNI electrónico o Cl@ve. Es la vía más rápida y deja registro inmediato.</li>
+    <li><strong>Presentación presencial</strong> en la <a href="https://www.mites.gob.es/itss/web/atencion_al_ciudadano/Direcciones_y_telefonos/index.html" target="_blank" rel="noopener">Inspección Provincial de Trabajo</a> que corresponda al centro de trabajo. Lleva dos copias y exige que te sellen una con fecha.</li>
+    <li><strong>Por correo postal o burofax</strong> a la Inspección Provincial. El burofax con acuse de recibo deja prueba de la fecha de presentación.</li>
+  </ol>
+
+  <p><strong>La denuncia puede ser anónima</strong>, pero no se recomienda en discriminación salarial: necesitas que se te informe del resultado y conservar legitimación en caso de demanda posterior. El <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 25 de la Directiva</a> protege explícitamente frente a represalias por presentar la denuncia.</p>
+
+  <h2>Qué pasa después</h2>
+  <ul>
+    <li>La Inspección puede requerir documentación a la empresa (registro retributivo, auditoría, plan de igualdad) y realizar visitas al centro de trabajo.</li>
+    <li>Si constata la infracción, levanta acta de infracción y propone sanción a la autoridad laboral. La <strong>sanción no recupera tus diferencias salariales</strong> — solo castiga a la empresa. Para recuperar lo dejado de cobrar es necesaria la demanda judicial.</li>
+    <li>El procedimiento inspector puede tardar varios meses. Mientras, conviene avanzar con sindicato o abogado/a laboralista la preparación de la demanda judicial.</li>
+    <li><strong>La demanda judicial</strong> ante el juzgado social se presenta tras intento de conciliación previa en el SMAC (<a href="https://www.mites.gob.es/itss/web/atencion_al_ciudadano/index.html" target="_blank" rel="noopener">Servicio de Mediación, Arbitraje y Conciliación</a>). En la demanda se reclaman las diferencias retributivas + daños y perjuicios (<a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">art. 16 Directiva</a>: derecho a indemnización íntegra). En este punto contar con asesoramiento jurídico no es opcional.</li>
+  </ul>
+
+  <h2>Marco legal aplicable</h2>
+  <div class="legal-box">
+    <p class="legal-title">Citas literales</p>
+    <ul>
+      <li><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener"><strong>Art. 16 Directiva 2023/970</strong></a> — Los Estados miembros velarán por que cualquier trabajador que haya sufrido un perjuicio […] tenga derecho a reclamar y obtener una indemnización íntegra […], que incluirá la recuperación íntegra de los atrasos salariales y de las primas o pagos en especie correspondientes, la indemnización por la pérdida de oportunidades, los daños morales […].</li>
+      <li><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener"><strong>Art. 18 Directiva 2023/970</strong></a> — Cuando los trabajadores […] establezcan ante un órgano jurisdiccional u otra autoridad competente hechos a partir de los cuales pueda presumirse que se ha producido una discriminación directa o indirecta, corresponderá a la parte reclamada demostrar que no se ha producido tal discriminación directa o indirecta en relación con la retribución.</li>
+      <li><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener"><strong>Art. 25 Directiva 2023/970</strong></a> — Ni los trabajadores ni los representantes de los trabajadores recibirán un trato menos favorable por haber ejercido sus derechos relativos a la igualdad de retribución […], ni por haber prestado asistencia a otra persona en la defensa de tales derechos.</li>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 28.1 ET</strong></a> — El empresario está obligado a pagar por la prestación de un trabajo de igual valor la misma retribución […], sin que pueda producirse discriminación alguna por razón de sexo en ninguno de los elementos o condiciones de aquella.</li>
+      <li><a href="${LEY.lo3_2007}" target="_blank" rel="noopener"><strong>Ley Orgánica 3/2007</strong></a> para la igualdad efectiva de mujeres y hombres — Marco general que da soporte a los planes de igualdad y al principio de igualdad retributiva.</li>
+    </ul>
+    <p class="legal-source"><a href="${LEY.directiva2023_970}" target="_blank" rel="noopener">Texto consolidado de la Directiva (UE) 2023/970 en BOE.es</a> · <a href="${LEY.et}" target="_blank" rel="noopener">Estatuto de los Trabajadores en BOE.es</a></p>
+  </div>
+
+  <h2>Preguntas frecuentes sobre esta plantilla</h2>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Qué consideran los tribunales "indicios sólidos" para invertir la carga de la prueba?</p>
+    <p class="faq-a">No basta con la sospecha personal. Sirven, entre otros: datos del registro retributivo o de la respuesta a la solicitud del art. 7 Directiva que muestren diferencia injustificada; ofertas internas o externas de la empresa con banda salarial divergente para misma categoría; comparaciones documentadas con compañeros/as identificados/as; estadísticas internas de la empresa publicadas en su informe de brecha (a partir de 2027 para empresas de 250+); resoluciones previas de Inspección de Trabajo o sentencias en casos similares dentro de la misma empresa.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Puedo presentar la denuncia sin haber pedido antes el registro retributivo?</p>
+    <p class="faq-a">Sí, pero suele ser más sólida si has pedido la información antes. La <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a> activa la respuesta de la empresa en 2 meses. Si esa respuesta confirma la brecha, tienes prueba directa para la denuncia. Si la empresa se niega o demora indebidamente, la propia falta de respuesta es indicio adicional. Aun así, si la urgencia te aprieta o crees que pedir el registro va a alertar a la empresa antes de tiempo, puedes denunciar directamente con las pruebas que ya tengas.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Puede mi empresa despedirme tras presentar la denuncia?</p>
+    <p class="faq-a">Cualquier despido o medida desfavorable que se produzca tras la presentación de la denuncia y guarde relación con ella es <strong>nulo de pleno derecho</strong> (art. 25 Directiva 2023/970 y art. 17 ET): la consecuencia jurídica es la readmisión obligatoria con abono de salarios de tramitación. Aun así, conviene leer el <a href="/reclamar-diferencias-salariales-convenio.html#escenario-serpico">escenario Serpico</a> para entender los matices reales más allá del papel — no todas las represalias son tan visibles como un despido directo.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿La Inspección me dirá si la empresa ha sido sancionada?</p>
+    <p class="faq-a">Si te identificas como denunciante (no anónimo/a), la Inspección debe informarte del resultado de las actuaciones — aunque no del importe concreto de la sanción, que es información reservada. La fecha de las actuaciones y el sentido de la resolución sí te lo trasladan.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Cuánto tarda el procedimiento ante la Inspección?</p>
+    <p class="faq-a">Varía según provincia y carga de trabajo, pero suele ser de varios meses (3 a 12, en muchos casos). Por eso conviene avanzar en paralelo la preparación de la <strong>demanda ante el juzgado social</strong>, que es la vía para recuperar las diferencias salariales y los daños — la denuncia administrativa solo sanciona a la empresa, no recupera tu dinero.</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.btn-copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          const orig = btn.textContent;
+          btn.textContent = 'Copiado';
+          btn.classList.add('btn-success');
+          setTimeout(() => { btn.textContent = orig; btn.classList.remove('btn-success'); }, 1800);
+        }).catch(() => alert('No se pudo copiar. Selecciona el texto manualmente.'));
+      });
+    });
+    document.querySelectorAll('.btn-download').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        const filename = btn.dataset.filename || 'plantilla.txt';
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    });
+  </script>
+`;
+
 // ── Plantillas del Kit (SSOT) ────────────────────────────────────────
 const PLANTILLAS = [
   {
@@ -582,18 +762,21 @@ const PLANTILLAS = [
   {
     num: 5,
     slug: 'plantilla-denunciar-discriminacion-salarial',
-    title: 'Plantilla para denunciar discriminación salarial por género',
+    title: 'Plantilla para denunciar discriminación salarial por género ante la Inspección de Trabajo',
     h1: 'Plantilla para denunciar discriminación salarial por género',
-    metaDescription: 'Modelo para denunciar formalmente una situación de discriminación salarial ante Inspección de Trabajo o juzgado social. Carga de la prueba invertida.',
+    metaDescription: 'Modelo de denuncia ante la Inspección de Trabajo por discriminación retributiva por razón de sexo. Listo para personalizar (copiar o descargar como .txt). Carga de la prueba invertida (art. 18 Directiva 2023/970).',
     breadcrumb: 'Denunciar discriminación salarial',
     hook: 'Tienes indicios sólidos de que cobras menos que un compañero/a por razón de sexo. La carga de la prueba se invierte: si aportas indicios, es la empresa quien debe demostrar que no hay discriminación. Vía: Inspección de Trabajo y/o juzgado social.',
     legal: [
       { text: 'Directiva (UE) 2023/970 — artículo 16 (Derecho a indemnización)', href: LEY.directiva2023_970 },
       { text: 'Directiva (UE) 2023/970 — artículo 18 (Inversión de la carga de la prueba)', href: LEY.directiva2023_970 },
       { text: 'Directiva (UE) 2023/970 — artículo 25 (Victimización y protección frente a un trato menos favorable)', href: LEY.directiva2023_970 },
-      { text: 'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)', href: LEY.et },
+      { text: 'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración por razón de sexo)', href: LEY.et },
+      { text: 'Estatuto de los Trabajadores — artículo 17 (igualdad de trato y no discriminación)', href: LEY.et },
       { text: 'Ley Orgánica 3/2007, para la igualdad efectiva de mujeres y hombres', href: LEY.lo3_2007 },
+      { text: 'Constitución Española — artículo 14 (principio de igualdad)', href: LEY.constitucion },
     ],
+    body: BODY_DENUNCIA_DISCRIMINACION,
   },
   {
     num: 6,
