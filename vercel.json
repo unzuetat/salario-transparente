@@ -15,6 +15,11 @@
       "source": "/en/index.html",
       "destination": "/en/",
       "permanent": true
+    },
+    {
+      "source": "/plantilla-reclamar-art-28-et.html",
+      "destination": "/plantilla-reclamar-igualdad-salarial-no-discriminacion.html",
+      "permanent": true
     }
   ]
 }

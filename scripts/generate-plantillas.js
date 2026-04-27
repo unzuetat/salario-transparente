@@ -777,7 +777,7 @@ const BODY_INFO_SALARIAL_RRHH = `
   <h2>Cómo enviarla</h2>
   <p>Necesitas dejar constancia del envío y de la recepción para poder escalar si la empresa no responde o lo hace de forma incompleta.</p>
   <ol>
-    <li><strong>Burofax con acuse de recibo y certificación de contenido</strong> (Correos). Prueba sólida ante un eventual juicio.</li>
+    <li><strong>Burofax con acuse de recibo y certificación de contenido</strong> (Correos). La opción más sólida ante un eventual juicio: prueba de qué dijiste y de cuándo lo recibió la empresa. Coste aproximado: 25–40 €.</li>
     <li><strong>Correo electrónico</strong> a la cuenta corporativa de RRHH, con confirmación de lectura y solicitud expresa de acuse de recibo. Si has elegido la Opción A, copia también al comité o delegados.</li>
     <li><strong>Registro de entrada presencial</strong> en las oficinas de la empresa con dos copias: una sellada para ti.</li>
   </ol>
@@ -823,6 +823,167 @@ const BODY_INFO_SALARIAL_RRHH = `
   <div class="faq-mini">
     <p class="faq-q">¿Y si la empresa dice que no tiene registro retributivo?</p>
     <p class="faq-a">Estaría incumpliendo el art. 5.1 RD 902/2020, que obliga a todas las empresas — al margen de su tamaño — a llevarlo. La negativa por escrito sirve como prueba de incumplimiento ante una eventual denuncia a la Inspección de Trabajo o ante un procedimiento por discriminación retributiva (donde la falta del registro juega contra la empresa al activar la inversión de la carga de la prueba).</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.btn-copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          const orig = btn.textContent;
+          btn.textContent = 'Copiado';
+          btn.classList.add('btn-success');
+          setTimeout(() => { btn.textContent = orig; btn.classList.remove('btn-success'); }, 1800);
+        }).catch(() => alert('No se pudo copiar. Selecciona el texto manualmente.'));
+      });
+    });
+    document.querySelectorAll('.btn-download').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        const filename = btn.dataset.filename || 'plantilla.txt';
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    });
+  </script>
+`;
+
+// ── Modelo de carta + body redactado de la plantilla #10 ────────────
+const CARTA_IGUALDAD_NO_DISCRIMINACION = `[CIUDAD], [FECHA]
+
+A la atención de [NOMBRE DEL/DE LA RESPONSABLE DE RECURSOS HUMANOS]
+[RAZÓN SOCIAL DE LA EMPRESA]
+[DOMICILIO DE LA EMPRESA]
+
+Asunto: Reclamación de igualdad retributiva por trato desigual injustificado (art. 17 del Estatuto de los Trabajadores)
+
+Estimado/a [NOMBRE]:
+
+Mediante el presente escrito, yo [TU NOMBRE Y APELLIDOS], con NIF [TU NIF], empleado/a de [RAZÓN SOCIAL] desde el [FECHA DE INCORPORACIÓN], con la categoría profesional de [TU CATEGORÍA SEGÚN CONTRATO] (grupo profesional [TU GRUPO]), pongo en su conocimiento los siguientes hechos y formulo la siguiente reclamación:
+
+PRIMERO. Mi retribución actual asciende a [TU RETRIBUCIÓN ANUAL] € brutos anuales (salario base + complementos), conforme a las nóminas que se acompañan.
+
+SEGUNDO. He tenido conocimiento de que [DESCRIPCIÓN VERIFICABLE DEL TRATO DESIGUAL: ej. "el trabajador D. ___, con la misma categoría profesional, antigüedad equivalente, funciones idénticas y desempeño comparable, percibe una retribución superior a la mía sin justificación objetiva"].
+
+Las circunstancias que acreditan que se trata de la misma categoría y trabajo son las siguientes:
+
+- [HECHO 1: ej. funciones efectivas idénticas — describir]
+- [HECHO 2: ej. mismo grupo profesional según convenio]
+- [HECHO 3: ej. responsabilidades equivalentes / formación equivalente]
+[AÑADIR LOS QUE APLIQUEN]
+
+TERCERO. La diferencia retributiva que se me aplica respecto a la persona referida [O AL CONJUNTO DE PERSONAS COMPARABLES] no responde a una causa objetiva, neutra y verificable. [SI APLICA: indicar la causa que sospechas — edad, condición social, ideología, adhesión sindical, lengua, etc.] Esta diferencia constituye una situación de discriminación prohibida por el artículo 17 del Estatuto de los Trabajadores y por el artículo 14 de la Constitución Española.
+
+CUARTO. [SI APLICA — el convenio colectivo establece igualdad por categoría:] El convenio colectivo aplicable, [NOMBRE DEL CONVENIO], establece la igualdad retributiva dentro de cada grupo profesional / categoría, lo que refuerza la nulidad del trato desigual aplicado.
+
+Por todo lo anterior, SOLICITO:
+
+1. La equiparación de mi retribución a la de la persona o personas comparables, con efectos desde [FECHA DESDE LA QUE SE APLICA EL TRATO DESIGUAL].
+
+2. El abono de las diferencias retributivas devengadas desde dicha fecha hasta la fecha de regularización efectiva.
+
+3. La explicación por escrito de los motivos objetivos, neutros y verificables que, en su caso, fundamentaron la diferencia retributiva — para poder valorar si concurren razones que la justifiquen.
+
+A los efectos del artículo 59.1 del Estatuto de los Trabajadores, dejo expresa constancia de la fecha de la presente reclamación, que interrumpe la prescripción de las cantidades reclamadas. Asimismo, conforme al artículo 17 in fine del Estatuto de los Trabajadores, cualquier represalia o trato desfavorable que se produjera tras la presentación de esta reclamación se entenderá nula de pleno derecho.
+
+Quedo a su disposición para aportar la documentación que estime oportuna y le ruego me confirme por escrito la recepción de esta solicitud y me responda en un plazo razonable.
+
+Atentamente,
+
+
+
+[FIRMA]
+
+[TU NOMBRE Y APELLIDOS]
+[TU NIF]
+`;
+
+const BODY_IGUALDAD_NO_DISCRIMINACION = `
+  <h2>Para qué sirve esta plantilla</h2>
+  <p>Cuando cobras menos que un compañero/a haciendo el mismo trabajo y la causa <strong>no es la razón de sexo</strong>, la vía de la Directiva 2023/970 y del art. 28 ET no aplica directamente — esos preceptos se centran específicamente en la igualdad retributiva entre mujeres y hombres. La vía correcta es el <a href="${LEY.et}" target="_blank" rel="noopener">artículo 17 del Estatuto de los Trabajadores</a> (igualdad de trato y no discriminación), que declara nulas las decisiones empresariales que generen trato desigual por una de las causas protegidas: edad, discapacidad, origen racial o étnico, estado civil, condición social, religión, ideas políticas, orientación e identidad sexual, adhesión o no a sindicatos, vínculos de parentesco con personas relacionadas con la empresa, lengua, y otras. Esta plantilla canaliza la reclamación previa con apoyo en el art. 17 ET y, donde aplique, en el convenio colectivo y en el art. 14 de la Constitución.</p>
+
+  <h2>Cuándo usar esta plantilla</h2>
+  <div class="when-box">
+    <p>Cobras menos que un compañero/a o conjunto de personas comparables haciendo el mismo trabajo o un trabajo equivalente, y la causa de la diferencia <strong>guarda relación con alguna de las características protegidas del art. 17 ET</strong> (edad, discapacidad, condición social, ideología, orientación sexual, adhesión sindical, lengua, etc.). Si la causa es la <em>razón de sexo</em>, la vía adecuada es la <a href="/plantilla-denunciar-discriminacion-salarial.html">Plantilla 5: denunciar discriminación salarial por género</a>, que activa además la inversión de la carga de la prueba del art. 18 Directiva 2023/970.</p>
+  </div>
+
+  <p><strong>Atención al matiz</strong>: si la diferencia retributiva no obedece a ninguna causa protegida y la empresa simplemente paga más a unas personas que a otras por mérito, antigüedad, evaluación de desempeño u otra razón objetiva, la jurisprudencia es restrictiva: el ET protege contra discriminación por causas tipificadas, no contra cualquier diferencia salarial entre dos personas de la misma categoría. En esos casos, la vía suele ser la negociación colectiva o individual, no la reclamación por discriminación.</p>
+
+  <h2>Antes de redactarla, ten a mano…</h2>
+  <ul>
+    <li>Tus datos personales: <strong>nombre y apellidos, NIF, dirección</strong>.</li>
+    <li>Datos del contrato y nóminas: <strong>fecha de incorporación, categoría profesional, grupo profesional, retribución bruta anual desglosada</strong>.</li>
+    <li>Datos de la empresa: <strong>razón social, CIF, domicilio social</strong>.</li>
+    <li>Identificación de la persona o personas comparables, su categoría y, en lo posible, indicios verificables de su retribución (ofertas internas, comunicaciones, contratos colectivos firmados, comparativas que la propia empresa haya difundido, etc.).</li>
+    <li>Identificación de la <strong>causa protegida</strong> a la que atribuyes la diferencia (edad, discapacidad, ideología…). Si no puedes identificar una causa concreta del catálogo del art. 17, la reclamación es más débil — y la vía de "discriminación" puede no encajar.</li>
+    <li>Tu <strong>archivo de evidencias</strong> con fechas y fuentes — ver <a href="/plantilla-documentar-evidencias-desigualdad-salarial.html">Plantilla 7: documentar evidencias de desigualdad</a> (en preparación).</li>
+  </ul>
+
+  <h2>Modelo de carta</h2>
+  <p>Sustituye los campos en <strong>[CORCHETES]</strong> por tus datos. La estructura "PRIMERO/SEGUNDO/TERCERO/CUARTO + SOLICITO" es la habitual en una reclamación previa al juzgado social.</p>
+
+  <div class="template-text-wrap">
+    <div class="template-actions">
+      <button type="button" class="btn-copy" data-target="template-text">Copiar al portapapeles</button>
+      <button type="button" class="btn-download" data-target="template-text" data-filename="reclamacion-igualdad-art-17-et.txt">Descargar como .txt</button>
+    </div>
+    <div id="template-text" class="template-text">${formatCarta(CARTA_IGUALDAD_NO_DISCRIMINACION)}</div>
+  </div>
+
+  <h2>Cómo enviarla</h2>
+  <ol>
+    <li><strong>Burofax con acuse de recibo y certificación de contenido</strong> (Correos). La opción más sólida ante un eventual juicio: prueba de qué dijiste y de cuándo lo recibió la empresa. Coste aproximado: 25–40 €.</li>
+    <li><strong>Correo electrónico</strong> a la cuenta corporativa de RRHH, con confirmación de lectura y solicitud expresa de acuse de recibo.</li>
+    <li><strong>Registro de entrada presencial</strong> en las oficinas de la empresa, con dos copias y una sellada para ti.</li>
+  </ol>
+
+  <h2>Qué pasa si la empresa no responde o rechaza la reclamación</h2>
+  <ul>
+    <li><strong>Reiterar por escrito</strong>, recordando el plazo transcurrido y el incumplimiento del art. 17 ET. Sirve para reforzar la prueba de mala fe.</li>
+    <li><strong>Acudir a la representación legal de los trabajadores</strong> o al sindicato. La discriminación por causas tipificadas suele afectar a más personas y la presión colectiva es más eficaz.</li>
+    <li><strong>Denunciar ante la Inspección de Trabajo</strong> (<a href="https://www.mites.gob.es/itss/web/index.html" target="_blank" rel="noopener">mites.gob.es/itss</a>): la discriminación en materia retributiva está tipificada como infracción muy grave por la Ley sobre Infracciones y Sanciones en el Orden Social (LISOS).</li>
+    <li><strong>Conciliación previa en el SMAC</strong> y, si no hay acuerdo, demanda ante el juzgado de lo social. El plazo de prescripción para reclamar cantidades es de un año desde que cada cantidad debió abonarse (art. 59.1 ET).</li>
+  </ul>
+
+  <h2>Marco legal aplicable</h2>
+  <div class="legal-box">
+    <p class="legal-title">Citas literales</p>
+    <ul>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 17.1 ET</strong></a> — Se entenderán nulos y sin efecto los preceptos reglamentarios, las cláusulas de los convenios colectivos, los pactos individuales y las decisiones unilaterales del empresario que den lugar en el empleo, así como en materia de retribuciones, jornada y demás condiciones de trabajo, a situaciones de discriminación directa o indirecta desfavorables por razón de edad o discapacidad o a situaciones de discriminación directa o indirecta por razón de sexo, origen […], estado civil, condición social, religión o convicciones, ideas políticas, orientación e identidad sexual […], adhesión o no a sindicatos y a sus acuerdos, vínculos de parentesco con personas pertenecientes a o relacionadas con la empresa y lengua dentro del Estado español.</li>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 17 in fine ET</strong></a> — Serán igualmente nulas las órdenes de discriminar y las decisiones del empresario que supongan un trato desfavorable de los trabajadores como reacción ante una reclamación efectuada en la empresa o ante una acción administrativa o judicial destinada a exigir el cumplimiento del principio de igualdad de trato y no discriminación.</li>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 59.1 ET</strong></a> — Las acciones derivadas del contrato de trabajo que no tengan señalado plazo especial prescribirán al año de su terminación. […] En general, el plazo de prescripción será de un año.</li>
+      <li><a href="${LEY.constitucion}" target="_blank" rel="noopener"><strong>Constitución Española · Art. 14</strong></a> — Los españoles son iguales ante la ley, sin que pueda prevalecer discriminación alguna por razón de nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social.</li>
+    </ul>
+    <p class="legal-source"><a href="${LEY.et}" target="_blank" rel="noopener">Estatuto de los Trabajadores en BOE.es</a> · <a href="${LEY.constitucion}" target="_blank" rel="noopener">Constitución Española en BOE.es</a></p>
+  </div>
+
+  <h2>Preguntas frecuentes sobre esta plantilla</h2>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Por qué no uso el art. 28 ET si trata de igualdad retributiva?</p>
+    <p class="faq-a">El art. 28 ET es <strong>específicamente</strong> sobre discriminación retributiva por razón de sexo: su literalidad no admite extender su protección a otras causas. La vía general para diferencias retributivas por causas distintas al sexo es el art. 17 ET, que declara nulos los actos del empresario que generen discriminación por las causas tipificadas (edad, discapacidad, condición social, ideología, etc.). Si la causa de la diferencia es el sexo, la plantilla adecuada es la <a href="/plantilla-denunciar-discriminacion-salarial.html">Plantilla 5: denunciar discriminación salarial por género</a>.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Y si simplemente cobro menos que un compañero/a sin causa "tipificada"?</p>
+    <p class="faq-a">Si la diferencia no obedece a ninguna de las causas protegidas del art. 17 ET, la reclamación por "discriminación" pierde fuerza. La empresa puede tener razones objetivas (mérito, evaluación, antigüedad, negociación individual) y los tribunales suelen admitirlas. En ese caso, la vía no es esta plantilla — es la negociación colectiva o individual, o la revisión salarial cuando se produzca. Esta plantilla está pensada para cuando hay una causa protegida identificable.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Necesito identificar a la persona o personas comparables con nombre y apellidos?</p>
+    <p class="faq-a">No es imprescindible que la empresa conozca a quién comparas en la fase de reclamación previa, pero sí necesitas que tu argumento sea verificable. Suelen aceptarse referencias como "el trabajador con categoría X que se incorporó en fecha Y" si la información es pública internamente o consta en convenios o comunicaciones. En sede judicial, la prueba sí debe identificar a la persona comparable — habitualmente vía testifical o documental.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Tengo la inversión de la carga de la prueba como en discriminación por sexo?</p>
+    <p class="faq-a">No de forma automática. La inversión específica del <a href="${LEY.directiva2023_970}" target="_blank" rel="noopener">art. 18 de la Directiva 2023/970</a> aplica a discriminación por razón de sexo. Para otras causas protegidas, la jurisprudencia constitucional reconoce un mecanismo análogo (sentencia del TC 38/1981 y sucesivas) basado en el art. 14 CE: si aportas indicios sólidos de discriminación, la empresa debe acreditar la justificación objetiva, neutra y razonable de la diferencia. Es un terreno donde conviene contar con asesoramiento jurídico antes de demandar.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Qué pasa si me despiden tras reclamar?</p>
+    <p class="faq-a">El art. 17 in fine ET declara <strong>nulas</strong> las decisiones del empresario que supongan un trato desfavorable como reacción ante una reclamación. Cualquier despido o medida desfavorable posterior a esta reclamación, si guarda relación con ella, puede declararse nulo en juicio — con consecuencia de readmisión obligatoria y abono de salarios de tramitación. Aun así, conviene leer el <a href="/reclamar-diferencias-salariales-convenio.html#escenario-serpico">escenario Serpico</a> para entender los matices reales más allá del papel.</p>
   </div>
 
   <script>
@@ -994,17 +1155,19 @@ const PLANTILLAS = [
   },
   {
     num: 10,
-    slug: 'plantilla-reclamar-art-28-et',
-    title: 'Plantilla para reclamar igualdad salarial por art. 28 ET (no relacionada con género)',
-    h1: 'Plantilla para reclamar igualdad salarial por el art. 28 del Estatuto de los Trabajadores',
-    metaDescription: 'Modelo de carta para reclamar igualdad retributiva cuando cobras menos que un compañero/a haciendo el mismo trabajo y la causa no es el género. Vía: art. 28 ET.',
-    breadcrumb: 'Reclamación por art. 28 ET',
-    hook: 'Cobras menos que un compañero/a haciendo el mismo trabajo, pero la causa no es el género. La vía es el art. 28 del Estatuto de los Trabajadores y el convenio colectivo aplicable, no la Directiva 2023/970.',
+    slug: 'plantilla-reclamar-igualdad-salarial-no-discriminacion',
+    title: 'Plantilla para reclamar igualdad salarial por trato desigual injustificado (art. 17 ET)',
+    h1: 'Plantilla para reclamar igualdad salarial por trato desigual injustificado',
+    metaDescription: 'Modelo de carta listo para personalizar (copiar o descargar como .txt) para reclamar igualdad retributiva cuando la diferencia salarial obedece a causas protegidas distintas del sexo (edad, discapacidad, condición social, ideología…). Vía: art. 17 ET y art. 14 CE.',
+    breadcrumb: 'Reclamación por trato desigual injustificado',
+    hook: 'Cobras menos que un compañero/a haciendo el mismo trabajo y la causa no es el género sino otra característica protegida (edad, discapacidad, condición social, ideología, orientación sexual, adhesión sindical, lengua…). La vía es el art. 17 ET y el convenio colectivo, no la Directiva 2023/970 ni el art. 28 ET (ambos específicos para discriminación por sexo).',
     legal: [
-      { text: 'Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)', href: LEY.et },
-      { text: 'Convenio colectivo aplicable', href: 'https://www.boe.es/buscar/' },
-      { text: 'Constitución Española — artículo 14 (principio de igualdad)', href: LEY.constitucion },
+      { text: 'Estatuto de los Trabajadores — artículo 17 (igualdad de trato y no discriminación: edad, discapacidad, condición social, ideología, etc.)', href: LEY.et },
+      { text: 'Estatuto de los Trabajadores — artículo 59.1 (prescripción de salarios: un año desde que cada cantidad debió abonarse)', href: LEY.et },
+      { text: 'Constitución Española — artículo 14 (principio de igualdad y no discriminación)', href: LEY.constitucion },
+      { text: 'Convenio colectivo aplicable (igualdad retributiva por categoría)', href: 'https://www.boe.es/buscar/' },
     ],
+    body: BODY_IGUALDAD_NO_DISCRIMINACION,
   },
 ];
 
