@@ -195,6 +195,170 @@ const BODY_BANDA_SALARIAL = `
   </script>
 `;
 
+// ── Modelo de carta + body redactado de la plantilla #3 ─────────────
+const CARTA_GRUPO_SUPERIOR = `[CIUDAD], [FECHA]
+
+A la atención de [NOMBRE DEL/DE LA RESPONSABLE DE RECURSOS HUMANOS]
+[RAZÓN SOCIAL DE LA EMPRESA]
+[DOMICILIO DE LA EMPRESA]
+
+Asunto: Solicitud de reconocimiento de grupo profesional superior y reclamación de diferencias retributivas
+
+Estimado/a [NOMBRE]:
+
+Mediante el presente escrito, yo [TU NOMBRE Y APELLIDOS], con NIF [TU NIF], empleado/a de [RAZÓN SOCIAL] desde el [FECHA DE INCORPORACIÓN], con la categoría profesional de [TU CATEGORÍA SEGÚN CONTRATO] (grupo profesional [TU GRUPO ACTUAL] del convenio colectivo aplicable), pongo en su conocimiento los siguientes hechos y formulo la siguiente solicitud:
+
+PRIMERO. Desde el [FECHA DE INICIO DE FUNCIONES SUPERIORES] vengo desempeñando, de manera habitual y efectiva, las siguientes funciones que corresponden al grupo profesional [GRUPO SUPERIOR RECLAMADO] del convenio colectivo:
+
+- [FUNCIÓN 1: descripción concreta]
+- [FUNCIÓN 2: descripción concreta]
+- [FUNCIÓN 3: descripción concreta]
+[AÑADIR LAS QUE APLIQUEN, CON DESCRIPCIONES OPERATIVAS]
+
+SEGUNDO. Estas funciones figuran descritas en el convenio colectivo aplicable como propias del grupo profesional [GRUPO SUPERIOR RECLAMADO], no del grupo en el que se me ha clasificado.
+
+TERCERO. Conforme al artículo 39.2 del Estatuto de los Trabajadores, el desempeño de funciones superiores a las del grupo profesional por un período superior a seis meses durante un año, o a ocho meses durante dos años, da derecho a la persona trabajadora a reclamar el ascenso al grupo profesional superior y las diferencias retributivas correspondientes.
+
+CUARTO. En mi caso, vengo desempeñando las funciones descritas de manera continuada durante [PERÍODO TEMPORAL CONCRETO: ej. "los últimos diez meses"], superando el umbral legal del artículo 39.2 ET.
+
+Por todo lo anterior, SOLICITO:
+
+1. El reconocimiento formal de mi clasificación en el grupo profesional [GRUPO SUPERIOR RECLAMADO], con efectos desde [FECHA DE INICIO DE FUNCIONES SUPERIORES].
+
+2. El abono de las diferencias retributivas (salario base, complementos y pagas extraordinarias) entre mi grupo actual y el superior, correspondientes al período comprendido entre [FECHA DE INICIO] y la fecha de la presente reclamación, así como las que se devenguen mientras continúe el desempeño en el grupo superior.
+
+Quedo a su disposición para aportar las pruebas documentales y testificales que acrediten los hechos descritos. Le ruego que me confirme por escrito la recepción de esta solicitud y me responda en un plazo razonable.
+
+A los efectos del artículo 59.1 del Estatuto de los Trabajadores, dejo expresa constancia de la fecha de la presente reclamación, que interrumpe la prescripción de las cantidades reclamadas.
+
+Atentamente,
+
+
+
+[FIRMA]
+
+[TU NOMBRE Y APELLIDOS]
+[TU NIF]
+`;
+
+const BODY_GRUPO_SUPERIOR = `
+  <h2>Para qué sirve esta plantilla</h2>
+  <p>El <a href="${LEY.et}" target="_blank" rel="noopener">artículo 39 del Estatuto de los Trabajadores</a> reconoce a cualquier persona trabajadora el derecho a reclamar el ascenso al <strong>grupo profesional superior</strong> cuando viene desempeñando funciones de ese grupo de forma continuada — junto con las diferencias retributivas correspondientes desde que empezó a hacerlas. Esta plantilla convierte ese derecho en una solicitud formal con tres partes bien delimitadas: <strong>constatación de los hechos</strong> (qué funciones haces y desde cuándo), <strong>anclaje legal</strong> (art. 39.2 ET) y <strong>pretensión concreta</strong> (reconocimiento del grupo + atrasos).</p>
+
+  <h2>Cuándo usar esta plantilla</h2>
+  <div class="when-box">
+    <p>Llevas haciendo funciones del grupo profesional superior durante <strong>más de seis meses dentro del último año</strong>, o <strong>más de ocho meses dentro de los dos últimos años</strong>. Estos plazos los fija el art. 39.2 ET y son acumulables — no tienen que ser los últimos seis u ocho meses seguidos, basta con que sumen ese tiempo dentro del período de referencia. Si las funciones superiores han sido <em>puntuales o esporádicas</em>, no llegas al umbral del ascenso, pero sí tienes derecho a las diferencias retributivas del período concreto en que las realizaste.</p>
+  </div>
+
+  <h2>Antes de redactarla, ten a mano…</h2>
+  <ul>
+    <li>Tus datos personales: <strong>nombre y apellidos, NIF, dirección</strong>.</li>
+    <li>Datos del contrato: <strong>fecha de incorporación, categoría profesional asignada, grupo profesional según contrato</strong>.</li>
+    <li>Datos de la empresa: <strong>razón social, CIF, domicilio social</strong> (vienen en tu nómina o en el contrato).</li>
+    <li>El <strong>convenio colectivo aplicable</strong> y la <strong>tabla de grupos profesionales</strong>. Si está entre los que <a href="/convenios.html">desgranamos en SalarioJusto</a>, tienes ahí el resumen; si no, ve al BOE o al boletín provincial correspondiente.</li>
+    <li>Una <strong>lista detallada y cronológica</strong> de las funciones del grupo superior que vienes desempeñando, con la <strong>fecha de inicio</strong> de cada una. Cuanto más concreta y comprobable, mejor.</li>
+    <li>Pruebas documentales que acrediten esas funciones: <strong>correos donde se te asignan tareas del grupo superior, organigramas, comunicaciones internas, descripciones de proyecto, evaluaciones de desempeño, comunicados a clientes en los que firmas con responsabilidad propia del grupo superior</strong>.</li>
+    <li>Cálculo aproximado de las <strong>diferencias retributivas</strong> mes a mes (salario base + complementos del grupo superior, menos los del grupo actual) por el período afectado. No tiene que ser exacto al céntimo — sirve para estimar la cuantía.</li>
+  </ul>
+
+  <h2>Modelo de carta</h2>
+  <p>Sustituye los campos en <strong>[CORCHETES]</strong> por tus datos. La estructura "PRIMERO / SEGUNDO / TERCERO / CUARTO + SOLICITO" es el formato habitual en una reclamación previa al juzgado social: ordena los hechos antes que las pretensiones para que la respuesta de la empresa sea limpia.</p>
+
+  <div class="template-text-wrap">
+    <div class="template-actions">
+      <button type="button" class="btn-copy" data-target="template-text">Copiar al portapapeles</button>
+      <button type="button" class="btn-download" data-target="template-text" data-filename="reclamacion-grupo-profesional-superior.txt">Descargar como .txt</button>
+    </div>
+    <div id="template-text" class="template-text">${formatCarta(CARTA_GRUPO_SUPERIOR)}</div>
+  </div>
+
+  <h2>Cómo enviarla</h2>
+  <p>La forma de envío importa porque la fecha de recepción es la que <strong>interrumpe la prescripción</strong> de las cantidades reclamadas (art. 59.1 ET). Necesitas dejar constancia tanto del envío como de la recepción.</p>
+
+  <ol>
+    <li><strong>Burofax con acuse de recibo y certificación de contenido</strong> (Correos). La opción más sólida ante un eventual juicio: prueba de qué dijiste y de cuándo lo recibió la empresa. Coste aproximado: 25–40 €.</li>
+    <li><strong>Correo electrónico</strong> a la cuenta corporativa de RRHH, con confirmación de lectura y solicitud expresa de acuse de recibo en el cuerpo del mensaje. Adjunta la carta firmada en PDF y conserva la cabecera del correo enviado.</li>
+    <li><strong>Registro de entrada presencial</strong> en las oficinas de la empresa. Lleva dos copias y exige que te sellen una con fecha y firma.</li>
+  </ol>
+
+  <p>Sea cual sea la vía, <strong>conserva siempre tu copia firmada y la prueba de recepción</strong>: son la base de la futura reclamación judicial si hace falta llegar a ella.</p>
+
+  <h2>Qué pasa si la empresa no responde o rechaza la solicitud</h2>
+
+  <p>El art. 39.2 ET no fija un plazo concreto de respuesta. Como referencia razonable, suelen darse <strong>15 días laborables</strong> antes de escalar. Si pasado ese plazo la empresa no contesta o rechaza la pretensión, las vías son:</p>
+  <ul>
+    <li><strong>Reiterar por escrito</strong>, recordando el plazo transcurrido y advirtiendo de que se procederá a denuncia. Sirve para dejar constancia adicional.</li>
+    <li><strong>Acudir a la representación legal</strong> de los trabajadores o a un sindicato sectorial. La presión colectiva suele resolver el caso sin juicio cuando el desempeño de funciones superiores es evidente para el resto de la plantilla.</li>
+    <li><strong>Denunciar ante la Inspección de Trabajo</strong> (<a href="https://www.mites.gob.es/itss/web/index.html" target="_blank" rel="noopener">mites.gob.es/itss</a>): la incorrecta clasificación profesional es una infracción tipificada y sancionable.</li>
+    <li><strong>Demanda ante el juzgado de lo social</strong>: la acción típica es declarativa de derecho al grupo + reclamación de cantidad. Es compatible reclamar cantidad a la vez que el reconocimiento del grupo.</li>
+  </ul>
+
+  <p><strong>Atención al plazo de prescripción.</strong> El plazo del art. 59.1 ET — un año desde que cada cantidad debió abonarse — afecta al <em>importe</em> que puedes recuperar, no al <em>derecho a la categoría</em>. Aunque hayan pasado más de doce meses desde que empezaste a hacer funciones superiores, sigues pudiendo reclamar el grupo correcto a partir de ahora; lo que pierdes son las diferencias retributivas anteriores al año previo a la reclamación. Por eso interesa enviar la carta cuanto antes y dejar constancia de la fecha.</p>
+
+  <h2>Marco legal aplicable</h2>
+  <div class="legal-box">
+    <p class="legal-title">Citas literales · Estatuto de los Trabajadores</p>
+    <ul>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 39.1</strong></a> — La movilidad funcional en la empresa se efectuará de acuerdo a las titulaciones académicas o profesionales precisas para ejercer la prestación laboral y con respeto a la dignidad del trabajador.</li>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 39.2</strong></a> — La movilidad funcional para la realización de funciones, tanto superiores como inferiores, no correspondientes al grupo profesional sólo será posible si existen, además, razones técnicas u organizativas que la justificasen y por el tiempo imprescindible para su atención. […] En el caso de encomienda de funciones superiores a las del grupo profesional por un periodo superior a seis meses durante un año u ocho durante dos años, el trabajador podrá reclamar el ascenso, si a ello no obsta lo dispuesto en convenio colectivo […], sin perjuicio de reclamar la diferencia salarial correspondiente.</li>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 39.3</strong></a> — El trabajador tendrá derecho a la retribución correspondiente a las funciones que efectivamente realice, salvo en los casos de encomienda de funciones inferiores, en los que mantendrá la retribución de origen.</li>
+      <li><a href="${LEY.et}" target="_blank" rel="noopener"><strong>Art. 59.1</strong></a> — Las acciones derivadas del contrato de trabajo que no tengan señalado plazo especial prescribirán al año de su terminación. […] En general, el plazo de prescripción será de un año.</li>
+    </ul>
+    <p class="legal-source"><a href="${LEY.et}" target="_blank" rel="noopener">Texto consolidado del Estatuto de los Trabajadores en BOE.es →</a></p>
+  </div>
+
+  <h2>Preguntas frecuentes sobre esta plantilla</h2>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Tengo que esperar a llegar a los 6 meses exactos para reclamar?</p>
+    <p class="faq-a">No es obligatorio: si llevas menos tiempo, igualmente puedes reclamar la <strong>diferencia retributiva</strong> por las funciones superiores que hayas realizado (art. 39.3 ET). El umbral de 6/12 u 8/24 meses solo condiciona el derecho a reclamar el <em>ascenso</em>, no el cobro de la diferencia salarial mientras dure el desempeño superior.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿La empresa puede negarse alegando que es una "necesidad organizativa temporal"?</p>
+    <p class="faq-a">El art. 39.2 ET exige razones técnicas u organizativas que justifiquen la movilidad funcional vertical y limita su duración al "tiempo imprescindible para su atención". Si la encomienda de funciones superiores se ha prolongado más allá de los plazos legales, la justificación de "temporalidad" deja de ser sostenible — y la empresa pierde ese argumento en juicio. La acumulación de tiempo es objetiva.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Qué pasa si el convenio colectivo regula los ascensos de forma específica?</p>
+    <p class="faq-a">El art. 39.2 ET admite que el convenio colectivo establezca reglas propias para la cobertura de vacantes y los ascensos, siempre que no anulen el derecho al ascenso. En la práctica: lee el capítulo de "ascensos" o "promoción profesional" de tu convenio antes de redactar la carta. Si el convenio fija un sistema concreto (concurso interno, valoración de méritos, antigüedad), tu solicitud debe enmarcarse en él. Si no lo fija o lo fija de forma incompleta, se aplica el art. 39.2 ET íntegramente.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Cuánto puedo recuperar si reclamo después de mucho tiempo?</p>
+    <p class="faq-a">El derecho a la <strong>categoría</strong> no prescribe en el plazo del año del art. 59.1 ET — puedes reclamar el reconocimiento del grupo profesional aunque hayas estado años haciendo funciones superiores. Lo que sí prescribe en un año son las <strong>cantidades</strong> económicas: las diferencias retributivas de mensualidades anteriores al año previo a la reclamación ya están perdidas. Por eso conviene reclamar pronto: cada mes que pasa, pierdes una mensualidad de atrasos por la "cola" del año.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Puedo combinar esta plantilla con la solicitud de banda salarial (Plantilla 1)?</p>
+    <p class="faq-a">Sí, y a menudo conviene. La <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1</a> te da los <em>datos retributivos medios</em> por categoría — eso es exactamente lo que necesitas para cuantificar la diferencia entre tu grupo actual y el superior. Si tienes margen de tiempo, pide primero los datos del art. 7 (la empresa tiene 2 meses para responder) y, con ellos en la mano, redacta esta reclamación con cifras concretas. Si la urgencia te aprieta — porque el plazo de prescripción está corriendo — envía las dos en paralelo.</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.btn-copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          const orig = btn.textContent;
+          btn.textContent = 'Copiado';
+          btn.classList.add('btn-success');
+          setTimeout(() => { btn.textContent = orig; btn.classList.remove('btn-success'); }, 1800);
+        }).catch(() => alert('No se pudo copiar. Selecciona el texto manualmente.'));
+      });
+    });
+    document.querySelectorAll('.btn-download').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        const filename = btn.dataset.filename || 'plantilla.txt';
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    });
+  </script>
+`;
+
 // ── Plantillas del Kit (SSOT) ────────────────────────────────────────
 const PLANTILLAS = [
   {
@@ -230,13 +394,15 @@ const PLANTILLAS = [
     slug: 'plantilla-reclamar-grupo-profesional-superior',
     title: 'Plantilla para reclamar tu grupo profesional cuando haces funciones superiores',
     h1: 'Plantilla para reclamar el reconocimiento de un grupo profesional superior',
-    metaDescription: 'Modelo de carta para reclamar el reconocimiento de tu grupo profesional cuando haces funciones de un grupo superior al que figura en tu contrato. Basado en el art. 39 ET.',
+    metaDescription: 'Modelo de carta listo para personalizar (copiar o descargar como .txt) para reclamar el grupo profesional superior cuando haces sus funciones de manera continuada. Basado en el art. 39.2 ET.',
     breadcrumb: 'Reclamar grupo profesional superior',
     hook: 'Haces tareas correspondientes a un grupo profesional superior al que tienes reconocido en contrato. Tienes derecho a reclamar el reconocimiento del grupo y la diferencia retributiva — con apoyo en el convenio y el art. 39 ET.',
     legal: [
-      { text: 'Estatuto de los Trabajadores — artículo 39 (movilidad funcional)', href: LEY.et },
-      { text: 'Convenio colectivo aplicable (definición de grupos profesionales)', href: 'https://www.boe.es/buscar/' },
+      { text: 'Estatuto de los Trabajadores — artículo 39 (movilidad funcional vertical y plazos para reclamar el ascenso)', href: LEY.et },
+      { text: 'Estatuto de los Trabajadores — artículo 59.1 (prescripción de salarios: un año desde que cada cantidad debió abonarse)', href: LEY.et },
+      { text: 'Convenio colectivo aplicable (tabla de grupos profesionales y reglas de ascensos)', href: 'https://www.boe.es/buscar/' },
     ],
+    body: BODY_GRUPO_SUPERIOR,
   },
   {
     num: 4,
