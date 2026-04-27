@@ -326,7 +326,7 @@ const BODY_GRUPO_SUPERIOR = `
     <p class="faq-a">El derecho a la <strong>categoría</strong> no prescribe en el plazo del año del art. 59.1 ET — puedes reclamar el reconocimiento del grupo profesional aunque hayas estado años haciendo funciones superiores. Lo que sí prescribe en un año son las <strong>cantidades</strong> económicas: las diferencias retributivas de mensualidades anteriores al año previo a la reclamación ya están perdidas. Por eso conviene reclamar pronto: cada mes que pasa, pierdes una mensualidad de atrasos por la "cola" del año.</p>
   </div>
   <div class="faq-mini">
-    <p class="faq-q">¿Puedo combinar esta plantilla con la solicitud de banda salarial (Plantilla 1)?</p>
+    <p class="faq-q">¿Puedo combinar esta plantilla con la Plantilla 1 (pedir la banda salarial a tu empresa)?</p>
     <p class="faq-a">Sí, y a menudo conviene. La <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a> te da los <em>datos retributivos medios</em> por categoría — eso es exactamente lo que necesitas para cuantificar la diferencia entre tu grupo actual y el superior. Si tienes margen de tiempo, pide primero los datos del art. 7 (la empresa tiene 2 meses para responder) y, con ellos en la mano, redacta esta reclamación con cifras concretas. Si la urgencia te aprieta — porque el plazo de prescripción está corriendo — envía las dos en paralelo.</p>
   </div>
 
@@ -698,6 +698,162 @@ const BODY_DENUNCIA_DISCRIMINACION = `
   </script>
 `;
 
+// ── Modelo de carta + body redactado de la plantilla #2 ─────────────
+const CARTA_INFO_SALARIAL_RRHH = `[CIUDAD], [FECHA]
+
+A la atención de [NOMBRE DEL/DE LA RESPONSABLE DE RECURSOS HUMANOS]
+[RAZÓN SOCIAL DE LA EMPRESA]
+[DOMICILIO DE LA EMPRESA]
+
+Asunto: Solicitud de acceso al registro retributivo (Real Decreto 902/2020)
+
+Estimado/a [NOMBRE]:
+
+Mediante el presente escrito, yo [TU NOMBRE Y APELLIDOS], con NIF [TU NIF], empleado/a de [RAZÓN SOCIAL] desde el [FECHA DE INCORPORACIÓN], con la categoría profesional de [TU CATEGORÍA SEGÚN CONTRATO] (grupo profesional [TU GRUPO]), ejerzo mi derecho de acceso al registro retributivo de la empresa conforme al artículo 5 del Real Decreto 902/2020, de 13 de octubre, de igualdad retributiva entre mujeres y hombres.
+
+[OPCIÓN A — SI EXISTE REPRESENTACIÓN LEGAL DE LOS TRABAJADORES EN LA EMPRESA:]
+Solicito el acceso al contenido íntegro del registro retributivo, en los términos previstos en el artículo 5.3 del citado Real Decreto, a través de la representación legal de los trabajadores. Con copia de esta solicitud al [COMITÉ DE EMPRESA / DELEGADOS DE PERSONAL / SECCIÓN SINDICAL], a quienes corresponde el acceso íntegro al registro y la información a la plantilla.
+
+[OPCIÓN B — SI NO EXISTE REPRESENTACIÓN LEGAL EN LA EMPRESA:]
+Al no existir representación legal de los trabajadores en la empresa, y conforme al artículo 5.3 in fine del Real Decreto 902/2020, solicito que se me facilite la información sobre las diferencias porcentuales que existieran en las retribuciones promediadas de hombres y mujeres, también desagregadas por grupo profesional, categoría profesional o puestos de trabajo iguales o de igual valor.
+
+En particular, solicito que se me facilite por escrito:
+
+1. La información correspondiente a mi grupo profesional ([TU GRUPO]) y a las categorías que realizan trabajos de igual valor al mío.
+
+2. Las diferencias porcentuales de retribución promediadas entre hombres y mujeres, en los términos del citado precepto.
+
+3. [SI APLICA — empresas con plan de igualdad obligatorio (≥ 50 trabajadores)] Confirmación de que la empresa cuenta con plan de igualdad inscrito en el REGCON y, en su caso, copia del mismo o indicación del lugar donde puedo consultarlo.
+
+Le ruego que me remita la información por escrito al correo electrónico [TU EMAIL] o a la dirección postal [TU DIRECCIÓN], en un plazo razonable que en ningún caso debería exceder de un mes desde la fecha de recepción de esta solicitud.
+
+Quedo a su disposición para aportar cualquier aclaración que consideren necesaria. Le agradeceré que me confirme por escrito la recepción de esta solicitud.
+
+Atentamente,
+
+
+
+[FIRMA]
+
+[TU NOMBRE Y APELLIDOS]
+[TU NIF]
+`;
+
+const BODY_INFO_SALARIAL_RRHH = `
+  <h2>Para qué sirve esta plantilla</h2>
+  <p>Es el cauce <strong>previo al 7 de junio de 2026</strong> para acceder a la información retributiva de tu empresa, antes de que la Directiva (UE) 2023/970 esté transpuesta y operativo el derecho directo del art. 7. Se apoya en el <a href="${LEY.rd902_2020}" target="_blank" rel="noopener">artículo 5 del Real Decreto 902/2020</a>, que obliga a todas las empresas a llevar un registro retributivo y regula el acceso a su contenido. Una vez en vigor la Directiva, el cauce más amplio y directo es la <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a>; mientras tanto, esta plantilla es lo que tienes.</p>
+
+  <h2>Cuándo usar esta plantilla</h2>
+  <div class="when-box">
+    <p><strong>Antes del 7 de junio de 2026</strong>, cuando necesitas información retributiva agregada de tu empresa para detectar posibles brechas de género o anomalías en tu categoría. Es también útil <strong>como complemento</strong> a la <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a> a partir de esa fecha, especialmente si quieres consultar el plan de igualdad o la auditoría retributiva.</p>
+  </div>
+
+  <p><strong>Diferencia clave del RD 902/2020 frente a la Directiva 2023/970</strong>: el acceso individual es más limitado. El art. 5.3 del RD distingue dos escenarios:</p>
+  <ul>
+    <li><strong>Si la empresa tiene representación legal de los trabajadores</strong> (comité de empresa, delegados de personal o sección sindical), <em>esa representación</em> tiene acceso íntegro al registro retributivo. La plantilla individual canaliza la solicitud a través de ella.</li>
+    <li><strong>Si la empresa no tiene representación legal</strong>, el trabajador individual sólo puede acceder a las <em>diferencias porcentuales</em> entre la retribución media de hombres y mujeres por categoría — no al desglose completo.</li>
+  </ul>
+
+  <h2>Antes de redactarla, ten a mano…</h2>
+  <ul>
+    <li>Tus datos personales: <strong>nombre y apellidos, NIF, dirección, email</strong>.</li>
+    <li>Datos del contrato: <strong>fecha de incorporación, categoría profesional, grupo profesional según convenio</strong>.</li>
+    <li>Datos de la empresa: <strong>razón social, CIF, domicilio social</strong>.</li>
+    <li>Saber si en tu empresa <strong>existe representación legal de los trabajadores</strong>: comité de empresa, delegados de personal o sección sindical. Determina qué versión de la solicitud (Opción A o B) eliges.</li>
+    <li>Si la empresa tiene <strong>50 o más personas trabajadoras</strong>, está obligada a tener <a href="${LEY.rd901_2020}" target="_blank" rel="noopener">plan de igualdad inscrito en el REGCON</a> y a someter el registro retributivo a auditoría retributiva. Saberlo es relevante para incluir o no la solicitud del plan en la carta.</li>
+  </ul>
+
+  <h2>Modelo de carta</h2>
+  <p>El modelo incluye <strong>dos opciones a elegir</strong> (la A si hay representación legal en la empresa; la B si no la hay). Borra la opción que no aplique antes de enviar. Sustituye los campos en <strong>[CORCHETES]</strong> por tus datos.</p>
+
+  <div class="template-text-wrap">
+    <div class="template-actions">
+      <button type="button" class="btn-copy" data-target="template-text">Copiar al portapapeles</button>
+      <button type="button" class="btn-download" data-target="template-text" data-filename="solicitud-info-salarial-rrhh.txt">Descargar como .txt</button>
+    </div>
+    <div id="template-text" class="template-text">${formatCarta(CARTA_INFO_SALARIAL_RRHH)}</div>
+  </div>
+
+  <h2>Cómo enviarla</h2>
+  <p>Necesitas dejar constancia del envío y de la recepción para poder escalar si la empresa no responde o lo hace de forma incompleta.</p>
+  <ol>
+    <li><strong>Burofax con acuse de recibo y certificación de contenido</strong> (Correos). Prueba sólida ante un eventual juicio.</li>
+    <li><strong>Correo electrónico</strong> a la cuenta corporativa de RRHH, con confirmación de lectura y solicitud expresa de acuse de recibo. Si has elegido la Opción A, copia también al comité o delegados.</li>
+    <li><strong>Registro de entrada presencial</strong> en las oficinas de la empresa con dos copias: una sellada para ti.</li>
+  </ol>
+
+  <h2>Qué pasa si la empresa no responde o lo hace de forma incompleta</h2>
+  <p>El RD 902/2020 no fija un plazo concreto de respuesta para el acceso al registro. Como referencia razonable, suelen darse <strong>15 días laborables</strong> antes de escalar. Si pasado ese plazo no contesta o la información facilitada es claramente incompleta:</p>
+  <ul>
+    <li><strong>Reiterar por escrito</strong>, citando el incumplimiento del art. 5 RD 902/2020 y advirtiendo de denuncia.</li>
+    <li><strong>Acudir a la representación legal</strong> de los trabajadores (si la hay): el incumplimiento del registro retributivo afecta a toda la plantilla, no solo a quien lo solicita.</li>
+    <li><strong>Denunciar ante la Inspección de Trabajo</strong> (<a href="https://www.mites.gob.es/itss/web/index.html" target="_blank" rel="noopener">mites.gob.es/itss</a>): el incumplimiento del registro retributivo y de las obligaciones de transparencia retributiva está tipificado como infracción sancionable.</li>
+    <li><strong>Si los datos sugieren discriminación retributiva por género</strong>, considera además la <a href="/plantilla-denunciar-discriminacion-salarial.html">Plantilla 5: denunciar discriminación salarial por género</a>, que activa la inversión de la carga de la prueba.</li>
+  </ul>
+
+  <h2>Marco legal aplicable</h2>
+  <div class="legal-box">
+    <p class="legal-title">Citas literales</p>
+    <ul>
+      <li><a href="${LEY.rd902_2020}" target="_blank" rel="noopener"><strong>RD 902/2020 · Art. 5.1</strong></a> — Todas las empresas, al margen de su tamaño, deben tener un registro retributivo de toda su plantilla, incluido el personal directivo y los altos cargos, con los valores medios de los salarios, los complementos salariales y las percepciones extrasalariales […], desagregados por sexo y distribuidos por grupos profesionales, categorías profesionales o puestos de trabajo iguales o de igual valor.</li>
+      <li><a href="${LEY.rd902_2020}" target="_blank" rel="noopener"><strong>RD 902/2020 · Art. 5.3</strong></a> — Cuando exista representación legal de las personas trabajadoras, el acceso al registro se facilitará a las personas trabajadoras a través de la citada representación, teniendo derecho aquellas a conocer el contenido íntegro del mismo. Cuando no exista representación legal, la información que se facilitará por parte de la empresa […] se limitará a las diferencias porcentuales que existieran en las retribuciones promediadas de hombres y mujeres […].</li>
+      <li><a href="${LEY.rd901_2020}" target="_blank" rel="noopener"><strong>RD 901/2020</strong></a> — Regula los planes de igualdad obligatorios para empresas de 50 o más personas trabajadoras, así como su contenido y registro en el REGCON.</li>
+    </ul>
+    <p class="legal-source"><a href="${LEY.rd902_2020}" target="_blank" rel="noopener">RD 902/2020 en BOE.es</a> · <a href="${LEY.rd901_2020}" target="_blank" rel="noopener">RD 901/2020 en BOE.es</a></p>
+  </div>
+
+  <h2>Preguntas frecuentes sobre esta plantilla</h2>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Tengo derecho a las nóminas individuales de mis compañeros/as?</p>
+    <p class="faq-a">No. El registro retributivo trabaja con <strong>valores medios</strong> agregados por sexo, grupo profesional, categoría o puesto, no con datos nominativos. La Ley Orgánica de Protección de Datos impide acceder a la retribución individual concreta de otra persona. Si lo que buscas es contrastar tu salario con el de un compañero/a específico/a, la vía no es el registro retributivo.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Por qué hay dos opciones en el modelo de carta?</p>
+    <p class="faq-a">Porque el alcance del derecho de acceso varía según exista o no representación legal en la empresa (comité, delegados, sección sindical). Con representación, accedes al registro íntegro a través de ella. Sin representación, sólo a las diferencias porcentuales. La carta debe reflejar tu situación real para que la empresa no pueda denegar la solicitud apoyándose en el cauce equivocado.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Cuánto tiempo puede tardar la empresa en responder?</p>
+    <p class="faq-a">El RD 902/2020 no fija un plazo expreso. Como referencia, 15 días laborables suele considerarse un plazo razonable. A partir del 7 de junio de 2026, la <a href="${LEY.directiva2023_970}" target="_blank" rel="noopener">Directiva (UE) 2023/970 (art. 7.4)</a> fija un plazo máximo de <strong>2 meses</strong> para la información ampliada del derecho individual.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Puedo combinar esta plantilla con la Plantilla 1 (banda salarial)?</p>
+    <p class="faq-a">Sí. De hecho, a partir del 7 de junio de 2026 la <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1: pedir la banda salarial a tu empresa</a> da derecho a información más amplia y directa (nivel retributivo individual + medios desglosados por sexo). Esta Plantilla 2 sigue siendo útil después de esa fecha si quieres pedir explícitamente acceso al <em>registro retributivo formal</em> o al plan de igualdad inscrito en el REGCON — son piezas que existen en paralelo a la información del art. 7 Directiva.</p>
+  </div>
+  <div class="faq-mini">
+    <p class="faq-q">¿Y si la empresa dice que no tiene registro retributivo?</p>
+    <p class="faq-a">Estaría incumpliendo el art. 5.1 RD 902/2020, que obliga a todas las empresas — al margen de su tamaño — a llevarlo. La negativa por escrito sirve como prueba de incumplimiento ante una eventual denuncia a la Inspección de Trabajo o ante un procedimiento por discriminación retributiva (donde la falta del registro juega contra la empresa al activar la inversión de la carga de la prueba).</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.btn-copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          const orig = btn.textContent;
+          btn.textContent = 'Copiado';
+          btn.classList.add('btn-success');
+          setTimeout(() => { btn.textContent = orig; btn.classList.remove('btn-success'); }, 1800);
+        }).catch(() => alert('No se pudo copiar. Selecciona el texto manualmente.'));
+      });
+    });
+    document.querySelectorAll('.btn-download').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        const filename = btn.dataset.filename || 'plantilla.txt';
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    });
+  </script>
+`;
+
 // ── Plantillas del Kit (SSOT) ────────────────────────────────────────
 const PLANTILLAS = [
   {
@@ -717,16 +873,17 @@ const PLANTILLAS = [
   {
     num: 2,
     slug: 'plantilla-solicitar-informacion-salarial-rrhh',
-    title: 'Plantilla para solicitar información salarial a RRHH | Modelo carta 2026',
+    title: 'Plantilla para solicitar información salarial a RRHH (RD 902/2020)',
     h1: 'Plantilla para solicitar información salarial a RRHH',
-    metaDescription: 'Modelo de carta para pedir el registro retributivo y los salarios medios por sexo a tu empresa. Basado en RD 902/2020 y la Directiva UE 2023/970.',
+    metaDescription: 'Modelo de carta listo para personalizar (copiar o descargar como .txt) para pedir el acceso al registro retributivo de tu empresa antes del 7 de junio de 2026, según el RD 902/2020.',
     breadcrumb: 'Solicitar información salarial a RRHH',
-    hook: 'Antes del 7 de junio de 2026 (basada en el RD 902/2020) o como complemento a la #1, cuando necesitas pedir acceso al registro retributivo de tu empresa para detectar diferencias por sexo o categoría.',
+    hook: 'Antes del 7 de junio de 2026 (basada en el RD 902/2020) o como complemento a la Plantilla 1 (banda salarial), cuando necesitas pedir acceso al registro retributivo de tu empresa para detectar diferencias por sexo o categoría.',
     legal: [
       { text: 'Real Decreto 902/2020 — artículo 5 (acceso al registro retributivo: íntegro vía representación legal; sin representación, sólo diferencias porcentuales)', href: LEY.rd902_2020 },
       { text: 'Real Decreto 901/2020 — planes de igualdad y auditoría retributiva', href: LEY.rd901_2020 },
-      { text: 'Directiva (UE) 2023/970 — artículos 7 y 9', href: LEY.directiva2023_970 },
+      { text: 'Directiva (UE) 2023/970 — artículos 7 y 9 (refuerzo del derecho a partir del 7 de junio de 2026)', href: LEY.directiva2023_970 },
     ],
+    body: BODY_INFO_SALARIAL_RRHH,
   },
   {
     num: 3,
