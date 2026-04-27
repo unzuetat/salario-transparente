@@ -134,6 +134,23 @@
     .disclaimer { background: var(--amber-bg); border: 1px solid #FDE68A; border-left: 4px solid #F59E0B; padding: 14px 18px; margin-top: 20px; }
     .disclaimer p { font-size: 12px; color: var(--ink-light); margin: 0; line-height: 1.6; }
 
+    /* Plantilla redactada: bloque del modelo de carta + acciones */
+    .template-text-wrap { background: #fff; border: 1px solid var(--cream-200); border-left: 4px solid var(--gold); padding: 0; margin: 12px 0 28px; overflow: hidden; }
+    .template-actions { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 14px; background: var(--cream-100); border-bottom: 1px solid var(--cream-200); }
+    .template-actions button { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; padding: 8px 14px; background: var(--ink); color: #fff; border: 1px solid var(--ink); cursor: pointer; letter-spacing: 0.04em; transition: background 0.15s ease, color 0.15s ease; }
+    .template-actions button:hover { background: var(--gold); border-color: var(--gold); }
+    .template-actions button.btn-success { background: var(--green); border-color: var(--green); }
+    .template-text { font-family: 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.65; color: var(--ink); padding: 22px 26px; white-space: pre-wrap; word-wrap: break-word; margin: 0; background: #fff; }
+
+    /* FAQ miniatura dentro de plantilla redactada */
+    .faq-mini { border-bottom: 1px solid var(--cream-200); padding: 16px 0; }
+    .faq-mini:last-of-type { border-bottom: none; }
+    .faq-mini .faq-q { font-size: 14px; font-weight: 700; color: var(--ink); margin: 0 0 6px; }
+    .faq-mini .faq-a { font-size: 14px; color: var(--ink-light); line-height: 1.6; margin: 0; }
+
+    .legal-box .legal-source { font-size: 12px; color: var(--ink-lighter); margin: 12px 0 0; }
+    .legal-box .legal-source a { color: var(--gold); }
+
     footer { background: var(--ink); padding: 32px; text-align: center; margin-top: 0; }
     .footer-text { font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 600px; margin: 0 auto; }
     .footer-text a { color: var(--gold-light); text-decoration: none; }
