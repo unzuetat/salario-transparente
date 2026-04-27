@@ -46,6 +46,7 @@ Datos extraídos de boletines oficiales con metodología A+B (verificación cruz
 
 ## Convenios provinciales de Hostelería
 
+- [Pilar Hostelería de España](https://salariojusto.es/convenio-hosteleria.html): hub sectorial con framing del sector (sin convenio estatal con tablas, ALEH como marco común), 6 provincias auditadas y directorio completo de las 50 provincias + Ceuta/Melilla.
 - [Convenio Hostelería Madrid](https://salariojusto.es/convenio-hosteleria-madrid.html) (en ultraactividad)
 - [Convenio Hostelería Valencia](https://salariojusto.es/convenio-hosteleria-valencia.html) (en ultraactividad)
 - [Convenio Hostelería Barcelona](https://salariojusto.es/convenio-hosteleria-barcelona.html)
