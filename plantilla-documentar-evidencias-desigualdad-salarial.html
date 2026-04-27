@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plantilla para documentar evidencias de desigualdad salarial antes de reclamar | SalarioJusto</title>
-  <meta name="description" content="Checklist + tabla para registrar indicios de desigualdad salarial (correos, conversaciones, ofertas, comparaciones de funciones) antes de presentar una reclamación.">
+  <meta name="description" content="Tabla maestra + checklist para registrar indicios sólidos de desigualdad salarial (correos, ofertas internas, comparaciones de funciones, datos públicos) antes de presentar una reclamación. Activa la inversión de la carga de la prueba (art. 18 Directiva 2023/970).">
   <link rel="canonical" href="https://salariojusto.es/plantilla-documentar-evidencias-desigualdad-salarial.html">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Plantilla para documentar evidencias de desigualdad salarial">
-  <meta property="og:description" content="Checklist + tabla para registrar indicios de desigualdad salarial (correos, conversaciones, ofertas, comparaciones de funciones) antes de presentar una reclamación.">
+  <meta property="og:description" content="Tabla maestra + checklist para registrar indicios sólidos de desigualdad salarial (correos, ofertas internas, comparaciones de funciones, datos públicos) antes de presentar una reclamación. Activa la inversión de la carga de la prueba (art. 18 Directiva 2023/970).">
   <meta property="og:url" content="https://salariojusto.es/plantilla-documentar-evidencias-desigualdad-salarial.html">
   <meta property="og:image" content="https://salariojusto.es/preview.jpg">
   <meta property="og:type" content="article">
@@ -37,7 +37,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Plantilla para documentar evidencias de desigualdad salarial",
-  "description": "Checklist + tabla para registrar indicios de desigualdad salarial (correos, conversaciones, ofertas, comparaciones de funciones) antes de presentar una reclamación.",
+  "description": "Tabla maestra + checklist para registrar indicios sólidos de desigualdad salarial (correos, ofertas internas, comparaciones de funciones, datos públicos) antes de presentar una reclamación. Activa la inversión de la carga de la prueba (art. 18 Directiva 2023/970).",
   "datePublished": "2026-04-27",
   "dateModified": "2026-04-27",
   "publisher": {
@@ -151,6 +151,29 @@
     .legal-box .legal-source { font-size: 12px; color: var(--ink-lighter); margin: 12px 0 0; }
     .legal-box .legal-source a { color: var(--gold); }
 
+    /* Tabla maestra de evidencias (plantilla #7) */
+    .evidence-table-wrap { overflow-x: auto; margin: 12px 0 24px; border: 1px solid var(--cream-200); }
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 13px; background: #fff; min-width: 720px; }
+    .evidence-table th, .evidence-table td { text-align: left; padding: 10px 12px; border: 1px solid var(--cream-200); vertical-align: top; line-height: 1.55; color: var(--ink-light); }
+    .evidence-table th { background: var(--cream-100); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink); font-weight: 700; }
+    .evidence-table .ev-date { white-space: nowrap; font-family: 'Courier New', Courier, monospace; font-size: 12px; color: var(--ink); }
+
+    /* Tipos de evidencia numerados */
+    .evidence-types ol { counter-reset: ev-type; list-style: none; padding-left: 0; margin: 12px 0 28px; }
+    .evidence-types li { position: relative; padding: 14px 0 14px 44px; border-bottom: 1px solid var(--cream-200); margin: 0; }
+    .evidence-types li::before { counter-increment: ev-type; content: counter(ev-type); position: absolute; left: 0; top: 14px; width: 28px; height: 28px; background: var(--cream-100); border: 1px solid var(--cream-200); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--ink); font-family: 'DM Serif Display', serif; }
+    .evidence-types li:last-child { border-bottom: none; }
+
+    /* Caja de advertencia (límites legales) */
+    .warning-box { background: var(--amber-bg); border: 1px solid #FDE68A; border-left: 4px solid #F59E0B; padding: 18px 22px; margin: 12px 0 24px; }
+    .warning-box h3 { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--ink); margin: 0 0 8px; }
+    .warning-box p { font-size: 14px; color: var(--ink); margin: 0 0 8px; line-height: 1.6; }
+    .warning-box ul { margin: 6px 0 0; padding-left: 20px; }
+    .warning-box li { color: var(--ink-light); margin-bottom: 6px; font-size: 14px; }
+
+    /* Código inline (nombres de fichero) */
+    code { background: var(--cream-100); padding: 1px 6px; font-family: 'Courier New', Courier, monospace; font-size: 12px; color: var(--ink); border: 1px solid var(--cream-200); }
+
     footer { background: var(--ink); padding: 32px; text-align: center; margin-top: 0; }
     .footer-text { font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 600px; margin: 0 auto; }
     .footer-text a { color: var(--gold-light); text-decoration: none; }
@@ -188,40 +211,234 @@
     <h1>Plantilla para documentar evidencias de desigualdad salarial</h1>
     <div class="article-meta">
       <span>Actualizado: 27 abril 2026</span>
-      <span>En preparación</span>
+      <span>Modelo listo para usar</span>
     </div>
   </div>
 </div>
 
 <main>
 
-  <div class="construction-banner">
-    <h2 style="font-family:'DM Sans',sans-serif;font-size:15px;margin-bottom:6px;border:none;padding:0;">Esta plantilla está en preparación</h2>
-    <p>Estamos terminando de redactarla con todos los detalles legales y los campos personalizables. Mientras tanto, aquí abajo tienes el contexto: cuándo usarla y los artículos en los que se apoya. Vuelve en los próximos días para ver el modelo completo descargable.</p>
-  </div>
+  <h2>Para qué sirve esta plantilla</h2>
+  <p>El <strong>artículo 18 de la Directiva (UE) 2023/970</strong> invierte la carga de la prueba en los casos de discriminación retributiva: cuando la persona trabajadora aporta <em>indicios suficientes</em> de que se ha producido un trato desigual, le corresponde a la empresa demostrar que la diferencia obedece a razones objetivas, neutras y verificables. Ese mecanismo es la diferencia entre una sospecha que se archiva y una reclamación que se gana — pero sólo se activa si existen indicios sólidos y bien documentados.</p>
+  <p>Esta plantilla no es una carta. Es la herramienta para construir esos indicios <em>antes</em> de mover ficha: una taxonomía de qué cuenta como evidencia, una tabla maestra para llevar el registro y una guía de qué se puede y qué no se puede hacer al recabarlas. Cuando la tengas rellena, tendrás la base para usar la <a href="/plantilla-solicitar-informacion-salarial-rrhh.html">Plantilla 2</a> (registro retributivo), la <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1</a> (banda salarial), la <a href="/plantilla-denunciar-discriminacion-salarial.html">Plantilla 5</a> (denuncia ITSS) o la <a href="/plantilla-reclamar-trabajo-igual-valor.html">Plantilla 9</a> (trabajo de igual valor) con expectativas razonables.</p>
 
   <h2>Cuándo usar esta plantilla</h2>
-
   <div class="when-box">
-    <p>Sospechas que algo no encaja y quieres reunir indicios sólidos antes de mover ficha. No es una carta — es un checklist + formato de tabla para registrar lo que vas observando (correos, conversaciones, ofertas, anuncios, comparaciones de funciones) sin levantar ruido.</p>
+    <p><strong>En cuanto sospechas que algo no encaja.</strong> Documentar evidencias es una actividad continuada, no algo que se hace en una tarde. Cuanto antes empieces, más sólido y con menos sesgo será el conjunto. La regla práctica: si la duda lleva más de dos semanas en tu cabeza, abre la tabla y vuelca lo que ya recuerdas con fechas aproximadas — y a partir de ahí registra cada cosa nueva el mismo día.</p>
   </div>
 
-  <h2>Marco legal en el que se apoya</h2>
+  <h2>Antes de empezar a documentar, ten claro…</h2>
+  <ul>
+    <li><strong>Quién es tu comparador o tus comparadores</strong>: nombre concreto y puesto. Si trabajas en un equipo donde hay varias personas haciendo lo mismo, lista a varias.</li>
+    <li><strong>Qué periodo abarca</strong>: desde cuándo crees que existe la diferencia. Lo habitual es revisar los 12 meses anteriores (la prescripción salarial del art. 59.1 ET es de un año).</li>
+    <li><strong>Si en tu empresa hay representación legal de las personas trabajadoras</strong> (delegados, comité, sección sindical). Si la hay, la <a href="/plantilla-solicitar-informacion-salarial-rrhh.html">Plantilla 2</a> abre la vía más amplia para acceder al registro retributivo.</li>
+    <li><strong>Si la empresa tiene 50 o más personas trabajadoras</strong>: en ese caso está obligada a tener plan de igualdad, registro retributivo y, en algunos casos, auditoría retributiva (RD 902/2020). La ausencia de cualquiera de estos juega a tu favor.</li>
+    <li><strong>El nombre del convenio colectivo</strong> que te aplica y, si lo conoces, el grupo profesional o nivel asignado a tu puesto.</li>
+  </ul>
 
-  <div class="legal-box">
-    <p class="legal-title">Artículos y normas aplicables</p>
+  <h2>Qué cuenta como "indicio sólido" — taxonomía de evidencias</h2>
+  <p>No todo vale. Los tribunales y la Inspección reconocen, esencialmente, siete tipos de evidencia. Tu objetivo es reunir, idealmente, al menos un elemento de tres categorías distintas — eso es lo que normalmente activa la inversión de la carga de la prueba (art. 18 Directiva).</p>
+
+  <div class="evidence-types">
+    <ol>
+      <li><strong>Comunicaciones internas.</strong> Correos, mensajes en Slack/Teams, conversaciones en grupos corporativos de WhatsApp. Sólo aquellas en las que <em>tú participas</em> o que se han enviado a una distribución de la que <em>tú formas parte</em>. Captura de pantalla con fecha/hora y dirección visibles, y exporta el correo original a .eml o PDF si puedes.</li>
+      <li><strong>Documentos retributivos en tu poder.</strong> Tus propias nóminas, tu contrato y sus anexos, ofertas internas o convocatorias publicadas en intranet con banda salarial para tu puesto exacto. Anuncios para tu mismo puesto que la empresa está publicando externamente con horquilla salarial visible.</li>
+      <li><strong>Comparaciones de funciones.</strong> Descripciones de puesto oficiales, organigramas internos, manuales de procesos, fichas de competencias del plan de igualdad. Sirven para argumentar trabajo de igual valor (art. 4 Directiva 2023/970, art. 28.1 ET) cuando las funciones del comparador no son idénticas a las tuyas pero sí equivalentes en formación, esfuerzo, responsabilidad y condiciones.</li>
+      <li><strong>Procesos de promoción y revisión salarial.</strong> Actas de comités de retribución comunicadas, evaluaciones de desempeño, comunicaciones colectivas de RRHH explicando criterios de subida (o ausencia de criterios escritos). Si la empresa nunca ha comunicado criterios claros, eso ya es un indicio: el art. 4 RD 902/2020 obliga a tener un sistema de valoración basado en "adecuación, totalidad y objetividad".</li>
+      <li><strong>Ofertas externas para puesto equivalente.</strong> LinkedIn, InfoJobs, Glassdoor, ofertas que la propia empresa ha publicado para reemplazar a un compañero/a o para crecer en el mismo puesto que tú ocupas. Útiles tanto para situar el rango de mercado como para identificar qué banda interna maneja la empresa.</li>
+      <li><strong>Anuncios y comunicados internos.</strong> Tablones físicos, intranet, comunicaciones de RRHH a toda la plantilla. Especialmente valiosos si describen políticas retributivas, criterios de subida, o si hay incoherencia entre lo anunciado y lo aplicado a tu caso.</li>
+      <li><strong>Datos públicos verificables.</strong> Tu convenio colectivo en el BOE/BOP (con tablas salariales por grupo y nivel), tu plan de igualdad si está registrado en el <a href="https://expinterweb.mites.gob.es/regcon/" target="_blank" rel="noopener">REGCON</a>, las cuentas anuales depositadas en el Registro Mercantil (información pública sobre masa salarial), y el registro retributivo cuando la empresa esté obligada a darlo.</li>
+    </ol>
+  </div>
+
+  <h2>Tabla maestra de evidencias</h2>
+  <p>Una sola tabla viva, no notas dispersas. Cópiala a Excel, Google Sheets, Numbers o cualquier hoja de cálculo y rellénala según vayas observando. El formato del bloque inferior es <strong>tabulado (TSV)</strong>: al pegarlo en una hoja de cálculo, las columnas se separan automáticamente.</p>
+
+  <div class="evidence-table-wrap">
+    <table class="evidence-table">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Fuente</th>
+          <th>Prueba adjunta</th>
+          <th>Quién más lo sabe</th>
+          <th>Relevancia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ev-date">2026-04-15</td>
+          <td>Comunicación interna</td>
+          <td>RRHH explica que las subidas se basan en una "valoración global" sin desglosar criterios</td>
+          <td>Email de RRHH del 15-abr al departamento</td>
+          <td>Sí · email-2026-04-15.eml</td>
+          <td>Toda la plantilla del departamento</td>
+          <td>Falta de criterios objetivos (incumple art. 4 RD 902/2020)</td>
+        </tr>
+        <tr>
+          <td class="ev-date">2026-04-22</td>
+          <td>Documento retributivo</td>
+          <td>Oferta interna publicada en intranet con banda 32-38 k€ para mi mismo puesto</td>
+          <td>Intranet › Empleo › Vacantes 22-abr</td>
+          <td>Sí · captura-vacante-22abr.png</td>
+          <td>—</td>
+          <td>Banda concreta para el puesto que ya ocupo (comparador interno)</td>
+        </tr>
+        <tr>
+          <td class="ev-date">2026-05-03</td>
+          <td>Comparación de funciones</td>
+          <td>Manual de procesos describe el rol "Especialista nivel 2" con responsabilidades equivalentes a las mías pero en grupo profesional superior</td>
+          <td>Manual de procesos v3, p. 18</td>
+          <td>Sí · manual-p18-marca.pdf</td>
+          <td>—</td>
+          <td>Argumenta trabajo de igual valor (art. 4 Directiva, art. 28.1 ET)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Plantilla en blanco para copiar a tu hoja de cálculo (cabecera + 10 filas vacías):</p>
+
+  <div class="template-text-wrap">
+    <div class="template-actions">
+      <button type="button" class="btn-copy" data-target="template-text">Copiar para Excel/Sheets</button>
+      <button type="button" class="btn-download" data-target="template-text" data-filename="tabla-evidencias-desigualdad.tsv">Descargar como .tsv</button>
+    </div>
+    <div id="template-text" class="template-text">Fecha	Tipo de evidencia	Descripción	Fuente	Prueba adjunta	Quién más lo sabe	Relevancia para la reclamación
+<strong>[YYYY-MM-DD]</strong>	<strong>[Comunicación / Documento / Comparación / Promoción / Oferta / Anuncio / Dato público]</strong>	<strong>[Qué pasó o qué dice — frase corta]</strong>	<strong>[De dónde sale: email, intranet, manual, BOE…]</strong>	<strong>[Sí / No · nombre fichero]</strong>	<strong>[Nombre o &quot;ninguno&quot;]</strong>	<strong>[Por qué importa: igual valor, falta de criterios, comparador directo…]</strong>
+<strong>[YYYY-MM-DD]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>
+<strong>[YYYY-MM-DD]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>
+<strong>[YYYY-MM-DD]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>
+<strong>[YYYY-MM-DD]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>
+<strong>[YYYY-MM-DD]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>
+<strong>[YYYY-MM-DD]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>
+<strong>[YYYY-MM-DD]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>
+<strong>[YYYY-MM-DD]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>
+<strong>[YYYY-MM-DD]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>	<strong>[ ]</strong>
+</div>
+  </div>
+
+  <h2>Checklist por tipo de evidencia</h2>
+  <p>Para cada categoría, lo mínimo que conviene tener guardado:</p>
+  <ul>
+    <li><strong>Comunicaciones internas</strong>: captura visible con fecha, hora, remitente y destinatarios; archivo .eml exportado; copia del correo original en una carpeta personal (de tu equipo, no del trabajo).</li>
+    <li><strong>Documentos retributivos</strong>: tus 12 últimas nóminas en PDF, tu contrato y todas las modificaciones; capturas de cualquier oferta interna o externa para tu puesto, con URL y fecha.</li>
+    <li><strong>Comparaciones de funciones</strong>: descripciones de puesto oficiales del tuyo y del comparador; organigrama vigente; fichas de valoración del plan de igualdad si existe.</li>
+    <li><strong>Procesos de promoción/revisión</strong>: comunicados de subida salarial recibidos por toda la plantilla; tus evaluaciones de desempeño firmadas; cualquier documento que cite criterios objetivos.</li>
+    <li><strong>Ofertas externas</strong>: capturas con fecha y URL; idealmente, la oferta tal y como aparece en LinkedIn/InfoJobs descargada como PDF para preservar la versión original.</li>
+    <li><strong>Anuncios y comunicados internos</strong>: capturas de tablones (con la cabecera de la pared visible si es físico), capturas de intranet con la URL en la barra del navegador.</li>
+    <li><strong>Datos públicos</strong>: enlace permanente al convenio en el <a href="https://www.boe.es/" target="_blank" rel="noopener">BOE</a> o BOP; código y URL del plan de igualdad en el <a href="https://expinterweb.mites.gob.es/regcon/" target="_blank" rel="noopener">REGCON</a>; última cuenta anual depositada en el Registro Mercantil si aplica.</li>
+  </ul>
+
+  <h2>Cómo documentar SIN levantar ruido (límites legales)</h2>
+
+  <div class="warning-box">
+    <h3>⚠ Hay líneas rojas que conviene no cruzar</h3>
+    <p>El derecho a documentar tiene límites. Cruzarlos puede convertir un caso ganable en un despido procedente o, en el peor escenario, en un delito. Los tribunales han fijado tres reglas claras:</p>
     <ul>
-        <li><a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">Directiva (UE) 2023/970 — artículo 18 (Inversión de la carga de la prueba)</a></li>
-        <li><a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">Directiva (UE) 2023/970 — artículo 20 (Acceso a las pruebas)</a></li>
-        <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener">Estatuto de los Trabajadores — artículo 28 (igualdad de remuneración)</a></li>
+      <li><strong>No reenvíes documentos confidenciales a tu correo personal.</strong> El Tribunal Supremo ha declarado procedente el despido de personas que reenvían información confidencial de la empresa — incluso aunque sea para defenderse en un litigio: la doctrina exige acudir al juzgado por la vía del art. 20 Directiva 2023/970, donde el juez puede ordenar a la empresa que entregue las pruebas, en lugar de tomarlas por cuenta propia.</li>
+      <li><strong>No accedas a documentos a los que no llegas por tu rol.</strong> Entrar en carpetas, expedientes o sistemas a los que tu permiso no alcanza — aunque la contraseña sea fácil o esté apuntada — puede ser delito de descubrimiento y revelación de secretos (art. 197 del Código Penal) o transgresión de la buena fe contractual.</li>
+      <li><strong>No grabes conversaciones en las que no participas.</strong> Grabar a terceros sin estar tú en la conversación es ilícito. Las conversaciones en las que <em>sí</em> participas se pueden grabar legalmente en España, pero conviene revisar el reglamento interno y la política de protección de datos antes de aportarlas a un proceso.</li>
     </ul>
   </div>
 
-  <p>El modelo completo incluirá un texto listo para personalizar (datos del trabajador, datos de la empresa, fechas, hechos), referencias a los artículos legales arriba citados, indicaciones para el envío con prueba de entrega (correo, burofax o registro presencial) y orientación sobre qué hacer si la empresa no responde en plazo.</p>
+  <p>Lo que <strong>sí</strong> puedes y debes hacer:</p>
+  <ul>
+    <li><strong>Captura de pantalla &gt; reenvío.</strong> La captura preserva fecha/hora del sistema, ventana y dirección — y no genera tráfico saliente trazable. Guárdalas con nombre descriptivo (por ejemplo <code>2026-04-15-email-rrhh-criterios.png</code>).</li>
+    <li><strong>Pide la información formalmente.</strong> Manda la <a href="/pedir-banda-salarial-empresa-2026.html">Plantilla 1</a> (banda salarial post-7-jun) o la <a href="/plantilla-solicitar-informacion-salarial-rrhh.html">Plantilla 2</a> (registro retributivo RD 902/2020). La respuesta — o la falta de respuesta en plazo — es prueba en sí misma.</li>
+    <li><strong>Conserva tus propias nóminas, tu contrato y tus comunicaciones.</strong> Los documentos que ya están en tu poder por la relación laboral son tuyos a todos los efectos.</li>
+    <li><strong>Apóyate en datos públicos:</strong> convenio (BOE/BOP), plan de igualdad (REGCON), cuentas anuales (Registro Mercantil), ofertas externas. Son inatacables como fuente.</li>
+    <li><strong>Habla con tu sindicato o con la representación legal.</strong> Tienen acceso al registro retributivo íntegro (art. 5.1 RD 902/2020) y experiencia en construir el relato de los hechos.</li>
+  </ul>
+
+  <h2>Cuándo tienes evidencias suficientes para reclamar</h2>
+  <p>No hay un umbral matemático, pero el patrón aceptado por la Inspección de Trabajo y los juzgados de lo social es que existan, al menos, <strong>tres elementos consistentes</strong>:</p>
+  <ol>
+    <li><strong>Un comparador identificado</strong> — alguien con tu mismo trabajo o con un trabajo de igual valor, cuya retribución superior puedes situar al menos por banda.</li>
+    <li><strong>Una diferencia retributiva apoyada en algún dato</strong> — tu nómina + uno de: oferta interna, banda externa publicada, registro retributivo recibido, comunicación que la mencione.</li>
+    <li><strong>Un elemento que descarte explicaciones objetivas</strong> — mismo nivel formativo, antigüedad similar o superior, evaluaciones equivalentes, ausencia de criterios escritos para fijar la diferencia.</li>
+  </ol>
+  <p>Cuando reúnes esos tres, dispones de los <em>indicios suficientes</em> que activan la inversión de la carga de la prueba (art. 18 Directiva 2023/970). A partir de ahí no eres tú quien debe demostrar la discriminación: es la empresa quien debe demostrar que la diferencia obedece a una razón objetiva y verificable.</p>
+
+  <h2>Marco legal aplicable</h2>
+
+  <div class="legal-box">
+    <p class="legal-title">Citas literales y enlaces verificables</p>
+    <ul>
+      <li><a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener"><strong>Art. 18.1 Directiva 2023/970</strong></a> — Cuando los trabajadores que se consideren perjudicados por el incumplimiento del principio de igualdad de retribución demuestren ante un juzgado u otra autoridad competente hechos a partir de los cuales pueda presumirse que ha existido discriminación, los Estados miembros velarán por que recaiga sobre el empleador la carga de probar que no se ha producido discriminación directa o indirecta en la retribución.</li>
+      <li><a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener"><strong>Art. 19 Directiva 2023/970</strong></a> — En la evaluación de la realización del mismo trabajo o de un trabajo de igual valor, la apreciación corresponderá a una valoración basada en criterios objetivos, neutros y verificables, conforme al art. 4.</li>
+      <li><a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener"><strong>Art. 20 Directiva 2023/970</strong></a> — Los Estados miembros velarán por que, en los procesos relativos a denuncias por discriminación salarial, los órganos jurisdiccionales nacionales o, en su caso, otras autoridades competentes puedan ordenar al demandado que aporte las pruebas pertinentes que obren en su poder.</li>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener"><strong>Art. 28.1 ET</strong></a> — El empresario está obligado a pagar por la prestación de un trabajo de igual valor la misma retribución […], sin que pueda producirse discriminación alguna por razón de sexo en ninguno de los elementos o condiciones de aquella.</li>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-6115" target="_blank" rel="noopener"><strong>Art. 13 LO 3/2007</strong></a> (transposición previa) — De acuerdo con las leyes procesales, en aquellos procedimientos en los que las alegaciones de la parte actora se fundamenten en actuaciones discriminatorias por razón de sexo, corresponderá a la persona demandada probar la ausencia de discriminación en las medidas adoptadas y su proporcionalidad.</li>
+      <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-12215" target="_blank" rel="noopener"><strong>Art. 4 RD 902/2020</strong></a> — Sistema de valoración de puestos de trabajo basado en los criterios de adecuación, totalidad y objetividad.</li>
+    </ul>
+  </div>
+
+  <h2>Preguntas frecuentes</h2>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Puedo grabar conversaciones con mi jefe/a o con RRHH?</p>
+    <p class="faq-a">En España, grabar conversaciones en las que <em>tú participas</em> es legal y la grabación es admisible como prueba (Tribunal Constitucional, doctrina consolidada desde la STC 114/1984). Lo que no puedes hacer es grabar conversaciones entre terceros. Antes de aportar una grabación a un proceso, comprueba el reglamento interno y la política de protección de datos: aunque sean ilegales para sancionarte por ello, conviene saber qué señales pueden mandar.</p>
+  </div>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Puedo enviarme documentos confidenciales de la empresa a mi correo personal "por si acaso"?</p>
+    <p class="faq-a">No. El Tribunal Supremo ha confirmado en varias sentencias que el reenvío masivo o sistemático de documentos confidenciales al correo personal — incluso con la justificación de prepararse para un litigio — puede ser causa de despido procedente por transgresión de la buena fe contractual. La vía correcta es el art. 20 de la Directiva 2023/970: si llegas al juzgado, el juez puede ordenar a la empresa que aporte las pruebas en su poder. Lo que sí puedes hacer es capturar pantalla de comunicaciones que ya están dirigidas a ti, y conservar tus propias nóminas, contratos y emails.</p>
+  </div>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Puedo preguntarle directamente a mi compañero/a cuánto cobra?</p>
+    <p class="faq-a">Sí. La <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-2023-80668" target="_blank" rel="noopener">Directiva 2023/970 (art. 7.5)</a> prohíbe a la empresa imponer cláusulas de confidencialidad sobre el salario, así que compartirlo entre compañeros/as es plenamente legal. Eso sí: pide consentimiento explícito si vas a usar el dato fuera de la conversación. Un correo o mensaje en el que la persona te dice expresamente su salario y te autoriza a usar el dato como comparador es prueba válida — anótalo en la tabla con la fuente correspondiente.</p>
+  </div>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Cuántas evidencias hacen falta para que la Inspección o un juzgado actúen?</p>
+    <p class="faq-a">No hay número fijo. La Inspección y los juzgados aplican el estándar de "indicios suficientes" del art. 18 Directiva: basta con que el conjunto sea coherente, verificable y permita presumir razonablemente la discriminación. En la práctica, tres elementos consistentes de tres categorías distintas (un comparador, una diferencia apoyada en dato, un elemento que descarte explicación objetiva) suelen bastar para activar la inversión de la carga de la prueba. Más, nunca sobran.</p>
+  </div>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Y si la empresa borra los registros o las comunicaciones después?</p>
+    <p class="faq-a">Por eso conviene fijar las pruebas <em>antes</em> de cualquier movimiento. Las capturas con metadatos, los .eml exportados y las URLs públicas con fecha en archive.org son prácticamente irreproducibles después. Adicionalmente, el art. 20 Directiva permite al juzgado ordenar a la empresa que aporte documentos en su poder; si la empresa no lo hace o si demuestras que los borró tras tener constancia de tu reclamación, esa conducta juega en su contra y puede equivaler a un reconocimiento implícito.</p>
+  </div>
+
+  <div class="faq-mini">
+    <p class="faq-q">¿Sirve un grupo de WhatsApp del trabajo como prueba?</p>
+    <p class="faq-a">Si tú formas parte del grupo y participas en la conversación, sí — y suele ser una de las pruebas más sólidas porque la cabecera del propio mensaje (remitente, hora) es difícil de falsificar. Captura la pantalla mostrando el grupo entero (con tu propio nombre o foto visible para acreditar que participas), exporta el chat completo desde la propia app (la opción "exportar chat") y guarda el .txt o .zip resultante. No edites nada.</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.btn-copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          const orig = btn.textContent;
+          btn.textContent = 'Copiado';
+          btn.classList.add('btn-success');
+          setTimeout(() => { btn.textContent = orig; btn.classList.remove('btn-success'); }, 1800);
+        }).catch(() => alert('No se pudo copiar. Selecciona el texto manualmente.'));
+      });
+    });
+    document.querySelectorAll('.btn-download').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.target);
+        const text = target.innerText;
+        const filename = btn.dataset.filename || 'plantilla.txt';
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    });
+  </script>
 
   <div class="cta-box">
-    <h3>Mientras tanto, prepara el contexto</h3>
-    <p>Antes de usar cualquier plantilla, conviene tener claro qué derechos tienes y cómo funcionan los plazos.</p>
+    <h3>¿Necesitas más contexto antes de enviarla?</h3>
+    <p>La guía de la Ley explica los derechos completos, los plazos y qué hacer si la empresa no responde como debe.</p>
     <a href="/ley-transparencia-salarial-2026.html" class="cta-btn">Leer la guía de la Ley →</a>
     <a href="/plantillas-transparencia-retributiva-2026.html" class="cta-btn secondary">Ver el Kit completo</a>
   </div>

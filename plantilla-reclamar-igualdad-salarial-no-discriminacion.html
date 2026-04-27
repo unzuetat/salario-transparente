@@ -151,6 +151,29 @@
     .legal-box .legal-source { font-size: 12px; color: var(--ink-lighter); margin: 12px 0 0; }
     .legal-box .legal-source a { color: var(--gold); }
 
+    /* Tabla maestra de evidencias (plantilla #7) */
+    .evidence-table-wrap { overflow-x: auto; margin: 12px 0 24px; border: 1px solid var(--cream-200); }
+    .evidence-table { width: 100%; border-collapse: collapse; font-size: 13px; background: #fff; min-width: 720px; }
+    .evidence-table th, .evidence-table td { text-align: left; padding: 10px 12px; border: 1px solid var(--cream-200); vertical-align: top; line-height: 1.55; color: var(--ink-light); }
+    .evidence-table th { background: var(--cream-100); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink); font-weight: 700; }
+    .evidence-table .ev-date { white-space: nowrap; font-family: 'Courier New', Courier, monospace; font-size: 12px; color: var(--ink); }
+
+    /* Tipos de evidencia numerados */
+    .evidence-types ol { counter-reset: ev-type; list-style: none; padding-left: 0; margin: 12px 0 28px; }
+    .evidence-types li { position: relative; padding: 14px 0 14px 44px; border-bottom: 1px solid var(--cream-200); margin: 0; }
+    .evidence-types li::before { counter-increment: ev-type; content: counter(ev-type); position: absolute; left: 0; top: 14px; width: 28px; height: 28px; background: var(--cream-100); border: 1px solid var(--cream-200); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--ink); font-family: 'DM Serif Display', serif; }
+    .evidence-types li:last-child { border-bottom: none; }
+
+    /* Caja de advertencia (límites legales) */
+    .warning-box { background: var(--amber-bg); border: 1px solid #FDE68A; border-left: 4px solid #F59E0B; padding: 18px 22px; margin: 12px 0 24px; }
+    .warning-box h3 { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--ink); margin: 0 0 8px; }
+    .warning-box p { font-size: 14px; color: var(--ink); margin: 0 0 8px; line-height: 1.6; }
+    .warning-box ul { margin: 6px 0 0; padding-left: 20px; }
+    .warning-box li { color: var(--ink-light); margin-bottom: 6px; font-size: 14px; }
+
+    /* Código inline (nombres de fichero) */
+    code { background: var(--cream-100); padding: 1px 6px; font-family: 'Courier New', Courier, monospace; font-size: 12px; color: var(--ink); border: 1px solid var(--cream-200); }
+
     footer { background: var(--ink); padding: 32px; text-align: center; margin-top: 0; }
     .footer-text { font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 600px; margin: 0 auto; }
     .footer-text a { color: var(--gold-light); text-decoration: none; }
@@ -212,7 +235,7 @@
     <li>Datos de la empresa: <strong>razón social, CIF, domicilio social</strong>.</li>
     <li>Identificación de la persona o personas comparables, su categoría y, en lo posible, indicios verificables de su retribución (ofertas internas, comunicaciones, contratos colectivos firmados, comparativas que la propia empresa haya difundido, etc.).</li>
     <li>Identificación de la <strong>causa protegida</strong> a la que atribuyes la diferencia (edad, discapacidad, ideología…). Si no puedes identificar una causa concreta del catálogo del art. 17, la reclamación es más débil — y la vía de "discriminación" puede no encajar.</li>
-    <li>Tu <strong>archivo de evidencias</strong> con fechas y fuentes — ver <a href="/plantilla-documentar-evidencias-desigualdad-salarial.html">Plantilla 7: documentar evidencias de desigualdad</a> (en preparación).</li>
+    <li>Tu <strong>archivo de evidencias</strong> con fechas y fuentes — ver <a href="/plantilla-documentar-evidencias-desigualdad-salarial.html">Plantilla 7: documentar evidencias de desigualdad</a>.</li>
   </ul>
 
   <h2>Modelo de carta</h2>
