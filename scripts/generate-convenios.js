@@ -287,14 +287,14 @@ function generateConvenioPage(data, meta) {
   const enUltraactividad = detectaUltraactividad(data.vigencia);
   const anyoMostrado = enUltraactividad ? CURRENT_YEAR : anyo;
   const title = enUltraactividad
-    ? `Convenio de ${meta.sector} en ${meta.provincia} ${CURRENT_YEAR} (en ultraactividad): tablas y jornada | SalarioJusto`
-    : `Convenio de ${meta.sector} en ${meta.provincia} (${anyo}): tablas salariales y jornada | SalarioJusto`;
+    ? `Convenio ${meta.sector} ${meta.provincia} ${CURRENT_YEAR}: salario y jornada por categoría | SalarioJusto`
+    : `Convenio ${meta.sector} ${meta.provincia} ${CURRENT_YEAR}: tablas salariales y jornada | SalarioJusto`;
   const desc = enUltraactividad
-    ? `Convenio de ${meta.sector} de ${meta.provincia}: las tablas salariales ${anyo} siguen vigentes en ${CURRENT_YEAR} al estar en ultraactividad. Jornada ${data.jornadaAnual}h/año, ${data.pagas} pagas. ${data.bop}.`
-    : `Tablas salariales ${anyo} del convenio de ${meta.sector} en ${meta.provincia}. Jornada ${data.jornadaAnual}h/año, ${data.pagas} pagas. Vigencia ${data.vigencia}. Datos oficiales ${data.bop}.`;
+    ? `Salarios del convenio de ${meta.sector.toLowerCase()} de ${meta.provincia} vigentes en ${CURRENT_YEAR} por ultraactividad. Tabla de ${anyo} por categoría profesional, jornada ${data.jornadaAnual} h/año y ${data.pagas} pagas. Datos del BOP.`
+    : `Tablas salariales del convenio de ${meta.sector.toLowerCase()} de ${meta.provincia} vigentes en ${CURRENT_YEAR}. Salario por categoría profesional, jornada ${data.jornadaAnual} h/año y ${data.pagas} pagas. Vigencia ${data.vigencia}. Fuente oficial.`;
   const ogTitle = enUltraactividad
-    ? `Convenio de ${meta.sector} en ${meta.provincia} ${CURRENT_YEAR} (en ultraactividad)`
-    : `Convenio de ${meta.sector} en ${meta.provincia} (${anyo})`;
+    ? `Convenio ${meta.sector} ${meta.provincia} ${CURRENT_YEAR}`
+    : `Convenio ${meta.sector} ${meta.provincia} ${anyo}`;
 
   // Construir tabla de grupos (máximo 15 filas, mostramos todos pero responsive)
   const subtablasKeys = Object.keys(data.subtablas);
