@@ -21,5 +21,11 @@ Thumbs.db
 # Outreach interno — datos de terceros + estrategia, NO subir a GitHub
 outreach/
 
-# Research del informe 2026 — datos brutos privados hasta publicación curada
-research/
+# Research del informe 2026
+# Mantenemos en git la herramienta de captura y la metodología (para usar en
+# ambas máquinas), pero NO los datos brutos (privados hasta publicación curada).
+research/*
+!research/informe-2026
+research/informe-2026/*
+!research/informe-2026/captura.html
+!research/informe-2026/metodologia.md

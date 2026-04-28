@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <title>Captura de ofertas · Informe SalarioJusto 2026</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --ink-light: #555;
+      --paper: #fafaf7;
+      --line: #e6e3dc;
+      --gold: #b8860b;
+      --green: #16a34a;
+      --red: #dc2626;
+      --blue: #2563eb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      margin: 0;
+      padding: 24px;
+      line-height: 1.5;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    h1 { font-size: 22px; margin: 0 0 4px; }
+    .subtitle { color: var(--ink-light); font-size: 14px; margin: 0 0 24px; }
+
+    .counters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+      margin-bottom: 20px;
+      padding: 12px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    .counter { font-size: 12px; text-align: center; }
+    .counter strong { font-size: 18px; display: block; }
+    .counter.full strong { color: var(--green); }
+    .counter.partial strong { color: var(--gold); }
+    .counter-total { background: var(--ink); color: white; padding: 8px; border-radius: 4px; }
+
+    form {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px 16px;
+      margin-bottom: 24px;
+    }
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field.wide { grid-column: 1 / -1; }
+    .field.medium { grid-column: span 2; }
+    label { font-size: 12px; color: var(--ink-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+    input, select, textarea {
+      font-family: inherit;
+      font-size: 14px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: white;
+      color: var(--ink);
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.15);
+    }
+    textarea { resize: vertical; min-height: 40px; font-family: inherit; }
+
+    .actions {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+      margin-top: 4px;
+    }
+    button {
+      font-family: inherit;
+      font-size: 14px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn-primary { background: var(--ink); color: white; }
+    .btn-primary:hover { background: #333; }
+    .btn-secondary { background: white; color: var(--ink); border: 1px solid var(--line); }
+    .btn-secondary:hover { background: var(--paper); }
+    .btn-danger { background: white; color: var(--red); border: 1px solid var(--line); }
+    .btn-danger:hover { background: #fee; }
+    .hint { font-size: 12px; color: var(--ink-light); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; background: white; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: var(--paper); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-light); }
+    tr:last-child td { border-bottom: none; }
+    .pill { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: 600; }
+    .pill-si { background: #dcfce7; color: #15803d; }
+    .pill-no { background: #fee2e2; color: #b91c1c; }
+    .pill-partial { background: #fef3c7; color: #92400e; }
+    .pill-q { background: #e5e7eb; color: #4b5563; }
+
+    .row-actions { white-space: nowrap; }
+    .row-actions button { padding: 4px 8px; font-size: 12px; }
+
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+    .btn-big {
+      flex: 1;
+      min-width: 280px;
+      padding: 16px 20px;
+      font-size: 15px;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      border: none;
+      transition: transform 0.05s;
+    }
+    .btn-big:hover { transform: translateY(-1px); }
+    .btn-big:active { transform: translateY(0); }
+    .btn-big-save { background: var(--green); color: white; }
+    .btn-big-save:hover { background: #15803d; }
+    .btn-big-load { background: var(--blue); color: white; }
+    .btn-big-load:hover { background: #1d4ed8; }
+    .btn-big small { font-weight: 400; opacity: 0.85; font-size: 12px; }
+    .danger-zone {
+      margin-top: 20px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: flex-end;
+    }
+    .save-status {
+      margin-top: 12px;
+      padding: 8px 12px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      font-size: 13px;
+      color: var(--ink-light);
+    }
+    .save-status.warning {
+      background: #fef3c7;
+      border-color: #fde68a;
+      color: #92400e;
+    }
+    details { background: white; border: 1px solid var(--line); border-radius: 6px; padding: 12px; margin-bottom: 16px; }
+    summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+    details[open] summary { margin-bottom: 8px; }
+    details ul { margin: 0; padding-left: 20px; font-size: 13px; }
+    details li { margin: 4px 0; }
+    code { background: var(--paper); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Captura de ofertas · Informe SalarioJusto 2026</h1>
+    <p class="subtitle">Local, privado, autoguardado en este navegador. Cuando termines, exporta a CSV.</p>
+
+    <div class="counters" id="counters"></div>
+
+    <details>
+      <summary>Recordatorio de criterios</summary>
+      <ul>
+        <li><strong>tipo_aplicacion</strong>: <code>E</code> = Easy Apply de LinkedIn (formulario nativo, auditable). <code>X</code> = redirige a sitio externo (no auditable).</li>
+        <li><strong>transparencia</strong> (¿hay cifra de salario?): <code>SI</code> rango/cifra clara · <code>PARCIAL</code> "desde X" · <code>NO</code> sin cifra o "competitivo/según valía".</li>
+        <li><strong>pide_salario_anterior</strong>: <code>SI</code> texto u Easy Apply piden tu salario actual · <code>NO</code> revisado, no pide · <code>?</code> tipo X (ATS externo no auditado).</li>
+        <li>Operativa Easy Apply sin enviar: click "Solicitar empleo" → "Siguiente" hasta "Preguntas del empleador" → revisa → cierra con la X (descarta). Candidatura NO se envía.</li>
+        <li><strong>tamaño</strong>: <code>XS</code> &lt;10 · <code>S</code> 10-49 · <code>M</code> 50-249 · <code>L</code> 250-999 · <code>XL</code> 1.000+ · <code>?</code> no aparece</li>
+      </ul>
+    </details>
+
+    <form id="form-oferta">
+      <div class="field">
+        <label for="sector">Sector</label>
+        <select id="sector" required>
+          <option value="">— Elige sector —</option>
+          <option value="TEC">TEC · Tecnología, información e Internet</option>
+          <option value="BAN">BAN · Servicios financieros</option>
+          <option value="SAN">SAN · Hospitales y atención sanitaria</option>
+          <option value="EDU">EDU · Servicios educativos</option>
+          <option value="RET">RET · Comercio al por menor</option>
+          <option value="HOS">HOS · Hostelería</option>
+          <option value="IND">IND · Fabricación</option>
+          <option value="CON">CON · Construcción</option>
+          <option value="CSL">CSL · Servicios de consultoría empresarial</option>
+          <option value="ADM">ADM · Administración pública</option>
+        </select>
+      </div>
+
+      <div class="field medium">
+        <label for="empresa">Empresa (privada)</label>
+        <input type="text" id="empresa" required placeholder="Acme Software SL">
+      </div>
+
+      <div class="field">
+        <label for="tamaño">Tamaño empresa</label>
+        <select id="tamaño" required>
+          <option value="">—</option>
+          <option value="XS">XS · &lt;10 empleados</option>
+          <option value="S">S · 10-49</option>
+          <option value="M">M · 50-249</option>
+          <option value="L">L · 250-999</option>
+          <option value="XL">XL · 1.000+</option>
+          <option value="?">? · No aparece</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="ccaa">CCAA / Ubicación</label>
+        <input type="text" id="ccaa" required list="ccaas" placeholder="Madrid">
+        <datalist id="ccaas">
+          <option value="Andalucía"><option value="Aragón"><option value="Asturias"><option value="Baleares"><option value="Canarias">
+          <option value="Cantabria"><option value="Castilla-La Mancha"><option value="Castilla y León"><option value="Cataluña"><option value="Extremadura">
+          <option value="Galicia"><option value="La Rioja"><option value="Madrid"><option value="Murcia"><option value="Navarra">
+          <option value="País Vasco"><option value="Valencia"><option value="Ceuta"><option value="Melilla">
+          <option value="Remoto"><option value="Multi"><option value="?">
+        </datalist>
+      </div>
+
+      <div class="field">
+        <label for="tipo_aplicacion">Tipo aplicación</label>
+        <select id="tipo_aplicacion" required>
+          <option value="">—</option>
+          <option value="E">E · Easy Apply (formulario LinkedIn)</option>
+          <option value="X">X · Externo (ATS de la empresa)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="transparencia">Transparencia (¿hay cifra?)</label>
+        <select id="transparencia" required>
+          <option value="">—</option>
+          <option value="SI">SI · Rango o cifra clara</option>
+          <option value="PARCIAL">PARCIAL · "desde/hasta X"</option>
+          <option value="NO">NO · sin cifra / vago</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="pide_salario_anterior">Pide salario anterior</label>
+        <select id="pide_salario_anterior" required>
+          <option value="">—</option>
+          <option value="SI">SI · texto o Easy Apply piden</option>
+          <option value="NO">NO · revisado, no pide</option>
+          <option value="?">? · tipo X (no auditable)</option>
+        </select>
+      </div>
+
+      <div class="field wide">
+        <label for="notas">Notas (opcional)</label>
+        <textarea id="notas" placeholder="ej. menciona convenio · oferta engañosa · pide en formulario"></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Añadir oferta</button>
+        <button type="button" class="btn-secondary" id="btn-clear-form">Limpiar formulario</button>
+        <span class="hint" id="last-added"></span>
+      </div>
+    </form>
+
+    <h2 style="font-size:16px; margin: 0 0 8px;">Ofertas capturadas (<span id="total">0</span>)</h2>
+    <table id="tabla-ofertas">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Sector</th>
+          <th>Empresa</th>
+          <th>Tam.</th>
+          <th>CCAA</th>
+          <th>Tipo</th>
+          <th>Transp.</th>
+          <th>Pide sal.</th>
+          <th>Notas</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="lista"></tbody>
+    </table>
+
+    <div class="toolbar">
+      <button class="btn-big btn-big-save" id="btn-export">
+        Guardar y descargar archivo
+        <small>Úsalo al terminar la sesión (descarga ofertas.csv a tu carpeta sincronizada)</small>
+      </button>
+      <button class="btn-big btn-big-load" id="btn-import">
+        Cargar trabajo de otra máquina
+        <small>Úsalo al empezar en una máquina nueva (importa el ofertas.csv que descargaste antes)</small>
+      </button>
+      <input type="file" id="file-input" accept=".csv" style="display:none">
+    </div>
+    <div class="save-status" id="save-status">Aún no has guardado en esta sesión.</div>
+    <p class="hint" style="margin-top:12px;">El trabajo se autoguarda en este navegador. Para sincronizar entre tu portátil y tu otra máquina: descarga el CSV en una carpeta sincronizada (Dropbox / iCloud / OneDrive / Google Drive) al terminar, y al empezar en la otra máquina pulsa "Cargar trabajo".</p>
+    <div class="danger-zone">
+      <button class="btn-danger" id="btn-clear-all">Borrar todo el trabajo</button>
+    </div>
+  </div>
+
+<script>
+  const STORAGE_KEY = 'sj_ofertas_2026';
+  const STORAGE_LAST_EXPORT = 'sj_ofertas_2026_last_export';
+  const STORAGE_LAST_CHANGE = 'sj_ofertas_2026_last_change';
+  const EXPORT_FILENAME = 'ofertas-salariojusto-informe.csv';
+  const SECTORES = ['TEC','BAN','SAN','EDU','RET','HOS','IND','CON','CSL','ADM'];
+  const SECTOR_NOMBRES = {
+    TEC:'Tecnología', BAN:'Banca', SAN:'Sanidad', EDU:'Educación', RET:'Retail',
+    HOS:'Hostelería', IND:'Industria', CON:'Construcción', CSL:'Consultoría', ADM:'Admin. pública'
+  };
+  const CUOTA = 20;
+  const TOTAL_OBJETIVO = SECTORES.length * CUOTA;
+
+  let ofertas = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+
+  const $ = id => document.getElementById(id);
+  const form = $('form-oferta');
+  const lista = $('lista');
+  const counters = $('counters');
+  const totalSpan = $('total');
+  const lastAdded = $('last-added');
+
+  function save() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(ofertas));
+    localStorage.setItem(STORAGE_LAST_CHANGE, Date.now().toString());
+    renderAll();
+  }
+
+  function formatRelativeTime(ms) {
+    if (!ms) return null;
+    const diff = Date.now() - ms;
+    if (diff < 60000) return 'hace menos de un minuto';
+    if (diff < 3600000) return `hace ${Math.floor(diff/60000)} min`;
+    if (diff < 86400000) return `hace ${Math.floor(diff/3600000)} h`;
+    return `hace ${Math.floor(diff/86400000)} días`;
+  }
+
+  function renderSaveStatus() {
+    const lastExport = parseInt(localStorage.getItem(STORAGE_LAST_EXPORT) || '0', 10);
+    const lastChange = parseInt(localStorage.getItem(STORAGE_LAST_CHANGE) || '0', 10);
+    const status = $('save-status');
+    if (ofertas.length === 0) {
+      status.textContent = 'Aún no has añadido ninguna oferta.';
+      status.classList.remove('warning');
+      return;
+    }
+    if (!lastExport || lastChange > lastExport) {
+      const cambios = lastExport ? ' (hay cambios desde la última)' : '';
+      status.innerHTML = `<strong>${ofertas.length} ofertas sin guardar a archivo${cambios}.</strong> Recuerda pulsar "Guardar y descargar" antes de cerrar.`;
+      status.classList.add('warning');
+    } else {
+      status.innerHTML = `Última descarga ${formatRelativeTime(lastExport)} · ${ofertas.length} ofertas guardadas.`;
+      status.classList.remove('warning');
+    }
+  }
+
+  function renderCounters() {
+    const counts = SECTORES.map(s => ({
+      slug: s,
+      n: ofertas.filter(o => o.sector === s).length
+    }));
+    const total = ofertas.length;
+    counters.innerHTML =
+      `<div class="counter counter-total"><strong>${total}/${TOTAL_OBJETIVO}</strong>TOTAL</div>` +
+      counts.map(c => {
+        const cls = c.n >= CUOTA ? 'full' : (c.n > 0 ? 'partial' : '');
+        return `<div class="counter ${cls}"><strong>${c.n}/${CUOTA}</strong>${c.slug} · ${SECTOR_NOMBRES[c.slug]}</div>`;
+      }).join('');
+  }
+
+  function pill(value, type) {
+    if (!value) return '<span class="pill pill-q">—</span>';
+    let cls = 'pill-q';
+    if (type === 'transp') {
+      if (value === 'SI') cls = 'pill-si';
+      else if (value === 'PARCIAL') cls = 'pill-partial';
+      else if (value === 'NO') cls = 'pill-no';
+    } else if (type === 'pide') {
+      if (value === 'SI') cls = 'pill-no';
+      else if (value === 'NO') cls = 'pill-si';
+      else cls = 'pill-q';
+    } else if (type === 'tipo') {
+      cls = value === 'E' ? 'pill-si' : 'pill-partial';
+    }
+    return `<span class="pill ${cls}">${value}</span>`;
+  }
+
+  function renderTabla() {
+    totalSpan.textContent = ofertas.length;
+    if (ofertas.length === 0) {
+      lista.innerHTML = '<tr><td colspan="10" style="text-align:center; color:var(--ink-light); padding:20px;">Aún no hay ofertas capturadas.</td></tr>';
+      return;
+    }
+    lista.innerHTML = ofertas.slice().reverse().map((o, idx) => {
+      const realId = ofertas.length - idx;
+      return `<tr>
+        <td>${realId}</td>
+        <td><strong>${o.sector}</strong></td>
+        <td>${escapeHtml(o.empresa)}</td>
+        <td>${o.tamaño}</td>
+        <td>${escapeHtml(o.ccaa)}</td>
+        <td>${pill(o.tipo_aplicacion, 'tipo')}</td>
+        <td>${pill(o.transparencia, 'transp')}</td>
+        <td>${pill(o.pide_salario_anterior, 'pide')}</td>
+        <td style="max-width:200px; font-size:12px; color:var(--ink-light);">${escapeHtml(o.notas || '')}</td>
+        <td class="row-actions"><button class="btn-danger" data-id="${realId-1}">borrar</button></td>
+      </tr>`;
+    }).join('');
+    lista.querySelectorAll('button[data-id]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const i = parseInt(btn.dataset.id, 10);
+        if (confirm(`Borrar oferta #${i+1} (${ofertas[i].empresa})?`)) {
+          ofertas.splice(i, 1);
+          save();
+        }
+      });
+    });
+  }
+
+  function renderAll() {
+    renderCounters();
+    renderTabla();
+    renderSaveStatus();
+  }
+
+  function escapeHtml(s) {
+    return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const o = {
+      sector: $('sector').value,
+      empresa: $('empresa').value.trim(),
+      tamaño: $('tamaño').value,
+      ccaa: $('ccaa').value.trim(),
+      tipo_aplicacion: $('tipo_aplicacion').value,
+      transparencia: $('transparencia').value,
+      pide_salario_anterior: $('pide_salario_anterior').value,
+      notas: $('notas').value.trim(),
+      ts: new Date().toISOString()
+    };
+    ofertas.push(o);
+    save();
+    // Limpiar form pero mantener sector y tamaño (probable que la próxima sea del mismo sector)
+    const sectorPrev = o.sector;
+    form.reset();
+    $('sector').value = sectorPrev;
+    $('empresa').focus();
+    lastAdded.textContent = `Añadida: ${o.empresa} (${o.sector}). Total: ${ofertas.length}`;
+    setTimeout(() => { lastAdded.textContent = ''; }, 4000);
+  });
+
+  $('btn-clear-form').addEventListener('click', () => {
+    form.reset();
+    $('sector').focus();
+  });
+
+  function toCSV() {
+    const headers = ['id','sector','empresa','tamaño','ccaa','tipo_aplicacion','transparencia','pide_salario_anterior','notas','ts'];
+    const lines = [headers.join(',')];
+    ofertas.forEach((o, i) => {
+      const row = [
+        i+1,
+        o.sector,
+        csvEscape(o.empresa),
+        o.tamaño,
+        csvEscape(o.ccaa),
+        o.tipo_aplicacion,
+        o.transparencia,
+        o.pide_salario_anterior,
+        csvEscape(o.notas || ''),
+        o.ts || ''
+      ];
+      lines.push(row.join(','));
+    });
+    return lines.join('\n');
+  }
+  function csvEscape(s) {
+    s = String(s ?? '');
+    if (s.includes(',') || s.includes('"') || s.includes('\n')) {
+      return '"' + s.replace(/"/g, '""') + '"';
+    }
+    return s;
+  }
+
+  $('btn-export').addEventListener('click', () => {
+    if (ofertas.length === 0) {
+      alert('Aún no has añadido ninguna oferta.');
+      return;
+    }
+    const csv = toCSV();
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = EXPORT_FILENAME;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    localStorage.setItem(STORAGE_LAST_EXPORT, Date.now().toString());
+    renderSaveStatus();
+  });
+
+  $('btn-import').addEventListener('click', () => $('file-input').click());
+  $('file-input').addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const txt = ev.target.result;
+        const lines = txt.split(/\r?\n/).filter(l => l.trim());
+        if (lines.length < 2) { alert('CSV vacío.'); return; }
+        const headers = lines[0].split(',').map(h => h.trim());
+        const importadas = lines.slice(1).map(line => {
+          const cols = parseCSVLine(line);
+          const o = {};
+          headers.forEach((h, i) => o[h] = cols[i] ?? '');
+          delete o.id;
+          return o;
+        });
+        // Si ya hay datos locales, preguntar: reemplazar o fusionar
+        if (ofertas.length > 0) {
+          const accion = confirm(
+            `Ya tienes ${ofertas.length} ofertas en este navegador. ` +
+            `¿Quieres REEMPLAZAR todo con las ${importadas.length} del archivo? ` +
+            `Pulsa Aceptar para reemplazar (recomendado al cambiar de máquina) o Cancelar para fusionar (sumar a las actuales).`
+          );
+          if (accion) {
+            ofertas = importadas;
+          } else {
+            ofertas = ofertas.concat(importadas);
+          }
+        } else {
+          ofertas = importadas;
+        }
+        // Tras importar, marcar "última exportación = ahora" porque el archivo es la fuente de verdad
+        localStorage.setItem(STORAGE_LAST_EXPORT, Date.now().toString());
+        save();
+      } catch (err) {
+        alert('Error al importar: ' + err.message);
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+  function parseCSVLine(line) {
+    const result = [];
+    let cur = '';
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (inQuotes) {
+        if (c === '"' && line[i+1] === '"') { cur += '"'; i++; }
+        else if (c === '"') { inQuotes = false; }
+        else { cur += c; }
+      } else {
+        if (c === ',') { result.push(cur); cur = ''; }
+        else if (c === '"') { inQuotes = true; }
+        else { cur += c; }
+      }
+    }
+    result.push(cur);
+    return result;
+  }
+
+  $('btn-clear-all').addEventListener('click', () => {
+    if (!confirm('¿Borrar TODAS las ofertas? Esta acción NO se puede deshacer.')) return;
+    if (!confirm('Última confirmación: se perderán ' + ofertas.length + ' ofertas. ¿Seguro?')) return;
+    ofertas = [];
+    save();
+  });
+
+  // Atajo: Ctrl/Cmd+S exporta CSV
+  document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+      e.preventDefault();
+      $('btn-export').click();
+    }
+  });
+
+  // Aviso al cerrar pestaña si hay cambios sin guardar a archivo
+  window.addEventListener('beforeunload', e => {
+    const lastExport = parseInt(localStorage.getItem(STORAGE_LAST_EXPORT) || '0', 10);
+    const lastChange = parseInt(localStorage.getItem(STORAGE_LAST_CHANGE) || '0', 10);
+    if (ofertas.length > 0 && (!lastExport || lastChange > lastExport)) {
+      e.preventDefault();
+      e.returnValue = '';
+      return '';
+    }
+  });
+
+  // Refrescar el indicador de "hace X" cada minuto
+  setInterval(renderSaveStatus, 60000);
+
+  renderAll();
+</script>
+</body>
+</html>
