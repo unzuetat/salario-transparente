@@ -1,6 +1,6 @@
 # Verificaciones de fuentes — Informe SalarioJusto 2026
 
-**Última actualización**: 2026-04-28
+**Última actualización**: 2026-04-29 (citas literales del Art. 5 confirmadas vía BOE-DOUE).
 **Privacidad**: archivo interno. La versión publicable irá en `/metodologia-informe-2026.html` con citas formales y URLs.
 
 Este archivo recoge las verificaciones de fuente primaria pendientes de la metodología. Cada bloque indica:
@@ -34,7 +34,9 @@ Este archivo recoge las verificaciones de fuente primaria pendientes de la metod
 > "en el anuncio de la vacante que se publique o por otro medio"
 > "negociación informada y transparente sobre la retribución"
 
-⚠️ **Pendiente de copy-paste exacto antes de publicar**: el texto carácter a carácter del 5.1 debe copiarse del BOE/EUR-Lex directamente en el momento de la maquetación. El extracto que tenemos es correcto en sustancia pero no garantizo que cada coma y cada giro sintáctico coincidan al 100%.
+✅ **Cita literal confirmada vía BOE-DOUE el 2026-04-29** (incorporada al draft v0.2 sección 2.1):
+
+> *"Los solicitantes de empleo tendrán derecho a recibir del empleador potencial información sobre lo siguiente: a) la retribución inicial o la banda retributiva inicial, basadas en criterios objetivos y neutros con respecto al género, correspondientes al puesto al que aspiran, y b) en su caso, las disposiciones pertinentes del convenio colectivo aplicado por el empleador con respecto al puesto. Esa información se facilitará de tal forma que se garantice una negociación informada y transparente sobre la retribución, por ejemplo, en el anuncio de la vacante que se publique o por otro medio."*
 
 ### Apartado 5.2 — Prohibición de preguntar el historial retributivo
 
@@ -45,9 +47,9 @@ Este es el apartado **taxativo** que hoy es legal y el 7-jun-2026 será ilegal e
 
 ### Apartado 5.3 — Neutralidad de género
 
-✅ **Verificado en sustancia**: los empleadores deben garantizar que los anuncios de vacantes y las denominaciones de puestos sean neutros respecto al género, y que los procesos de contratación se desarrollen de modo no discriminatorio para respetar el derecho a la igualdad retributiva.
+✅ **Cita literal confirmada vía BOE-DOUE el 2026-04-29** (incorporada al draft v0.2 sección 2.3):
 
-⚠️ **Pendiente copy-paste exacto** del BOE.
+> *"Los empleadores deben garantizar que los anuncios de las vacantes de trabajo y las denominaciones de los puestos de trabajo sean neutros con respecto al género, y que los procesos de contratación se desarrollen de un modo no discriminatorio, a fin de no socavar el derecho a la igualdad de retribución por un mismo trabajo o un trabajo de igual valor."*
 
 ### Considerando 32 — Aclaración interpretativa importante
 
@@ -62,7 +64,7 @@ Este es el apartado **taxativo** que hoy es legal y el 7-jun-2026 será ilegal e
 - ✅ El framing del 5.1 (ofertas sin rango) se matiza: una empresa puede cumplir la directiva sin publicar el rango EN la oferta, pero solo si lo comunica antes de la entrevista. Por tanto:
   - Métrica A (transparencia voluntaria): sigue siendo indicador de madurez, no de cumplimiento estricto.
   - Pero el informe puede señalar que las ofertas sin rango quedan en una zona ambigua donde la empresa **debería** comunicar el rango antes de la entrevista para cumplir; eso es invisible desde fuera y por tanto no auditable, pero es un matiz a reflejar.
-- ⚠️ Antes de publicar: copy-paste literal del 5.1, 5.2, 5.3 y Considerando 32 desde el BOE/EUR-Lex.
+- ✅ Copy-paste literal del Art. 5.1, 5.2, 5.3 y Considerando 32 confirmado vía BOE-DOUE el 2026-04-29 e incorporado al draft v0.2.
 
 ---
 
@@ -180,7 +182,7 @@ Los datos siguientes están verificados contra resúmenes legales recientes (no 
 
 ### Pendientes antes de publicar
 
-- [ ] Copy-paste exacto del Art. 5 (apartados 1, 2, 3) y Considerando 32 desde BOE/EUR-Lex en el momento de la maquetación.
+- [x] Copy-paste exacto del Art. 5 (apartados 1, 2, 3) y Considerando 32 desde BOE/EUR-Lex (2026-04-29).
 - [ ] Confirmar texto oficial de SB19-085 (Colorado), §194-B (NY), SB 1162 (California) — al menos los párrafos que se citen.
 - [ ] Decidir framing comparativo final con la corrección del UK.
 
