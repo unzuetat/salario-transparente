@@ -12,7 +12,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const DATA_DIR = path.join(ROOT, 'data', 'convenios');
 
-const fmt = n => new Intl.NumberFormat('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n);
+const fmt = n => new Intl.NumberFormat('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: true }).format(n);
 const fmtEur = n => fmt(n) + ' €';
 const slug = s => s.toLowerCase()
   .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -287,15 +287,16 @@ function generateConvenioPage(data, meta) {
   // Ultraactividad: si las tablas son de un año anterior pero siguen vigentes
   const enUltraactividad = detectaUltraactividad(data.vigencia);
   const anyoMostrado = enUltraactividad ? CURRENT_YEAR : anyo;
-  const title = enUltraactividad
-    ? `Convenio ${meta.sector} ${meta.provincia} ${CURRENT_YEAR}: salario y jornada por categoría | SalarioJusto`
-    : `Convenio ${meta.sector} ${meta.provincia} ${CURRENT_YEAR}: tablas salariales y jornada | SalarioJusto`;
-  const desc = enUltraactividad
-    ? `Salarios del convenio de ${meta.sector.toLowerCase()} de ${meta.provincia} vigentes en ${CURRENT_YEAR} por ultraactividad. Tabla de ${anyo} por categoría profesional, jornada ${data.jornadaAnual} h/año y ${data.pagas} pagas. Datos del BOP.`
-    : `Tablas salariales del convenio de ${meta.sector.toLowerCase()} de ${meta.provincia} vigentes en ${CURRENT_YEAR}. Salario por categoría profesional, jornada ${data.jornadaAnual} h/año y ${data.pagas} pagas. Vigencia ${data.vigencia}. Fuente oficial.`;
-  const ogTitle = enUltraactividad
-    ? `Convenio ${meta.sector} ${meta.provincia} ${CURRENT_YEAR}`
-    : `Convenio ${meta.sector} ${meta.provincia} ${anyo}`;
+  // Rango salarial mensual del convenio — usado en title/desc (V1 cifra-directa) y en la primera FAQ
+  const salariosMes = data.grupos.map(g => g.salario[anyo]?.mes).filter(Boolean);
+  const salarioMinimo = Math.min(...salariosMes);
+  const salarioMaximo = Math.max(...salariosMes);
+  const fmtMil = n => new Intl.NumberFormat('es-ES', { maximumFractionDigits: 0, useGrouping: true }).format(n);
+  const sectorCorto = meta.sector === 'Oficinas y Despachos' ? 'Oficinas' : meta.sector;
+
+  const title = `Convenio ${sectorCorto} ${meta.provincia} ${CURRENT_YEAR}: tablas ${fmtMil(salarioMinimo)}–${fmtMil(salarioMaximo)} €/mes`;
+  const desc = `Tablas salariales del convenio de ${meta.sector.toLowerCase()} de ${meta.provincia} ${CURRENT_YEAR}: salario base de ${fmtEur(salarioMinimo)} a ${fmtEur(salarioMaximo)} en ${data.pagas} pagas, jornada ${fmtMil(data.jornadaAnual)} h/año. BOP oficial.`;
+  const ogTitle = `Convenio ${meta.sector} ${meta.provincia} ${CURRENT_YEAR}`;
 
   // Construir tabla de grupos (máximo 15 filas, mostramos todos pero responsive)
   const subtablasKeys = Object.keys(data.subtablas);
@@ -315,10 +316,7 @@ function generateConvenioPage(data, meta) {
         </tr>`;
   }).filter(Boolean).join('\n');
 
-  // FAQs
-  const salarioMinimo = Math.min(...data.grupos.map(g => g.salario[anyo]?.mes).filter(Boolean));
-  const salarioMaximo = Math.max(...data.grupos.map(g => g.salario[anyo]?.mes).filter(Boolean));
-
+  // FAQs (salarioMinimo/Maximo ya calculados arriba para title/desc)
   const faqs = [
     {
       q: `¿Cuál es el salario mínimo del convenio de ${meta.sector} en ${meta.provincia} para ${anyo}?`,
