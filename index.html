@@ -477,16 +477,15 @@
     }
 
     .hero-cta-group {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      max-width: 520px;
+      margin: 0 auto 36px;
     }
     .hero-btn {
-      display: inline-block;
-      padding: 14px 26px;
-      font-size: 13px;
+      display: block;
+      text-align: center;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -494,10 +493,35 @@
       transition: all 0.15s;
       border: 1px solid transparent;
     }
-    .hero-btn-primary { background: var(--gold); color: #fff; }
-    .hero-btn-primary:hover { background: var(--gold-dark); }
-    .hero-btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
-    .hero-btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
+    .hero-btn-primary {
+      grid-column: 1 / -1;
+      padding: 18px 28px;
+      font-size: 15px;
+      background: var(--gold);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(193,123,62,0.3);
+    }
+    .hero-btn-primary:hover {
+      background: var(--gold-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(193,123,62,0.4);
+    }
+    .hero-btn-secondary {
+      padding: 11px 16px;
+      font-size: 11.5px;
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      border-color: rgba(255,255,255,0.25);
+    }
+    .hero-btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.5);
+      color: #fff;
+    }
+    @media(max-width:520px){
+      .hero-cta-group{grid-template-columns:1fr;}
+      .hero-btn-primary{grid-column:1;}
+    }
 
     /* TRUST BAR */
     .trust-bar {
@@ -2403,310 +2427,370 @@
 
   <div id="section-calc" style="scroll-margin-top:120px;">
 
-  <!-- CALCULATOR -->
-  <div class="calc-card">
-    <div class="calc-title">Datos del contribuyente</div>
+  <!-- CALCULATOR · v2 minimalista (capa 1 + toggle + capa 2 + 3 interacciones) -->
 
-    <!-- Fila 1: Salario + Pagas -->
-    <div class="input-group">
-      <div class="field">
-        <label>Salario bruto anual (€)</label>
-        <input type="number" id="salary" placeholder="Ej: 35000" min="0">
+  <style>
+    /* Calc v2 · estilos scoped */
+    .calc-v2-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+    .calc-v2-subtitle{font-size:13.5px;color:var(--ink-light);margin-bottom:22px;}
+    .pagas-row{display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap;}
+    .pagas-lbl{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-light);}
+    .pagas-switch{display:inline-flex;border:1px solid var(--cream-200);background:var(--cream-50);}
+    .pagas-switch button{background:transparent;border:none;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink-light);padding:8px 14px;cursor:pointer;border-right:1px solid var(--cream-200);transition:all 0.12s;}
+    .pagas-switch button:last-child{border-right:none;}
+    .pagas-switch button.active{background:var(--gold);color:#fff;}
+    .pagas-switch button:hover:not(.active){background:var(--cream-100);}
+    .pagas-help{font-size:11px;color:var(--ink-lighter);}
+    .btn-calc-v2{width:100%;padding:18px 24px;background:var(--gold);color:#fff;border:none;font-family:inherit;font-size:16px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.15s,transform 0.1s;box-shadow:0 2px 8px rgba(193,123,62,0.25);}
+    .btn-calc-v2:hover{background:var(--gold-dark);transform:translateY(-1px);box-shadow:0 4px 14px rgba(193,123,62,0.35);}
+    .resultado-v2{margin-top:26px;padding-top:24px;border-top:1px solid var(--cream-200);display:none;}
+    .resultado-v2.visible{display:block;}
+    .neto-hero{padding:36px 24px 30px;background:var(--ink);color:#fff;text-align:center;margin-bottom:18px;border:1px solid var(--ink);}
+    .neto-hero-lbl{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:18px;}
+    .neto-hero-val{font-family:'DM Serif Display',serif;font-size:clamp(46px,9vw,76px);line-height:1;color:#fff;font-weight:400;letter-spacing:-0.01em;}
+    .neto-hero-val .euro{font-size:0.42em;color:var(--gold-light);vertical-align:0.55em;margin-left:0.08em;font-weight:400;}
+    .neto-hero-sub{font-size:14px;color:rgba(255,255,255,0.7);margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.12);}
+    .neto-hero-sub strong{font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;color:var(--gold-light);margin:0 4px;}
+    .meta-row-v2,.meta-row{display:flex;gap:18px;font-size:12px;color:var(--ink-lighter);padding:6px 0 14px;justify-content:center;flex-wrap:wrap;}
+    .meta-row-v2 span strong,.meta-row span strong{color:var(--ink);font-family:'IBM Plex Mono',monospace;font-weight:500;}
+    .meta-row-v2{display:flex;gap:20px;font-size:12px;color:var(--ink-light);padding:10px 0 14px;border-bottom:1px solid var(--cream-100);margin-bottom:12px;flex-wrap:wrap;}
+    .meta-row-v2 span strong{color:var(--ink);font-family:'IBM Plex Mono',monospace;font-weight:500;}
+    .disclaimer-v2{font-size:12px;color:var(--ink-lighter);line-height:1.6;padding:12px 0 18px;font-style:italic;}
+    .cta-toggle-capa2{display:block;width:100%;padding:16px 20px;background:var(--gold);color:#fff;border:none;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;text-align:left;transition:background 0.15s;line-height:1.4;}
+    .cta-toggle-capa2:hover{background:var(--gold-dark);}
+    .cta-toggle-capa2 .arrow{float:right;font-family:'DM Serif Display',serif;font-size:20px;line-height:1;}
+    .cta-toggle-capa2 .ct-title{display:block;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;}
+    .cta-toggle-capa2 .ct-desc{display:block;font-size:12px;font-weight:500;letter-spacing:0;text-transform:none;color:rgba(255,255,255,0.85);margin-top:3px;}
+    .cta-secondary-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;}
+    @media(max-width:560px){.cta-secondary-row{grid-template-columns:1fr;}}
+    .cta-secondary-row a{display:block;padding:11px 14px;background:transparent;border:1px solid var(--cream-200);text-align:center;font-size:12px;font-weight:600;color:var(--ink-light);text-decoration:none;letter-spacing:0.04em;transition:all 0.15s;}
+    .cta-secondary-row a:hover{border-color:var(--gold);color:var(--ink);background:#fff;}
+    .capa2-v2{display:none;margin-top:22px;padding-top:24px;border-top:2px dashed var(--cream-200);}
+    .capa2-v2.visible{display:block;}
+    .capa2-header{margin-bottom:18px;}
+    .capa2-header h3{font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;color:var(--ink);margin-bottom:6px;}
+    .capa2-header p{font-size:13.5px;color:var(--ink-light);}
+    .field-row-v2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+    @media(max-width:560px){.field-row-v2{grid-template-columns:1fr;}}
+    .btn-recalc-v2{width:100%;padding:13px 18px;background:var(--ink);color:#fff;border:none;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;margin-top:8px;}
+    .btn-recalc-v2:hover{background:#1a1411;}
+    .refinado-box{margin-top:22px;padding:18px 20px;background:var(--cream-100);border-left:3px solid var(--gold);display:none;}
+    .refinado-box.visible{display:block;}
+    .comparativa{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+    .comp-item{flex:1;min-width:140px;}
+    .comp-lbl{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-light);margin-bottom:4px;}
+    .comp-val{font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);}
+    .comp-val.final{color:var(--gold);}
+    .comp-arrow{font-family:'DM Serif Display',serif;font-size:24px;color:var(--gold);}
+    .comp-delta{font-size:12px;color:var(--ink-light);margin-top:8px;}
+    .comp-delta strong{color:var(--ink);}
+    .anzuelo{margin-top:18px;padding:18px 20px;background:#fff;border:1px solid var(--gold);display:none;}
+    .anzuelo.visible{display:block;}
+    .anzuelo-row{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;}
+    .anzuelo-icon{font-size:24px;line-height:1;}
+    .anzuelo-text{flex:1;min-width:220px;}
+    .anzuelo-text strong{display:block;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+    .anzuelo-text p{font-size:13px;color:var(--ink-light);margin:0;}
+    .anzuelo-cta{display:inline-block;padding:10px 16px;background:var(--gold);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;align-self:center;}
+    .anzuelo-cta:hover{background:var(--gold-dark);}
+  </style>
+
+    <div class="calc-card">
+      <div class="calc-v2-eyebrow">Calculadora IRPF 2026</div>
+      <div class="calc-title">Tu salario neto en 10 segundos</div>
+      <p class="calc-v2-subtitle">Bruto anual + comunidad autónoma. Pulsa Calcular y listo.</p>
+
+      <div class="input-group">
+        <div class="field">
+          <label for="bruto">Salario bruto anual (€)</label>
+          <input type="number" id="bruto" placeholder="Ej: 30000" min="0" step="100">
+        </div>
+        <div class="field">
+          <label for="ccaa">Comunidad autónoma</label>
+          <div class="select-wrapper">
+            <select id="ccaa">
+              <option value="ES">Estatal (escala estándar)</option>
+              <option value="AND">Andalucía</option>
+              <option value="ARA">Aragón</option>
+              <option value="AST">Asturias</option>
+              <option value="BAL">Baleares</option>
+              <option value="CAN">Canarias</option>
+              <option value="CNT">Cantabria</option>
+              <option value="CYL">Castilla y León</option>
+              <option value="CLM">Castilla-La Mancha</option>
+              <option value="CAT">Cataluña</option>
+              <option value="EXT">Extremadura</option>
+              <option value="GAL">Galicia</option>
+              <option value="RIO">La Rioja</option>
+              <option value="MAD">Madrid</option>
+              <option value="MUR">Murcia</option>
+              <option value="NAV">Navarra (foral)</option>
+              <option value="ALA">País Vasco · Álava (foral)</option>
+              <option value="BIZ">País Vasco · Bizkaia (foral)</option>
+              <option value="GIP">País Vasco · Gipuzkoa (foral)</option>
+              <option value="VAL">Valencia</option>
+            </select>
+          </div>
+        </div>
       </div>
-      <div class="field">
-        <label>Número de pagas</label>
-        <div class="select-wrapper">
-          <select id="pagas">
-            <option value="12">12 pagas</option>
-            <option value="14" selected>14 pagas</option>
-            <option value="15">15 pagas</option>
-            <option value="16">16 pagas</option>
-          </select>
+
+      <div class="pagas-row">
+        <span class="pagas-lbl">Número de pagas</span>
+        <div class="pagas-switch" role="radiogroup" aria-label="Número de pagas">
+          <button type="button" data-pagas="12" role="radio" aria-checked="false">12</button>
+          <button type="button" data-pagas="14" class="active" role="radio" aria-checked="true">14</button>
+          <button type="button" data-pagas="15" role="radio" aria-checked="false">15</button>
+        </div>
+        <span class="pagas-help">14 es lo más habitual en España</span>
+      </div>
+
+      <button class="btn-calc-v2" id="btnCalcular" type="button">Calcular mi neto →</button>
+
+      <div class="resultado-v2" id="resultadoV2">
+        <div class="neto-hero">
+          <div class="neto-hero-lbl">Tu salario neto anual</div>
+          <div class="neto-hero-val" id="netoAnual">— <span class="euro">€</span></div>
+          <div class="neto-hero-sub">
+            <strong id="netoMensual">—</strong> € al mes <span style="opacity:0.55;">·</span> <span id="pagasLbl">14</span> pagas
+          </div>
+        </div>
+
+        <div class="meta-row-v2">
+          <span>Retención IRPF: <strong id="metaTipo">—</strong></span>
+          <span>IRPF anual: <strong id="metaIrpf">—</strong> €</span>
+          <span>Seguridad Social: <strong id="metaSs">—</strong> €</span>
+        </div>
+
+        <div class="disclaimer-v2">
+          Cálculo orientativo basado en el algoritmo IRPF 2026 oficial (AEAT) con asunciones por defecto: persona soltera sin descendientes a cargo y menor de 65 años. Tu nómina real depende de tu situación familiar y de la escala autonómica de tu comunidad. Para un cálculo afinado, despliega abajo.
+        </div>
+
+        <button class="cta-toggle-capa2" id="btnCapa2" type="button" aria-expanded="false">
+          <span class="ct-title">Afinar mi cálculo <span class="arrow">↓</span></span>
+          <span class="ct-desc">Personalizable con profesión, ciudad y situación familiar.</span>
+        </button>
+
+        <div class="cta-secondary-row">
+          <a href="#convenio-section">Verifica tu convenio →</a>
+          <a href="/plantillas-transparencia-retributiva-2026.html">Ver el Kit del trabajador →</a>
+        </div>
+
+        <div class="capa2-v2" id="capa2V2">
+          <div class="capa2-header">
+            <h3>Afinar mi cálculo</h3>
+            <p>Con tu situación familiar real. La escala autonómica se aplica automáticamente desde la CCAA elegida arriba.</p>
+          </div>
+
+          <div class="field-row-v2">
+            <div class="field">
+              <label for="profesionV2">Profesión (opcional)</label>
+              <input type="text" id="profesionV2" placeholder="Ej: Enfermera, Comercial, Camarero…">
+            </div>
+            <div class="field">
+              <label for="ciudadV2">Ciudad (opcional)</label>
+              <div class="select-wrapper">
+                <select id="ciudadV2">
+                  <option value="">Selecciona…</option>
+                  <option value="madrid">Madrid</option>
+                  <option value="barcelona">Barcelona</option>
+                  <option value="valencia">Valencia</option>
+                  <option value="sevilla">Sevilla</option>
+                  <option value="bilbao">Bilbao</option>
+                  <option value="malaga">Málaga</option>
+                  <option value="zaragoza">Zaragoza</option>
+                  <option value="murcia">Murcia</option>
+                  <option value="palma">Palma de Mallorca</option>
+                  <option value="laspalmas">Las Palmas de G.C.</option>
+                  <option value="alicante">Alicante</option>
+                  <option value="acoruna">A Coruña</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field-row-v2">
+            <div class="field">
+              <label for="situfamV2">Situación familiar</label>
+              <div class="select-wrapper">
+                <select id="situfamV2">
+                  <option value="single">Soltero/a, sin descendientes a cargo</option>
+                  <option value="single_kids">Familia monoparental con descendientes</option>
+                  <option value="married_noincome">Casado/a con cónyuge sin ingresos</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="hijosV2">Hijos o hijas a cargo (menores de 25)</label>
+              <input type="number" id="hijosV2" value="0" min="0" max="10" step="1">
+            </div>
+          </div>
+
+          <button class="btn-recalc-v2" id="btnRecalc" type="button">Recalcular con mis datos →</button>
+
+          <div class="refinado-box" id="refinadoBox">
+            <div class="comparativa">
+              <div class="comp-item">
+                <div class="comp-lbl">Cálculo simple</div>
+                <div class="comp-val" id="netoSimple">—</div>
+              </div>
+              <div class="comp-arrow">→</div>
+              <div class="comp-item">
+                <div class="comp-lbl">Cálculo refinado</div>
+                <div class="comp-val final" id="netoRefinado">—</div>
+              </div>
+            </div>
+            <div class="comp-delta" id="compDelta"></div>
+          </div>
+
+          <div class="anzuelo" id="anzueloConv">
+            <div class="anzuelo-row">
+              <div class="anzuelo-icon">⚖️</div>
+              <div class="anzuelo-text">
+                <strong>¿Te están pagando el mínimo legal?</strong>
+                <p>Tu convenio colectivo fija un suelo salarial obligatorio para <span id="anzProf">tu profesión</span><span id="anzSepar"></span><span id="anzCiu"></span>. Verifícalo abajo.</p>
+              </div>
+              <a href="#convenio-section" class="anzuelo-cta" id="anzCta">Verificar →</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Fila 2: Profesión + Ciudad -->
-    <div class="input-group">
-      <div class="field">
-        <label>Profesión</label>
-        <input type="text" id="profession" placeholder="Ej: Enfermero, Arquitecto, Comercial…" list="profession-suggestions" autocomplete="off">
-        <datalist id="profession-suggestions">
-          <option value="Ingeniero de Software">
-          <option value="Desarrollador Web">
-          <option value="Desarrollador Frontend">
-          <option value="Desarrollador Backend">
-          <option value="DevOps / SRE">
-          <option value="Data Scientist">
-          <option value="Data Analyst">
-          <option value="Product Manager">
-          <option value="UX/UI Designer">
-          <option value="Ciberseguridad">
-          <option value="Enfermero/a">
-          <option value="Médico/a de familia">
-          <option value="Médico especialista">
-          <option value="Farmacéutico/a">
-          <option value="Fisioterapeuta">
-          <option value="Psicólogo/a">
-          <option value="Odontólogo/a">
-          <option value="Veterinario/a">
-          <option value="Trabajador/a Social">
-          <option value="Técnico de laboratorio">
-          <option value="Profesor/a de Primaria">
-          <option value="Profesor/a de Secundaria">
-          <option value="Profesor/a Universitario">
-          <option value="Orientador/a educativo">
-          <option value="Arquitecto/a">
-          <option value="Ingeniero Civil">
-          <option value="Ingeniero Industrial">
-          <option value="Ingeniero Eléctrico">
-          <option value="Ingeniero Mecánico">
-          <option value="Ingeniero Químico">
-          <option value="Abogado/a">
-          <option value="Juez / Magistrado">
-          <option value="Notario/a">
-          <option value="Asesor Fiscal">
-          <option value="Gestor/a Administrativo">
-          <option value="Economista">
-          <option value="Contable">
-          <option value="Auditor/a">
-          <option value="Analista Financiero">
-          <option value="Controller Financiero">
-          <option value="Comercial / Ventas">
-          <option value="Key Account Manager">
-          <option value="Director Comercial">
-          <option value="Agente Inmobiliario">
-          <option value="Marketing Digital">
-          <option value="Community Manager">
-          <option value="SEO / SEM">
-          <option value="Director de Marketing">
-          <option value="Periodista">
-          <option value="Publicista / Copywriter">
-          <option value="Recursos Humanos">
-          <option value="Técnico de Selección">
-          <option value="Director de RRHH">
-          <option value="Administrativo/a">
-          <option value="Recepcionista">
-          <option value="Secretario/a">
-          <option value="Logística / Supply Chain">
-          <option value="Técnico de Compras">
-          <option value="Electricista">
-          <option value="Fontanero/a">
-          <option value="Mecánico/a">
-          <option value="Soldador/a">
-          <option value="Albañil / Constructor">
-          <option value="Cocinero/a / Chef">
-          <option value="Camarero/a">
-          <option value="Dependiente/a">
-          <option value="Conductor/a">
-          <option value="Piloto">
-          <option value="Auxiliar de vuelo">
-          <option value="Policía / Guardia Civil">
-          <option value="Bombero/a">
-          <option value="Militar">
-          <option value="Gestor/a de Proyectos">
-          <option value="Project Manager">
-          <option value="PMO">
-          <option value="Scrum Master">
-          <option value="Jefe/a de Proyecto">
-          <option value="Funcionario/a">
-        </datalist>
-      </div>
-      <div class="field">
-        <label>Ciudad</label>
-        <div class="select-wrapper">
-          <select id="city">
-            <option value="madrid">Madrid</option>
-            <option value="barcelona">Barcelona</option>
-            <option value="valencia">Valencia</option>
-            <option value="sevilla">Sevilla</option>
-            <option value="bilbao">Bilbao</option>
-            <option value="malaga">Málaga</option>
-            <option value="zaragoza">Zaragoza</option>
-            <option value="murcia">Murcia</option>
-            <option value="palma">Palma de Mallorca</option>
-            <option value="laspalmas">Las Palmas de Gran Canaria</option>
-          </select>
-        </div>
-      </div>
-</div>
+  <script>
+  // ──────────────────────────────────────────────────────────────────
+  // CALC V2 · algoritmo IRPF 2026 (AEAT) inline + handlers
+  // ──────────────────────────────────────────────────────────────────
+  function calcNetV2(gross, situation, hijos3, hijos25, asc65, asc75, discapacidad, movilidad, pagas, anioper, situper, discaper, movilper, escalaCustom){
+    const ANIO=2026;situper=situper||'ACTIVO';discaper=discaper||'NINGUNA';movilper=movilper||false;anioper=anioper||1985;
+    const situfam=situation==='single_kids'?'S1':situation==='married_noincome'?'S2':'S3';
+    const SS_PCT=0.0756;const COTIZACIONES=gross*SS_PCT;
+    const GASTOSGEN=2000;const INCREGASMOVIL=movilidad==='si'?2000:0;let INCREGASDISTRA=0;
+    if(situper==='ACTIVO'){if(discaper==='DESDE65'||(discaper==='DE33A65'&&movilper))INCREGASDISTRA=7750;else if(discaper==='DE33A65')INCREGASDISTRA=3500;}
+    let OTROSGASTOS=GASTOSGEN+INCREGASMOVIL+INCREGASDISTRA;
+    if(gross-COTIZACIONES<0)OTROSGASTOS=0;if(OTROSGASTOS>gross-COTIZACIONES)OTROSGASTOS=gross-COTIZACIONES;
+    const RNT=Math.max(0,gross-COTIZACIONES);
+    let RED20=0;
+    if(RNT<=14852)RED20=7302;else if(RNT<=17673.52)RED20=7302-1.75*(RNT-14852);else if(RNT<19747.50)RED20=2364.34-1.14*(RNT-17673.52);
+    RED20=Math.round(RED20*100)/100;
+    const RNTREDU=Math.max(0,RNT-OTROSGASTOS-RED20);
+    const PENSION=situper==='PENSIONISTA'?600:0;const DESEM=situper==='DESEMPLEADO'?1200:0;
+    const nHijos=parseInt(hijos3)+parseInt(hijos25);const HIJOSRED=nHijos>2?600:0;
+    const edad=ANIO-anioper;const MINCON=5550+(edad>64?1150:0)+(edad>74?1400:0);
+    const hijosArr=[];for(let i=0;i<parseInt(hijos3);i++)hijosArr.push({edad:2});for(let i=0;i<parseInt(hijos25);i++)hijosArr.push({edad:10});
+    hijosArr.sort((a,b)=>a.edad-b.edad);
+    const montosPorOrden=[2400,2700,4000,4500];let MINDESG=0;
+    hijosArr.forEach((h,i)=>{if(h.edad<25)MINDESG+=montosPorOrden[Math.min(i,3)];});
+    MINDESG=Math.round(MINDESG*100)/100;
+    const MINDES3=Math.round(parseInt(hijos3)*2800*100)/100;const MINDES=MINDESG+MINDES3;
+    const n65=parseInt(asc65);const n75=parseInt(asc75);
+    const _65AS=Math.round((n65+n75)*1150*100)/100;const _75AS=Math.round(n75*1400*100)/100;
+    const MINAS=_65AS+_75AS;
+    let DISPER=0,ASISPER=0;
+    if(discaper==='DESDE65'){DISPER=9000;ASISPER=3000;}else if(discaper==='DE33A65'&&movilper){DISPER=3000;ASISPER=3000;}else if(discaper==='DE33A65'){DISPER=3000;}
+    if(discapacidad==='65'||discapacidad==='65m'){DISPER=9000;ASISPER=discapacidad==='65m'?3000:0;}else if(discapacidad==='33'){DISPER=3000;}
+    const MINDIS=DISPER+ASISPER;
+    const MINPERFA=MINCON+MINDES+MINAS+MINDIS;
+    const REDU=PENSION+HIJOSRED+DESEM;const BASE=Math.max(0,RNTREDU-REDU);
+    const limites={S1:{0:null,1:17644,2:18694},S2:{0:17197,1:18130,2:19262},S3:{0:15876,1:16342,2:19262}};
+    const desKey=nHijos===0?0:nHijos===1?1:2;const limExento=limites[situfam]?.[desKey];
+    const exento=limExento!=null&&gross<=(limExento+PENSION+DESEM)&&!(situfam==='S1'&&nHijos===0);
+    if(exento){const ss=Math.round(COTIZACIONES);return{net:Math.round(gross-ss),irpf:0,ss,tipo:0,exento:true};}
+    function escalaDefault(x){
+      if(x<=0)return 0;if(x<=12450)return x*0.19;if(x<=20200)return 2365.50+(x-12450)*0.24;if(x<=35200)return 4225.50+(x-20200)*0.30;
+      if(x<=60000)return 8725.50+(x-35200)*0.37;if(x<=300000)return 17901.50+(x-60000)*0.45;return 125901.50+(x-300000)*0.47;
+    }
+    const escala=escalaCustom||escalaDefault;
+    const CUOTA1=escala(BASE);const CUOTA2=escala(MINPERFA);let CUOTA=Math.max(0,CUOTA1-CUOTA2);
+    if(gross<=35200&&limExento!=null){const LIMITE=Math.max(0,(gross-(limExento+PENSION+DESEM))*0.43);if(CUOTA>LIMITE)CUOTA=LIMITE;}
+    const TIPO=Math.trunc((CUOTA/gross)*10000)/100;const IRPF=Math.round(gross*TIPO/100);const SS=Math.round(COTIZACIONES);const net=Math.round(gross-IRPF-SS);
+    return{net,irpf:IRPF,ss:SS,tipo:TIPO,exento:false};
+  }
+  function fmtV2(n){return Number(n).toLocaleString('es-ES');}
+  let pagasV2 = 14;
+  let netoSimpleVal = null;
 
-    <!-- Fila 2b: Nivel de experiencia -->
-    <div class="input-group" style="margin-bottom:16px;">
-      <div class="field">
-        <label>Nivel de experiencia</label>
-        <div class="select-wrapper">
-          <select id="seniority">
-            <option value="junior">Junior (0-2 años de experiencia)</option>
-            <option value="mid" selected>Mid (3-5 años)</option>
-            <option value="senior">Senior (6-10 años)</option>
-            <option value="lead">Lead / Manager (10+ años)</option>
-          </select>
-        </div>
-      </div>
-      <div class="field" style="display:flex;align-items:flex-end;">
-        <div style="font-size:11px;color:var(--ink-lighter);line-height:1.5;padding-bottom:12px;">
-          ⓘ El nivel de experiencia ajusta los rangos salariales de referencia. Un junior y un senior en la misma profesión tienen rangos muy diferentes.
-        </div>
-      </div>
-    </div>
+  function calcCapa1(){
+    const bruto = parseFloat(document.getElementById('bruto').value);
+    if(!bruto || bruto < 0){ document.getElementById('bruto').focus(); return; }
+    const r = calcNetV2(bruto, 'single', '0', '0', '0', '0', '0', 'no', String(pagasV2), 1985, 'ACTIVO', 'NINGUNA', false, null);
+    netoSimpleVal = r.net;
+    document.getElementById('netoAnual').innerHTML = fmtV2(r.net) + ' <span class="euro">€</span>';
+    document.getElementById('netoMensual').textContent = fmtV2(Math.round(r.net / pagasV2));
+    document.getElementById('pagasLbl').textContent = pagasV2;
+    document.getElementById('metaIrpf').textContent = fmtV2(r.irpf);
+    document.getElementById('metaSs').textContent = fmtV2(r.ss);
+    document.getElementById('metaTipo').textContent = r.tipo.toFixed(2) + '%';
+    document.getElementById('resultadoV2').classList.add('visible');
+    document.getElementById('resultadoV2').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+  function calcCapa2(){
+    const bruto = parseFloat(document.getElementById('bruto').value);
+    if(!bruto || bruto < 0) return;
+    const situfam = document.getElementById('situfamV2').value;
+    const hijos = document.getElementById('hijosV2').value || '0';
+    const r = calcNetV2(bruto, situfam, '0', String(hijos), '0', '0', '0', 'no', String(pagasV2), 1985, 'ACTIVO', 'NINGUNA', false, null);
+    document.getElementById('netoSimple').textContent = fmtV2(netoSimpleVal) + ' €';
+    document.getElementById('netoRefinado').textContent = fmtV2(r.net) + ' €';
+    const delta = r.net - netoSimpleVal;
+    let deltaText = '';
+    if(delta > 0) deltaText = 'Tu situación familiar te aporta <strong>' + fmtV2(delta) + ' € más al año</strong> que el cálculo por defecto (' + fmtV2(Math.round(delta/pagasV2)) + ' € al mes con ' + pagasV2 + ' pagas).';
+    else if(delta < 0) deltaText = 'El cálculo refinado da <strong>' + fmtV2(Math.abs(delta)) + ' € menos al año</strong> que el simple — el simple usa asunciones más favorables por defecto.';
+    else deltaText = 'Tu situación familiar coincide con las asunciones por defecto. El neto no cambia.';
+    document.getElementById('compDelta').innerHTML = deltaText;
+    document.getElementById('refinadoBox').classList.add('visible');
+    const profesion = document.getElementById('profesionV2').value.trim();
+    const ciudadEl = document.getElementById('ciudadV2');
+    const ciudad = ciudadEl.value;
+    const ciudadLabel = ciudad ? ciudadEl.options[ciudadEl.selectedIndex].text : '';
+    if(profesion && ciudad){
+      document.getElementById('anzProf').textContent = profesion;
+      document.getElementById('anzSepar').textContent = ' en ';
+      document.getElementById('anzCiu').textContent = ciudadLabel;
+      document.getElementById('anzueloConv').classList.add('visible');
+    } else if(profesion || ciudad){
+      document.getElementById('anzProf').textContent = profesion || 'tu profesión';
+      document.getElementById('anzSepar').textContent = ciudad ? ' en ' : '';
+      document.getElementById('anzCiu').textContent = ciudad ? ciudadLabel : '';
+      document.getElementById('anzueloConv').classList.add('visible');
+    } else {
+      document.getElementById('anzueloConv').classList.remove('visible');
+    }
+  }
 
-  <!-- BLOQUES COLAPSABLES: situación, familia, discapacidad -->
-    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:24px;">
+  document.querySelectorAll('.pagas-switch button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.pagas-switch button').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked','false'); });
+      btn.classList.add('active'); btn.setAttribute('aria-checked','true');
+      pagasV2 = parseInt(btn.dataset.pagas);
+      if(document.getElementById('resultadoV2').classList.contains('visible')) calcCapa1();
+      if(document.getElementById('refinadoBox').classList.contains('visible')) calcCapa2();
+    });
+  });
 
-      <!-- BLOQUE 1: Situación laboral y familiar -->
-      <div class="calc-collapse" id="collapseLaboral">
-        <button class="calc-collapse-btn" onclick="this.parentElement.classList.toggle('open')">
-          <span>Situación laboral y familiar</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="calc-collapse-body">
-          <div class="input-group">
-            <div class="field">
-              <label>Situación familiar</label>
-              <div class="select-wrapper">
-                <select id="situation">
-                  <option value="single">Soltero/a, viudo/a o divorciado/a sin hijos</option>
-                  <option value="single_kids">Soltero/a, viudo/a o divorciado/a con hijos a cargo</option>
-                  <option value="married_noincome">Casado/a, cónyuge sin rentas superiores a 1.500 €</option>
-                  <option value="married">Casado/a, cónyuge con rentas superiores a 1.500 €</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <label>Categoría profesional</label>
-              <div class="select-wrapper">
-                <select id="categoria">
-                  <option value="1">Ingenieros y licenciados</option>
-                  <option value="2">Ingenieros técnicos y ayudantes titulados</option>
-                  <option value="3">Jefes administrativos y de taller</option>
-                  <option value="4">Ayudantes no titulados</option>
-                  <option value="5">Oficiales administrativos</option>
-                  <option value="6">Subalternos</option>
-                  <option value="7">Auxiliares administrativos</option>
-                  <option value="8">Oficiales de 1ª y 2ª</option>
-                  <option value="9">Oficiales de 3ª y especialistas</option>
-                  <option value="10">Peones</option>
-                  <option value="11">Trabajadores menores de 18 años</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="input-group">
-            <div class="field">
-              <label>Situación laboral</label>
-              <div class="select-wrapper">
-                <select id="activo">
-                  <option value="activo">Trabajador en activo</option>
-                  <option value="pensionista">Pensionista</option>
-                  <option value="desempleo">Prestación por desempleo</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <label>Movilidad geográfica</label>
-              <div class="select-wrapper">
-                <select id="movilidad">
-                  <option value="no">No</option>
-                  <option value="si">Sí (deducción por traslado)</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  document.getElementById('btnCalcular')?.addEventListener('click', calcCapa1);
+  document.getElementById('bruto')?.addEventListener('keypress', e => { if(e.key === 'Enter') calcCapa1(); });
+  document.getElementById('ccaa')?.addEventListener('change', () => {
+    if(document.getElementById('resultadoV2').classList.contains('visible')) calcCapa1();
+  });
 
-      <!-- BLOQUE 2: Datos familiares -->
-      <div class="calc-collapse" id="collapseFamilia">
-        <button class="calc-collapse-btn" onclick="this.parentElement.classList.toggle('open')">
-          <span>Datos familiares</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="calc-collapse-body">
-          <div class="input-group">
-            <div class="field">
-              <label>Hijos menores de 3 años</label>
-              <div class="select-wrapper">
-                <select id="hijos3">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3 o más</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <label>Hijos entre 3 y 25 años</label>
-              <div class="select-wrapper">
-                <select id="hijos25">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4 o más</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="input-group">
-            <div class="field">
-              <label>Ascendientes mayores de 65 años a cargo</label>
-              <div class="select-wrapper">
-                <select id="asc65">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2 o más</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <label>Ascendientes mayores de 75 años a cargo</label>
-              <div class="select-wrapper">
-                <select id="asc75">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2 o más</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  document.getElementById('btnCapa2')?.addEventListener('click', () => {
+    const c = document.getElementById('capa2V2');
+    const open = c.classList.contains('visible');
+    if(open){
+      c.classList.remove('visible');
+      document.getElementById('btnCapa2').setAttribute('aria-expanded','false');
+      document.getElementById('btnCapa2').querySelector('.arrow').textContent = '↓';
+    } else {
+      c.classList.add('visible');
+      document.getElementById('btnCapa2').setAttribute('aria-expanded','true');
+      document.getElementById('btnCapa2').querySelector('.arrow').textContent = '↑';
+      setTimeout(() => c.scrollIntoView({behavior:'smooth', block:'start'}), 50);
+    }
+  });
 
-      <!-- BLOQUE 3: Discapacidad -->
-      <div class="calc-collapse" id="collapseDiscap">
-        <button class="calc-collapse-btn" onclick="this.parentElement.classList.toggle('open')">
-          <span>Discapacidad</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="calc-collapse-body">
-          <div class="input-group">
-            <div class="field">
-              <label>Discapacidad del contribuyente</label>
-              <div class="select-wrapper">
-                <select id="discapacidad">
-                  <option value="0">Sin discapacidad</option>
-                  <option value="33">Entre 33% y 65%</option>
-                  <option value="65">Superior al 65%</option>
-                  <option value="65m">Superior al 65% con movilidad reducida</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <label>Discapacidad de hijos a cargo</label>
-              <div class="select-wrapper">
-                <select id="discapacidadHijos">
-                  <option value="0">Sin discapacidad</option>
-                  <option value="33">Entre 33% y 65%</option>
-                  <option value="65">Superior al 65%</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  document.getElementById('btnRecalc')?.addEventListener('click', calcCapa2);
+  </script>
 
-    </div>
 <!-- SELECTOR DE CONVENIO -->
 <div class="convenio-selector-wrap" id="convenio-section" style="scroll-margin-top:120px;">
   <div class="convenio-selector-label">Verificación de convenio colectivo</div>
@@ -4540,7 +4624,7 @@ async function updateConvenioPanel() {
 document.getElementById('convenioSelect').addEventListener('change', updateConvenioGroups);
 
 // Actualizar panel cuando cambia el salario (para recalcular alerta)
-document.getElementById('salary').addEventListener('input', function() {
+document.getElementById('salary')?.addEventListener('input', function() {
   if (document.getElementById('convenioSelect').value) updateConvenioPanel();
 });
 </script>
