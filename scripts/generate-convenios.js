@@ -102,6 +102,12 @@ const CONVENIO_CONFIG = {
     plurprovincial: false,
     relacionadas: ['hosteleria-madrid', 'oficinas-valencia']
   },
+  'hosteleria_sev.json': {
+    sector: 'Hostelería', sectorSlug: 'hosteleria',
+    provincia: 'Sevilla', provinciaSlug: 'sevilla',
+    plurprovincial: false,
+    relacionadas: ['hosteleria-madrid', 'hosteleria-valencia', 'hosteleria-barcelona']
+  },
   'ofydes_vlc.json': {
     sector: 'Oficinas y Despachos', sectorSlug: 'oficinas',
     provincia: 'Valencia', provinciaSlug: 'valencia',
@@ -160,6 +166,7 @@ function adaptPlurProvincial(rawData, provinciaKey) {
     pagas: numPagas,
     jornadaAnual: jornadaAnual,
     urlBop: rawData.urlBop,
+    notaEditorial: (prov.notaEditorial || rawData.notaEditorial) || null,
     subtablas: prov.subtablas,
     grupos: grupos,
     anyoMasReciente: Math.max(...Object.keys(prov.niveles[0].salario).map(Number)),
@@ -182,6 +189,7 @@ function normalizeSimple(rawData) {
     pagas: rawData.pagas || 14,
     jornadaAnual: jornadaAnual,
     urlBop: rawData.urlBop,
+    notaEditorial: rawData.notaEditorial || null,
     subtablas: rawData.subtablas || {},
     grupos: rawData.grupos,
     anyoMasReciente: Math.max(...anyos),
@@ -214,6 +222,8 @@ function headCSS() {
     .card-title{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
     .card-title::after{content:'';flex:1;height:1px;background:var(--cream-200);}
     .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;}
+    .callout-info{background:var(--green-bg);border:1px solid #BDE6CD;border-left:4px solid var(--green);padding:18px 22px;margin:20px 0;font-size:14px;line-height:1.65;color:var(--ink-light);}
+    .callout-info strong{color:var(--green);}
     .stat-item{border-left:3px solid var(--gold);padding:4px 14px;}
     .stat-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);margin-bottom:2px;}
     .stat-value{font-size:15px;font-weight:700;color:var(--ink);line-height:1.3;}
@@ -406,7 +416,11 @@ ${navHTML()}
       <div class="stat-item"><div class="stat-label">Código convenio</div><div class="stat-value" style="font-size:13px;font-family:monospace;">${data.codigo}</div></div>
     </div>
   </div>
-
+${data.notaEditorial ? `
+  <div class="callout-info">
+    ${data.notaEditorial}
+  </div>
+` : ''}
   <div class="card">
     <div class="card-title">Tablas salariales ${anyo} — ${meta.provincia}</div>
     <p style="font-size:13px;color:var(--ink-lighter);margin-bottom:12px;">Salario base mensual bruto en ${data.pagas} pagas. Cuantías oficiales publicadas en ${data.bop}.</p>

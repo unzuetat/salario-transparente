@@ -21,6 +21,9 @@ Thumbs.db
 # Outreach interno — datos de terceros + estrategia, NO subir a GitHub
 outreach/
 
+# Previews locales de rediseños — maquetas standalone, no entran al sitio
+_preview/
+
 # Research del informe 2026
 # Mantenemos en git la herramienta de captura y la metodología (para usar en
 # ambas máquinas), pero NO los datos brutos (privados hasta publicación curada).

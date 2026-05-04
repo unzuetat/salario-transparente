@@ -1,0 +1,2993 @@
+{
+  "nombre": "Hostelería — Provincia de Sevilla",
+  "bop": "BOP Sevilla núm. 102, 30/05/2025",
+  "codigo": "41001465011981",
+  "vigencia": "1 enero 2025 – 31 diciembre 2028",
+  "pagas": 15,
+  "jornadaAnual": 1800,
+  "urlBop": "https://bopsevilla.dipusevilla.es/export/sites/bop/.galleries/Documentos-Anuncios-en-PDF/firmado-1748559753418-final-4f322455-1.pdf",
+  "notaEditorial": "Convenio recién firmado en 2025 con vigencia hasta diciembre de 2028. La subida acumulada en los cuatro años es del 17% (+4% en 2025, +5% en 2026, +4% en 2027, +4% en 2028), una de las más altas de la hostelería estatal. El convenio reconoce 17 sub-categorías de establecimiento — desde hoteles de 5 estrellas hasta tabernas sin comidas — con 5 niveles profesionales en cada una (más un 'Nivel 3 Bis' específico de Camarero/a de Pisos en hoteles, con un +1,5% adicional cada año). Las cifras de la tabla son <strong>salario base mensual bruto</strong>, distribuidas en <strong>15 pagas equivalentes</strong>: 12 mensualidades + 2 pagas extras (15 de julio y 15 de diciembre) + Paga de Primavera (antes del 1 de abril del año siguiente). Cada paga equivale al salario base + antigüedad. Adicionalmente, el Plus Convenio (20 días de salario base, abonado el 15 de octubre) y el Plus Asistencia (10 días, condicionados a faltas inferiores a 7 al año) se suman fuera de la tabla.",
+  "subtablas": {
+    "H45": "Hoteles y Apartamentos de 4 y 5 estrellas",
+    "H3": "Hoteles y Apartamentos de 3 estrellas",
+    "H2": "Hoteles y Apartamentos de 2 estrellas",
+    "H1": "Hoteles y Apartamentos de 1 estrella",
+    "MOT": "Moteles, Camping, Pensiones, Hostales y Residencias Geriátricas",
+    "R45": "Restaurantes de 4 y 5 tenedores",
+    "R23": "Restaurantes de 2 y 3 tenedores y Catering",
+    "R1": "Restaurantes 1 tenedor, Tabernas con Comidas, Pizzerías, Hamburgueserías, Bagueterías",
+    "C23": "Cafeterías de 2 y 3 tazas",
+    "C1": "Cafeterías de 1 taza y Creperías",
+    "BE": "Cafés y Bares de Categoría Especial, Cervecerías, Chocolaterías, Heladerías",
+    "B4": "Cafés y Cafés Bares de 4ª",
+    "DIS": "Pubs, Disco Bares, Salas de Fiestas, Discotecas, Tablaos Flamencos, Salas de Bailes",
+    "TS": "Tabernas sin comidas",
+    "C12": "Casinos de 1ª y 2ª Categoría",
+    "C34": "Casinos de 3ª y 4ª Categoría",
+    "BIL": "Billares y Salones de Recreo"
+  },
+  "grupos": [
+    {
+      "id": "H45-1",
+      "subtabla": "H45",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Hotel 4-5★)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1571.85,
+          "sba": 23577.75
+        },
+        "2026": {
+          "mes": 1650.44,
+          "sba": 24756.6
+        },
+        "2027": {
+          "mes": 1716.46,
+          "sba": 25746.9
+        },
+        "2028": {
+          "mes": 1785.11,
+          "sba": 26776.65
+        }
+      }
+    },
+    {
+      "id": "H45-2",
+      "subtabla": "H45",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Hotel 4-5★)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1516.21,
+          "sba": 22743.15
+        },
+        "2026": {
+          "mes": 1592.02,
+          "sba": 23880.3
+        },
+        "2027": {
+          "mes": 1655.7,
+          "sba": 24835.5
+        },
+        "2028": {
+          "mes": 1721.92,
+          "sba": 25828.8
+        }
+      }
+    },
+    {
+      "id": "H45-3",
+      "subtabla": "H45",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Hotel 4-5★)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1423.97,
+          "sba": 21359.55
+        },
+        "2026": {
+          "mes": 1495.17,
+          "sba": 22427.55
+        },
+        "2027": {
+          "mes": 1554.97,
+          "sba": 23324.55
+        },
+        "2028": {
+          "mes": 1617.17,
+          "sba": 24257.55
+        }
+      }
+    },
+    {
+      "id": "H45-3B",
+      "subtabla": "H45",
+      "nombre": "Nivel 3 Bis — Camarero/a de Pisos (Hotel 4-5★)",
+      "puestos": [
+        "Camarero/a de Pisos"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1340.76,
+          "sba": 20111.4
+        },
+        "2026": {
+          "mes": 1427.91,
+          "sba": 21418.65
+        },
+        "2027": {
+          "mes": 1506.44,
+          "sba": 22596.6
+        },
+        "2028": {
+          "mes": 1589.3,
+          "sba": 23839.5
+        }
+      }
+    },
+    {
+      "id": "H45-4",
+      "subtabla": "H45",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Hotel 4-5★)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1265.16,
+          "sba": 18977.4
+        },
+        "2026": {
+          "mes": 1328.42,
+          "sba": 19926.3
+        },
+        "2027": {
+          "mes": 1381.55,
+          "sba": 20723.25
+        },
+        "2028": {
+          "mes": 1436.82,
+          "sba": 21552.3
+        }
+      }
+    },
+    {
+      "id": "H45-5",
+      "subtabla": "H45",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Hotel 4-5★)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1238.43,
+          "sba": 18576.45
+        },
+        "2026": {
+          "mes": 1300.35,
+          "sba": 19505.25
+        },
+        "2027": {
+          "mes": 1352.37,
+          "sba": 20285.55
+        },
+        "2028": {
+          "mes": 1406.46,
+          "sba": 21096.9
+        }
+      }
+    },
+    {
+      "id": "H3-1",
+      "subtabla": "H3",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Hotel 3★)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1417.5,
+          "sba": 21262.5
+        },
+        "2026": {
+          "mes": 1488.37,
+          "sba": 22325.55
+        },
+        "2027": {
+          "mes": 1547.91,
+          "sba": 23218.65
+        },
+        "2028": {
+          "mes": 1609.83,
+          "sba": 24147.45
+        }
+      }
+    },
+    {
+      "id": "H3-2",
+      "subtabla": "H3",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Hotel 3★)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1319.71,
+          "sba": 19795.65
+        },
+        "2026": {
+          "mes": 1385.69,
+          "sba": 20785.35
+        },
+        "2027": {
+          "mes": 1441.12,
+          "sba": 21616.8
+        },
+        "2028": {
+          "mes": 1498.77,
+          "sba": 22481.55
+        }
+      }
+    },
+    {
+      "id": "H3-3",
+      "subtabla": "H3",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Hotel 3★)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1273.85,
+          "sba": 19107.75
+        },
+        "2026": {
+          "mes": 1337.55,
+          "sba": 20063.25
+        },
+        "2027": {
+          "mes": 1391.05,
+          "sba": 20865.75
+        },
+        "2028": {
+          "mes": 1446.69,
+          "sba": 21700.35
+        }
+      }
+    },
+    {
+      "id": "H3-3B",
+      "subtabla": "H3",
+      "nombre": "Nivel 3 Bis — Camarero/a de Pisos (Hotel 3★)",
+      "puestos": [
+        "Camarero/a de Pisos"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1273.85,
+          "sba": 19107.75
+        },
+        "2026": {
+          "mes": 1337.55,
+          "sba": 20063.25
+        },
+        "2027": {
+          "mes": 1391.05,
+          "sba": 20865.75
+        },
+        "2028": {
+          "mes": 1446.69,
+          "sba": 21700.35
+        }
+      }
+    },
+    {
+      "id": "H3-4",
+      "subtabla": "H3",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Hotel 3★)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1220.23,
+          "sba": 18303.45
+        },
+        "2026": {
+          "mes": 1281.24,
+          "sba": 19218.6
+        },
+        "2027": {
+          "mes": 1332.49,
+          "sba": 19987.35
+        },
+        "2028": {
+          "mes": 1385.79,
+          "sba": 20786.85
+        }
+      }
+    },
+    {
+      "id": "H3-5",
+      "subtabla": "H3",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Hotel 3★)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1220.23,
+          "sba": 18303.45
+        },
+        "2026": {
+          "mes": 1281.24,
+          "sba": 19218.6
+        },
+        "2027": {
+          "mes": 1332.49,
+          "sba": 19987.35
+        },
+        "2028": {
+          "mes": 1385.79,
+          "sba": 20786.85
+        }
+      }
+    },
+    {
+      "id": "H2-1",
+      "subtabla": "H2",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Hotel 2★)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1307.46,
+          "sba": 19611.9
+        },
+        "2026": {
+          "mes": 1372.83,
+          "sba": 20592.45
+        },
+        "2027": {
+          "mes": 1427.74,
+          "sba": 21416.1
+        },
+        "2028": {
+          "mes": 1484.85,
+          "sba": 22272.75
+        }
+      }
+    },
+    {
+      "id": "H2-2",
+      "subtabla": "H2",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Hotel 2★)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1274.9,
+          "sba": 19123.5
+        },
+        "2026": {
+          "mes": 1338.65,
+          "sba": 20079.75
+        },
+        "2027": {
+          "mes": 1392.2,
+          "sba": 20883.0
+        },
+        "2028": {
+          "mes": 1447.88,
+          "sba": 21718.2
+        }
+      }
+    },
+    {
+      "id": "H2-3",
+      "subtabla": "H2",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Hotel 2★)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1225.06,
+          "sba": 18375.9
+        },
+        "2026": {
+          "mes": 1286.31,
+          "sba": 19294.65
+        },
+        "2027": {
+          "mes": 1337.76,
+          "sba": 20066.4
+        },
+        "2028": {
+          "mes": 1391.27,
+          "sba": 20869.05
+        }
+      }
+    },
+    {
+      "id": "H2-3B",
+      "subtabla": "H2",
+      "nombre": "Nivel 3 Bis — Camarero/a de Pisos (Hotel 2★)",
+      "puestos": [
+        "Camarero/a de Pisos"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1225.06,
+          "sba": 18375.9
+        },
+        "2026": {
+          "mes": 1286.31,
+          "sba": 19294.65
+        },
+        "2027": {
+          "mes": 1337.77,
+          "sba": 20066.55
+        },
+        "2028": {
+          "mes": 1391.28,
+          "sba": 20869.2
+        }
+      }
+    },
+    {
+      "id": "H2-4",
+      "subtabla": "H2",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Hotel 2★)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1163.96,
+          "sba": 17459.4
+        },
+        "2026": {
+          "mes": 1222.16,
+          "sba": 18332.4
+        },
+        "2027": {
+          "mes": 1271.04,
+          "sba": 19065.6
+        },
+        "2028": {
+          "mes": 1321.88,
+          "sba": 19828.2
+        }
+      }
+    },
+    {
+      "id": "H2-5",
+      "subtabla": "H2",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Hotel 2★)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1163.96,
+          "sba": 17459.4
+        },
+        "2026": {
+          "mes": 1222.16,
+          "sba": 18332.4
+        },
+        "2027": {
+          "mes": 1271.04,
+          "sba": 19065.6
+        },
+        "2028": {
+          "mes": 1321.88,
+          "sba": 19828.2
+        }
+      }
+    },
+    {
+      "id": "H1-1",
+      "subtabla": "H1",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Hotel 1★)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1275.84,
+          "sba": 19137.6
+        },
+        "2026": {
+          "mes": 1339.63,
+          "sba": 20094.45
+        },
+        "2027": {
+          "mes": 1393.22,
+          "sba": 20898.3
+        },
+        "2028": {
+          "mes": 1448.95,
+          "sba": 21734.25
+        }
+      }
+    },
+    {
+      "id": "H1-2",
+      "subtabla": "H1",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Hotel 1★)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1244.02,
+          "sba": 18660.3
+        },
+        "2026": {
+          "mes": 1306.22,
+          "sba": 19593.3
+        },
+        "2027": {
+          "mes": 1358.47,
+          "sba": 20377.05
+        },
+        "2028": {
+          "mes": 1412.8,
+          "sba": 21192.0
+        }
+      }
+    },
+    {
+      "id": "H1-3",
+      "subtabla": "H1",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Hotel 1★)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1195.21,
+          "sba": 17928.15
+        },
+        "2026": {
+          "mes": 1254.97,
+          "sba": 18824.55
+        },
+        "2027": {
+          "mes": 1305.17,
+          "sba": 19577.55
+        },
+        "2028": {
+          "mes": 1357.38,
+          "sba": 20360.7
+        }
+      }
+    },
+    {
+      "id": "H1-3B",
+      "subtabla": "H1",
+      "nombre": "Nivel 3 Bis — Camarero/a de Pisos (Hotel 1★)",
+      "puestos": [
+        "Camarero/a de Pisos"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1195.21,
+          "sba": 17928.15
+        },
+        "2026": {
+          "mes": 1254.97,
+          "sba": 18824.55
+        },
+        "2027": {
+          "mes": 1305.17,
+          "sba": 19577.55
+        },
+        "2028": {
+          "mes": 1357.38,
+          "sba": 20360.7
+        }
+      }
+    },
+    {
+      "id": "H1-4",
+      "subtabla": "H1",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Hotel 1★)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1135.05,
+          "sba": 17025.75
+        },
+        "2026": {
+          "mes": 1191.8,
+          "sba": 17877.0
+        },
+        "2027": {
+          "mes": 1239.47,
+          "sba": 18592.05
+        },
+        "2028": {
+          "mes": 1289.05,
+          "sba": 19335.75
+        }
+      }
+    },
+    {
+      "id": "H1-5",
+      "subtabla": "H1",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Hotel 1★)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1135.05,
+          "sba": 17025.75
+        },
+        "2026": {
+          "mes": 1191.8,
+          "sba": 17877.0
+        },
+        "2027": {
+          "mes": 1239.47,
+          "sba": 18592.05
+        },
+        "2028": {
+          "mes": 1289.05,
+          "sba": 19335.75
+        }
+      }
+    },
+    {
+      "id": "MOT-1",
+      "subtabla": "MOT",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Pensiones/Camping/Geriátricos)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1275.84,
+          "sba": 19137.6
+        },
+        "2026": {
+          "mes": 1339.63,
+          "sba": 20094.45
+        },
+        "2027": {
+          "mes": 1393.22,
+          "sba": 20898.3
+        },
+        "2028": {
+          "mes": 1448.95,
+          "sba": 21734.25
+        }
+      }
+    },
+    {
+      "id": "MOT-2",
+      "subtabla": "MOT",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Pensiones/Camping/Geriátricos)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1244.02,
+          "sba": 18660.3
+        },
+        "2026": {
+          "mes": 1306.22,
+          "sba": 19593.3
+        },
+        "2027": {
+          "mes": 1358.47,
+          "sba": 20377.05
+        },
+        "2028": {
+          "mes": 1412.8,
+          "sba": 21192.0
+        }
+      }
+    },
+    {
+      "id": "MOT-3",
+      "subtabla": "MOT",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Pensiones/Camping/Geriátricos)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1195.21,
+          "sba": 17928.15
+        },
+        "2026": {
+          "mes": 1254.97,
+          "sba": 18824.55
+        },
+        "2027": {
+          "mes": 1305.17,
+          "sba": 19577.55
+        },
+        "2028": {
+          "mes": 1357.38,
+          "sba": 20360.7
+        }
+      }
+    },
+    {
+      "id": "MOT-3B",
+      "subtabla": "MOT",
+      "nombre": "Nivel 3 Bis — Camarero/a de Pisos (Pensiones/Camping/Geriátricos)",
+      "puestos": [
+        "Camarero/a de Pisos"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1195.21,
+          "sba": 17928.15
+        },
+        "2026": {
+          "mes": 1254.97,
+          "sba": 18824.55
+        },
+        "2027": {
+          "mes": 1305.17,
+          "sba": 19577.55
+        },
+        "2028": {
+          "mes": 1357.38,
+          "sba": 20360.7
+        }
+      }
+    },
+    {
+      "id": "MOT-4",
+      "subtabla": "MOT",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Pensiones/Camping/Geriátricos)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1135.05,
+          "sba": 17025.75
+        },
+        "2026": {
+          "mes": 1191.8,
+          "sba": 17877.0
+        },
+        "2027": {
+          "mes": 1239.47,
+          "sba": 18592.05
+        },
+        "2028": {
+          "mes": 1289.05,
+          "sba": 19335.75
+        }
+      }
+    },
+    {
+      "id": "MOT-5",
+      "subtabla": "MOT",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Pensiones/Camping/Geriátricos)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1135.05,
+          "sba": 17025.75
+        },
+        "2026": {
+          "mes": 1191.8,
+          "sba": 17877.0
+        },
+        "2027": {
+          "mes": 1239.47,
+          "sba": 18592.05
+        },
+        "2028": {
+          "mes": 1289.05,
+          "sba": 19335.75
+        }
+      }
+    },
+    {
+      "id": "R45-1",
+      "subtabla": "R45",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Restaurante 4-5 ten.)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1560.85,
+          "sba": 23412.75
+        },
+        "2026": {
+          "mes": 1638.9,
+          "sba": 24583.5
+        },
+        "2027": {
+          "mes": 1704.45,
+          "sba": 25566.75
+        },
+        "2028": {
+          "mes": 1772.63,
+          "sba": 26589.45
+        }
+      }
+    },
+    {
+      "id": "R45-2",
+      "subtabla": "R45",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Restaurante 4-5 ten.)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1505.21,
+          "sba": 22578.15
+        },
+        "2026": {
+          "mes": 1580.47,
+          "sba": 23707.05
+        },
+        "2027": {
+          "mes": 1643.69,
+          "sba": 24655.35
+        },
+        "2028": {
+          "mes": 1709.44,
+          "sba": 25641.6
+        }
+      }
+    },
+    {
+      "id": "R45-3",
+      "subtabla": "R45",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Restaurante 4-5 ten.)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1413.12,
+          "sba": 21196.8
+        },
+        "2026": {
+          "mes": 1483.78,
+          "sba": 22256.7
+        },
+        "2027": {
+          "mes": 1543.13,
+          "sba": 23146.95
+        },
+        "2028": {
+          "mes": 1604.85,
+          "sba": 24072.75
+        }
+      }
+    },
+    {
+      "id": "R45-4",
+      "subtabla": "R45",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Restaurante 4-5 ten.)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1290.76,
+          "sba": 19361.4
+        },
+        "2026": {
+          "mes": 1355.3,
+          "sba": 20329.5
+        },
+        "2027": {
+          "mes": 1409.52,
+          "sba": 21142.8
+        },
+        "2028": {
+          "mes": 1465.9,
+          "sba": 21988.5
+        }
+      }
+    },
+    {
+      "id": "R45-5",
+      "subtabla": "R45",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Restaurante 4-5 ten.)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1290.76,
+          "sba": 19361.4
+        },
+        "2026": {
+          "mes": 1355.3,
+          "sba": 20329.5
+        },
+        "2027": {
+          "mes": 1409.52,
+          "sba": 21142.8
+        },
+        "2028": {
+          "mes": 1465.9,
+          "sba": 21988.5
+        }
+      }
+    },
+    {
+      "id": "R23-1",
+      "subtabla": "R23",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Restaurante 2-3 ten./Catering)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1359.05,
+          "sba": 20385.75
+        },
+        "2026": {
+          "mes": 1427.0,
+          "sba": 21405.0
+        },
+        "2027": {
+          "mes": 1484.08,
+          "sba": 22261.2
+        },
+        "2028": {
+          "mes": 1543.45,
+          "sba": 23151.75
+        }
+      }
+    },
+    {
+      "id": "R23-2",
+      "subtabla": "R23",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Restaurante 2-3 ten./Catering)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1324.65,
+          "sba": 19869.75
+        },
+        "2026": {
+          "mes": 1390.88,
+          "sba": 20863.2
+        },
+        "2027": {
+          "mes": 1446.52,
+          "sba": 21697.8
+        },
+        "2028": {
+          "mes": 1504.38,
+          "sba": 22565.7
+        }
+      }
+    },
+    {
+      "id": "R23-3",
+      "subtabla": "R23",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Restaurante 2-3 ten./Catering)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1292.08,
+          "sba": 19381.2
+        },
+        "2026": {
+          "mes": 1356.68,
+          "sba": 20350.2
+        },
+        "2027": {
+          "mes": 1410.95,
+          "sba": 21164.25
+        },
+        "2028": {
+          "mes": 1467.38,
+          "sba": 22010.7
+        }
+      }
+    },
+    {
+      "id": "R23-4",
+      "subtabla": "R23",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Restaurante 2-3 ten./Catering)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1210.27,
+          "sba": 18154.05
+        },
+        "2026": {
+          "mes": 1270.78,
+          "sba": 19061.7
+        },
+        "2027": {
+          "mes": 1321.61,
+          "sba": 19824.15
+        },
+        "2028": {
+          "mes": 1374.48,
+          "sba": 20617.2
+        }
+      }
+    },
+    {
+      "id": "R23-5",
+      "subtabla": "R23",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Restaurante 2-3 ten./Catering)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1210.27,
+          "sba": 18154.05
+        },
+        "2026": {
+          "mes": 1270.78,
+          "sba": 19061.7
+        },
+        "2027": {
+          "mes": 1321.61,
+          "sba": 19824.15
+        },
+        "2028": {
+          "mes": 1374.48,
+          "sba": 20617.2
+        }
+      }
+    },
+    {
+      "id": "R1-1",
+      "subtabla": "R1",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Restaurante 1 ten./Tabernas/Pizzerías)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1346.38,
+          "sba": 20195.7
+        },
+        "2026": {
+          "mes": 1413.7,
+          "sba": 21205.5
+        },
+        "2027": {
+          "mes": 1470.25,
+          "sba": 22053.75
+        },
+        "2028": {
+          "mes": 1529.06,
+          "sba": 22935.9
+        }
+      }
+    },
+    {
+      "id": "R1-2",
+      "subtabla": "R1",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Restaurante 1 ten./Tabernas/Pizzerías)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1312.28,
+          "sba": 19684.2
+        },
+        "2026": {
+          "mes": 1377.9,
+          "sba": 20668.5
+        },
+        "2027": {
+          "mes": 1433.01,
+          "sba": 21495.15
+        },
+        "2028": {
+          "mes": 1490.33,
+          "sba": 22354.95
+        }
+      }
+    },
+    {
+      "id": "R1-3",
+      "subtabla": "R1",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Restaurante 1 ten./Tabernas/Pizzerías)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1280.19,
+          "sba": 19202.85
+        },
+        "2026": {
+          "mes": 1344.2,
+          "sba": 20163.0
+        },
+        "2027": {
+          "mes": 1397.97,
+          "sba": 20969.55
+        },
+        "2028": {
+          "mes": 1453.88,
+          "sba": 21808.2
+        }
+      }
+    },
+    {
+      "id": "R1-4",
+      "subtabla": "R1",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Restaurante 1 ten./Tabernas/Pizzerías)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1198.96,
+          "sba": 17984.4
+        },
+        "2026": {
+          "mes": 1258.91,
+          "sba": 18883.65
+        },
+        "2027": {
+          "mes": 1309.27,
+          "sba": 19639.05
+        },
+        "2028": {
+          "mes": 1361.64,
+          "sba": 20424.6
+        }
+      }
+    },
+    {
+      "id": "R1-5",
+      "subtabla": "R1",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Restaurante 1 ten./Tabernas/Pizzerías)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1198.96,
+          "sba": 17984.4
+        },
+        "2026": {
+          "mes": 1258.91,
+          "sba": 18883.65
+        },
+        "2027": {
+          "mes": 1309.27,
+          "sba": 19639.05
+        },
+        "2028": {
+          "mes": 1361.64,
+          "sba": 20424.6
+        }
+      }
+    },
+    {
+      "id": "C23-1",
+      "subtabla": "C23",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Cafetería 2-3 tazas)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1346.23,
+          "sba": 20193.45
+        },
+        "2026": {
+          "mes": 1413.54,
+          "sba": 21203.1
+        },
+        "2027": {
+          "mes": 1470.08,
+          "sba": 22051.2
+        },
+        "2028": {
+          "mes": 1528.88,
+          "sba": 22933.2
+        }
+      }
+    },
+    {
+      "id": "C23-2",
+      "subtabla": "C23",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Cafetería 2-3 tazas)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1298.1,
+          "sba": 19471.5
+        },
+        "2026": {
+          "mes": 1363.0,
+          "sba": 20445.0
+        },
+        "2027": {
+          "mes": 1417.52,
+          "sba": 21262.8
+        },
+        "2028": {
+          "mes": 1474.22,
+          "sba": 22113.3
+        }
+      }
+    },
+    {
+      "id": "C23-3",
+      "subtabla": "C23",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Cafetería 2-3 tazas)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1248.53,
+          "sba": 18727.95
+        },
+        "2026": {
+          "mes": 1310.96,
+          "sba": 19664.4
+        },
+        "2027": {
+          "mes": 1363.4,
+          "sba": 20451.0
+        },
+        "2028": {
+          "mes": 1417.93,
+          "sba": 21268.95
+        }
+      }
+    },
+    {
+      "id": "C23-4",
+      "subtabla": "C23",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Cafetería 2-3 tazas)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1215.83,
+          "sba": 18237.45
+        },
+        "2026": {
+          "mes": 1276.62,
+          "sba": 19149.3
+        },
+        "2027": {
+          "mes": 1327.69,
+          "sba": 19915.35
+        },
+        "2028": {
+          "mes": 1380.8,
+          "sba": 20712.0
+        }
+      }
+    },
+    {
+      "id": "C23-5",
+      "subtabla": "C23",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Cafetería 2-3 tazas)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1215.83,
+          "sba": 18237.45
+        },
+        "2026": {
+          "mes": 1276.62,
+          "sba": 19149.3
+        },
+        "2027": {
+          "mes": 1327.69,
+          "sba": 19915.35
+        },
+        "2028": {
+          "mes": 1380.8,
+          "sba": 20712.0
+        }
+      }
+    },
+    {
+      "id": "C1-1",
+      "subtabla": "C1",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Cafetería 1 taza/Crepería)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1303.29,
+          "sba": 19549.35
+        },
+        "2026": {
+          "mes": 1368.45,
+          "sba": 20526.75
+        },
+        "2027": {
+          "mes": 1423.19,
+          "sba": 21347.85
+        },
+        "2028": {
+          "mes": 1480.12,
+          "sba": 22201.8
+        }
+      }
+    },
+    {
+      "id": "C1-2",
+      "subtabla": "C1",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Cafetería 1 taza/Crepería)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1271.13,
+          "sba": 19066.95
+        },
+        "2026": {
+          "mes": 1334.69,
+          "sba": 20020.35
+        },
+        "2027": {
+          "mes": 1388.07,
+          "sba": 20821.05
+        },
+        "2028": {
+          "mes": 1443.6,
+          "sba": 21654.0
+        }
+      }
+    },
+    {
+      "id": "C1-3",
+      "subtabla": "C1",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Cafetería 1 taza/Crepería)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1223.53,
+          "sba": 18352.95
+        },
+        "2026": {
+          "mes": 1284.71,
+          "sba": 19270.65
+        },
+        "2027": {
+          "mes": 1336.09,
+          "sba": 20041.35
+        },
+        "2028": {
+          "mes": 1389.54,
+          "sba": 20843.1
+        }
+      }
+    },
+    {
+      "id": "C1-4",
+      "subtabla": "C1",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Cafetería 1 taza/Crepería)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1204.51,
+          "sba": 18067.65
+        },
+        "2026": {
+          "mes": 1264.73,
+          "sba": 18970.95
+        },
+        "2027": {
+          "mes": 1315.32,
+          "sba": 19729.8
+        },
+        "2028": {
+          "mes": 1367.93,
+          "sba": 20518.95
+        }
+      }
+    },
+    {
+      "id": "C1-5",
+      "subtabla": "C1",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Cafetería 1 taza/Crepería)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1204.51,
+          "sba": 18067.65
+        },
+        "2026": {
+          "mes": 1264.73,
+          "sba": 18970.95
+        },
+        "2027": {
+          "mes": 1315.32,
+          "sba": 19729.8
+        },
+        "2028": {
+          "mes": 1367.93,
+          "sba": 20518.95
+        }
+      }
+    },
+    {
+      "id": "BE-1",
+      "subtabla": "BE",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Café/Bar Cat.Especial)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1302.19,
+          "sba": 19532.85
+        },
+        "2026": {
+          "mes": 1367.3,
+          "sba": 20509.5
+        },
+        "2027": {
+          "mes": 1422.0,
+          "sba": 21330.0
+        },
+        "2028": {
+          "mes": 1478.88,
+          "sba": 22183.2
+        }
+      }
+    },
+    {
+      "id": "BE-2",
+      "subtabla": "BE",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Café/Bar Cat.Especial)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1254.55,
+          "sba": 18818.25
+        },
+        "2026": {
+          "mes": 1317.28,
+          "sba": 19759.2
+        },
+        "2027": {
+          "mes": 1369.97,
+          "sba": 20549.55
+        },
+        "2028": {
+          "mes": 1424.77,
+          "sba": 21371.55
+        }
+      }
+    },
+    {
+      "id": "BE-3",
+      "subtabla": "BE",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Café/Bar Cat.Especial)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1205.3,
+          "sba": 18079.5
+        },
+        "2026": {
+          "mes": 1265.56,
+          "sba": 18983.4
+        },
+        "2027": {
+          "mes": 1316.18,
+          "sba": 19742.7
+        },
+        "2028": {
+          "mes": 1368.83,
+          "sba": 20532.45
+        }
+      }
+    },
+    {
+      "id": "BE-4",
+      "subtabla": "BE",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Café/Bar Cat.Especial)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1173.03,
+          "sba": 17595.45
+        },
+        "2026": {
+          "mes": 1231.68,
+          "sba": 18475.2
+        },
+        "2027": {
+          "mes": 1280.94,
+          "sba": 19214.1
+        },
+        "2028": {
+          "mes": 1332.18,
+          "sba": 19982.7
+        }
+      }
+    },
+    {
+      "id": "BE-5",
+      "subtabla": "BE",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Café/Bar Cat.Especial)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1173.03,
+          "sba": 17595.45
+        },
+        "2026": {
+          "mes": 1231.68,
+          "sba": 18475.2
+        },
+        "2027": {
+          "mes": 1280.94,
+          "sba": 19214.1
+        },
+        "2028": {
+          "mes": 1332.18,
+          "sba": 19982.7
+        }
+      }
+    },
+    {
+      "id": "B4-1",
+      "subtabla": "B4",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Café/Bar 4ª)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1265.7,
+          "sba": 18985.5
+        },
+        "2026": {
+          "mes": 1328.99,
+          "sba": 19934.85
+        },
+        "2027": {
+          "mes": 1382.15,
+          "sba": 20732.25
+        },
+        "2028": {
+          "mes": 1437.43,
+          "sba": 21561.45
+        }
+      }
+    },
+    {
+      "id": "B4-2",
+      "subtabla": "B4",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Café/Bar 4ª)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1233.76,
+          "sba": 18506.4
+        },
+        "2026": {
+          "mes": 1295.45,
+          "sba": 19431.75
+        },
+        "2027": {
+          "mes": 1347.27,
+          "sba": 20209.05
+        },
+        "2028": {
+          "mes": 1401.16,
+          "sba": 21017.4
+        }
+      }
+    },
+    {
+      "id": "B4-3",
+      "subtabla": "B4",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Café/Bar 4ª)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1186.46,
+          "sba": 17796.9
+        },
+        "2026": {
+          "mes": 1245.79,
+          "sba": 18686.85
+        },
+        "2027": {
+          "mes": 1295.62,
+          "sba": 19434.3
+        },
+        "2028": {
+          "mes": 1347.44,
+          "sba": 20211.6
+        }
+      }
+    },
+    {
+      "id": "B4-4",
+      "subtabla": "B4",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Café/Bar 4ª)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1167.46,
+          "sba": 17511.9
+        },
+        "2026": {
+          "mes": 1225.84,
+          "sba": 18387.6
+        },
+        "2027": {
+          "mes": 1274.87,
+          "sba": 19123.05
+        },
+        "2028": {
+          "mes": 1325.86,
+          "sba": 19887.9
+        }
+      }
+    },
+    {
+      "id": "B4-5",
+      "subtabla": "B4",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Café/Bar 4ª)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1167.46,
+          "sba": 17511.9
+        },
+        "2026": {
+          "mes": 1225.84,
+          "sba": 18387.6
+        },
+        "2027": {
+          "mes": 1274.87,
+          "sba": 19123.05
+        },
+        "2028": {
+          "mes": 1325.86,
+          "sba": 19887.9
+        }
+      }
+    },
+    {
+      "id": "DIS-1",
+      "subtabla": "DIS",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Pub/Disco/Sala fiestas)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1376.52,
+          "sba": 20647.8
+        },
+        "2026": {
+          "mes": 1445.35,
+          "sba": 21680.25
+        },
+        "2027": {
+          "mes": 1503.16,
+          "sba": 22547.4
+        },
+        "2028": {
+          "mes": 1563.29,
+          "sba": 23449.35
+        }
+      }
+    },
+    {
+      "id": "DIS-2",
+      "subtabla": "DIS",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Pub/Disco/Sala fiestas)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1308.25,
+          "sba": 19623.75
+        },
+        "2026": {
+          "mes": 1373.66,
+          "sba": 20604.9
+        },
+        "2027": {
+          "mes": 1428.61,
+          "sba": 21429.15
+        },
+        "2028": {
+          "mes": 1485.75,
+          "sba": 22286.25
+        }
+      }
+    },
+    {
+      "id": "DIS-3",
+      "subtabla": "DIS",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Pub/Disco/Sala fiestas)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1249.13,
+          "sba": 18736.95
+        },
+        "2026": {
+          "mes": 1311.59,
+          "sba": 19673.85
+        },
+        "2027": {
+          "mes": 1364.05,
+          "sba": 20460.75
+        },
+        "2028": {
+          "mes": 1418.62,
+          "sba": 21279.3
+        }
+      }
+    },
+    {
+      "id": "DIS-4",
+      "subtabla": "DIS",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Pub/Disco/Sala fiestas)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1233.95,
+          "sba": 18509.25
+        },
+        "2026": {
+          "mes": 1295.65,
+          "sba": 19434.75
+        },
+        "2027": {
+          "mes": 1347.47,
+          "sba": 20212.05
+        },
+        "2028": {
+          "mes": 1401.37,
+          "sba": 21020.55
+        }
+      }
+    },
+    {
+      "id": "DIS-5",
+      "subtabla": "DIS",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Pub/Disco/Sala fiestas)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1233.95,
+          "sba": 18509.25
+        },
+        "2026": {
+          "mes": 1295.65,
+          "sba": 19434.75
+        },
+        "2027": {
+          "mes": 1347.47,
+          "sba": 20212.05
+        },
+        "2028": {
+          "mes": 1401.37,
+          "sba": 21020.55
+        }
+      }
+    },
+    {
+      "id": "TS-3",
+      "subtabla": "TS",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Taberna sin comidas)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1186.46,
+          "sba": 17796.9
+        },
+        "2026": {
+          "mes": 1245.79,
+          "sba": 18686.85
+        },
+        "2027": {
+          "mes": 1295.62,
+          "sba": 19434.3
+        },
+        "2028": {
+          "mes": 1347.44,
+          "sba": 20211.6
+        }
+      }
+    },
+    {
+      "id": "TS-4",
+      "subtabla": "TS",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Taberna sin comidas)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1167.46,
+          "sba": 17511.9
+        },
+        "2026": {
+          "mes": 1225.84,
+          "sba": 18387.6
+        },
+        "2027": {
+          "mes": 1274.87,
+          "sba": 19123.05
+        },
+        "2028": {
+          "mes": 1325.86,
+          "sba": 19887.9
+        }
+      }
+    },
+    {
+      "id": "TS-5",
+      "subtabla": "TS",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Taberna sin comidas)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1167.46,
+          "sba": 17511.9
+        },
+        "2026": {
+          "mes": 1225.84,
+          "sba": 18387.6
+        },
+        "2027": {
+          "mes": 1274.87,
+          "sba": 19123.05
+        },
+        "2028": {
+          "mes": 1325.86,
+          "sba": 19887.9
+        }
+      }
+    },
+    {
+      "id": "C12-1",
+      "subtabla": "C12",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Casino 1ª-2ª)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1528.88,
+          "sba": 22933.2
+        },
+        "2026": {
+          "mes": 1605.33,
+          "sba": 24079.95
+        },
+        "2027": {
+          "mes": 1669.54,
+          "sba": 25043.1
+        },
+        "2028": {
+          "mes": 1736.32,
+          "sba": 26044.8
+        }
+      }
+    },
+    {
+      "id": "C12-2",
+      "subtabla": "C12",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Casino 1ª-2ª)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1473.42,
+          "sba": 22101.3
+        },
+        "2026": {
+          "mes": 1547.09,
+          "sba": 23206.35
+        },
+        "2027": {
+          "mes": 1608.97,
+          "sba": 24134.55
+        },
+        "2028": {
+          "mes": 1673.33,
+          "sba": 25099.95
+        }
+      }
+    },
+    {
+      "id": "C12-3",
+      "subtabla": "C12",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Casino 1ª-2ª)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1431.07,
+          "sba": 21466.05
+        },
+        "2026": {
+          "mes": 1502.62,
+          "sba": 22539.3
+        },
+        "2027": {
+          "mes": 1562.73,
+          "sba": 23440.95
+        },
+        "2028": {
+          "mes": 1625.24,
+          "sba": 24378.6
+        }
+      }
+    },
+    {
+      "id": "C12-4",
+      "subtabla": "C12",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Casino 1ª-2ª)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1381.48,
+          "sba": 20722.2
+        },
+        "2026": {
+          "mes": 1450.56,
+          "sba": 21758.4
+        },
+        "2027": {
+          "mes": 1508.58,
+          "sba": 22628.7
+        },
+        "2028": {
+          "mes": 1568.92,
+          "sba": 23533.8
+        }
+      }
+    },
+    {
+      "id": "C12-5",
+      "subtabla": "C12",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Casino 1ª-2ª)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1381.48,
+          "sba": 20722.2
+        },
+        "2026": {
+          "mes": 1450.56,
+          "sba": 21758.4
+        },
+        "2027": {
+          "mes": 1508.58,
+          "sba": 22628.7
+        },
+        "2028": {
+          "mes": 1568.92,
+          "sba": 23533.8
+        }
+      }
+    },
+    {
+      "id": "C34-1",
+      "subtabla": "C34",
+      "nombre": "Nivel 1 — Jefes/as de Cocina, Sala, Recepción (Casino 3ª-4ª)",
+      "puestos": [
+        "Jefe/a de Cocina",
+        "Jefe/a de Recepción",
+        "Jefe/a de Sala",
+        "Primer Jefe/a de Comedor",
+        "Encargado/a General",
+        "Gobernanta",
+        "Contable General",
+        "Primer Barman",
+        "Primer Encargado/a de Mostrador"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1465.25,
+          "sba": 21978.75
+        },
+        "2026": {
+          "mes": 1538.51,
+          "sba": 23077.65
+        },
+        "2027": {
+          "mes": 1600.05,
+          "sba": 24000.75
+        },
+        "2028": {
+          "mes": 1664.05,
+          "sba": 24960.75
+        }
+      }
+    },
+    {
+      "id": "C34-2",
+      "subtabla": "C34",
+      "nombre": "Nivel 2 — Recepcionista, Cajero/a, 2º Jefe/a, Repostero/a (Casino 3ª-4ª)",
+      "puestos": [
+        "Recepcionista",
+        "Cajero/a",
+        "Segundo/a Jefe/a de Cocina",
+        "Segundo/a Jefe/a de Sala",
+        "Repostero/a",
+        "Mayordomo/a de Pisos",
+        "Subgobernante",
+        "Relaciones Públicas",
+        "Oficial Contable"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1433.01,
+          "sba": 21495.15
+        },
+        "2026": {
+          "mes": 1504.66,
+          "sba": 22569.9
+        },
+        "2027": {
+          "mes": 1564.84,
+          "sba": 23472.6
+        },
+        "2028": {
+          "mes": 1627.44,
+          "sba": 24411.6
+        }
+      }
+    },
+    {
+      "id": "C34-3",
+      "subtabla": "C34",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Casino 3ª-4ª)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1383.75,
+          "sba": 20756.25
+        },
+        "2026": {
+          "mes": 1452.94,
+          "sba": 21794.1
+        },
+        "2027": {
+          "mes": 1511.06,
+          "sba": 22665.9
+        },
+        "2028": {
+          "mes": 1571.5,
+          "sba": 23572.5
+        }
+      }
+    },
+    {
+      "id": "C34-4",
+      "subtabla": "C34",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Casino 3ª-4ª)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1351.37,
+          "sba": 20270.55
+        },
+        "2026": {
+          "mes": 1418.93,
+          "sba": 21283.95
+        },
+        "2027": {
+          "mes": 1475.69,
+          "sba": 22135.35
+        },
+        "2028": {
+          "mes": 1534.72,
+          "sba": 23020.8
+        }
+      }
+    },
+    {
+      "id": "C34-5",
+      "subtabla": "C34",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Casino 3ª-4ª)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1351.37,
+          "sba": 20270.55
+        },
+        "2026": {
+          "mes": 1418.93,
+          "sba": 21283.95
+        },
+        "2027": {
+          "mes": 1475.69,
+          "sba": 22135.35
+        },
+        "2028": {
+          "mes": 1534.72,
+          "sba": 23020.8
+        }
+      }
+    },
+    {
+      "id": "BIL-3",
+      "subtabla": "BIL",
+      "nombre": "Nivel 3 — Camarero/a, Cocinero/a, Barman, Sumiller (Billar/Salón recreo)",
+      "puestos": [
+        "Camarero/a",
+        "Cocinero/a",
+        "Barman",
+        "Sumiller",
+        "Bodeguero/a",
+        "Jefe/a de Partida",
+        "Oficial Repostero/a",
+        "Telefonista",
+        "Conserje de Noche"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1210.99,
+          "sba": 18164.85
+        },
+        "2026": {
+          "mes": 1271.54,
+          "sba": 19073.1
+        },
+        "2027": {
+          "mes": 1322.4,
+          "sba": 19836.0
+        },
+        "2028": {
+          "mes": 1375.29,
+          "sba": 20629.35
+        }
+      }
+    },
+    {
+      "id": "BIL-4",
+      "subtabla": "BIL",
+      "nombre": "Nivel 4 — Ayudante de Camarero/a, de Cocina, Mozo/a, Conductor/a, Rider (Billar/Salón recreo)",
+      "puestos": [
+        "Ayudante de Camarero/a",
+        "Ayudante de Cocina",
+        "Ayudante de Recepción",
+        "Conductor/a",
+        "Mozo/a de Habitación",
+        "Vigilante de Noche",
+        "Rider",
+        "Portero/a",
+        "Monitor/a de Comedor (Colectividades)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1190.22,
+          "sba": 17853.3
+        },
+        "2026": {
+          "mes": 1249.73,
+          "sba": 18745.95
+        },
+        "2027": {
+          "mes": 1299.72,
+          "sba": 19495.8
+        },
+        "2028": {
+          "mes": 1351.71,
+          "sba": 20275.65
+        }
+      }
+    },
+    {
+      "id": "BIL-5",
+      "subtabla": "BIL",
+      "nombre": "Nivel 5 — Marmitón, Fregador/a, Limpiador/a, Lavandero/a, Pinche (Billar/Salón recreo)",
+      "puestos": [
+        "Marmitón",
+        "Fregador/a",
+        "Limpiador/a",
+        "Lavandero/a",
+        "Planchador/a",
+        "Mozo/a de Equipaje",
+        "Mozo/a de Almacén",
+        "Aprendiz",
+        "Pinche",
+        "Botones (mayor de 18)"
+      ],
+      "salario": {
+        "2025": {
+          "mes": 1173.03,
+          "sba": 17595.45
+        },
+        "2026": {
+          "mes": 1231.68,
+          "sba": 18475.2
+        },
+        "2027": {
+          "mes": 1280.94,
+          "sba": 19214.1
+        },
+        "2028": {
+          "mes": 1332.18,
+          "sba": 19982.7
+        }
+      }
+    }
+  ],
+  "complementos": {
+    "2026": {
+      "pagasExtra": {
+        "mes": null,
+        "anual": null,
+        "nota": "12 mensualidades + 2 pagas extras (15-jul, 15-dic) + Paga de Primavera. 15 pagas equivalentes. Cada paga: salario base + antigüedad."
+      },
+      "antiguedad": {
+        "mes": null,
+        "anual": null,
+        "nota": "Sobre el SMI (base congelada en 420,71 €). 3% (3 años), 8% (6), 16% (9), 26% (14), 38% (19), 45% (24). Para nuevos ingresos post 1-ene-1995: tope 8%. Ad personam, no compensable ni absorbible."
+      },
+      "plusConvenio": {
+        "mes": null,
+        "anual": null,
+        "nota": "20 días de salario base + antigüedad. Devengo 15-oct año anterior a 14-oct año en curso. Abono 15-oct."
+      },
+      "plusAsistencia": {
+        "mes": null,
+        "anual": null,
+        "nota": "10 días de salario base + antigüedad. Abono en enero año siguiente. 100% si ≤7 faltas/año, 50% si 8 faltas, 40% si 9 faltas, 0% si ≥10."
+      },
+      "nocturnidad": {
+        "mes": null,
+        "anual": null,
+        "nota": "25% sobre salario hora ordinario en jornada parcial nocturna (22:00-06:00). 20% sobre sueldo base si la jornada es específicamente nocturna y comienza tras las 22:00."
+      },
+      "horasExtra": {
+        "mes": null,
+        "anual": null,
+        "nota": "Compensación según convenio. Trabajo en festivos no recuperables: ver artículo correspondiente."
+      }
+    }
+  },
+  "relacionados": [
+    {
+      "nombre": "Hostelería — Madrid",
+      "url": "/convenio-hosteleria-madrid.html",
+      "nota": "Comparativa con la capital"
+    },
+    {
+      "nombre": "Hostelería — Valencia",
+      "url": "/convenio-hosteleria-valencia.html",
+      "nota": "Otro pilar mediterráneo"
+    },
+    {
+      "nombre": "Hostelería — Barcelona",
+      "url": "/convenio-hosteleria-barcelona.html",
+      "nota": "Provincia con mayor turismo"
+    },
+    {
+      "nombre": "V ALEH (Acuerdo Laboral Estatal Hostelería)",
+      "url": "https://www.boe.es/buscar/doc.php?q=acuerdo+laboral+hosteleria",
+      "nota": "Marco estatal"
+    },
+    {
+      "nombre": "Restauración Colectiva (estatal)",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-12598",
+      "nota": "Catering y comedores"
+    }
+  ]
+}

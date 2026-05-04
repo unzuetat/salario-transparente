@@ -1,0 +1,201 @@
+id,empresa,sector_codigo,sector_nombre,ccaa,tamaño,fecha_captura
+1,eDreams ODIGEO,TEC,Tecnología,Cataluña,XL,2026-04-28
+2,Deporvillage,TEC,Tecnología,Cataluña,M,2026-04-28
+3,Octave,TEC,Tecnología,Madrid,XL,2026-04-28
+4,Peer Markets,TEC,Tecnología,?,XS,2026-04-28
+5,Lastminute.com,TEC,Tecnología,Madrid,XL,2026-04-28
+6,Robert Walters,TEC,Tecnología,Valencia,XL,2026-04-28
+7,Kairós Digital Solutions S.L.,TEC,Tecnología,Madrid,L,2026-04-28
+8,Product Hackers,TEC,Tecnología,Remoto,M,2026-04-28
+9,Libeen Smart Housing,TEC,Tecnología,Madrid,S,2026-04-28
+10,Perk,TEC,Tecnología,Cataluña,XL,2026-04-28
+11,Saanz,TEC,Tecnología,Remoto,XS,2026-04-28
+12,Investing.com,TEC,Tecnología,Madrid,L,2026-04-28
+13,Performanze,TEC,Tecnología,Madrid,M,2026-04-28
+14,Click&Boat,TEC,Tecnología,Cataluña,M,2026-04-28
+15,Fedcel,TEC,Tecnología,Cataluña,S,2026-04-28
+16,Papernest,TEC,Tecnología,Cataluña,XL,2026-04-28
+17,SplitMetrics,TEC,Tecnología,Cataluña,M,2026-04-28
+18,Guesty,TEC,Tecnología,Remoto,L,2026-04-28
+19,Èmfasi. Agencia de marketing digital,TEC,Tecnología,Cataluña,S,2026-04-28
+20,Ascendion,TEC,Tecnología,Madrid,XL,2026-04-28
+21,The Social Hub (B Corp),HOS,Hostelería,Cataluña,L,2026-04-28
+22,Ola Living,HOS,Hostelería,Cataluña,S,2026-04-28
+23,Inmood Hotels,HOS,Hostelería,Andalucía,M,2026-04-28
+24,Iberostar Hotels & Resorts,HOS,Hostelería,Baleares,XL,2026-04-28
+25,Vacation Marbella,HOS,Hostelería,Andalucía,S,2026-04-28
+26,The Völkers House,HOS,Hostelería,Baleares,M,2026-04-28
+27,FireVolt,HOS,Hostelería,Cataluña,XS,2026-04-28
+28,Grand Hyatt,HOS,Hostelería,Cataluña,XL,2026-04-28
+29,Nobu Hotel Barcelona,HOS,Hostelería,Cataluña,L,2026-04-28
+30,TUI,HOS,Hostelería,Baleares,XL,2026-04-28
+31,AtlasOra,HOS,Hostelería,Cataluña,S,2026-04-28
+32,Gloria Thalasso & Hotels,HOS,Hostelería,Canarias,L,2026-04-28
+33,Balnearios Relais Termal,HOS,Hostelería,La Rioja,L,2026-04-28
+34,DO & CO AG,HOS,Hostelería,Madrid,XL,2026-04-28
+35,Hovima Hotels,HOS,Hostelería,Canarias,L,2026-04-28
+36,Grupo Crit,HOS,Hostelería,Murcia,XL,2026-04-28
+37,Hilton,HOS,Hostelería,Madrid,XL,2026-04-28
+38,Empresa Confidencial,HOS,Hostelería,Cataluña,M,2026-04-28
+39,Greystar,HOS,Hostelería,Madrid,XL,2026-04-28
+40,Hyde Hotels,HOS,Hostelería,Baleares,XL,2026-04-28
+41,The Adecco Group,BAN,Servicios financieros,Madrid,XL,2026-04-28
+42,Minsait,BAN,Servicios financieros,Madrid,XL,2026-04-28
+43,Thrive IT Systems,BAN,Servicios financieros,Remoto,S,2026-04-28
+44,BME Bolsas y Mercados Españoles,BAN,Servicios financieros,Madrid,L,2026-04-28
+45,AXA Exclusiv,BAN,Servicios financieros,Extremadura,XL,2026-04-28
+46,BFF Banking Group,BAN,Servicios financieros,Madrid,L,2026-04-28
+47,Sahun Talent Search,BAN,Servicios financieros,Cataluña,XS,2026-04-28
+48,Talent Solutions ManpowerGroup España,BAN,Servicios financieros,Castilla-La Mancha,L,2026-04-28
+49,Randstad,BAN,Servicios financieros,Madrid,XL,2026-04-28
+50,LHH,BAN,Servicios financieros,Cataluña,XL,2026-04-28
+51,Nationale Nederlanden,BAN,Servicios financieros,Galicia,XL,2026-04-28
+52,CAS Training,BAN,Servicios financieros,Remoto,L,2026-04-28
+53,Caja Rural de Aragón,BAN,Servicios financieros,Aragón,L,2026-04-28
+54,Randstad España,BAN,Servicios financieros,Cataluña,XL,2026-04-28
+55,Financiera El Corte Inglés,BAN,Servicios financieros,Madrid,L,2026-04-28
+56,Allianz España,BAN,Servicios financieros,Madrid,XL,2026-04-28
+57,Caixabank,BAN,Servicios financieros,País Vasco,XL,2026-04-28
+58,Renta 4,BAN,Servicios financieros,Madrid,L,2026-04-28
+59,Vass,BAN,Servicios financieros,Remoto,XL,2026-04-28
+60,Abanca,BAN,Servicios financieros,Madrid,XL,2026-04-28
+61,Emeis Iberia,SAN,Sanidad y atención hospitalaria,Madrid,XL,2026-04-28
+62,Quirón Salud,SAN,Sanidad y atención hospitalaria,Madrid,XL,2026-04-28
+63,Diagnóstico para todos,SAN,Sanidad y atención hospitalaria,Madrid,XS,2026-04-28
+64,Laboratorio Echevarne,SAN,Sanidad y atención hospitalaria,Cataluña,L,2026-04-28
+65,MyGwork,SAN,Sanidad y atención hospitalaria,Cataluña,S,2026-04-28
+66,Impress,SAN,Sanidad y atención hospitalaria,Cataluña,XL,2026-04-28
+67,Fundación Aladina,SAN,Sanidad y atención hospitalaria,Madrid,S,2026-04-28
+68,Tunstall Healthcare Group,SAN,Sanidad y atención hospitalaria,Murcia,XL,2026-04-28
+69,Viamed Salud,SAN,Sanidad y atención hospitalaria,Madrid,XL,2026-04-28
+70,Talent Wins,SAN,Sanidad y atención hospitalaria,Madrid,S,2026-04-28
+71,Medtronic,SAN,Sanidad y atención hospitalaria,Madrid,XL,2026-04-28
+72,Fundació Puigvert,SAN,Sanidad y atención hospitalaria,Cataluña,L,2026-04-28
+73,Centro Crisam Psicologos,SAN,Sanidad y atención hospitalaria,Madrid,S,2026-04-28
+74,GE Healthcare,SAN,Sanidad y atención hospitalaria,Madrid,XL,2026-04-28
+75,Oasis Premium Recovery,SAN,Sanidad y atención hospitalaria,Andalucía,S,2026-04-28
+76,Empresa Confidencial,SAN,Sanidad y atención hospitalaria,Madrid,XS,2026-04-28
+77,Page Personnel,SAN,Sanidad y atención hospitalaria,Cataluña,XL,2026-04-28
+78,Freenius Medical Care,SAN,Sanidad y atención hospitalaria,Cataluña,XL,2026-04-28
+79,Iwantic,SAN,Sanidad y atención hospitalaria,Asturias,S,2026-04-28
+80,Manpower España,SAN,Sanidad y atención hospitalaria,País Vasco,L,2026-04-28
+81,Affinitas Education,EDU,Servicios educativos,Madrid,M,2026-04-29
+82,Tusclasesparticulares,EDU,Servicios educativos,Remoto,XL,2026-04-29
+83,Etalentum Selección,EDU,Servicios educativos,Cataluña,M,2026-04-29
+84,Astroiberia,EDU,Servicios educativos,Murcia,XS,2026-04-29
+85,Eduki,EDU,Servicios educativos,Remoto,M,2026-04-29
+86,Universidad Nebrija,EDU,Servicios educativos,Remoto,L,2026-04-29
+87,Universidad Pontificia Comillas ICAI-ICADE,EDU,Servicios educativos,Madrid,XL,2026-04-29
+88,Academia 10 Formación,EDU,Servicios educativos,Andalucía,S,2026-04-29
+89,Xtart FR (Grupo UAX),EDU,Servicios educativos,Madrid,L,2026-04-29
+90,Esade,EDU,Servicios educativos,Cataluña,L,2026-04-29
+91,Grupo Aspasia,EDU,Servicios educativos,Valencia,L,2026-04-29
+92,Instituto Psynova,EDU,Servicios educativos,Asturias,XS,2026-04-29
+93,Universidad Alfonso X el Sabio,EDU,Servicios educativos,Remoto,L,2026-04-29
+94,ESIC - Escuela de Formación Profesional Superior,EDU,Servicios educativos,Madrid,M,2026-04-29
+95,Globeducate,EDU,Servicios educativos,Madrid,XL,2026-04-29
+96,Advantage Consultores,EDU,Servicios educativos,Madrid,S,2026-04-29
+97,Kids&Us,EDU,Servicios educativos,Cataluña,XL,2026-04-29
+98,The Adecco Group,EDU,Servicios educativos,Aragón,XL,2026-04-29
+99,Platform Engineering,EDU,Servicios educativos,Cataluña,S,2026-04-29
+100,EduTalent Group,EDU,Servicios educativos,Andalucía,XS,2026-04-29
+101,Experience Group,RET,Comercio al por menor,Madrid,L,2026-04-29
+102,Leroy Merlin,RET,Comercio al por menor,Madrid,XL,2026-04-29
+103,Bassol Optic,RET,Comercio al por menor,Cataluña,S,2026-04-29
+104,Santagloria,RET,Comercio al por menor,Baleares,S,2026-04-29
+105,Lagardère Travel Retail,RET,Comercio al por menor,Andalucía,XL,2026-04-29
+106,Ale-Hop,RET,Comercio al por menor,Valencia,XL,2026-04-29
+107,Chanel,RET,Comercio al por menor,Madrid,XL,2026-04-29
+108,Under Armour,RET,Comercio al por menor,Canarias,XL,2026-04-29
+109,Farm Rio,RET,Comercio al por menor,Andalucía,XL,2026-04-29
+110,Converse,RET,Comercio al por menor,Madrid,XL,2026-04-29
+111,Nike,RET,Comercio al por menor,Cataluña,XL,2026-04-29
+112,Hays,RET,Comercio al por menor,Andalucía,XL,2026-04-29
+113,Multiópticas,RET,Comercio al por menor,Madrid,XL,2026-04-29
+114,Merkal,RET,Comercio al por menor,Valencia,XL,2026-04-29
+115,Dia España,RET,Comercio al por menor,Andalucía,XL,2026-04-29
+116,Afflelou Grupo,RET,Comercio al por menor,Madrid,XL,2026-04-29
+117,Artesta Store,RET,Comercio al por menor,Cataluña,XS,2026-04-29
+118,Rocigarcía Cerería,RET,Comercio al por menor,Galicia,XS,2026-04-29
+119,Brico Depôt Iberia (Grupo Kingfisher),RET,Comercio al por menor,Madrid,XL,2026-04-29
+120,Action,RET,Comercio al por menor,Valencia,XL,2026-04-29
+121,Merello Packaging Machines,IND,Industria y fabricación,Madrid,M,2026-04-29
+122,Fain Ascensores,IND,Industria y fabricación,Madrid,XL,2026-04-29
+123,Chart Industries Inc.,IND,Industria y fabricación,Madrid,XL,2026-04-29
+124,"Ansi, Análisis y Soluciones de Ingeniería SL",IND,Industria y fabricación,Galicia,S,2026-04-29
+125,SafetyKleen,IND,Industria y fabricación,Madrid,XL,2026-04-29
+126,Agudiza Ingeniería,IND,Industria y fabricación,Madrid,XS,2026-04-29
+127,Iba Proton Therapy,IND,Industria y fabricación,País Vasco,XL,2026-04-29
+128,Laveer Engineering,IND,Industria y fabricación,Madrid,S,2026-04-29
+129,KDT Iberia,IND,Industria y fabricación,Madrid,S,2026-04-29
+130,Bradel Works,IND,Industria y fabricación,Cataluña,S,2026-04-29
+131,Topcon Positioning Systems,IND,Industria y fabricación,Remoto,XL,2026-04-29
+132,Liebherr Group,IND,Industria y fabricación,Madrid,XL,2026-04-29
+133,Iman Global Consulting,IND,Industria y fabricación,Valencia,S,2026-04-29
+134,Vanderlande,IND,Industria y fabricación,Cataluña,XL,2026-04-29
+135,Whtewater Group,IND,Industria y fabricación,Aragón,L,2026-04-29
+136,LHH,IND,Industria y fabricación,Cataluña,XL,2026-04-29
+137,Commonsense RRHH,IND,Industria y fabricación,Cataluña,XS,2026-04-29
+138,Miguel Vieira Constructor de Moldes,IND,Industria y fabricación,Valencia,XS,2026-04-29
+139,Grupo Crit,IND,Industria y fabricación,Castilla-La Mancha,XL,2026-04-29
+140,Laulagun Bearings,IND,Industria y fabricación,País Vasco,M,2026-04-29
+141,C + G Técnica,CON,Construcción,Valencia,S,2026-04-29
+142,Linesight,CON,Construcción,Madrid,XL,2026-04-29
+143,ManpowerGroup,CON,Construcción,Andalucía,XL,2026-04-29
+144,Grupo Insur,CON,Construcción,Andalucía,L,2026-04-29
+145,DataX Connect,CON,Construcción,Madrid,S,2026-04-29
+146,ReTra Rehabilitación y Tratamientos SL,CON,Construcción,Madrid,S,2026-04-29
+147,S&You España,CON,Construcción,Cataluña,L,2026-04-29
+148,Melt Group,CON,Construcción,País Vasco,M,2026-04-29
+149,Carbonell Figueras,CON,Construcción,Madrid,XL,2026-04-29
+150,Amenitiz,CON,Construcción,Cataluña,L,2026-04-29
+151,Hays,CON,Construcción,Madrid,XL,2026-04-29
+152,W Hunt España,CON,Construcción,Andalucía,M,2026-04-29
+153,Itercon,CON,Construcción,Madrid,L,2026-04-29
+154,Aszende,CON,Construcción,Cataluña,L,2026-04-29
+155,Route Pont SL,CON,Construcción,Valencia,S,2026-04-29
+156,Vilor,CON,Construcción,Valencia,L,2026-04-29
+157,Euroselección & Partners SL,CON,Construcción,Madrid,XS,2026-04-29
+158,Industrias Metálicas Puersur,CON,Construcción,Andalucía,S,2026-04-29
+159,Grupo Elecnor,CON,Construcción,Madrid,XL,2026-04-29
+160,Recruitsyn,CON,Construcción,Cataluña,XS,2026-04-29
+161,PKF Attest,CSL,Consultoría empresarial,Madrid,L,2026-04-29
+162,GO! People & Talent,CSL,Consultoría empresarial,Galicia,XS,2026-04-29
+163,Altair Soluciones Reales,CSL,Consultoría empresarial,Valencia,S,2026-04-29
+164,Afixen Société d'ingénierie,CSL,Consultoría empresarial,Cataluña,M,2026-04-29
+165,Vass,CSL,Consultoría empresarial,Remoto,XL,2026-04-29
+166,Vipirsa,CSL,Consultoría empresarial,Madrid,M,2026-04-29
+167,Base Life Science,CSL,Consultoría empresarial,Cataluña,L,2026-04-29
+168,Qualium Asesores,CSL,Consultoría empresarial,Cataluña,XS,2026-04-29
+169,Indeep Ai,CSL,Consultoría empresarial,Cataluña,S,2026-04-29
+170,Davidson Consulting,CSL,Consultoría empresarial,Madrid,XL,2026-04-29
+171,Marlex People,CSL,Consultoría empresarial,Cataluña,M,2026-04-29
+172,Aurora Live,CSL,Consultoría empresarial,Cataluña,M,2026-04-29
+173,Organización Lurbe SL,CSL,Consultoría empresarial,Valencia,S,2026-04-29
+174,Pelegrín Asesores,CSL,Consultoría empresarial,Murcia,XS,2026-04-29
+175,Michael Page,CSL,Consultoría empresarial,País Vasco,XL,2026-04-29
+176,FI Group,CSL,Consultoría empresarial,Madrid,XL,2026-04-29
+177,Hanbai.io,CSL,Consultoría empresarial,Madrid,M,2026-04-29
+178,Ilunion,CSL,Consultoría empresarial,Madrid,XL,2026-04-29
+179,BCNC Group,CSL,Consultoría empresarial,Remoto,M,2026-04-29
+180,Afianza,CSL,Consultoría empresarial,Madrid,XL,2026-04-29
+181,CTTI - Centre de Telecomunicacions i Tecnologies de la Informació,ADM,Administración pública,Cataluña,L,2026-04-29
+182,Diputación de Cáceres,ADM,Administración pública,Extremadura,L,2026-04-29
+183,Clinica Wellcare Medica,ADM,Administración pública,Madrid,S,2026-04-29
+184,"Promoció Econòmica de Sabadell, Vapor Llonch",ADM,Administración pública,Cataluña,L,2026-04-29
+185,Inetum,ADM,Administración pública,País Vasco,XL,2026-04-29
+186,IMO Salvador Seguí,ADM,Administración pública,Cataluña,M,2026-04-29
+187,CGI Colaboración Tributaria,ADM,Administración pública,Navarra,M,2026-04-29
+188,ICA Talento,ADM,Administración pública,Galicia,XS,2026-04-29
+189,SAD Assistencial Comarques Meridionals SL,ADM,Administración pública,Cataluña,S,2026-04-29
+190,EQA España,ADM,Administración pública,Madrid,L,2026-04-29
+191,Ajuntament de Girona,ADM,Administración pública,Cataluña,XL,2026-04-29
+192,Instituto Láser de Fotomedicina,ADM,Administración pública,Cataluña,S,2026-04-29
+193,Ayuntamiento de Rivas Vacíamadrid,ADM,Administración pública,Madrid,L,2026-04-29
+194,Bonàrea Agrupa,ADM,Administración pública,Cataluña,XL,2026-04-29
+195,Michael Page,ADM,Administración pública,País Vasco,XL,2026-04-29
+196,Verian Group,ADM,Administración pública,Madrid,L,2026-04-29
+197,Psicotec,ADM,Administración pública,Cataluña,M,2026-04-29
+198,Barcelona Supercomputing Center,ADM,Administración pública,Cataluña,XL,2026-04-29
+199,Paul Marlex,ADM,Administración pública,Cataluña,M,2026-04-29
+200,Hays,ADM,Administración pública,Madrid,XL,2026-04-29

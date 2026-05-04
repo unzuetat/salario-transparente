@@ -958,6 +958,15 @@ ${conveniosHTML}
   </div>
 
   <div class="card">
+    <div class="card-title">Investigación · informes y datos abiertos</div>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+      <li><a href="/informe-transparencia-2026.html" style="font-size:14px;font-weight:600;">Informe transparencia retributiva 2026</a> — 200 ofertas analizadas en LinkedIn España, ola 1</li>
+      <li><a href="/listado-muestra-200.csv">Dataset abierto · listado de 200 empresas (CC-BY)</a></li>
+      <li><a href="/sala-de-prensa.html">Sala de prensa</a> — recursos para medios y contacto</li>
+    </ul>
+  </div>
+
+  <div class="card">
     <div class="card-title">Idiomas</div>
     <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
       <li><a href="/">Español (principal)</a></li>
@@ -1000,6 +1009,7 @@ function generateSitemap(pages, convenios = [], plantillas = [], plantillasHubUr
     { url: 'https://salariojusto.es/convenios.html', priority: '0.90', freq: 'weekly' },
     { url: 'https://salariojusto.es/sobre.html', priority: '0.70', freq: 'monthly' },
     { url: 'https://salariojusto.es/sala-de-prensa.html', priority: '0.70', freq: 'monthly' },
+    { url: 'https://salariojusto.es/informe-transparencia-2026.html', priority: '0.85', freq: 'monthly' },
     { url: 'https://salariojusto.es/mapa-del-sitio.html', priority: '0.60', freq: 'weekly' },
   ];
 

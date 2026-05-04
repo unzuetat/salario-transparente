@@ -65,6 +65,12 @@ Datos extraídos de boletines oficiales con metodología A+B (verificación cruz
 - [Tramos IRPF 2026](https://salariojusto.es/tramos-irpf-2026.html): escala estatal completa
 - [Salario Mínimo Interprofesional 2026](https://salariojusto.es/salario-minimo-interprofesional-2026.html)
 
+## Investigación · informes propios
+
+- [Informe transparencia retributiva 2026](https://salariojusto.es/informe-transparencia-2026.html): análisis de 200 ofertas en LinkedIn España (28-29 abr 2026) ante la entrada en vigor de la Directiva UE 2023/970. Hallazgos: 85% de las ofertas no publica el rango salarial; spread sectorial 7× (sanidad 35% vs comercio 5%); curva en U por tamaño de empresa donde el segmento más opaco son las grandes nacionales (8%), no las micro (25%) ni las multinacionales (16%). Citas literales del Art. 5 de la directiva verificadas contra BOE-DOUE. Ola 1 de un seguimiento trimestral durante el primer año post-directiva.
+- [Dataset abierto · listado de las 200 empresas analizadas](https://salariojusto.es/listado-muestra-200.csv): CSV bajo licencia CC-BY con 7 columnas (id, empresa, sector, ccaa, tamaño, fecha de captura). Sin etiqueta de transparencia individualizada por empresa — esa información se publica solo como agregado por sector y por tamaño dentro del informe.
+- [Sala de prensa](https://salariojusto.es/sala-de-prensa.html): frase oficial citable, datos clave verificables, cómo citarnos, contacto directo de prensa.
+
 ## Sobre el proyecto
 
 - [Sobre SalarioJusto](https://salariojusto.es/sobre.html): metodología de cálculo IRPF, fuentes oficiales (BOE, REGCON, BOPs), proceso de verificación, principios del proyecto
