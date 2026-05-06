@@ -198,6 +198,18 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://salariojusto.es/convenio-hosteleria-bizkaia.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://salariojusto.es/convenio-hosteleria-malaga.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://salariojusto.es/plantillas-transparencia-retributiva-2026.html</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
