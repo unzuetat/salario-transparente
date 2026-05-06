@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de salario neto por ciudad y tramo (IRPF 2026) | SalarioJusto</title>
-  <meta name="description" content="Todas las combinaciones de salario neto calculadas: 14 tramos brutos × 12 ciudades. IRPF 2026 oficial, datos AEAT.">
+  <title>Convenios y salarios por provincia 2026 | SalarioJusto</title>
+  <meta name="description" content="Hub provincial de convenios colectivos auditados en España: tablas salariales 2026 verificadas por sector y por provincia. Hostelería, Limpieza, Oficinas, Construcción.">
   <link rel="canonical" href="https://salariojusto.es/salarios.html">
   <link rel="alternate" hreflang="es" href="https://salariojusto.es/salarios.html">
   <link rel="alternate" hreflang="x-default" href="https://salariojusto.es/salarios.html">
-  <meta property="og:title" content="Calculadora de salario neto por ciudad y tramo (IRPF 2026)">
-  <meta property="og:description" content="Todas las combinaciones de salario neto calculadas: 14 tramos brutos × 12 ciudades. IRPF 2026 oficial, datos AEAT.">
+  <meta property="og:title" content="Convenios y salarios por provincia 2026">
+  <meta property="og:description" content="Tablas salariales 2026 verificadas por sector y provincia. Hostelería, Limpieza, Oficinas, Construcción.">
   <meta property="og:url" content="https://salariojusto.es/salarios.html">
   <meta property="og:image" content="https://salariojusto.es/preview.jpg">
   <meta property="og:type" content="website">
@@ -26,10 +26,7 @@
   "url": "https://salariojusto.es/",
   "logo": "https://salariojusto.es/preview.jpg",
   "description": "Herramienta gratuita de transparencia salarial para España: cálculo IRPF 2026, verificación de convenios colectivos y guías de derechos laborales.",
-  "areaServed": {
-    "@type": "Country",
-    "name": "España"
-  },
+  "areaServed": { "@type": "Country", "name": "España" },
   "knowsAbout": [
     "Derecho laboral español",
     "Convenios colectivos",
@@ -37,35 +34,15 @@
     "Salario Mínimo Interprofesional",
     "Ley de Transparencia Retributiva (Directiva UE 2023/970)"
   ],
-  "sameAs": [
-    "https://salariojusto.es/sobre.html"
-  ]
+  "sameAs": ["https://salariojusto.es/sobre.html"]
 }</script>
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "SalarioJusto",
-      "item": "https://salariojusto.es/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Cálculos de salario neto",
-      "item": "https://salariojusto.es/salarios.html"
-    }
+    { "@type": "ListItem", "position": 1, "name": "SalarioJusto", "item": "https://salariojusto.es/" },
+    { "@type": "ListItem", "position": 2, "name": "Convenios por provincia", "item": "https://salariojusto.es/salarios.html" }
   ]
-}</script>
-  <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Salario neto calculado por ciudad y tramo IRPF 2026",
-  "url": "https://salariojusto.es/salarios.html",
-  "description": "Todas las combinaciones de salario neto calculadas: 14 tramos brutos × 12 ciudades. IRPF 2026 oficial, datos AEAT.",
-  "numberOfItems": 168
 }</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXJ8V2FBW9"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MXJ8V2FBW9');</script>
@@ -73,7 +50,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=Newsreader:wght@500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-  
+
   <style>
     :root{--cream-50:#FDFBF7;--cream-100:#F7F0E6;--cream-200:#EDE0CE;--gold:#C17B3E;--gold-dark:#A0622A;--gold-light:#D9A06A;--ink:#2D2520;--ink-light:#6B5E52;--ink-lighter:#9B8E88;--green:#2E7D52;--green-bg:#EAF5EE;--red:#B91C1C;--red-bg:#FEE2E2;--amber:#B45309;--amber-bg:#FEF3C7;--blue:#1D4ED8;--blue-bg:#EFF6FF;}
     *{box-sizing:border-box;margin:0;padding:0;}
@@ -90,21 +67,23 @@
     .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(22px,3.5vw,34px);color:#fff;font-weight:400;line-height:1.25;max-width:700px;margin:0 auto 16px;}
     .hero h1 em{font-style:normal;color:var(--gold-light);}
     .hero-sub{font-size:15px;color:rgba(255,255,255,0.6);max-width:550px;margin:0 auto;}
-    main{max-width:860px;margin:0 auto;padding:40px 24px 64px;}
-    .card{background:#fff;border:1px solid var(--cream-200);padding:32px;margin-bottom:24px;box-shadow:0 1px 3px rgba(45,37,32,0.06);}
-    .card-title{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+    main{max-width:920px;margin:0 auto;padding:40px 24px 64px;}
+    .card{background:#fff;border:1px solid var(--cream-200);padding:28px;margin-bottom:24px;box-shadow:0 1px 3px rgba(45,37,32,0.06);}
+    .card-title{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
     .card-title::after{content:'';flex:1;height:1px;background:var(--cream-200);}
-    table{width:100%;border-collapse:collapse;margin:12px 0;}
-    th{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-lighter);text-align:left;padding:10px 12px;border-bottom:2px solid var(--cream-200);}
-    td{padding:10px 12px;border-bottom:1px solid var(--cream-100);font-size:14px;color:var(--ink-light);}
-    td:first-child{font-weight:600;color:var(--ink);}
-    .highlight{background:var(--green-bg);font-weight:700;color:var(--green);}
+    .prov-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+    .prov{padding:18px 20px;background:var(--cream-50);border:1px solid var(--cream-200);}
+    .prov h3{font-family:'DM Serif Display',serif;font-size:18px;font-weight:400;color:var(--ink);margin:0 0 4px;}
+    .prov-meta{font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-lighter);margin-bottom:10px;}
+    .prov ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;}
+    .prov li a{display:block;padding:6px 10px;background:#fff;border:1px solid var(--cream-200);font-size:13px;color:var(--gold-dark);text-decoration:none;font-weight:500;}
+    .prov li a:hover{background:var(--cream-100);text-decoration:none;}
+    .prov li a .sector{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink-lighter);margin-right:6px;}
     .cta-box{background:var(--ink);padding:28px;text-align:center;margin:32px 0;}
     .cta-box p{color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:14px;}
     .cta-btn{display:inline-block;background:var(--gold);color:#fff;padding:14px 28px;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;}
     .cta-btn:hover{background:var(--gold-dark);}
     h2{font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;color:var(--ink);margin:36px 0 14px;padding-top:24px;border-top:1px solid var(--cream-200);}
-    h3{font-size:16px;font-weight:700;color:var(--ink);margin:20px 0 8px;}
     p{color:var(--ink-light);font-size:15px;margin-bottom:14px;}
     a{color:var(--gold);text-decoration:none;}
     a:hover{text-decoration:underline;}
@@ -112,20 +91,8 @@
     .related h2{border:none;padding:0;margin:0 0 14px;}
     .related ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;}
     .related a{color:var(--gold-dark);font-weight:500;font-size:14px;}
-    .cities-grid{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;}
-    .city-link{display:inline-block;padding:6px 14px;background:#fff;border:1px solid var(--cream-200);font-size:13px;font-weight:500;color:var(--ink-light);text-decoration:none;}
-    .city-link:hover,.city-link.active{background:var(--gold);color:#fff;border-color:var(--gold);text-decoration:none;}
-    @media(max-width:600px){main{padding:24px 16px 48px;}.card{padding:20px;}th,td{padding:8px 6px;font-size:12px;}}
-  </style>
-  <style>
-    .hub-table{width:100%;border-collapse:collapse;margin:8px 0 32px;}
-    .hub-table th{font-size:12px;font-weight:700;color:var(--ink);background:var(--cream-100);padding:12px;text-align:center;border:1px solid var(--cream-200);}
-    .hub-table td{padding:0;border:1px solid var(--cream-200);text-align:center;}
-    .hub-table td a{display:block;padding:14px 8px;color:var(--gold);text-decoration:none;font-size:13px;font-weight:600;line-height:1.35;}
-    .hub-table td a:hover{background:var(--cream-100);text-decoration:none;}
-    .hub-table thead th:first-child{background:var(--ink);color:#fff;}
-    .hub-table tbody th{background:var(--cream-50);font-size:13px;}
-    @media(max-width:700px){.hub-table th,.hub-table td a{padding:8px 4px;font-size:11px;}.hub-table td a span{display:none;}}
+    .nota{font-size:13px;color:var(--ink-light);background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px 16px;margin:0 0 24px;}
+    @media(max-width:600px){main{padding:24px 16px 48px;}.card{padding:20px;}}
   </style>
 </head>
 <body>
@@ -139,84 +106,158 @@
   <a href="/" class="header-cta">Calculadora completa →</a>
 </header>
 
-<div style="background:var(--cream-100);border-bottom:1px solid var(--cream-200);padding:10px 32px;font-size:12px;color:var(--ink-lighter);"><a href="/" style="color:var(--gold);">SalarioJusto</a> › Cálculos de salario neto</div>
+<div style="background:var(--cream-100);border-bottom:1px solid var(--cream-200);padding:10px 32px;font-size:12px;color:var(--ink-lighter);"><a href="/" style="color:var(--gold);">SalarioJusto</a> › Convenios por provincia</div>
 
 <section class="hero">
-  <div class="hero-badge">168 cálculos precomputados</div>
-  <h1>Salario neto por <em>ciudad y tramo</em> — IRPF 2026</h1>
-  <p class="hero-sub">Todas las combinaciones de salario bruto y ciudad con el cálculo oficial de la Agencia Tributaria. Elige el tuyo:</p>
+  <div class="hero-badge">Hub provincial · Convenios 2026</div>
+  <h1>Convenios y <em>salarios por provincia</em> en España (2026)</h1>
+  <p class="hero-sub">Tablas salariales auditadas a partir de los textos publicados en BOE, BOP y boletines autonómicos. Encuentra los convenios disponibles en tu provincia.</p>
 </section>
 
 <main>
 
+  <p class="nota">Esta página lista los convenios provinciales <strong>auditados con tabla salarial verificada</strong>. Si tu provincia o sector no aparece todavía, puedes consultar el <a href="/convenios.html">hub por sector</a> o el <a href="/convenio-limpieza-edificios-locales.html">pilar estatal de Limpieza</a>. Vamos publicando provincias progresivamente — la calidad de cada ficha prima sobre la cobertura.</p>
+
   <div class="card">
-    <div class="card-title">Matriz completa</div>
-    <div style="overflow-x:auto;">
-      <table class="hub-table">
-        <thead>
-          <tr>
-            <th>Bruto anual</th>
-            <th>Madrid</th>
-            <th>Barcelona</th>
-            <th>Valencia</th>
-            <th>Sevilla</th>
-            <th>Bilbao</th>
-            <th>Málaga</th>
-            <th>Zaragoza</th>
-            <th>Alicante</th>
-            <th>Murcia</th>
-            <th>Palma de Mallorca</th>
-            <th>Las Palmas de Gran Canaria</th>
-            <th>A Coruña</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr><th>15.000 €</th><td><a href="/salario-neto-15000-euros-brutos-madrid.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-15000-euros-brutos-barcelona.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-15000-euros-brutos-valencia.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-15000-euros-brutos-sevilla.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-15000-euros-brutos-bilbao.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-15000-euros-brutos-malaga.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-15000-euros-brutos-zaragoza.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-15000-euros-brutos-alicante.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-15000-euros-brutos-murcia.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-15000-euros-brutos-palma.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-15000-euros-brutos-laspalmas.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-15000-euros-brutos-acoruna.html">15.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>18.000 €</th><td><a href="/salario-neto-18000-euros-brutos-madrid.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-18000-euros-brutos-barcelona.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-18000-euros-brutos-valencia.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-18000-euros-brutos-sevilla.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-18000-euros-brutos-bilbao.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-18000-euros-brutos-malaga.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-18000-euros-brutos-zaragoza.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-18000-euros-brutos-alicante.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-18000-euros-brutos-murcia.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-18000-euros-brutos-palma.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-18000-euros-brutos-laspalmas.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-18000-euros-brutos-acoruna.html">18.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>20.000 €</th><td><a href="/salario-neto-20000-euros-brutos-madrid.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-20000-euros-brutos-barcelona.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-20000-euros-brutos-valencia.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-20000-euros-brutos-sevilla.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-20000-euros-brutos-bilbao.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-20000-euros-brutos-malaga.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-20000-euros-brutos-zaragoza.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-20000-euros-brutos-alicante.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-20000-euros-brutos-murcia.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-20000-euros-brutos-palma.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-20000-euros-brutos-laspalmas.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-20000-euros-brutos-acoruna.html">20.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>22.000 €</th><td><a href="/salario-neto-22000-euros-brutos-madrid.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-22000-euros-brutos-barcelona.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-22000-euros-brutos-valencia.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-22000-euros-brutos-sevilla.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-22000-euros-brutos-bilbao.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-22000-euros-brutos-malaga.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-22000-euros-brutos-zaragoza.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-22000-euros-brutos-alicante.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-22000-euros-brutos-murcia.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-22000-euros-brutos-palma.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-22000-euros-brutos-laspalmas.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-22000-euros-brutos-acoruna.html">22.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>25.000 €</th><td><a href="/salario-neto-25000-euros-brutos-madrid.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-25000-euros-brutos-barcelona.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-25000-euros-brutos-valencia.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-25000-euros-brutos-sevilla.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-25000-euros-brutos-bilbao.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-25000-euros-brutos-malaga.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-25000-euros-brutos-zaragoza.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-25000-euros-brutos-alicante.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-25000-euros-brutos-murcia.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-25000-euros-brutos-palma.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-25000-euros-brutos-laspalmas.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-25000-euros-brutos-acoruna.html">25.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>28.000 €</th><td><a href="/salario-neto-28000-euros-brutos-madrid.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-28000-euros-brutos-barcelona.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-28000-euros-brutos-valencia.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-28000-euros-brutos-sevilla.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-28000-euros-brutos-bilbao.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-28000-euros-brutos-malaga.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-28000-euros-brutos-zaragoza.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-28000-euros-brutos-alicante.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-28000-euros-brutos-murcia.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-28000-euros-brutos-palma.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-28000-euros-brutos-laspalmas.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-28000-euros-brutos-acoruna.html">28.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>30.000 €</th><td><a href="/salario-neto-30000-euros-brutos-madrid.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-30000-euros-brutos-barcelona.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-30000-euros-brutos-valencia.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-30000-euros-brutos-sevilla.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-30000-euros-brutos-bilbao.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-30000-euros-brutos-malaga.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-30000-euros-brutos-zaragoza.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-30000-euros-brutos-alicante.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-30000-euros-brutos-murcia.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-30000-euros-brutos-palma.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-30000-euros-brutos-laspalmas.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-30000-euros-brutos-acoruna.html">30.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>35.000 €</th><td><a href="/salario-neto-35000-euros-brutos-madrid.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-35000-euros-brutos-barcelona.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-35000-euros-brutos-valencia.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-35000-euros-brutos-sevilla.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-35000-euros-brutos-bilbao.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-35000-euros-brutos-malaga.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-35000-euros-brutos-zaragoza.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-35000-euros-brutos-alicante.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-35000-euros-brutos-murcia.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-35000-euros-brutos-palma.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-35000-euros-brutos-laspalmas.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-35000-euros-brutos-acoruna.html">35.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>40.000 €</th><td><a href="/salario-neto-40000-euros-brutos-madrid.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-40000-euros-brutos-barcelona.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-40000-euros-brutos-valencia.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-40000-euros-brutos-sevilla.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-40000-euros-brutos-bilbao.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-40000-euros-brutos-malaga.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-40000-euros-brutos-zaragoza.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-40000-euros-brutos-alicante.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-40000-euros-brutos-murcia.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-40000-euros-brutos-palma.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-40000-euros-brutos-laspalmas.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-40000-euros-brutos-acoruna.html">40.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>45.000 €</th><td><a href="/salario-neto-45000-euros-brutos-madrid.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-45000-euros-brutos-barcelona.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-45000-euros-brutos-valencia.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-45000-euros-brutos-sevilla.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-45000-euros-brutos-bilbao.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-45000-euros-brutos-malaga.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-45000-euros-brutos-zaragoza.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-45000-euros-brutos-alicante.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-45000-euros-brutos-murcia.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-45000-euros-brutos-palma.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-45000-euros-brutos-laspalmas.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-45000-euros-brutos-acoruna.html">45.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>50.000 €</th><td><a href="/salario-neto-50000-euros-brutos-madrid.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-50000-euros-brutos-barcelona.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-50000-euros-brutos-valencia.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-50000-euros-brutos-sevilla.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-50000-euros-brutos-bilbao.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-50000-euros-brutos-malaga.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-50000-euros-brutos-zaragoza.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-50000-euros-brutos-alicante.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-50000-euros-brutos-murcia.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-50000-euros-brutos-palma.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-50000-euros-brutos-laspalmas.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-50000-euros-brutos-acoruna.html">50.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>60.000 €</th><td><a href="/salario-neto-60000-euros-brutos-madrid.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-60000-euros-brutos-barcelona.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-60000-euros-brutos-valencia.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-60000-euros-brutos-sevilla.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-60000-euros-brutos-bilbao.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-60000-euros-brutos-malaga.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-60000-euros-brutos-zaragoza.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-60000-euros-brutos-alicante.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-60000-euros-brutos-murcia.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-60000-euros-brutos-palma.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-60000-euros-brutos-laspalmas.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-60000-euros-brutos-acoruna.html">60.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>70.000 €</th><td><a href="/salario-neto-70000-euros-brutos-madrid.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-70000-euros-brutos-barcelona.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-70000-euros-brutos-valencia.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-70000-euros-brutos-sevilla.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-70000-euros-brutos-bilbao.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-70000-euros-brutos-malaga.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-70000-euros-brutos-zaragoza.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-70000-euros-brutos-alicante.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-70000-euros-brutos-murcia.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-70000-euros-brutos-palma.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-70000-euros-brutos-laspalmas.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-70000-euros-brutos-acoruna.html">70.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        <tr><th>100.000 €</th><td><a href="/salario-neto-100000-euros-brutos-madrid.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Madrid</span></a></td><td><a href="/salario-neto-100000-euros-brutos-barcelona.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Barcelona</span></a></td><td><a href="/salario-neto-100000-euros-brutos-valencia.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Valencia</span></a></td><td><a href="/salario-neto-100000-euros-brutos-sevilla.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Sevilla</span></a></td><td><a href="/salario-neto-100000-euros-brutos-bilbao.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Bilbao</span></a></td><td><a href="/salario-neto-100000-euros-brutos-malaga.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Málaga</span></a></td><td><a href="/salario-neto-100000-euros-brutos-zaragoza.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Zaragoza</span></a></td><td><a href="/salario-neto-100000-euros-brutos-alicante.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Alicante</span></a></td><td><a href="/salario-neto-100000-euros-brutos-murcia.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Murcia</span></a></td><td><a href="/salario-neto-100000-euros-brutos-palma.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Palma de Mallorca</span></a></td><td><a href="/salario-neto-100000-euros-brutos-laspalmas.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en Las Palmas de Gran Canaria</span></a></td><td><a href="/salario-neto-100000-euros-brutos-acoruna.html">100.000 €<br><span style="font-size:11px;color:var(--ink-lighter);">en A Coruña</span></a></td></tr>
-        </tbody>
-      </table>
+    <div class="card-title">Convenios provinciales disponibles</div>
+    <div class="prov-grid">
+
+      <div class="prov">
+        <h3>Madrid</h3>
+        <div class="prov-meta">Comunidad de Madrid · 2 sectores</div>
+        <ul>
+          <li><a href="/convenio-hosteleria-madrid.html"><span class="sector">Hostelería</span>Tabla 2025 vigente</a></li>
+          <li><a href="/convenio-limpieza-madrid.html"><span class="sector">Limpieza</span>Edificios y locales</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Barcelona</h3>
+        <div class="prov-meta">Cataluña · 2 sectores</div>
+        <ul>
+          <li><a href="/convenio-hosteleria-barcelona.html"><span class="sector">Hostelería</span>2025 – 2028</a></li>
+          <li><a href="/convenio-limpieza-barcelona.html"><span class="sector">Limpieza</span>2026 – 2030</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Valencia</h3>
+        <div class="prov-meta">Comunitat Valenciana · 3 sectores</div>
+        <ul>
+          <li><a href="/convenio-hosteleria-valencia.html"><span class="sector">Hostelería</span>Hasta dic-2025</a></li>
+          <li><a href="/convenio-oficinas-valencia.html"><span class="sector">Oficinas</span>2024 – 2026</a></li>
+          <li><a href="/convenio-limpieza-valencia.html"><span class="sector">Limpieza</span>Tabla 2025</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Sevilla</h3>
+        <div class="prov-meta">Andalucía</div>
+        <ul>
+          <li><a href="/convenio-limpieza-sevilla.html"><span class="sector">Limpieza</span>2024 – 2027</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Málaga</h3>
+        <div class="prov-meta">Andalucía</div>
+        <ul>
+          <li><a href="/convenio-limpieza-malaga.html"><span class="sector">Limpieza</span>Tabla 2025</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Bizkaia</h3>
+        <div class="prov-meta">País Vasco · IRPF foral</div>
+        <ul>
+          <li><a href="/convenio-limpieza-bizkaia.html"><span class="sector">Limpieza</span>Jornada 35h/semana</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Zaragoza</h3>
+        <div class="prov-meta">Aragón</div>
+        <ul>
+          <li><a href="/convenio-limpieza-zaragoza.html"><span class="sector">Limpieza</span>Tabla 2025 prorrogada</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Asturias</h3>
+        <div class="prov-meta">Principado de Asturias</div>
+        <ul>
+          <li><a href="/convenio-limpieza-asturias.html"><span class="sector">Limpieza</span>Tabla 2025 corregida</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Murcia</h3>
+        <div class="prov-meta">Región de Murcia</div>
+        <ul>
+          <li><a href="/convenio-limpieza-murcia.html"><span class="sector">Limpieza</span>Convenio 2023 – 2027</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Las Palmas</h3>
+        <div class="prov-meta">Canarias</div>
+        <ul>
+          <li><a href="/convenio-limpieza-laspalmas.html"><span class="sector">Limpieza</span>Tabla 2026 vigente</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Tarragona</h3>
+        <div class="prov-meta">Cataluña</div>
+        <ul>
+          <li><a href="/convenio-hosteleria-tarragona.html"><span class="sector">Hostelería</span>2025 – 2028</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Girona</h3>
+        <div class="prov-meta">Cataluña</div>
+        <ul>
+          <li><a href="/convenio-hosteleria-girona.html"><span class="sector">Hostelería</span>2025 – 2028</a></li>
+        </ul>
+      </div>
+
+      <div class="prov">
+        <h3>Maresme</h3>
+        <div class="prov-meta">Cataluña · comarca</div>
+        <ul>
+          <li><a href="/convenio-hosteleria-maresme.html"><span class="sector">Hostelería</span>2025 – 2028</a></li>
+        </ul>
+      </div>
+
     </div>
   </div>
 
+  <div class="card">
+    <div class="card-title">Pilares estatales</div>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+      <li><a href="/convenio-limpieza-edificios-locales.html" style="font-weight:600;">Limpieza de edificios y locales — Estatal</a> · 52 provincias y ciudades autónomas listadas; 10 con tabla auditada en SalarioJusto.</li>
+      <li><a href="/construccion-estatal-suelo-salarial.html" style="font-weight:600;">Construcción — Suelo salarial estatal</a> · Convenio General 2022–2026.</li>
+    </ul>
+  </div>
+
   <div class="cta-box">
-    <p>¿Tu caso es distinto? Hijos, discapacidad, Ley Beckham, movilidad geográfica…</p>
-    <a href="/" class="cta-btn">Calculadora completa personalizada →</a>
+    <p>¿Buscas el cálculo neto exacto de tu nómina con tu situación familiar?</p>
+    <a href="/" class="cta-btn">Usar la calculadora completa →</a>
   </div>
 
-  <h2>Guías fiscales y convenios 2026</h2>
-  <div class="cities-grid">
-    <a href="/tramos-irpf-2026.html" class="city-link">Tramos IRPF 2026 →</a>
-    <a href="/salario-minimo-interprofesional-2026.html" class="city-link">Salario Mínimo Interprofesional 2026 →</a>
-    <a href="/convenios.html" class="city-link">Convenios colectivos →</a>
-    <a href="/ley-transparencia-salarial-2026.html" class="city-link">Ley de Transparencia Salarial →</a>
-    <a href="/reclamar-diferencias-salariales-convenio.html" class="city-link">Reclamar diferencias de convenio →</a>
-    <a href="/denunciar-brecha-salarial-guia-practica-2026.html" class="city-link">Denunciar brecha salarial →</a>
-    <a href="/rangos-salariales-empresa-transparencia-2026.html" class="city-link">Rangos salariales en empresa →</a>
-    <a href="/guias.html" class="city-link">Ver todas las guías →</a>
-  </div>
-
-  <h2>¿Cómo se calcula?</h2>
-  <p>Cada celda de la matriz usa el algoritmo oficial de retención IRPF 2026 publicado por la Agencia Tributaria. Se aplican las escalas estatal y autonómica, el mínimo personal y familiar, y las cotizaciones a la Seguridad Social del trabajador (7,56% del salario bruto).</p>
-  <p>Los resultados asumen una persona soltera sin hijos y 14 pagas. Si tu situación familiar es distinta o quieres ajustes específicos, usa la <a href="/">calculadora completa</a> donde puedes introducir hijos menores, ascendientes, discapacidad o régimen Beckham.</p>
+  <h2>Sobre la metodología</h2>
+  <p>Cada landing provincial cita la fuente normativa concreta (BOE, BOP o boletín autonómico) y la fecha de publicación. La cobertura es <strong>progresiva y honesta</strong>: solo aparecen las provincias cuya tabla ha sido extraída del texto oficial y verificada manualmente. Si una provincia no está aún, no significa que no exista convenio — significa que todavía no la hemos auditado al estándar de SalarioJusto.</p>
+  <p>Para el detalle de las 52 provincias y ciudades autónomas con convenio de Limpieza vigente, revisa el <a href="/convenio-limpieza-edificios-locales.html">pilar estatal</a>: ahí distinguimos entre <em>listadas</em> (con enlace al BOP), con <em>acceso oficial</em> y con <em>tabla auditada</em> en este sitio.</p>
 
   <div class="related">
-    <h2 style="font-size:18px;">Navegación rápida</h2>
+    <h2 style="font-size:18px;">Continuar por aquí</h2>
     <ul>
-      <li><a href="/">← Volver a la calculadora</a></li>
-      <li><a href="/guias.html">Guías para trabajadores</a></li>
-      <li><a href="/en/">English version</a></li>
+      <li><a href="/convenios.html">Hub de convenios por sector →</a></li>
+      <li><a href="/guias.html">Guías y plantillas para reclamar tus derechos →</a></li>
+      <li><a href="/tramos-irpf-2026.html">Tramos IRPF 2026 (estatal + autonómico)</a></li>
+      <li><a href="/salario-minimo-interprofesional-2026.html">Salario Mínimo Interprofesional 2026</a></li>
+      <li><a href="/">← Calculadora de salario neto</a></li>
     </ul>
   </div>
 
@@ -227,7 +268,6 @@
   <p style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;">
     SalarioJusto · Herramienta gratuita para trabajadores y trabajadoras · Sin empresas detrás<br>
     <a href="/" style="color:#D9A06A;text-decoration:none;">Calculadora</a> ·
-    <a href="/salarios.html" style="color:#D9A06A;text-decoration:none;">Cálculos por ciudad</a> ·
     <a href="/convenios.html" style="color:#D9A06A;text-decoration:none;">Convenios</a> ·
     <a href="/guias.html" style="color:#D9A06A;text-decoration:none;">Guías</a> ·
     <a href="/sobre.html" style="color:#D9A06A;text-decoration:none;">Sobre</a> ·

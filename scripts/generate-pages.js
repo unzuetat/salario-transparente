@@ -40,7 +40,7 @@ const SITUATIONS = [
 
 const fmt = n => new Intl.NumberFormat('es-ES').format(n);
 const fmtEur = n => fmt(n) + ' €';
-const today = '2026-04-16';
+const today = '2026-05-06';
 
 // ── Schema Organization global (E-E-A-T) ─────────────────────────────
 const ORGANIZATION_SCHEMA = JSON.stringify({
@@ -124,7 +124,6 @@ function footerHTML() {
   <p style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;">
     SalarioJusto · Herramienta gratuita para trabajadores y trabajadoras · Sin empresas detrás<br>
     <a href="/" style="color:#D9A06A;text-decoration:none;">Calculadora</a> ·
-    <a href="/salarios.html" style="color:#D9A06A;text-decoration:none;">Cálculos por ciudad</a> ·
     <a href="/convenios.html" style="color:#D9A06A;text-decoration:none;">Convenios</a> ·
     <a href="/guias.html" style="color:#D9A06A;text-decoration:none;">Guías</a> ·
     <a href="/sobre.html" style="color:#D9A06A;text-decoration:none;">Sobre</a> ·
@@ -532,9 +531,8 @@ ${faqs.map(f => `  <h3>${f.q}</h3>
     <h2 style="font-size:18px;">Guías relacionadas</h2>
     <ul>
       <li><a href="/tramos-irpf-2026.html">Tramos IRPF 2026: tabla completa y ejemplos →</a></li>
-      <li><a href="/salario-neto-18000-euros-brutos-madrid.html">Salario neto de 18.000 € brutos en Madrid →</a></li>
-      <li><a href="/salario-neto-20000-euros-brutos-madrid.html">Salario neto de 20.000 € brutos en Madrid →</a></li>
       <li><a href="/ley-transparencia-salarial-2026.html">Ley de Transparencia Salarial 2026 →</a></li>
+      <li><a href="/convenios.html">Convenios colectivos por provincia →</a></li>
       <li><a href="/construccion-estatal-suelo-salarial.html">Convenio Construcción Estatal →</a></li>
     </ul>
   </div>
@@ -662,11 +660,6 @@ ${examples.map(e => `        <tr><td>${fmtEur(e.gross)}</td><td>${fmtEur(e.irpf)
   <h2>Preguntas frecuentes sobre el IRPF 2026</h2>
 ${faqs.map(f => `  <h3>${f.q}</h3>
   <p>${f.a}</p>`).join('\n\n')}
-
-  <h2>Calcula el neto para cada tramo</h2>
-  <div class="cities-grid">
-${SALARIES.map(s => `    <a href="/salario-neto-${s}-euros-brutos-madrid.html" class="city-link">${fmt(s)} € brutos</a>`).join('\n')}
-  </div>
 
   <div class="related">
     <h2 style="font-size:18px;">Guías relacionadas</h2>
@@ -833,7 +826,7 @@ ${footerHTML()}
 function generateSiteMapHTML(salaryPages, convenios) {
   const url = 'https://salariojusto.es/mapa-del-sitio.html';
   const title = 'Mapa del sitio | SalarioJusto';
-  const desc = `Índice completo de SalarioJusto: ${salaryPages.length} cálculos de salario neto, ${convenios.length} convenios colectivos, guías fiscales y herramientas para trabajadores en España.`;
+  const desc = `Índice completo de SalarioJusto: ${convenios.length} convenios colectivos auditados, guías fiscales y herramientas para trabajadores en España.`;
 
   const breadcrumbSchema = JSON.stringify({
     "@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -916,28 +909,22 @@ ${navHTML()}
 <section class="hero">
   <div class="hero-badge">Índice completo del sitio</div>
   <h1>Mapa del sitio — <em>SalarioJusto</em></h1>
-  <p class="hero-sub">Listado completo de cálculos, convenios y guías disponibles. ${salaryPages.length + convenios.length + 10} páginas en total.</p>
+  <p class="hero-sub">Listado completo de convenios, guías y herramientas para trabajadores y trabajadoras en España.</p>
 </section>
 
 <main>
 
   <div class="card">
-    <div class="card-title">Calculadoras <span class="sm-counter">3</span></div>
+    <div class="card-title">Calculadoras <span class="sm-counter">2</span></div>
     <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
       <li><a href="/" style="font-size:14px;font-weight:600;">Calculadora de salario neto (personalizada)</a> — situación familiar exacta, IRPF 2026</li>
-      <li><a href="/salarios.html" style="font-size:14px;font-weight:600;">Matriz de cálculos precomputados</a> — ${salaryPages.length} combinaciones ciudad × tramo</li>
       <li><a href="/#verifica-convenio" style="font-size:14px;font-weight:600;">Verificador de convenio colectivo</a> — comprueba si tu salario cumple el mínimo legal</li>
     </ul>
   </div>
 
   <div class="card">
-    <div class="card-title">Salario neto por ciudad y tramo <span class="sm-counter">${salaryPages.length}</span></div>
-    <div class="sm-grid">${tramosHTML}
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">Convenios colectivos <span class="sm-counter">${convenios.length}</span></div>
+    <div class="card-title">Convenios por provincia <span class="sm-counter">${convenios.length}</span></div>
+    <p style="font-size:13px;color:var(--ink-light);margin-bottom:10px;">Ver también: <a href="/salarios.html">hub de convenios por provincia</a> · <a href="/convenios.html">hub por sector</a>.</p>
     <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
       <li><a href="/convenios.html" style="font-size:14px;font-weight:600;">Hub de convenios colectivos</a> — todos agrupados por sector</li>
 ${conveniosHTML}
@@ -1003,10 +990,9 @@ function generateSitemap(pages, convenios = [], plantillas = [], plantillasHubUr
     { url: 'https://salariojusto.es/mapa-del-sitio.html', priority: '0.60', freq: 'weekly' },
   ];
 
-  // Add generated salary pages
-  pages.forEach(p => {
-    existingPages.push({ url: `https://salariojusto.es/${p.fileName}`, priority: '0.70', freq: 'monthly' });
-  });
+  // (Las 168 landings programáticas salario-neto-* fueron retiradas el 2026-05-06
+  // tras rechazo AdSense por "contenido de poco valor". Snapshot en tag git
+  // landings-thin-pre-retirada-2026-05-06.)
 
   // Add generated convenio pages
   convenios.forEach(c => {
@@ -1048,19 +1034,12 @@ function generateSitemap(pages, convenios = [], plantillas = [], plantillasHubUr
 
 // ── MAIN ───────────────────────────────────────────────────────────
 function main() {
-  console.log('Generating salary landing pages...');
-
+  // RETIRADA 2026-05-06: bucle de 168 landings programáticas y hub /salarios.html
+  // generado eliminados tras rechazo de AdSense por "contenido de poco valor"
+  // (0 clics totales en ventana 28d previa). /salarios.html ahora se mantiene
+  // a mano como hub provincial editorial. Snapshot recuperable en tag git
+  // landings-thin-pre-retirada-2026-05-06. Ver MC/GSC_STATUS.md.
   const salaryPages = [];
-
-  // Generate 40 salary pages (8 brackets x 5 cities)
-  for (const gross of SALARIES) {
-    for (const city of CITIES) {
-      const page = generateSalaryPage(gross, city);
-      salaryPages.push(page);
-      fs.writeFileSync(path.join(ROOT, page.fileName), page.html, 'utf8');
-      console.log(`  ✓ ${page.fileName}`);
-    }
-  }
 
   // Generate SMI page
   console.log('\nGenerating SMI page...');
@@ -1073,12 +1052,6 @@ function main() {
   const tramosPage = generateTramosPage();
   fs.writeFileSync(path.join(ROOT, tramosPage.fileName), tramosPage.html, 'utf8');
   console.log(`  ✓ ${tramosPage.fileName}`);
-
-  // Generate hub page /salarios.html
-  console.log('\nGenerating hub page...');
-  const hubPage = generateHubPage();
-  fs.writeFileSync(path.join(ROOT, hubPage.fileName), hubPage.html, 'utf8');
-  console.log(`  ✓ ${hubPage.fileName}`);
 
   // Generate convenio landings + /convenios.html hub
   console.log('\nGenerating convenio landings...');
@@ -1098,7 +1071,7 @@ function main() {
   console.log('\nGenerating sitemap.xml...');
   const sitemap = generateSitemap(salaryPages, convenios, plantillas, generatePlantillas.HUB_URL);
   fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap, 'utf8');
-  const totalUrls = salaryPages.length + 14 + convenios.filter(c => c.href !== '/construccion-estatal-suelo-salarial.html').length + 1 + plantillas.length;
+  const totalUrls = 14 + convenios.filter(c => c.href !== '/construccion-estatal-suelo-salarial.html').length + 1 + plantillas.length;
   console.log(`  ✓ sitemap.xml (${totalUrls} URLs)`);
 
   console.log(`\nDone!`);

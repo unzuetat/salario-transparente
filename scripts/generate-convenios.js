@@ -62,12 +62,11 @@ const PROVINCIA_A_CIUDAD_SLUG = {
 const TRAMOS_DESTACADOS = [20000, 25000, 30000, 35000, 45000];
 
 function relatedSalarioNetoLinksHTML(provinciaSlug, provinciaNombre) {
-  const ciudadSlug = PROVINCIA_A_CIUDAD_SLUG[provinciaSlug];
-  if (!ciudadSlug) return '';
-  return TRAMOS_DESTACADOS.map(tramo => {
-    const fmtTramo = new Intl.NumberFormat('es-ES').format(tramo);
-    return `      <li><a href="/salario-neto-${tramo}-euros-brutos-${ciudadSlug}.html">Salario neto de ${fmtTramo} € brutos en ${provinciaNombre}</a></li>`;
-  }).join('\n');
+  // RETIRADA 2026-05-06: las landings programáticas salario-neto-* fueron retiradas
+  // tras rechazo AdSense por "contenido de poco valor" (0 clics totales en GSC).
+  // Devolvemos string vacío; el caller compone "Más recursos para {provincia}"
+  // solo si quedan convenios cruzados disponibles.
+  return '';
 }
 
 function relatedConvenioLinksHTML(provinciaSlug, provinciaNombre, sectorActual) {
@@ -263,7 +262,6 @@ function footerHTML() {
   <p class="footer-text">
     SalarioJusto · Herramienta gratuita para trabajadores y trabajadoras · Sin empresas detrás<br>
     <a href="/">Calculadora</a> ·
-    <a href="/salarios.html">Cálculos por ciudad</a> ·
     <a href="/convenios.html">Convenios</a> ·
     <a href="/guias.html">Guías</a> ·
     <a href="/sobre.html">Sobre</a> ·
