@@ -647,6 +647,8 @@ function main() {
     { sector: 'Limpieza de Edificios y Locales', provincia: 'Zaragoza', href: '/convenio-limpieza-zaragoza.html', nombreCorto: 'Limpieza — Zaragoza', vigencia: 'Tabla 2025 · prorrogado 2026 (Art. 5) · jornada 1.766 h' },
     { sector: 'Limpieza de Edificios y Locales', provincia: 'Asturias', href: '/convenio-limpieza-asturias.html', nombreCorto: 'Limpieza — Asturias', vigencia: 'Tabla 2025 (corregida) · 3 pagas extras · jornada 1.758 h' },
     { sector: 'Limpieza de Edificios y Locales', provincia: 'Murcia', href: '/convenio-limpieza-murcia.html', nombreCorto: 'Limpieza — Murcia', vigencia: 'Convenio 2023-2027 · Tabla 2026 · 16 pagas anuales · jornada 1.748 h' },
+    { sector: 'Hostelería', provincia: 'Bizkaia', href: '/convenio-hosteleria-bizkaia.html', nombreCorto: 'Hostelería — Bizkaia', vigencia: 'Tabla 2026 (BOB-2026a038) · IRPF foral · vigente hasta dic-2027' },
+    { sector: 'Hostelería', provincia: 'Málaga', href: '/convenio-hosteleria-malaga.html', nombreCorto: 'Hostelería — Málaga', vigencia: 'Tablas 2026 provisionales (BOP 14-abr-2026) · 9 secciones · vigente hasta dic-2027' },
     { sector: 'Construcción', ambito: 'Estatal', provincia: null, href: '/construccion-estatal-suelo-salarial.html', nombreCorto: 'Construcción — Suelo salarial estatal', vigencia: '1 enero 2022 – 31 diciembre 2026' },
   ];
   for (const m of MANUAL_CONVENIOS) generated.push(m);
